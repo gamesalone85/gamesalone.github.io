@@ -33,7 +33,7 @@
 
 /* TITULO PRINCIPAL */
 .main-title {
-  color: #00ffff;
+  color: #00DD00;
   font-size: 3rem;
   margin-bottom: 20px;
   letter-spacing: 4px;
@@ -41,7 +41,7 @@
 
 /* TEXTO EN CONSTRUCCIÓN */
 .construction-title {
-  color: #ffd700;
+  color: #B6E1E7;
   font-size: 1.5rem;
   margin-top: 40px;
   letter-spacing: 3px;
