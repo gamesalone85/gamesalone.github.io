@@ -1,28 +1,41 @@
-/* HOME SIMPLE */
-.home {
-  margin: 0;
+/* CONTENEDOR BLANCO CENTRADO */
+.white-box {
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 50px 40px;
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+/* AJUSTES DE TEXTO */
+.white-box h1,
+.white-box h2 {
+  text-align: center;
+}
+
+.white-box p,
+.white-box li {
+  text-align: left;
+}
+
+/* BOTÓN REGRESAR */
+.back-menu {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 14px 30px;
   background: #000;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
 }
 
-.home-simple {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-/* BANNER PEQUEÑO */
-.banner-small {
-  width: 280px;      /* ajusta aquí */
-  height: auto;
-}
-
-/* BOTÓN GIF PEQUEÑO */
-.btn-gif img {
-  width: 160px;      /* ajusta aquí */
-  cursor: pointer;
+.btn-back:hover {
+  background: #222;
 }
