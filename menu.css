@@ -51,11 +51,16 @@
    CAJA DE CONTENIDO
 ========================= */
 .menu-box {
-  background: #fff;
-  padding: 50px 60px;
+  background: #FFFFFF;
+  color: #323232;
+  max-width: 520px;
+  padding: 50px 40px;
+  margin: 60px 20px;
   border-radius: 8px;
-  text-align: center;
-  min-width: 280px;
+  line-height: 1.6;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center; /* 🔹 TEXTO CENTRADO */
+  font-size: 0.95rem; /* 🔹 LETRA UN POCO MÁS CHICA */
 }
 
 /* =========================
