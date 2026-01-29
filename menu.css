@@ -20,7 +20,7 @@
 }
 
 .menu-banner img {
-  width: 100%;
+  width: 50%;
   max-width: 780px;   /* 🔹 TAMAÑO WEB */
   height: auto;
   max-height: 280px;  /* 🔹 EVITA QUE SEA GIGANTE */
