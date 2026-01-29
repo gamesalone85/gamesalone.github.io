@@ -1,0 +1,75 @@
+/* FONDO GENERAL */
+.page {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CAJA BLANCA */
+.white-box {
+  background: #fff;
+  color: #111;
+  max-width: 900px;
+  padding: 50px 40px;
+  margin: 60px 20px;
+  border-radius: 8px;
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
+}
+
+/* TITULOS */
+.spaced {
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.white-box h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* TEXTO */
+.white-box p,
+.white-box li {
+  text-align: left;
+}
+
+/* DIVISORES */
+.white-box hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 60px 0;
+}
+
+/* LISTA REDES */
+.redes {
+  list-style: none;
+  padding: 0;
+}
+
+.redes li {
+  margin-bottom: 8px;
+}
+
+/* BOTÓN */
+.back-menu {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.btn-back:hover {
+  background: #222;
+}
