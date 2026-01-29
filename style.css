@@ -7,8 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-family: Arial, sans-serif;
 }
 
 /* CONTENEDOR */
@@ -16,13 +14,21 @@
   text-align: center;
 }
 
+/* TÍTULO PRINCIPAL */
+.main-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  font-size: 2.6rem;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+}
+
 /* TEXTO BIENVENIDA */
 .welcome-text {
-  color: #fff;
-  font-size: 1.6rem;
+  color: #aaa;
+  font-size: 1rem;
   letter-spacing: 3px;
-  margin-bottom: 35px;
-  font-weight: normal;
+  margin-bottom: 40px;
 }
 
 /* BOTÓN GIF */
