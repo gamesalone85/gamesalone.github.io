@@ -1,33 +1,55 @@
-/* FONDO */
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   FONDO GENERAL
+========================= */
 .menu-page {
   background: #F8F8F9;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* IMPORTANTE: no centrar vertical */
   padding-top: 40px;
   font-family: Arial, sans-serif;
 }
 
 /* =========================
-   BANNER MENÚ (RESPONSIVE)
+   CONTENEDOR PRINCIPAL
+========================= */
+.menu-section {
+  width: 100%;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+/* =========================
+   BANNER MENÚ (CONTROL REAL)
 ========================= */
 .menu-banner {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .menu-banner img {
-  width: 50%;
-  max-width: 780px;   /* 🔹 TAMAÑO WEB */
-  height: auto;
-  max-height: 280px;  /* 🔹 EVITA QUE SEA GIGANTE */
+  width: auto;              /* CLAVE: evita gigantismo */
+  max-width: 780px;         /* tamaño web */
+  max-height: 240px;        /* altura web controlada */
   object-fit: contain;
+  display: block;
 }
 
-/* CONTENEDOR */
+/* =========================
+   CAJA DE CONTENIDO
+========================= */
 .menu-box {
   background: #fff;
   padding: 50px 60px;
@@ -36,13 +58,17 @@
   min-width: 280px;
 }
 
-/* TÍTULO */
+/* =========================
+   TÍTULO
+========================= */
 .menu-title {
   margin-bottom: 40px;
   letter-spacing: 3px;
 }
 
-/* LINKS */
+/* =========================
+   LINKS DEL MENÚ
+========================= */
 .menu-links {
   display: flex;
   flex-direction: column;
@@ -61,9 +87,12 @@
   background: #f3f3f3;
 }
 
-/* BOTÓN */
+/* =========================
+   BOTÓN REGRESAR
+========================= */
 .back-home {
   margin-top: 50px;
+  text-align: center;
 }
 
 .btn-back {
@@ -77,4 +106,23 @@
 
 .btn-back:hover {
   background: #222;
+}
+
+/* =========================
+   AJUSTE ESPECÍFICO MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+  .menu-banner img {
+    max-width: 90%;
+    max-height: 120px;   /* CLAVE: altura REAL para móvil */
+  }
+
+  .menu-box {
+    padding: 35px 25px;
+  }
+
+  .menu-links a {
+    font-size: 1rem;
+  }
 }
