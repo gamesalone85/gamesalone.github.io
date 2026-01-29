@@ -1,31 +1,28 @@
-/* HOME HERO */
+/* HOME SIMPLE */
 .home {
   margin: 0;
   background: #000;
-}
-
-.home-hero {
-  width: 100%;
   height: 100vh;
-  background: url("img/banner.png") no-repeat center center;
-  background-size: contain; /* usa cover si quieres que recorte */
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* BOTÓN CENTRADO */
-.hero-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-simple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
-.hero-btn img {
-  width: 220px;
+/* BANNER PEQUEÑO */
+.banner-small {
+  width: 280px;      /* ajusta aquí */
+  height: auto;
+}
+
+/* BOTÓN GIF PEQUEÑO */
+.btn-gif img {
+  width: 160px;      /* ajusta aquí */
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.hero-btn img:hover {
-  transform: scale(1.05);
 }
