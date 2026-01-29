@@ -8,6 +8,24 @@
   font-family: Arial, sans-serif;
 }
 
+/* =========================
+   BANNER MENÚ (RESPONSIVE)
+========================= */
+.menu-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.menu-banner img {
+  width: 100%;
+  max-width: 780px;   /* 🔹 TAMAÑO WEB */
+  height: auto;
+  max-height: 280px;  /* 🔹 EVITA QUE SEA GIGANTE */
+  object-fit: contain;
+}
+
 /* CONTENEDOR */
 .menu-box {
   background: #fff;
