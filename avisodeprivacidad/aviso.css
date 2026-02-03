@@ -1,0 +1,50 @@
+.aviso-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.aviso-container h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.aviso-container h2 {
+  margin-bottom: 20px;
+}
+
+.fecha {
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.aviso-box {
+  text-align: left;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.aviso-box h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.nota {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.btn-regresar {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
