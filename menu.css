@@ -1,44 +1,50 @@
+/* CONTENEDOR GENERAL */
 .menu-container {
-  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
   text-align: center;
+}
+
+/* BANNER */
+.menu-banner {
+  margin-bottom: 40px;
 }
 
 .menu-banner img {
   width: 100%;
   max-width: 900px;
-  max-height: 260px;
-  object-fit: contain;
-  margin-bottom: 40px;
+  height: auto;
+  border-radius: 8px;
 }
 
+/* TÍTULO */
+.menu-container h1 {
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+/* GRID DE TARJETAS */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  max-width: 1000px;
-  margin: auto;
 }
 
+/* TARJETAS */
 .menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
-  color: #000;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-card img {
   width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.menu-card img:hover {
-  transform: scale(1.05);
-}
-
-.menu-card span {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-}
+  height: 160px;
+  ob
