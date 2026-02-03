@@ -1,102 +1,33 @@
-/* =========================
-   FONDO GENERAL
-========================= */
-.page {
-  background: #2272FF;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* =========================
-   CAJA BLANCA CONTENIDO
-========================= */
-.white-box {
-  background: #FFFFFF;
-  color: #323232;
-  max-width: 520px;
-  padding: 50px 40px;
-  margin: 60px 20px;
-  border-radius: 8px;
-  line-height: 1.6;
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center; /* 🔹 TEXTO CENTRADO */
-  font-size: 0.95rem; /* 🔹 LETRA UN POCO MÁS CHICA */
-}
-
-/* =========================
-   TITULOS
-========================= */
-.spaced {
+.page-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.page-container h1 {
+  margin-bottom: 40px;
   letter-spacing: 4px;
-  margin-bottom: 25px;
 }
 
-.white-box h2 {
-  text-align: center;
-  margin-top: 40px;
-  font-family: Arial, sans-serif;
+.page-image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-/* =========================
-   TEXTO
-========================= */
-.white-box p {
-  margin-bottom: 1.1em;
-}
-
-/* =========================
-   LISTAS
-========================= */
-.white-box ul {
-  padding-left: 0;
-  list-style-position: inside;
-}
-
-/* =========================
-   DIVISORES
-========================= */
-.white-box hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 40px 0;
-}
-
-/* =========================
-   LISTA REDES
-========================= */
-.redes {
-  list-style: none;
-  padding: 0;
-}
-
-.redes li {
-  margin-bottom: 8px;
-}
-
-/* =========================
-   BOTÓN REGRESAR
-========================= */
-.back-menu {
-  margin-top: 40px;
-  text-align: center;
+.page-container p {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .btn-back {
   display: inline-block;
-  padding: 14px 32px;
+  margin-top: 50px;
+  padding: 12px 30px;
   background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 0.9rem;
-  font-family: Arial, sans-serif;
 }
-
-.btn-back:hover {
-  background: #222;
-}
-
-
