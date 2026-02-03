@@ -6,24 +6,26 @@
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 /* =========================
-   BANNER
+   BANNER RESPONSIVE REAL
 ========================= */
 .menu-banner {
   width: 100%;
-  display: flex;
-  justify-content: center;
   margin-bottom: 40px;
   overflow: hidden;
 }
 
-/* DESKTOP */
-.menu-banner img {
+/* CONTENEDOR INTERNO CON PROPORCIÓN */
+.banner-inner {
   width: 100%;
-  max-width: 900px;
-  height: auto;
+  aspect-ratio: 16 / 9;              /* DESKTOP */
+  background-image: url("../img/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 8px;
 }
 
@@ -33,6 +35,7 @@
 .menu-container h1 {
   margin-bottom: 40px;
   letter-spacing: 3px;
+  font-size: 1.8rem;
 }
 
 /* =========================
@@ -52,15 +55,16 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: #fff;
+  background: #ffffff;
   border-radius: 8px;
   min-height: 180px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .menu-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
 }
 
 .menu-card span {
@@ -70,21 +74,23 @@
   color: #111;
 }
 
+/* TARJETA TEXTO (AVISO) */
+.text-card {
+  background: linear-gradient(135deg, #111, #1f1f1f);
+}
+
+.text-card span {
+  color: #ffffff;
+}
+
 /* =========================
-   MÓVIL (SOLUCIÓN REAL)
+   MÓVIL (CLAVE)
 ========================= */
 @media (max-width: 768px) {
 
-  .menu-banner {
-    height: 28vh;              /* 🔥 AQUÍ SE CONTROLA */
-    max-height: 220px;
-  }
-
-  .menu-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;       /* 🔥 YA NO SE AGRANDA */
-    border-radius: 6px;
+  .banner-inner {
+    aspect-ratio: 3 / 1;        /* 🔥 NO MÁS BANNER GIGANTE */
+    background-position: center top;
   }
 
   .menu-container h1 {
