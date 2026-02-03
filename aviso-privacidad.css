@@ -1,0 +1,98 @@
+/* SECCIÓN GENERAL */
+.privacy-section {
+  background: #ffffff;
+  padding: 120px 20px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CAJA CONTENEDORA */
+.privacy-box {
+  max-width: 900px;
+  width: 100%;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TITULO PRINCIPAL */
+.privacy-box h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* SUBTITULO */
+.privacy-box h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* FECHA */
+.update-date {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 50px;
+}
+
+/* SUBTITULOS NUMERADOS */
+.privacy-box h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 45px 0 15px;
+}
+
+/* TEXTO */
+.privacy-box p {
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* LISTAS */
+.privacy-box ul {
+  list-style: disc;
+  padding-left: 40px;
+  margin: 15px auto 30px;
+  max-width: 760px;
+}
+
+.privacy-box li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* TITULO LISTA */
+.list-title {
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+/* NOTA LEGAL */
+.legal-note {
+  font-size: 0.9rem;
+  margin-top: 60px;
+  text-align: center;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .privacy-box h1 {
+    font-size: 1.7rem;
+  }
+
+  .privacy-box h2 {
+    font-size: 1.15rem;
+  }
+
+  .privacy-box p,
+  .privacy-box li {
+    font-size: 0.92rem;
+  }
+}
