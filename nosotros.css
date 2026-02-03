@@ -1,33 +1,102 @@
-.page-container {
+/* =========================
+   SECCIÓN GENERAL
+========================= */
+.about-section {
+  background: #ffffff;
+  padding: 120px 20px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   CAJA CONTENEDORA
+========================= */
+.about-box {
   max-width: 900px;
-  margin: auto;
-  padding: 80px 20px;
+  width: 100%;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
-.page-container h1 {
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+.about-box h1 {
+  font-size: 2.1rem;
+  font-weight: bold;
   margin-bottom: 40px;
   letter-spacing: 4px;
 }
 
-.page-image {
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+.about-image {
   width: 100%;
   max-width: 700px;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin: 0 auto 40px;
+  display: block;
 }
 
-.page-container p {
-  font-size: 1rem;
+/* =========================
+   SUBTÍTULOS (OPCIONAL)
+========================= */
+.about-box h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 45px 0 15px;
+  text-align: center;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.about-box p {
+  font-size: 0.98rem;
   line-height: 1.7;
+  margin-bottom: 18px;
+  text-align: justify;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   BOTÓN REGRESO
+========================= */
+.back-menu {
+  margin-top: 60px;
 }
 
 .btn-back {
   display: inline-block;
-  margin-top: 50px;
   padding: 12px 30px;
   background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.btn-back:hover {
+  background: #222;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .about-box h1 {
+    font-size: 1.7rem;
+  }
+
+  .about-box h2 {
+    font-size: 1.15rem;
+  }
+
+  .about-box p {
+    font-size: 0.92rem;
+  }
 }
