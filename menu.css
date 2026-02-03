@@ -1,4 +1,6 @@
-/* CONTENEDOR GENERAL */
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
 .menu-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,54 +8,107 @@
   text-align: center;
 }
 
-/* BANNER */
+/* =========================
+   BANNER (RESPONSIVE REAL)
+========================= */
 .menu-banner {
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
 }
 
 .menu-banner img {
   width: 100%;
-  max-width: 900px;
+  max-width: 900px;      /* Desktop */
   height: auto;
+  max-height: 420px;     /* Evita que sea enorme */
+  object-fit: cover;
   border-radius: 8px;
 }
 
-/* TÍTULO */
+/* =========================
+   TÍTULO
+========================= */
 .menu-container h1 {
   margin-bottom: 40px;
   letter-spacing: 3px;
 }
 
-/* GRID DE TARJETAS */
+/* =========================
+   GRID DE TARJETAS
+========================= */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
-/* TARJETAS */
+/* =========================
+   TARJETAS
+========================= */
 .menu-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
+  min-height: 180px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* TARJETA SOLO TEXTO */
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* TEXTO TARJETA */
+.menu-card span {
+  padding: 20px;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+}
+
+/* =========================
+   TARJETA SOLO TEXTO
+========================= */
 .menu-card.text-card {
-  justify-content: center;
-  height: 180px;
   background: linear-gradient(135deg, #111, #1f1f1f);
 }
 
 .menu-card.text-card span {
   color: #fff;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+}
+
+/* =========================
+   RESPONSIVE MÓVIL (CLAVE)
+========================= */
+@media (max-width: 768px) {
+
+  .menu-container {
+    padding: 30px 15px;
+  }
+
+  .menu-banner img {
+    max-width: 100%;
+    max-height: 260px;   /* 🔥 AQUÍ SE SOLUCIONA EL PROBLEMA */
+    object-fit: cover;
+  }
+
+  .menu-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-card {
+    min-height: 150px;
+  }
+
+  .menu-card span {
+    font-size: 0.95rem;
+  }
 }
