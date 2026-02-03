@@ -1,144 +1,44 @@
-/* =========================
-   RESET BÁSICO
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* =========================
-   FONDO GENERAL
-========================= */
-.menu-page {
-  background: #F8F8F9;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* IMPORTANTE: no centrar vertical */
-  padding-top: 40px;
-  font-family: Arial, sans-serif;
-}
-
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
-.menu-section {
-  width: 100%;
-  max-width: 960px;
-  padding: 0 20px;
-}
-
-/* =========================
-   BANNER MENÚ (CONTROL REAL)
-========================= */
-.menu-banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.menu-banner img {
-  width: auto;              /* CLAVE: evita gigantismo */
-  max-width: 780px;         /* tamaño web */
-  max-height: 240px;        /* altura web controlada */
-  object-fit: contain;
-  display: block;
-}
-
-/* =========================
-   CAJA DE CONTENIDO
-========================= */
-.menu-box {
-  background: #FFFFFF;
-  color: #323232;
-  max-width: 520px;
-  padding: 50px 40px;
-  margin: 60px 20px;
-  border-radius: 8px;
-  line-height: 1.6;
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center; /* 🔹 TEXTO CENTRADO */
-  font-size: 0.95rem; /* 🔹 LETRA UN POCO MÁS CHICA */
-}
-
-/* =========================
-   TÍTULO
-========================= */
-.menu-title {
-  margin-bottom: 40px;
-  letter-spacing: 3px;
-}
-
-/* =========================
-   LINKS DEL MENÚ
-========================= */
-.menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.menu-links a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.05rem;
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-}
-
-.menu-links a:hover {
-  background: #f3f3f3;
-}
-
-/* =========================
-   BOTÓN REGRESAR
-========================= */
-.back-home {
-  margin-top: 50px;
+.menu-container {
+  padding: 60px 20px;
   text-align: center;
 }
 
-.btn-back {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #000;
-  color: #fff;
+.menu-banner img {
+  width: 100%;
+  max-width: 900px;
+  max-height: 260px;
+  object-fit: contain;
+  margin-bottom: 40px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.menu-card {
   text-decoration: none;
-  border-radius: 4px;
+  color: #000;
 }
 
-.btn-back:hover {
-  background: #222;
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-/* =========================
-   AJUSTE ESPECÍFICO MÓVIL
-========================= */
-@media (max-width: 600px) {
-
-  .menu-banner img {
-    max-width: 90%;
-    max-height: 120px;   /* CLAVE: altura REAL para móvil */
-  }
-
-  .menu-box {
-    padding: 35px 25px;
-  }
-
-  .menu-links a {
-    font-size: 1rem;
-  }
-}
-.carousel img {
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
+.menu-card img:hover {
+  transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .carousel img {
-    max-height: 220px;
-  }
+.menu-card span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
 }
