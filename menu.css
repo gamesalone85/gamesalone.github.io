@@ -44,7 +44,16 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menu-card img {
-  width: 100%;
-  height: 160px;
-  ob
+/* TARJETA SOLO TEXTO */
+.menu-card.text-card {
+  justify-content: center;
+  height: 180px;
+  background: linear-gradient(135deg, #111, #1f1f1f);
+}
+
+.menu-card.text-card span {
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
