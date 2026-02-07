@@ -50,4 +50,107 @@
   <!-- =========================
        TÍTULO
   ========================== -->
-  <h1 clas
+  <h1 class="text-center mt-4">GamesAlone18</h1>
+
+  <!-- =========================
+       GRID DE MENÚ
+  ========================== -->
+  <div class="menu-grid container mt-4">
+
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <a href="exclusivas.html" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Exclusivas
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="nosotros.html" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Nosotros
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="universe.html" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Universe
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="prensa.html" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Sala de Prensa
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="contacto.html" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Contáctanos
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="avisodeprivacidad/" class="menu-card d-block text-center p-4 bg-dark text-white rounded">
+          Aviso de Privacidad
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer class="text-center mt-5 mb-3">
+  <p>
+    © <span id="year"></span> GamesAlone18. Todos los derechos reservados.
+  </p>
+  <p>
+    Creado y diseñado por <strong>GamesAlone18</strong>
+  </p>
+</footer>
+
+<!-- =========================
+     JS
+========================== -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Año automático
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // =========================
+  // CARRUSEL
+  // =========================
+  const container = document.querySelector('.carousel-container');
+  const slides = document.querySelectorAll('.slide');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
+  let index = 0;
+
+  function updateCarousel() {
+    container.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateCarousel();
+  });
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateCarousel();
+  }, 5000);
+</script>
+
+</body>
+</html>
