@@ -11,11 +11,10 @@
   font-family: Arial, sans-serif;
 }
 
-.contador-fixed {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 9999;
+.contador-footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 /* CONTENEDOR */
