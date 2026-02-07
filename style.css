@@ -11,15 +11,28 @@
   font-family: Arial, sans-serif;
 }
 
-.contador-footer {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 20px;
-}
-
 /* CONTENEDOR */
 .home-container {
   text-align: center;
+}
+
+/* CONTADOR SUPERIOR */
+.contador-top {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contador-texto {
+  color: #00DD00;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.contador-top img {
+  width: 90px;
 }
 
 /* TEXTO BIENVENIDA */
@@ -52,4 +65,3 @@
   margin-top: 40px;
   letter-spacing: 3px;
 }
-
