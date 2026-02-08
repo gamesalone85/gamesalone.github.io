@@ -111,3 +111,11 @@
   line-height: 1.6;
   margin-bottom: 15px;
 }
+
+/* Texto SEO discreto para indexación */
+.seo-text {
+  font-size: 0.1px;
+  color: #000;
+  margin-top: 10px;
+}
+
