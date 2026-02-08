@@ -1,22 +1,28 @@
-/* HOME */
+/* =========================
+   HOME
+========================= */
 .home {
   margin: 0;
   background: #000;
-  height: 100vh;
-
+  min-height: 100vh;        /* Permite crecer si hay más contenido */
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;   /* Permite contenido hacia abajo */
   font-family: Arial, sans-serif;
 }
 
-/* CONTENEDOR */
+/* =========================
+   CONTENEDOR
+========================= */
 .home-container {
   text-align: center;
+  max-width: 100%;
 }
 
-/* CONTADOR SUPERIOR */
+/* =========================
+   CONTADOR SUPERIOR
+========================= */
 .contador-top {
   text-align: center;
   margin-bottom: 15px;
@@ -35,33 +41,73 @@
   width: 90px;
 }
 
-/* TEXTO BIENVENIDA */
+/* =========================
+   TITULO PRINCIPAL
+========================= */
+.main-title {
+  color: #00DD00;
+  font-size: 1.4rem;     /* ligeramente reducido */
+  margin-bottom: 5px;
+  letter-spacing: 4px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* =========================
+   TEXTO BIENVENIDA
+========================= */
 .welcome-text {
   color: #fff;
-  font-size: 2.0rem;
+  font-size: 1.6rem;     /* reducido para balance visual */
   letter-spacing: 3px;
   margin-bottom: 35px;
   font-weight: normal;
 }
 
-/* BOTÓN GIF */
+/* =========================
+   BOTÓN GIF
+========================= */
 .btn-gif img {
   width: 380px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* TITULO PRINCIPAL */
-.main-title {
-  color: #00DD00;
-  font-size: 1.5rem;
-  margin-bottom: 3px;
-  letter-spacing: 4px;
+.btn-gif img:hover {
+  transform: scale(1.05);
 }
 
-/* TEXTO EN CONSTRUCCIÓN */
+/* =========================
+   TEXTO EN CONSTRUCCIÓN
+========================= */
 .construction-title {
   color: #B6E1E7;
   font-size: 1.5rem;
   margin-top: 40px;
   letter-spacing: 3px;
+}
+
+/* =========================
+   BLOQUE SEO (centrado y discreto)
+========================= */
+.seo-content {
+  max-width: 700px;
+  margin: 60px auto 80px auto;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.seo-content h2 {
+  font-size: 16px;
+  color: #00DD00;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.seo-content p {
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
