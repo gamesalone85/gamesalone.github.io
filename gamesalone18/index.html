@@ -160,50 +160,48 @@
                     </div>
                 </div>
         </section>
-        <!-- Signup-->
-        <section class="signup-section" id="signup">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Suscríbete para recibir información!</h2>
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="row input-group-newsletter">
-                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notifícame</button></div>
-                            </div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">Se requiere un correo válido.</div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Correo invalido.</div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3 mt-2 text-white">
-                                    <div class="fw-bolder">Registro satisfactorio!</div>
-                                    Para Activar el acceso, siguenos en
-                                    <br />
-                                    <a href="https://www.youtube.com/@GAMESALONE18">GamesAlone18 Universe</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
-                        </form>
+        <!-- Signup -->
+<section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                
+                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5">
+                    Suscríbete para recibir información
+                </h2>
+
+                <!-- FORMULARIO FUNCIONAL -->
+                <form action="https://formsubmit.co/gamesalone85@gmail.com" method="POST" class="form-signup">
+
+                    <div class="row input-group-newsletter">
+                        <div class="col">
+                            <input 
+                                class="form-control" 
+                                type="email" 
+                                name="email" 
+                                placeholder="Ingresa tu correo electrónico..." 
+                                required>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" type="submit">
+                                Notifícame
+                            </button>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- CONFIGURACIÓN OCULTA -->
+                    <input type="hidden" name="_subject" value="Nueva suscripción - GamesAlone18 Universe">
+                    <input type="hidden" name="_autoresponse" value="Gracias por suscribirte a GamesAlone18 Universe. Muy pronto recibirás noticias exclusivas del proyecto.">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+
+                </form>
+
             </div>
-        </section>
+        </div>
+    </div>
+</section>
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
