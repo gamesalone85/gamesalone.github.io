@@ -11,18 +11,50 @@
     <!-- Font Awesome-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-    <!-- CSS GLOBAL (desde gamesalone18) -->
+    <!-- CSS GLOBAL -->
     <link href="../gamesalone18/css/styles.css" rel="stylesheet" />
-</head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-EGZ2977YBH');
-</script>
+    <!-- ZOOM CSS SOLO PARA ESTA PÁGINA -->
+    <style>
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 45px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .img-fluid {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
 
 <body id="page-top">
 
@@ -35,34 +67,18 @@
 
             <button class="navbar-toggler navbar-toggler-right" type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+                data-bs-target="#navbarResponsive">
+                Menu <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../gamesalone18/index.html#about">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../gamesalone18/index.html#projects">Universe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../prensa/">Sala de Prensa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../merch/">Mercancía Especial</a>
-                    </li>
-                     <li class="nav-item">
-                          <a class="nav-link" href="../contáctanos/">Contáctanos</a>
-                        </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../avisodeprivacidad/">Aviso de Privacidad</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../gamesalone18/index.html#about">Acerca de Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../gamesalone18/index.html#projects">Universe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../prensa/">Sala de Prensa</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../merch/">Mercancía Especial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contáctanos/">Contáctanos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../avisodeprivacidad/">Aviso de Privacidad</a></li>
                 </ul>
             </div>
         </div>
@@ -96,27 +112,25 @@
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-white">Cerveza Artesanal Edición Especial</h4>
-                                <p class="mb-0 text-white-50">Un lanzamiento especial donde plasmamos un poco de nostros y nuestra 3ra Temporada de Cuentos de Terror Con NotAlone18. Este producto es exclusivo para mayores de 18 años.
-Al continuar confirmas que eres mayor de edad, venta directa en Cervecería Maldito Elixir.</p>
-                                <p class="text-white-50"><strong>Precio:</strong> Precio Lanzamiento $99 MXN</p>
+                                <p class="mb-0 text-white-50">Un lanzamiento especial donde plasmamos nuestra 3ra Temporada de Cuentos de Terror Con NotAlone18.</p>
+                                <p class="text-white-50"><strong>Precio:</strong> $99 MXN</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Producto Dos -->
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="row gx-0 justify-content-center">
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="merchimg/playera.jpg" alt="Playera GamesAlone18 Universe" />
+                    <img class="img-fluid" src="merchimg/playera.jpg" alt="Playera" />
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Playera Oficial GamesAlone18</h4>
-                                <p class="mb-0 text-white-50">Playera 100% algodón, con diseño exclusivo inspirado en el universo de GamesAlone18. Solicítala.</p>
-                                <p class="text-white-50"><strong>Precio:</strong> Precio de lanzamiento $299 MXN</p>
+                                <h4 class="text-white">Playera Oficial</h4>
+                                <p class="text-white-50"><strong>Precio:</strong> $299 MXN</p>
                             </div>
                         </div>
                     </div>
@@ -126,53 +140,28 @@ Al continuar confirmas que eres mayor de edad, venta directa en Cervecería Mald
             <!-- Producto Tres -->
             <div class="row gx-0 justify-content-center">
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="merchimg/taza.jpg" alt="Taza GamesAlone18 Universe" />
+                    <img class="img-fluid" src="merchimg/taza.jpg" alt="Taza" />
                 </div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Taza Oficial GamesAlone18</h4>
-                                <p class="mb-0 text-white-50">Taza cerámica con logo y personajes icónicos del canal, ideal para tu café o té.</p>
-                                <p class="text-white-50"><strong>Precio:</strong> Lanzamiento $159 MXN</p>
+                                <h4 class="text-white">Taza Oficial</h4>
+                                <p class="text-white-50"><strong>Precio:</strong> $159 MXN</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Producto Cuatro -->
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="merchimg/dulce.jpg" alt="Sticker Pack GamesAlone18 Universe" />
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Bolsa de Chocolates</h4>
-                                <p class="mb-0 text-white-50">Regala un detalle con esta edición dulce que traemos para tí, contiene 10 artesanales variados, endulza tu día con GamesAlone18 Universe.</p>
-                                <p class="text-white-50"><strong>Precio:</strong> Lanzamiento $99 MXN</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Solicitar Informes -->
-            <div class="row gx-0 justify-content-center mt-5">
-                <div class="col-lg-8 text-center">
-                    <a href="https://wa.me/message/4H3TFP6JKO6NN1" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg">
-                        <i class="bi bi-whatsapp"></i> Solicitar informes por WhatsApp
-                    </a>
-                    <div class="back-menu">
-                        <a href="/gamesalone18/" class="btn-back">Volver al menú</a>
-                    </div>
-                </div>
-            </div>             
-            </div>
-            
+        </div>
     </section>
+
+    <!-- MODAL ZOOM -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
@@ -181,11 +170,29 @@ Al continuar confirmas que eres mayor de edad, venta directa en Cervecería Mald
         </div>
     </footer>
 
-    <!-- Bootstrap core JS-->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core theme JS (IMPORTANTE para navbar shrink) -->
     <script src="../gamesalone18/js/scripts.js"></script>
+
+    <!-- SCRIPT ZOOM -->
+    <script>
+        document.querySelectorAll('.img-fluid').forEach(img => {
+            img.addEventListener('click', function() {
+                document.getElementById("imageModal").style.display = "block";
+                document.getElementById("modalImg").src = this.src;
+            });
+        });
+
+        document.querySelector(".close-modal").onclick = function() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        document.getElementById("imageModal").onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
