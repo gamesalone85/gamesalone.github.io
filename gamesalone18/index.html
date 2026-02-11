@@ -350,6 +350,7 @@
     </a>
 
 </div>
+                    
         </section>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; GamesAlone18 Universe 2026</div></footer>
@@ -362,5 +363,32 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- ANUNCIO AUTOMÁTICO AL CARGAR -->
+            <div class="modal fade" id="anuncioModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark border-0">
+                  <div class="modal-body p-0 position-relative">
+
+            <button type="button"
+                class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"></button>
+
+           <img src="assets/img/anuncio.jpg"
+             alt="Anuncio Especial"
+             class="img-fluid w-100 rounded">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var modal = new bootstrap.Modal(document.getElementById('anuncioModal'));
+    modal.show();
+});
+</script>
+            
     </body>
 </html>
