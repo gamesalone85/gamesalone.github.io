@@ -11066,9 +11066,9 @@ body {
 .masthead {
   position: relative;
   width: 100%;
-  height: 35vh;        /* altura real controlada */
+  height: 25vh;        /* altura real controlada */
   min-height: unset;   /* elimina el mínimo */
-  padding: 1rem 0;     /* mucho menos espacio */
+  padding: 3rem 0;     /* mucho menos espacio */
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3) 0%,
