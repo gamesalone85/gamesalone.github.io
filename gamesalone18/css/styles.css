@@ -11066,9 +11066,9 @@ body {
 .masthead {
   position: relative;
   width: 100%;
-  height: 35vh;        /* altura real controlada */
-  min-height: unset;   /* elimina el mínimo */
-  padding: 3rem 0;     /* mucho menos espacio */
+  height: 55vh;        /* más espacio real */
+  min-height: 400px;   /* asegura que nunca colapse */
+  padding: 0;          /* eliminamos padding excesivo */
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3) 0%,
@@ -11078,8 +11078,9 @@ body {
     url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;   /* vuelve a cover */
+  background-size: cover;
 }
+
 
 
 .masthead h1, .masthead .h1 {
