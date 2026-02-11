@@ -11066,7 +11066,7 @@ body {
 .masthead {
   position: relative;
   width: 100%;
-  height: 55vh;        /* más espacio real */
+  height: 75vh;        /* más espacio real */
   min-height: 400px;   /* asegura que nunca colapse */
   padding: 0;          /* eliminamos padding excesivo */
   background: linear-gradient(
