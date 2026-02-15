@@ -85,3 +85,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener("resize", updateCarousel);
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const track = document.querySelector(".carousel-track");
+  if (!track) return; 
+
+  const slides = Array.from(track.children);
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  let index = 0;
+
+  function updateCarousel() {
+    const width = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateCarousel();
+  }, 4000);
+
+  window.addEventListener("resize", updateCarousel);
+});
+
