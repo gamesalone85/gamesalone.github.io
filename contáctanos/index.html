@@ -112,47 +112,84 @@
 
         </div>
     </section>
-    
-     <!-- Te Escuchamos -->
-    <section class="contact-section">
-      <div class="container">
+    <!-- Te Escuchamos -->
+<section class="projects-section bg-light">
+    <div class="container px-4 px-lg-5">
 
-    <h2 class="section-title">Te escuchamos</h2>
-    <p class="section-description">
-      Queremos saber tu opinión, ideas o sugerencias. Tu voz es parte del universo que estamos construyendo.
-    </p>
+        <div class="row gx-0 justify-content-center">
+            
+            <!-- Imagen -->
+            <div class="col-lg-6">
+                <img class="img-fluid" 
+                     src="../gamesalone18/assets/img/colabora.jpg" 
+                     alt="Te escuchamos - GamesAlone18 Universe" />
+            </div>
 
-    <h3 class="form-title">Deja tus comentarios, tu voz nos ayuda a crecer</h3>
+            <!-- Formulario -->
+            <div class="col-lg-6 order-lg-first">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
 
-    <form action="https://formspree.io/f/xqedqdjq" method="POST" class="contact-form">
-      
-      <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="Nombre" required>
-      </div>
+                            <h2 class="text-white">Te escuchamos</h2>
+                            <p class="mb-4 text-white-50">
+                                Deja tus comentarios. Tu voz nos ayuda a crecer dentro del universo GamesAlone18.
+                            </p>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required>
-      </div>
+                            <form action="https://formspree.io/f/xqedqdjq" 
+                                  method="POST" 
+                                  class="text-start">
 
-      <div class="form-group">
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="Telefono">
-      </div>
+                                <div class="mb-3">
+                                    <input class="form-control"
+                                           type="text"
+                                           name="Nombre"
+                                           placeholder="Nombre"
+                                           required>
+                                </div>
 
-      <div class="form-group">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="Mensaje" rows="5" required></textarea>
-      </div>
+                                <div class="mb-3">
+                                    <input class="form-control"
+                                           type="email"
+                                           name="Email"
+                                           placeholder="Email"
+                                           required>
+                                </div>
 
-      <button type="submit" class="btn-submit">ENVIAR</button>
+                                <div class="mb-3">
+                                    <input class="form-control"
+                                           type="tel"
+                                           name="Telefono"
+                                           placeholder="Teléfono">
+                                </div>
 
-    </form>
-  </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control"
+                                              name="Mensaje"
+                                              rows="4"
+                                              placeholder="Mensaje"
+                                              required></textarea>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-primary" type="submit">
+                                        ENVIAR
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
-
+     
     <!-- Suscripción -->
     <section class="signup-section">
         <div class="container px-4 px-lg-5 text-center">
