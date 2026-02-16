@@ -11230,11 +11230,24 @@ body {
 
 .carousel-track img {
   width: 100%;
-  height: 450px;           /* un poco más alto que las imágenes de Projects */
+  height: 450px;        /* desktop */
   object-fit: cover;
   border-radius: 8px;
 }
 
+/* Ajuste para tablets */
+@media (max-width: 992px) {
+  .carousel-track img {
+    height: 350px;
+  }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 576px) {
+  .carousel-track img {
+    height: 200px;   /* mucho más proporcional al ancho del móvil */
+  }
+}
 .carousel-btn {
   position: absolute;
   top: 50%;
