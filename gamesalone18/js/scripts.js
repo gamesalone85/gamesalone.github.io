@@ -77,11 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCarousel();
   });
 
-  // Auto-slide cada 4 segundos
+  // Auto-slide cada 20 segundos
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
-  }, 10000);
+  }, 20000);
 
   window.addEventListener("resize", updateCarousel);
 });
