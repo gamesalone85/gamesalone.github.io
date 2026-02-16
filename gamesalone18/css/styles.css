@@ -2915,18 +2915,19 @@ textarea.form-control-lg {
 }
 
 .btn-partner {
-  background-color: transparent;
-  border: 2px solid #00dd00;
-  color: #00dd00;
+  background-color: transparent !important;
+  border: 2px solid #00dd00 !important;
+  color: #00dd00 !important;
   font-weight: 600;
   border-radius: 40px;
   padding: 12px 28px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-partner:hover {
-  background-color: #00dd00;
-  color: #000;
+  background-color: #00dd00 !important;
+  color: #000 !important;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 221, 0, 0.25);
 }
