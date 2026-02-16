@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 document.addEventListener("DOMContentLoaded", function() {
   const track = document.querySelector(".carousel-track");
-  if (!track) return;
+  if (!track) return; 
 
   const slides = Array.from(track.children);
   const nextBtn = document.querySelector(".carousel-btn.next");
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
-  }, 8000);
+  }, 4000);
 
   window.addEventListener("resize", updateCarousel);
 });
