@@ -52,7 +52,6 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
-// Carrusel inspirado en Banner About
 document.addEventListener("DOMContentLoaded", function() {
   const track = document.querySelector(".carousel-track");
   if (!track) return;
@@ -77,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCarousel();
   });
 
-  // Avance automático lento (8 segundos)
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
