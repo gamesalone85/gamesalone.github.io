@@ -11211,9 +11211,9 @@ body {
 }
 .carousel-container {
   position: relative;
+  width: 100%;            /* ancho completo */
+  max-width: 100%;        /* asegura que nunca se limite */
   overflow: hidden;
-  width: 70%;              /* similar a col-xl-8 pero centrado */
-  max-width: 1000px;
   border-radius: 8px;
 }
 
@@ -11226,14 +11226,26 @@ body {
   display: block;
   flex-shrink: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;      /* mantiene proporción similar al banner About */
 }
 
 .carousel-track img {
   width: 100%;
-  height: 100%;
+  height: 450px;         /* altura tipo Projects en desktop */
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* Ajuste responsive */
+@media (max-width: 992px) {
+  .carousel-track img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-track img {
+    height: 200px;
+  }
 }
 
 .carousel-btn {
