@@ -11211,10 +11211,10 @@ body {
 }
 .carousel-container {
   position: relative;
-  width: 70%;              /* 70% del contenedor, un poco más grande que col-xl-8 (~66%) */
-  max-width: 1000px;       /* ancho máximo para pantallas grandes */
   overflow: hidden;
-  border-radius: 8px;
+  width: 100%;
+  height: auto; /* se adapta al ancho manteniendo proporción de la imagen */
+  border-radius: 8px; /* opcional */
 }
 
 .carousel-track {
@@ -11222,32 +11222,12 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel-track a {
-  display: block;
-  flex-shrink: 0;
-  width: 100%;
-}
-
 .carousel-track img {
   width: 100%;
-  height: 450px;        /* desktop */
-  object-fit: cover;
+  flex-shrink: 0;
   border-radius: 8px;
 }
 
-/* Ajuste para tablets */
-@media (max-width: 992px) {
-  .carousel-track img {
-    height: 350px;
-  }
-}
-
-/* Ajuste para móviles */
-@media (max-width: 576px) {
-  .carousel-track img {
-    height: 200px;   /* mucho más proporcional al ancho del móvil */
-  }
-}
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -11259,7 +11239,6 @@ body {
   cursor: pointer;
   font-size: 1.5rem;
   border-radius: 50%;
-  z-index: 10;
 }
 
 .carousel-btn.prev {
