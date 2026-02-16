@@ -1,121 +1,150 @@
-/* =========================
-   HOME
-========================= */
-.home {
+/* ========================================
+   GAMESALONE18 UNIVERSE
+   LANDING CINEMÁTICA OFICIAL
+======================================== */
+
+/* RESET BÁSICO */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY GENERAL */
+body.home {
+  font-family: 'Orbitron', sans-serif;
   background: #000;
-  min-height: 100vh;        /* Permite crecer si hay más contenido */
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ========================================
+   HERO FULLSCREEN
+======================================== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Overlay sutil para profundidad */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* CONTENIDO CENTRAL */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* TÍTULO PRINCIPAL */
+.hero h1 {
+  font-size: 3.2rem;
+  color: #00DD00;
+  letter-spacing: 6px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #00DD00;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 45px;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.hero-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;   /* Permite contenido hacia abajo */
-  font-family: Arial, sans-serif;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-/* =========================
-   CONTENEDOR
-========================= */
-.home-container {
-  text-align: center;
-  max-width: 100%;
-}
-
-/* =========================
-   CONTADOR SUPERIOR
-========================= */
-.contador-top {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.contador-texto {
-  color: #00DD00;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 6px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.contador-top img {
-  width: 90px;
-}
-
-/* =========================
-   TITULO PRINCIPAL
-========================= */
-.main-title {
-  color: #00DD00;
-  font-size: 1.4rem;     /* ligeramente reducido */
-  margin-bottom: 5px;
-  letter-spacing: 4px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* =========================
-   TEXTO BIENVENIDA
-========================= */
-.welcome-text {
-  color: #fff;
-  font-size: 1.6rem;     /* reducido para balance visual */
-  letter-spacing: 3px;
-  margin-bottom: 35px;
-  font-weight: normal;
-}
-
-/* =========================
-   BOTÓN GIF
-========================= */
-.btn-gif img {
-  width: 380px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.btn-gif img:hover {
-  transform: scale(1.05);
-}
-
-/* =========================
-   TEXTO EN CONSTRUCCIÓN
-========================= */
-.construction-title {
-  color: #B6E1E7;
-  font-size: 1.5rem;
-  margin-top: 40px;
-  letter-spacing: 3px;
-}
-
-/* =========================
-   BLOQUE SEO (centrado y discreto)
-========================= */
-.seo-content {
-  max-width: 700px;
-  margin: 60px auto 80px auto;
-  padding: 0 25px;
-  text-align: center;
-}
-
-.seo-content h2 {
-  font-size: 16px;
-  color: #00DD00;
-  margin-top: 25px;
-  margin-bottom: 8px;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-
-.seo-content p {
-  font-size: 13px;
-  color: #ccc;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* Texto SEO discreto para indexación */
-.seo-text {
-  font-size: 0.1px;
+/* BOTÓN PRINCIPAL */
+.btn-primary {
+  padding: 15px 40px;
+  background: #00DD00;
   color: #000;
-  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
 }
 
+.btn-primary:hover {
+  background: #00ff55;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00DD00;
+}
+
+/* BOTÓN SECUNDARIO */
+.btn-secondary {
+  padding: 15px 40px;
+  border: 2px solid #00DD00;
+  color: #00DD00;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+  background: #00DD00;
+  color: #000;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00DD00;
+}
+
+/* ========================================
+   ANIMACIÓN
+======================================== */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
