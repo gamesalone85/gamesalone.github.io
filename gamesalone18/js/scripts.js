@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
-  }, 4000);
+  }, 10000);
 
   window.addEventListener("resize", updateCarousel);
 });
