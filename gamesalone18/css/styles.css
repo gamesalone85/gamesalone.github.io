@@ -11300,3 +11300,12 @@ body {
 .carousel-btn.next {
   right: 10px;
 }
+.about-section h2 {
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
