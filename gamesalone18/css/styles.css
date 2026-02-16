@@ -11211,9 +11211,10 @@ body {
 }
 .carousel-container {
   position: relative;
+  width: 70%;              /* 70% del contenedor, un poco más grande que col-xl-8 (~66%) */
+  max-width: 1000px;       /* ancho máximo para pantallas grandes */
   overflow: hidden;
-  width: 100%;
-  border-radius: 8px; /* opcional */
+  border-radius: 8px;
 }
 
 .carousel-track {
@@ -11229,8 +11230,8 @@ body {
 
 .carousel-track img {
   width: 100%;
-  height: 400px;       /* ajusta a la altura que quieras, similar al banner About */
-  object-fit: cover;   /* mantiene proporción y rellena el contenedor */
+  height: 450px;           /* un poco más alto que las imágenes de Projects */
+  object-fit: cover;
   border-radius: 8px;
 }
 
