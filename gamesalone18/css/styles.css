@@ -11066,13 +11066,13 @@ body {
 .masthead {
   position: relative;
   width: 100%;
-  height: 75vh;        /* más espacio real */
-  min-height: 400px;   /* asegura que nunca colapse */
-  padding: 0;          /* eliminamos padding excesivo */
+  height: 85vh;
+  min-height: 500px;
+  padding: 0;
   background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.7) 75%,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.75) 70%,
       #000 100%
     ),
     url("../assets/img/bg-masthead.jpg");
@@ -11081,44 +11081,70 @@ body {
   background-size: cover;
 }
 
-
-
-.masthead h1, .masthead .h1 {
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
+/* TITULO PRINCIPAL */
+.masthead h1 {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 0.25rem; /* antes 0.8rem (excesivo) */
+  color: #ffffff;          /* quitamos degradado para más fuerza */
 }
-.masthead h2, .masthead .h2 {
-  max-width: 20rem;
-  font-size: 1rem;
+
+/* TEXTO SOCIAL (+3477 miembros) */
+.masthead .community-counter {
+  color: #00dd00;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
+
+/* SUBTITULO */
+.masthead h2 {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+}
+
+/* BOTONES */
+.masthead .btn {
+  border-radius: 40px;
+  padding: 12px 28px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.masthead .btn-success:hover {
+  transform: translateY(-3px);
+}
+
+.masthead .btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* RESPONSIVE */
 @media (min-width: 768px) {
-  .masthead h1, .masthead .h1 {
-    font-size: 4rem;
-    line-height: 4rem;
+  .masthead h1 {
+    font-size: 4.5rem;
   }
 }
+
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
-    padding: 0;
   }
-  .masthead h1, .masthead .h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
+
+  .masthead h1 {
+    font-size: 5.5rem;
   }
-  .masthead h2, .masthead .h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
+
+  .masthead h2 {
+    font-size: 1.3rem;
   }
 }
-
 .about-section {
   padding-top: 10rem;
   background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
