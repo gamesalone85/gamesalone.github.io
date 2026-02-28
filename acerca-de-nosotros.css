@@ -93,3 +93,40 @@ hr {
   background: #222;
   color: #fff;
 }
+/* ===== TARJETA UNIVERSAL MEDIA ===== */
+.media-card{
+    max-width:320px;
+    margin:auto;
+    transition:all .35s ease;
+}
+
+/* IMAGEN CONTROLADA */
+.media-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    transition:all .4s ease;
+}
+
+/* TEXTO */
+.media-card h4{
+    margin-top:15px;
+    font-weight:600;
+}
+
+.media-card p{
+    margin-top:5px;
+    color:#666;
+}
+
+/* HOVER PROFESIONAL */
+.media-card:hover{
+    transform:translateY(-8px);
+}
+
+.media-card:hover img{
+    transform:scale(1.05);
+    box-shadow:0 10px 28px rgba(0,0,0,0.35);
+}
