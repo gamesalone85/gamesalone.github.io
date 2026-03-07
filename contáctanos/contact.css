@@ -67,3 +67,16 @@
 .btn-submit:hover {
   background-color: #ffd84d;
 }
+/* Banner páginas internas */
+.masthead{
+    min-height: 300px;
+    height: 40vh;
+}
+
+/* Ajuste para celulares */
+@media (max-width:768px){
+    .masthead{
+        height: 220px;
+        min-height: 220px;
+    }
+}
