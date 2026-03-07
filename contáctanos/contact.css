@@ -80,3 +80,18 @@
         min-height: 220px;
     }
 }
+/* Reducir espacios entre secciones */
+.projects-section{
+    padding: 60px 0;
+}
+@media (max-width:768px){
+
+    .projects-section{
+        padding:40px 0;
+    }
+
+    .contact-section{
+        padding:40px 0;
+    }
+
+}
