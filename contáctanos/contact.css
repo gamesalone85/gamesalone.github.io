@@ -95,3 +95,24 @@
     }
 
 }
+/* Ajustar tamaño del texto del banner */
+.masthead h1{
+    font-size: 2.5rem;
+}
+
+.masthead p{
+    font-size: 1.1rem;
+}
+
+/* Ajuste para celular */
+@media (max-width:768px){
+
+.masthead h1{
+    font-size: 1.8rem;
+}
+
+.masthead p{
+    font-size: 0.95rem;
+}
+
+}
