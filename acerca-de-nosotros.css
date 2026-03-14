@@ -229,3 +229,20 @@ font-size:18px;
 font-size:14px;
 color:#666;
 }
+#enfoque{
+color:#333;
+}
+
+#enfoque h2{
+margin-bottom:30px;
+}
+
+#enfoque h4{
+font-size:18px;
+font-weight:600;
+}
+
+#enfoque p{
+font-size:14px;
+color:#555;
+}
