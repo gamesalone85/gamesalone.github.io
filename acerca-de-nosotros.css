@@ -271,3 +271,48 @@ hr {
   font-size:14px;
   color:#555;
 }
+/* ===============================
+   LINKS Y BOTONES VISIBLES
+================================ */
+
+a{
+  color:#000;
+}
+
+a:hover{
+  color:#444;
+}
+
+/* botones */
+
+.btn-back{
+  background:#000;
+  color:#fff;
+}
+
+.btn-back:hover{
+  background:#222;
+  color:#fff;
+}
+
+/* CTA inferior */
+
+.cta-buttons a{
+  background:#000;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:5px;
+  text-decoration:none;
+  margin:5px;
+  display:inline-block;
+}
+
+.cta-buttons a:hover{
+  background:#333;
+}
+
+/* textos dentro de secciones blancas */
+
+.white-box a{
+  color:#000;
+}
