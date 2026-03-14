@@ -149,3 +149,58 @@ border-radius:4px;
 min-width:260px;
 flex:0 0 auto;
 }
+/* ===== CATALOGO HORIZONTAL ===== */
+
+.netflix-row{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.netflix-row::-webkit-scrollbar{
+height:6px;
+}
+
+.netflix-row::-webkit-scrollbar-thumb{
+background:#888;
+border-radius:10px;
+}
+
+/* tarjetas */
+
+.netflix-card{
+min-width:260px;
+max-width:260px;
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:transform .25s;
+flex-shrink:0;
+}
+
+.netflix-card:hover{
+transform:scale(1.05);
+}
+
+/* imagen controlada */
+
+.netflix-card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+/* texto */
+
+.netflix-info{
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+
+.netflix-info p{
+margin:0;
+}
