@@ -129,3 +129,23 @@ hr {
     transform:scale(1.04);
     box-shadow:0 14px 35px rgba(0,0,0,0.35);
 }
+.horizontal-scroll{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding-bottom:10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar{
+height:8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb{
+background:#999;
+border-radius:4px;
+}
+
+.media-card{
+min-width:260px;
+flex:0 0 auto;
+}
