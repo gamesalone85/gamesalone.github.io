@@ -204,3 +204,28 @@ font-size:14px;
 .netflix-info p{
 margin:0;
 }
+/* ===== SECCION EQUIPO ===== */
+
+.team-card{
+text-align:center;
+padding:20px;
+}
+
+.team-card img{
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.team-card h4{
+margin-bottom:5px;
+font-size:18px;
+}
+
+.team-card p{
+font-size:14px;
+color:#666;
+}
