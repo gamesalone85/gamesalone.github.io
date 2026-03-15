@@ -148,3 +148,25 @@ body.home {
   }
 
 }
+/* VIDEO DE FONDO */
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* LOGO HERO */
+
+.hero-logo{
+  width:120px;
+  margin-bottom:20px;
+  filter: drop-shadow(0 0 10px #00DD00);
+}
