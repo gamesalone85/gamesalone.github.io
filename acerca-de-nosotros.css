@@ -120,3 +120,15 @@ font-weight:700;
 font-size:14px;
 opacity:0.9;
 }
+/* REDES */
+
+.redes-sociales a{
+font-size:32px;
+margin:0 15px;
+color:#333;
+transition:0.3s;
+}
+
+.redes-sociales a:hover{
+color:#f5c518;
+}
