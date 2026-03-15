@@ -1,15 +1,58 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EGZ2977YBH');
+</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Zona Restringida | GamesAlone18 Universe</title>
-<meta name="description" content="Área privada con archivos clasificados del universo GamesAlone18.">
+<meta name="description" content="Área privada para activación de códigos de descuento del universo GamesAlone18.">
 <meta name="robots" content="noindex,nofollow">
 
 <link href="../gamesalone18/css/styles.css" rel="stylesheet">
-<link rel="stylesheet" href="zona.css">
+
+<style>
+
+/* SECCION CODIGO */
+
+.codigo-box{
+background:#000;
+padding:40px;
+border-radius:10px;
+color:#fff;
+max-width:500px;
+margin:auto;
+}
+
+.codigo-box input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
+}
+
+.codigo-box button{
+width:100%;
+padding:12px;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:15px;
+font-size:0.95rem;
+}
+
+</style>
 
 </head>
 
@@ -18,69 +61,82 @@
 <div id="header"></div>
 
 <!-- HEADER -->
-<header class="masthead" style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
+
+<header class="masthead"
+style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
+
 <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
 
 <div class="text-center">
 
 <h1 class="text-white text-uppercase">
-Zona Restringida
+Zona de Códigos
 </h1>
 
 <h2 class="text-white-50 mt-3">
-Archivos Clasificados del Universo GamesAlone18
+Activa aquí tu código de descuento oficial
 </h2>
 
 </div>
+
 </div>
+
 </header>
 
-<!-- ACCESO -->
+<!-- ACTIVACION CODIGO -->
+
 <section class="projects-section bg-light">
 
 <div class="container px-4 px-lg-5">
 
-<div class="row gx-0 justify-content-center">
+<div class="codigo-box text-center">
 
-<div class="col-lg-6">
+<h2>Activar Código</h2>
 
-<img class="img-fluid"
-src="img/archivo1.jpg"
-alt="Acceso restringido">
-
-</div>
-
-<div class="col-lg-6 order-lg-first">
-
-<div class="bg-black text-center h-100 project">
-
-<div class="d-flex h-100">
-
-<div class="project-text w-100 my-auto text-center text-lg-left">
-
-<h2 class="text-white">Acceso Autorizado</h2>
-
-<p class="text-white-50">
-Esta sección contiene archivos reservados del universo
-<strong>GamesAlone18</strong>.
-Solo usuarios autorizados pueden acceder.
+<p style="opacity:0.8;">
+Ingresa tu correo y el código recibido.
+La vigencia será de <strong>10 días</strong>
+a partir del momento de activación.
 </p>
 
-<input type="password" id="password" placeholder="Ingrese clave de acceso">
+<form id="formCodigo"
+action="https://formspree.io/f/TU_FORM_ID"
+method="POST">
 
-<br><br>
+<input
+type="email"
+name="email"
+id="email"
+placeholder="Tu correo electrónico"
+required>
 
-<button class="btn btn-danger" onclick="checkPassword()">
-Desbloquear Archivo
+<input
+type="text"
+name="codigo"
+id="codigo"
+placeholder="Código de descuento"
+required>
+
+<input
+type="hidden"
+name="fecha_activacion"
+id="fechaActivacion">
+
+<input
+type="hidden"
+name="fecha_vencimiento"
+id="fechaVencimiento">
+
+<button class="btn btn-primary" type="submit"
+onclick="calcularVigencia()">
+
+Activar Código
+
 </button>
 
-<p id="error"></p>
+</form>
 
-</div>
-
-</div>
-</div>
-</div>
+<p id="resultado"></p>
 
 </div>
 
@@ -88,60 +144,26 @@ Desbloquear Archivo
 
 </section>
 
-<!-- ARCHIVOS -->
+<!-- INFO -->
+
 <section class="projects-section bg-light">
 
-<div class="container px-4 px-lg-5">
+<div class="container px-4 px-lg-5 text-center">
 
-<h2 class="text-center mb-5">
-Archivos Detectados
+<h2 class="mb-4">
+Información del sistema
 </h2>
 
-<div class="row text-center">
+<p style="max-width:700px;margin:auto;">
+Los códigos de descuento son emitidos durante eventos,
+colaboraciones y promociones especiales del universo
+<strong>GamesAlone18</strong>.
+</p>
 
-<div class="col-lg-4 col-md-6 mb-5">
-
-<div class="media-card">
-
-<img src="img/archivo1.jpg">
-
-<h4>Caso 001</h4>
-
-<p>Archivo pendiente de desbloqueo</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4 col-md-6 mb-5">
-
-<div class="media-card">
-
-<img src="img/archivo2.jpg">
-
-<h4>Caso 002</h4>
-
-<p>Archivo clasificado</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4 col-md-6 mb-5">
-
-<div class="media-card">
-
-<img src="img/archivo3.jpg">
-
-<h4>Caso 003</h4>
-
-<p>Acceso restringido</p>
-
-</div>
-
-</div>
-
-</div>
+<p style="max-width:700px;margin:auto;">
+Cada código tiene una vigencia de <strong>10 días</strong>
+desde el momento en que es activado.
+</p>
 
 </div>
 
@@ -158,6 +180,7 @@ Volver al menú
 </section>
 
 <!-- FOOTER -->
+
 <footer class="footer bg-black text-white-50 py-5">
 
 <div class="container px-4 px-lg-5">
@@ -169,6 +192,7 @@ Volver al menú
 </div>
 
 <div class="col-md-6 text-center text-md-end">
+
 <h6 class="text-white mb-3">Menús</h6>
 
 <ul class="list-unstyled">
@@ -190,21 +214,24 @@ Volver al menú
 
 <script>
 
-function checkPassword(){
+function calcularVigencia(){
 
-var password = document.getElementById("password").value;
+let hoy = new Date();
 
-var correctPassword = "archivo18";
+let vencimiento = new Date();
 
-if(password === correctPassword){
+vencimiento.setDate(hoy.getDate()+10);
 
-window.location.href="archivos.html";
+let hoyTexto = hoy.toLocaleDateString();
 
-}else{
+let vencimientoTexto = vencimiento.toLocaleDateString();
 
-document.getElementById("error").innerHTML="Clave incorrecta";
+document.getElementById("fechaActivacion").value = hoyTexto;
 
-}
+document.getElementById("fechaVencimiento").value = vencimientoTexto;
+
+document.getElementById("resultado").innerHTML =
+"✅ Código activado.<br>Vigencia hasta: "+vencimientoTexto;
 
 }
 
@@ -219,6 +246,11 @@ document.getElementById("header").innerHTML = data;
 });
 
 </script>
+
+</body>
+</html>
+```
+
 
 </body>
 </html>
