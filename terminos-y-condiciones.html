@@ -85,7 +85,9 @@
 </head>
 
 <body>
-
+ <!-- Navigation-->
+<div id="header"></div>
+<header class="masthead">
 <section class="page">
   <div class="white-box">
 
@@ -283,6 +285,14 @@ En caso de cancelación por parte del cliente con menos de 72 horas de anticipac
 
   </div>
 </section>
+   <!-- Header top-->
+<script>
+fetch("/header.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("header").innerHTML = data;
+});
+</script>
 
 </body>
 </html>
