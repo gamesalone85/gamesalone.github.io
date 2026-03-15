@@ -11,7 +11,6 @@ padding:0;
 box-sizing:border-box;
 }
 
-
 /* BODY GENERAL */
 
 body.home{
@@ -20,7 +19,6 @@ background:#000;
 color:#fff;
 overflow:hidden;
 }
-
 
 /* ========================================
    HERO FULLSCREEN
@@ -38,24 +36,19 @@ padding:20px;
 overflow:hidden;
 }
 
-
-/* VIDEO DE FONDO */
+/* VIDEO DE FONDO AJUSTADO */
 
 .hero-video{
 position:absolute;
-top:50%;
-left:50%;
-min-width:100%;
-min-height:100%;
-width:auto;
-height:auto;
-transform:translate(-50%,-50%);
+top:0;
+left:0;
+width:100%;
+height:100%;
 object-fit:cover;
 z-index:0;
 }
 
-
-/* OVERLAY OSCURO PARA CONTRASTE */
+/* OVERLAY OSCURO */
 
 .hero::after{
 content:"";
@@ -64,7 +57,6 @@ inset:0;
 background:rgba(0,0,0,0.55);
 z-index:1;
 }
-
 
 /* CONTENIDO CENTRAL */
 
@@ -76,7 +68,6 @@ animation:fadeIn 1.2s ease forwards;
 opacity:0;
 }
 
-
 /* LOGO HERO */
 
 .hero-logo{
@@ -84,7 +75,6 @@ width:130px;
 margin-bottom:25px;
 filter:drop-shadow(0 0 10px #00DD00);
 }
-
 
 /* TÍTULO PRINCIPAL */
 
@@ -101,7 +91,6 @@ text-shadow:
 0 0 40px #00DD00;
 }
 
-
 /* SUBTÍTULO */
 
 .hero-subtitle{
@@ -112,8 +101,7 @@ letter-spacing:2px;
 line-height:1.6;
 }
 
-
-/* TEXTO PRUEBA SOCIAL */
+/* TEXTO COMUNIDAD */
 
 .hero-proof{
 margin-top:35px;
@@ -121,7 +109,6 @@ font-size:0.9rem;
 color:#aaa;
 letter-spacing:1px;
 }
-
 
 /* ========================================
    BOTONES
@@ -133,7 +120,6 @@ justify-content:center;
 gap:25px;
 flex-wrap:wrap;
 }
-
 
 /* BOTÓN PRINCIPAL */
 
@@ -154,7 +140,6 @@ transform:scale(1.08);
 box-shadow:0 0 20px #00DD00;
 }
 
-
 /* BOTÓN SECUNDARIO */
 
 .btn-secondary{
@@ -174,7 +159,6 @@ transform:scale(1.08);
 box-shadow:0 0 20px #00DD00;
 }
 
-
 /* ========================================
    ANIMACIÓN
 ======================================== */
@@ -184,7 +168,6 @@ to{
 opacity:1;
 }
 }
-
 
 /* ========================================
    RESPONSIVE
@@ -209,6 +192,10 @@ width:100px;
 .btn-secondary{
 width:100%;
 max-width:300px;
+}
+
+.hero-proof{
+font-size:0.8rem;
 }
 
 }
