@@ -167,8 +167,7 @@
 
 <script>
 
-document.getElementById("contactForm")
-.addEventListener("submit",function(e){
+document.getElementById("contactForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
@@ -181,41 +180,31 @@ fetch("https://script.google.com/macros/s/AKfycbwG9X3GHuTKxyusWJj1yWjIfcpsTPWgBY
 
 method:"POST",
 
-body:new URLSearchParams({
+mode:"no-cors",
 
+body:new URLSearchParams({
 nombre:nombre,
 email:email,
 telefono:telefono,
 mensaje:mensaje,
 token:"GA18CONTACT"
-
 })
 
 })
 
-.then(res=>res.text())
-.then(data=>{
+.then(function(){
 
-if(data=="ENVIADO"){
-
-document.getElementById("respuesta").innerHTML=
+document.getElementById("respuesta").innerHTML =
 "✅ Gracias por tu mensaje. Te responderemos pronto.";
 
 document.getElementById("contactForm").reset();
 
-}else{
-
-document.getElementById("respuesta").innerHTML=
-"⚠ Ocurrió un error. Intenta nuevamente.";
-
-}
-
 })
 
-.catch(error=>{
+.catch(function(){
 
-document.getElementById("respuesta").innerHTML=
-"⚠ Error de conexión.";
+document.getElementById("respuesta").innerHTML =
+"⚠ No se pudo enviar el mensaje.";
 
 });
 
