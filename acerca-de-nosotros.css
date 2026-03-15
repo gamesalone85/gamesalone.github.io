@@ -123,13 +123,12 @@ opacity:0.9;
 /* REDES */
 
 .redes-sociales i{
-font-size:40px;
-margin:0 15px;
-color:#ffffff;
-transition:0.3s;
+font-size:45px;
+margin:0 18px;
+color:white;
 }
 
 .redes-sociales i:hover{
-color:#00ff88;
-transform:scale(1.2);
+color:#00ff9d;
+transform:scale(1.15);
 }
