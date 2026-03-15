@@ -91,62 +91,139 @@
 <section class="projects-section bg-light" style="padding:30px 0;">
     <div class="container px-4 px-lg-5">
         <div class="row gx-0 justify-content-center">
+
             <div class="col-lg-6">
                 <img class="img-fluid"
                      src="../gamesalone18/assets/img/escuchamos.jpg"
                      alt="Te escuchamos - GamesAlone18 Universe" />
             </div>
+
             <div class="col-lg-6 order-lg-first">
                 <div class="bg-black text-center h-100 project">
+
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-left">
+
                             <h2 class="text-white">Te escuchamos</h2>
+
                             <p class="mb-4 text-white-50">
                                 Deja tus comentarios. Tu voz nos ayuda a crecer.
                             </p>
-                            <form action="https://formspree.io/f/xqedqdjq"
-                                  method="POST"
-                                  class="text-start">
+
+                            <form id="contactForm" class="text-start">
+
                                 <div class="mb-3">
                                     <input class="form-control"
                                            type="text"
-                                           name="Nombre"
+                                           id="nombre"
                                            placeholder="Nombre"
                                            required>
                                 </div>
+
                                 <div class="mb-3">
                                     <input class="form-control"
                                            type="email"
-                                           name="Email"
+                                           id="email"
                                            placeholder="Email"
                                            required>
                                 </div>
+
                                 <div class="mb-3">
                                     <input class="form-control"
                                            type="tel"
-                                           name="Telefono"
+                                           id="telefono"
                                            placeholder="Teléfono">
                                 </div>
+
                                 <div class="mb-3">
                                     <textarea class="form-control"
-                                              name="Mensaje"
+                                              id="mensaje"
                                               rows="4"
                                               placeholder="Mensaje"
                                               required></textarea>
                                 </div>
+
                                 <div class="d-grid">
                                     <button class="btn btn-primary" type="submit">
                                         ENVIAR
                                     </button>
                                 </div>
+
+                                <p id="respuesta"
+                                   style="color:white;margin-top:15px;font-size:0.9rem;"></p>
+
                             </form>
+
                         </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </div>
-</section>    
+</section>
+
+
+<script>
+
+document.getElementById("contactForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+var nombre = document.getElementById("nombre").value;
+var email = document.getElementById("email").value;
+var telefono = document.getElementById("telefono").value;
+var mensaje = document.getElementById("mensaje").value;
+
+fetch("https://script.google.com/macros/s/AKfycbyp4Y4J79MTtYJL0hZolPnEn-T7gCONY51UA_040-93EWJL2QnHdI_RHBhSu5r81sQ/exec",{
+
+method:"POST",
+
+body:new URLSearchParams({
+
+nombre:nombre,
+email:email,
+telefono:telefono,
+mensaje:mensaje,
+token:"GA18CONTACT"
+
+})
+
+})
+
+.then(res=>res.text())
+.then(data=>{
+
+if(data=="ENVIADO"){
+
+document.getElementById("respuesta").innerHTML=
+"✅ Gracias por tu mensaje. Te responderemos pronto.";
+
+document.getElementById("contactForm").reset();
+
+}else{
+
+document.getElementById("respuesta").innerHTML=
+"⚠ Ocurrió un error. Intenta nuevamente.";
+
+}
+
+})
+
+.catch(error=>{
+
+document.getElementById("respuesta").innerHTML=
+"⚠ Error de conexión.";
+
+});
+
+});
+
+</script>
+```
+  
     <!-- Contacto Directo -->
     <section class="contact-section bg-black">
         <div class="container px-4 px-lg-5">
