@@ -34,6 +34,7 @@ border:none;
 width:100%;
 padding:12px;
 font-weight:bold;
+cursor:pointer;
 }
 
 #resultado{
@@ -42,21 +43,10 @@ font-size:0.95rem;
 }
 
 </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EGZ2977YBH');
-</script>
 
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header class="masthead"
 style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
@@ -80,8 +70,6 @@ Activa aquí tu código de descuento oficial
 </header>
 
 
-<!-- ACTIVACION CODIGO -->
-
 <section class="projects-section bg-light">
 
 <div class="container px-4 px-lg-5">
@@ -92,8 +80,7 @@ Activa aquí tu código de descuento oficial
 
 <p style="opacity:0.8;">
 Ingresa tu correo y el código recibido.
-La vigencia será de <strong>10 días</strong>
-a partir de la activación.
+La vigencia será de <strong>10 días</strong>.
 </p>
 
 <form id="cuponForm">
@@ -142,7 +129,8 @@ method:"POST",
 body:new URLSearchParams({
 
 email:email,
-codigo:codigo
+codigo:codigo,
+token:"GA18SECURE"
 
 })
 
@@ -157,10 +145,15 @@ if(data=="VALIDO"){
 document.getElementById("resultado").innerHTML=
 "✅ Código activado correctamente. Revisa tu correo.";
 
-}else{
+}else if(data=="INVALIDO"){
 
 document.getElementById("resultado").innerHTML=
 "❌ Código inválido o ya utilizado.";
+
+}else{
+
+document.getElementById("resultado").innerHTML=
+"⚠ Error de seguridad.";
 
 }
 
