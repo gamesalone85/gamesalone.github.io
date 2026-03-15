@@ -120,10 +120,10 @@ font-weight:700;
 font-size:14px;
 opacity:0.9;
 }
-/* REDES */
+/* REDES SOCIALES */
 .redes-sociales a i{
-font-size:55px !important;
-margin:0 20px;
+font-size:40px;
+margin:0 15px;
 color:#000;
 transition:0.3s;
 }
@@ -131,4 +131,20 @@ transition:0.3s;
 .redes-sociales a i:hover{
 color:#00ff88;
 transform:scale(1.2);
+}
+
+/* TABLET */
+@media (max-width: 768px){
+.redes-sociales a i{
+font-size:32px;
+margin:0 10px;
+}
+}
+
+/* CELULAR */
+@media (max-width: 480px){
+.redes-sociales a i{
+font-size:28px;
+margin:0 8px;
+}
 }
