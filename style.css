@@ -4,169 +4,211 @@
 ======================================== */
 
 /* RESET BÁSICO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
+
 /* BODY GENERAL */
-body.home {
-  font-family: 'Orbitron', sans-serif;
-  background: #000;
-  color: #fff;
-  overflow: hidden;
+
+body.home{
+font-family:'Orbitron',sans-serif;
+background:#000;
+color:#fff;
+overflow:hidden;
 }
+
 
 /* ========================================
    HERO FULLSCREEN
 ======================================== */
 
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background: radial-gradient(circle at center, #111 0%, #000 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+.hero{
+position:relative;
+height:100vh;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+overflow:hidden;
 }
 
-/* Overlay sutil para profundidad */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+
+/* VIDEO DE FONDO */
+
+.hero-video{
+position:absolute;
+top:50%;
+left:50%;
+min-width:100%;
+min-height:100%;
+width:auto;
+height:auto;
+transform:translate(-50%,-50%);
+object-fit:cover;
+z-index:0;
 }
+
+
+/* OVERLAY OSCURO PARA CONTRASTE */
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+z-index:1;
+}
+
 
 /* CONTENIDO CENTRAL */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  animation: fadeIn 1.2s ease forwards;
-  opacity: 0;
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+animation:fadeIn 1.2s ease forwards;
+opacity:0;
 }
+
+
+/* LOGO HERO */
+
+.hero-logo{
+width:130px;
+margin-bottom:25px;
+filter:drop-shadow(0 0 10px #00DD00);
+}
+
 
 /* TÍTULO PRINCIPAL */
-.hero h1 {
-  font-size: 3.2rem;
-  color: #00DD00;
-  letter-spacing: 6px;
-  margin-bottom: 25px;
-  text-shadow: 0 0 15px #00DD00;
+
+.hero h1{
+font-size:3.2rem;
+color:#00DD00;
+letter-spacing:6px;
+margin-bottom:25px;
+
+text-shadow:
+0 0 5px #00DD00,
+0 0 10px #00DD00,
+0 0 20px #00DD00,
+0 0 40px #00DD00;
 }
 
+
 /* SUBTÍTULO */
-.hero-subtitle {
-  font-size: 1.3rem;
-  color: #ccc;
-  margin-bottom: 45px;
-  letter-spacing: 2px;
-  line-height: 1.6;
+
+.hero-subtitle{
+font-size:1.3rem;
+color:#ccc;
+margin-bottom:45px;
+letter-spacing:2px;
+line-height:1.6;
 }
+
+
+/* TEXTO PRUEBA SOCIAL */
+
+.hero-proof{
+margin-top:35px;
+font-size:0.9rem;
+color:#aaa;
+letter-spacing:1px;
+}
+
 
 /* ========================================
    BOTONES
 ======================================== */
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
+
 
 /* BOTÓN PRINCIPAL */
-.btn-primary {
-  padding: 15px 40px;
-  background: #00DD00;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+
+.btn-primary{
+padding:15px 40px;
+background:#00DD00;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+border-radius:4px;
+transition:all .3s ease;
+letter-spacing:1px;
 }
 
-.btn-primary:hover {
-  background: #00ff55;
-  transform: scale(1.08);
-  box-shadow: 0 0 20px #00DD00;
+.btn-primary:hover{
+background:#00ff55;
+transform:scale(1.08);
+box-shadow:0 0 20px #00DD00;
 }
+
 
 /* BOTÓN SECUNDARIO */
-.btn-secondary {
-  padding: 15px 40px;
-  border: 2px solid #00DD00;
-  color: #00DD00;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+
+.btn-secondary{
+padding:15px 40px;
+border:2px solid #00DD00;
+color:#00DD00;
+text-decoration:none;
+border-radius:4px;
+transition:all .3s ease;
+letter-spacing:1px;
 }
 
-.btn-secondary:hover {
-  background: #00DD00;
-  color: #000;
-  transform: scale(1.08);
-  box-shadow: 0 0 20px #00DD00;
+.btn-secondary:hover{
+background:#00DD00;
+color:#000;
+transform:scale(1.08);
+box-shadow:0 0 20px #00DD00;
 }
+
 
 /* ========================================
    ANIMACIÓN
 ======================================== */
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+@keyframes fadeIn{
+to{
+opacity:1;
 }
+}
+
 
 /* ========================================
    RESPONSIVE
 ======================================== */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-  .hero h1 {
-    font-size: 2.2rem;
-    letter-spacing: 3px;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    max-width: 300px;
-  }
-
-}
-/* VIDEO DE FONDO */
-
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
+.hero h1{
+font-size:2.2rem;
+letter-spacing:3px;
 }
 
-/* LOGO HERO */
+.hero-subtitle{
+font-size:1.1rem;
+}
 
 .hero-logo{
-  width:120px;
-  margin-bottom:20px;
-  filter: drop-shadow(0 0 10px #00DD00);
+width:100px;
+}
+
+.btn-primary,
+.btn-secondary{
+width:100%;
+max-width:300px;
+}
+
 }
