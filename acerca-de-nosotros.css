@@ -122,13 +122,16 @@ opacity:0.9;
 }
 /* REDES */
 
-.redes-sociales i{
-font-size:45px;
-margin:0 18px;
-color:white;
+/* ICONOS REDES SOCIALES */
+
+.redes-sociales a i{
+font-size:55px !important;
+margin:0 20px;
+color:#000;
+transition:0.3s;
 }
 
-.redes-sociales i:hover{
-color:#00ff9d;
-transform:scale(1.15);
+.redes-sociales a i:hover{
+color:#00ff88;
+transform:scale(1.2);
 }
