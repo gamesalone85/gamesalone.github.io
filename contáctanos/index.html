@@ -87,6 +87,101 @@
         </div>
     </div>
 </section>
+
+<!-- Project Eight Row-->
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+
+    <!-- IMAGEN -->
+    <div class="col-lg-6">
+        <img class="img-fluid"
+             src="../gamesalone18/assets/img/suscribete.jpg"
+             alt="Suscripción GamesAlone18 Universe" />
+    </div>
+
+    <!-- TEXTO + FORMULARIO -->
+    <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+
+                    <h2 class="text-white">
+                        Acceso Anticipado al Universo
+                    </h2>
+
+                    <p class="mb-4 text-white-50">
+                        Los miembros suscritos reciben lanzamientos antes que nadie,
+                        beneficios exclusivos y anuncios privados del universo.
+                        No es un boletín.
+                        Es acceso.
+                    </p>
+
+                    <p class="text-success mb-3">
+                        +3,477 miembros ya están dentro.
+                    </p>
+
+                    <p class="mb-4 text-white-50">
+                        Accede a contenido anticipado, lanzamientos especiales
+                        y novedades del universo GamesAlone18.
+                    </p>
+
+                    <!-- FORMULARIO -->
+                    <form id="suscripcionForm" class="text-start">
+
+                        <div class="mb-3">
+                            <input class="form-control"
+                                   type="email"
+                                   id="email"
+                                   placeholder="Ingresa tu correo electrónico..."
+                                   required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary" type="submit">
+                                Acceder antes que nadie
+                            </button>
+                        </div>
+
+                        <p id="respuesta"
+                           style="color:white;margin-top:15px;font-size:0.9rem;"></p>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+    <script>
+
+document.getElementById("suscripcionForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+var email = document.getElementById("email").value;
+
+fetch("https://script.google.com/macros/s/AKfycbwZ-OsNJLQzhpkkPG2-vGvomdiBJfnV9u3wA679oq3pakLzuvtsBvqpTHJhnSoz58I/exec",{
+
+method:"POST",
+mode:"no-cors",
+
+body:new URLSearchParams({
+email:email
+})
+
+});
+
+document.getElementById("respuesta").innerHTML =
+"✅ Revisa tu correo para acceder al universo.";
+
+document.getElementById("suscripcionForm").reset();
+
+});
+
+</script>
 <!-- TE ESCUCHAMOS -->
 <section class="projects-section bg-light" style="padding:30px 0;">
     <div class="container px-4 px-lg-5">
