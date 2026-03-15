@@ -1,44 +1,33 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EGZ2977YBH');
-</script>
 <head>
-<meta charset="utf-8">
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Zona Restringida | GamesAlone18 Universe</title>
-<meta name="description" content="Área privada para activación de códigos de descuento del universo GamesAlone18.">
-<meta name="robots" content="noindex,nofollow">
+<title>Zona de Códigos | GamesAlone18 Universe</title>
 
 <link href="../gamesalone18/css/styles.css" rel="stylesheet">
 
 <style>
 
-/* SECCION CODIGO */
-
 .codigo-box{
 background:#000;
 padding:40px;
-border-radius:10px;
+border-radius:12px;
 color:#fff;
 max-width:500px;
 margin:auto;
+text-align:center;
 }
 
 .codigo-box input{
 width:100%;
 padding:12px;
 margin-bottom:15px;
-border:none;
 border-radius:6px;
+border:none;
 }
 
 .codigo-box button{
@@ -53,12 +42,19 @@ font-size:0.95rem;
 }
 
 </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EGZ2977YBH');
+</script>
 
 </head>
 
-<body id="page-top">
-
-<div id="header"></div>
+<body>
 
 <!-- HEADER -->
 
@@ -83,55 +79,39 @@ Activa aquí tu código de descuento oficial
 
 </header>
 
+
 <!-- ACTIVACION CODIGO -->
 
 <section class="projects-section bg-light">
 
 <div class="container px-4 px-lg-5">
 
-<div class="codigo-box text-center">
+<div class="codigo-box">
 
 <h2>Activar Código</h2>
 
 <p style="opacity:0.8;">
 Ingresa tu correo y el código recibido.
 La vigencia será de <strong>10 días</strong>
-a partir del momento de activación.
+a partir de la activación.
 </p>
 
-<form id="formCodigo"
-action="https://formspree.io/f/TU_FORM_ID"
-method="POST">
+<form id="cuponForm">
 
-<input
-type="email"
-name="email"
-id="email"
+<input 
+type="email" 
+id="email" 
 placeholder="Tu correo electrónico"
 required>
 
-<input
-type="text"
-name="codigo"
-id="codigo"
+<input 
+type="text" 
+id="codigo" 
 placeholder="Código de descuento"
 required>
 
-<input
-type="hidden"
-name="fecha_activacion"
-id="fechaActivacion">
-
-<input
-type="hidden"
-name="fecha_vencimiento"
-id="fechaVencimiento">
-
-<button class="btn btn-primary" type="submit"
-onclick="calcularVigencia()">
-
+<button type="submit">
 Activar Código
-
 </button>
 
 </form>
@@ -144,105 +124,55 @@ Activar Código
 
 </section>
 
-<!-- INFO -->
-
-<section class="projects-section bg-light">
-
-<div class="container px-4 px-lg-5 text-center">
-
-<h2 class="mb-4">
-Información del sistema
-</h2>
-
-<p style="max-width:700px;margin:auto;">
-Los códigos de descuento son emitidos durante eventos,
-colaboraciones y promociones especiales del universo
-<strong>GamesAlone18</strong>.
-</p>
-
-<p style="max-width:700px;margin:auto;">
-Cada código tiene una vigencia de <strong>10 días</strong>
-desde el momento en que es activado.
-</p>
-
-</div>
-
-</section>
-
-<!-- BOTON VOLVER -->
-
-<section class="contact-section bg-black text-center">
-
-<a href="/gamesalone18/" class="btn btn-light">
-Volver al menú
-</a>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer class="footer bg-black text-white-50 py-5">
-
-<div class="container px-4 px-lg-5">
-
-<div class="row">
-
-<div class="col-md-6 text-center text-md-start">
-<small>Copyright © GamesAlone18 Universe 2026</small>
-</div>
-
-<div class="col-md-6 text-center text-md-end">
-
-<h6 class="text-white mb-3">Menús</h6>
-
-<ul class="list-unstyled">
-
-<li><a href="/" class="text-white-50 text-decoration-none">Inicio</a></li>
-<li><a href="/merch/" class="text-white-50 text-decoration-none">Tienda</a></li>
-<li><a href="../acerca-de-nosotros.html" class="text-white-50 text-decoration-none">Nosotros</a></li>
-<li><a href="/contáctanos/" class="text-white-50 text-decoration-none">Contacto</a></li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</footer>
 
 <script>
 
-function calcularVigencia(){
+document.getElementById("cuponForm")
+.addEventListener("submit",function(e){
 
-let hoy = new Date();
+e.preventDefault();
 
-let vencimiento = new Date();
+var email = document.getElementById("email").value;
+var codigo = document.getElementById("codigo").value;
 
-vencimiento.setDate(hoy.getDate()+10);
+fetch("https://script.google.com/macros/s/AKfycbyp4Y4J79MTtYJL0hZolPnEn-T7gCONY51UA_040-93EWJL2QnHdI_RHBhSu5r81sQ/exec",{
 
-let hoyTexto = hoy.toLocaleDateString();
+method:"POST",
 
-let vencimientoTexto = vencimiento.toLocaleDateString();
+body:new URLSearchParams({
 
-document.getElementById("fechaActivacion").value = hoyTexto;
+email:email,
+codigo:codigo
 
-document.getElementById("fechaVencimiento").value = vencimientoTexto;
+})
 
-document.getElementById("resultado").innerHTML =
-"✅ Código activado.<br>Vigencia hasta: "+vencimientoTexto;
+})
+
+.then(res=>res.text())
+
+.then(data=>{
+
+if(data=="VALIDO"){
+
+document.getElementById("resultado").innerHTML=
+"✅ Código activado correctamente. Revisa tu correo.";
+
+}else{
+
+document.getElementById("resultado").innerHTML=
+"❌ Código inválido o ya utilizado.";
 
 }
 
-</script>
+})
 
-<script>
+.catch(error=>{
 
-fetch("/header.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("header").innerHTML = data;
+document.getElementById("resultado").innerHTML=
+"⚠ Error al validar el código.";
+
+});
+
 });
 
 </script>
@@ -250,7 +180,3 @@ document.getElementById("header").innerHTML = data;
 </body>
 </html>
 ```
-
-
-</body>
-</html>
