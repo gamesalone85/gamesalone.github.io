@@ -26,9 +26,8 @@
 
 <body id="page-top">
 
-    <!-- Navigation-->
+   <!-- Navigation-->
 <div id="header"></div>
-<header class="masthead">
     <!-- Header -->
     <header class="masthead">
         <div class="container px-2 px-lg-3 d-flex h-100 align-items-center justify-content-center">
@@ -159,12 +158,27 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> 
-     <!-- Header top-->
+    <!-- Header top-->
 <script>
 fetch("/header.html")
 .then(response => response.text())
 .then(data => {
-document.getElementById("header").innerHTML = data;
+    document.getElementById("header").innerHTML = data;
+
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+
+    if (!navbarCollapsible) return;
+
+    const navbarShrink = function () {
+        if (window.scrollY === 0) {
+            navbarCollapsible.classList.remove('navbar-shrink');
+        } else {
+            navbarCollapsible.classList.add('navbar-shrink');
+        }
+    };
+
+    navbarShrink();
+    document.addEventListener('scroll', navbarShrink);
 });
 </script>
     </body>
