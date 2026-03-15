@@ -11345,3 +11345,16 @@ body {
   font-size: 1.05rem;
   line-height: 1.8;
 }
+/* ICONOS REDES SOCIALES */
+
+.redes-sociales a i{
+font-size:55px !important;
+margin:0 20px;
+color:#000;
+transition:0.3s;
+}
+
+.redes-sociales a i:hover{
+color:#00ff88;
+transform:scale(1.2);
+}
