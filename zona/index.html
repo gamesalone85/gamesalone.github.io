@@ -11,10 +11,10 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.gamesalone.com/zona/">
 
-<!-- CSS GLOBAL DEL SITIO -->
 <link href="../gamesalone18/css/styles.css" rel="stylesheet">
 
-<!-- CSS DE ESTA PÁGINA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <style>
 
 .codigo-box{
@@ -45,6 +45,13 @@ cursor:pointer;
 #resultado{
 margin-top:15px;
 font-size:0.95rem;
+}
+
+/* Ajuste para centrar el captcha en cajas oscuras */
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 /* CSS ORIGINAL DE LA ZONA */
@@ -82,7 +89,6 @@ margin-bottom:10px;
 
 </style>
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -95,7 +101,6 @@ gtag('config', 'G-EGZ2977YBH');
 
 <body>
 
-<!-- Navigation -->
 <div id="header"></div>
 
 <header class="masthead"
@@ -136,41 +141,34 @@ decoding="async">
 <div class="d-flex h-100">
 <div class="project-text w-100 my-auto text-center text-lg-right">
 <h2 class="text-white">
-Ya nos sigues?
+¿Ya nos sigues?
 Acceso Anticipado al Universo
 </h2>
 
 <p class="mb-4 text-white-50">
-Los miembros suscritos reciben lanzamientos antes que nadie,
-beneficios exclusivos y anuncios privados del universo.
+Los miembros suscritos reciben lanzamientos antes que nadie y beneficios exclusivos.
 </p>
-
-<p class="text-success mb-3">
-+3,477 miembros ya están dentro.
-</p>
-
 
 <form id="suscripcionForm" class="text-start">
 
 <div class="mb-3">
-
 <input
 class="form-control"
 type="email"
 id="emailSuscripcion"
 placeholder="Ingresa tu correo electrónico..."
 required>
-
 </div>
 
-<div class="d-grid">
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
 
+<div class="d-grid">
 <button class="btn btn-primary" type="submit">
 Acceder antes que nadie
 </button>
 
-<p class="mb-4 text-white-50">
-Consulta nuestro <a href="/avisodeprivacidad/">Aviso de Privacidad</a> y  <a href="/terminos-y-condiciones.html">Términos y Condiciones</a>
+<p class="mt-3 mb-4 text-white-50">
+Consulta nuestro <a href="/avisodeprivacidad/">Aviso de Privacidad</a> y <a href="/terminos-y-condiciones.html">Términos y Condiciones</a>
 </p>
 </div>
 
@@ -183,49 +181,44 @@ style="color:white;margin-top:15px;font-size:0.9rem;"></p>
 </div>
 </div>
 </div>
-<script>
 
+<script>
 document.getElementById("suscripcionForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
+// Validación de Seguridad del Auditor
+var response = grecaptcha.getResponse(0); // 0 indica el primer captcha de la página
+if(response.length == 0) {
+    document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
+    return;
+}
+
 var email=document.getElementById("emailSuscripcion").value;
 
 fetch("https://script.google.com/macros/s/AKfycbwZ-OsNJLQzhpkkPG2-vGvomdiBJfnV9u3wA679oq3pakLzuvtsBvqpTHJhnSoz58I/exec",{
-
 method:"POST",
 mode:"no-cors",
-
-body:new URLSearchParams({
-email:email
-})
-
+body:new URLSearchParams({ email:email })
 });
 
 document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
-
+grecaptcha.reset(0);
 document.getElementById("suscripcionForm").reset();
 
 });
-
 </script>
 
-<section class="projects-section bg-light">
-
+<section class="projects-section bg-light py-5">
 <div class="container px-4 px-lg-5">
-
 <div class="codigo-box">
-
 <h2>Activar Código</h2>
-
 <p style="opacity:0.8;">
-Ingresa tu correo y el código recibido.  
-La vigencia del código es de <strong>10 días</strong>.
+Ingresa tu correo y el código recibido.
 </p>
 
 <form id="cuponForm">
-
 <input 
 type="email"
 id="email"
@@ -238,21 +231,18 @@ id="codigo"
 placeholder="Código de descuento"
 required>
 
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+
 <button type="submit">
 Activar Código
 </button>
-
 </form>
 
 <p id="resultado"></p>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
@@ -263,141 +253,80 @@ document.getElementById("footer").innerHTML = data;
 });
 </script>
 
-<!-- VALIDACIÓN DEL CUPÓN -->
 <script>
-
 document.getElementById("cuponForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
+// Validación Auditor: Verificar Captcha
+var response = grecaptcha.getResponse(1); // 1 indica el segundo captcha
+if(response.length == 0) {
+    document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
+    return;
+}
+
 var email = document.getElementById("email").value;
 var codigo = document.getElementById("codigo").value;
 
 fetch("https://script.google.com/macros/s/AKfycbyp4Y4J79MTtYJL0hZolPnEn-T7gCONY51UA_040-93EWJL2QnHdI_RHBhSu5r81sQ/exec",{
-
 method:"POST",
-
 body:new URLSearchParams({
 email:email,
 codigo:codigo,
 token:"GA18SECURE"
 })
-
 })
-
 .then(res=>res.text())
-
 .then(data=>{
-
 if(data=="VALIDO"){
-
-document.getElementById("resultado").innerHTML=
-"✅ Código activado correctamente. Revisa tu correo.";
-
+document.getElementById("resultado").innerHTML="✅ Código activado correctamente. Revisa tu correo.";
 }else if(data=="INVALIDO"){
-
-document.getElementById("resultado").innerHTML=
-"❌ Código inválido o ya utilizado.";
-
+document.getElementById("resultado").innerHTML="❌ Código inválido o ya utilizado.";
 }else{
-
-document.getElementById("resultado").innerHTML=
-"⚠ Error de seguridad.";
-
+document.getElementById("resultado").innerHTML="⚠ Error de seguridad.";
 }
-
+grecaptcha.reset(1);
 })
-
 .catch(error=>{
-
-document.getElementById("resultado").innerHTML=
-"⚠ Error al validar el código.";
-
+document.getElementById("resultado").innerHTML="⚠ Error al validar el código.";
 });
 
 });
-
 </script>
 
-<!-- CARGAR HEADER -->
 <script>
 fetch("/header.html")
 .then(response => response.text())
 .then(data => {
-
 document.getElementById("header").innerHTML = data;
-
-const navbarCollapsible = document.body.querySelector('#mainNav');
-
-if (!navbarCollapsible) return;
-
-const navbarShrink = function () {
-
-if (window.scrollY === 0) {
-navbarCollapsible.classList.remove('navbar-shrink');
-} else {
-navbarCollapsible.classList.add('navbar-shrink');
-}
-
+const nav = document.body.querySelector('#mainNav');
+if (!nav) return;
+const shrink = function () {
+window.scrollY === 0 ? nav.classList.remove('navbar-shrink') : nav.classList.add('navbar-shrink');
 };
-
-navbarShrink();
-document.addEventListener('scroll', navbarShrink);
-
+shrink();
+document.addEventListener('scroll', shrink);
 });
 </script>
-<!-- POP-UP ZONA EXCLUSIVA -->
-<div id="exclusivePopup" style="
-  display:none;
-  position:fixed;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.85);
-  z-index:9999;
-  justify-content:center;
-  align-items:center;
-">
-  <div style="
-    background:#fff;
-    color:#111;
-    max-width:500px;
-    width:90%;
-    padding:35px 25px;
-    border-radius:8px;
-    text-align:center;
-    font-family:Georgia, 'Times New Roman', serif;
-    box-shadow:0 0 15px rgba(0,0,0,0.5);
-  ">
+
+<div id="exclusivePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; color:#111; max-width:500px; width:90%; padding:35px 25px; border-radius:8px; text-align:center; font-family:Georgia, serif; box-shadow:0 0 15px rgba(0,0,0,0.5);">
     <h2 style="margin-bottom:15px;">Bienvenido a la Zona Exclusiva</h2>
     <p style="margin-bottom:25px; line-height:1.5;">
-      Este espacio está reservado únicamente para miembros registrados. 
-      El registro es obligatorio para disfrutar de los beneficios y contenido exclusivo que se ofrecerá dentro de esta sección. 
-      Tus datos serán tratados de manera segura y conforme a nuestro <a href="/avisodeprivacidad/" target="_blank">Aviso de Privacidad</a>.
+      Este espacio está reservado únicamente para miembros registrados.
     </p>
-    <button id="closeExclusivePopup" style="
-      padding:12px 25px;
-      background:#000;
-      color:#fff;
-      border:none;
-      border-radius:4px;
-      cursor:pointer;
-      font-weight:bold;
-      font-size:0.95rem;
-      transition:0.3s;
-    ">Entendido</button>
+    <button id="closeExclusivePopup" style="padding:12px 25px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">Entendido</button>
   </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Mostrar siempre
   document.getElementById('exclusivePopup').style.display = 'flex';
-
-  // Cerrar pop-up al hacer clic en el botón
   document.getElementById('closeExclusivePopup').addEventListener('click', function() {
     document.getElementById('exclusivePopup').style.display = 'none';
-    });
   });
+});
 </script>
 </body>
 </html>
