@@ -327,7 +327,7 @@ document.getElementById("header").innerHTML = data;
   display:none;
   position:fixed;
   top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,0.8);
   z-index:9999;
   justify-content:center;
   align-items:center;
@@ -336,49 +336,38 @@ document.getElementById("header").innerHTML = data;
     background:#fff;
     color:#111;
     max-width:500px;
-    width:90%;
-    padding:35px 25px;
+    padding:30px 25px;
     border-radius:8px;
     text-align:center;
     font-family:Georgia, 'Times New Roman', serif;
-    box-shadow:0 0 15px rgba(0,0,0,0.5);
   ">
-    <h2 style="margin-bottom:15px;">Atención</h2>
-    <p style="margin-bottom:25px; line-height:1.5;">
+    <h2>Atención</h2>
+    <p style="margin:15px 0;">
       Las entregas de nuestros productos de merch se realizan únicamente en puntos céntricos de la Ciudad de México, incluyendo estaciones seleccionadas del Metro. 
       Pedidos fuera de estas áreas no podrán ser procesados.
     </p>
     <button id="closePopup" style="
-      padding:12px 25px;
+      padding:10px 20px;
       background:#000;
       color:#fff;
       border:none;
       border-radius:4px;
       cursor:pointer;
       font-weight:bold;
-      font-size:0.95rem;
-      transition:0.3s;
     ">Entendido</button>
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const merchPopup = document.getElementById('merchPopup');
-  const closeBtn = document.getElementById('closeMerchPopup');
+  // Mostrar pop-up al cargar la página
+  window.addEventListener('load', function() {
+    document.getElementById('merchPopup').style.display = 'flex';
+  });
 
-  // Mostrar siempre
-  merchPopup.style.display = 'flex';
-
-  // Cerrar al hacer clic, con comprobación
-  if(closeBtn && merchPopup) {
-    closeBtn.addEventListener('click', function() {
-      merchPopup.style.display = 'none';
-    });
-  } else {
-    console.error("No se encontró el pop-up o el botón. Verifica los IDs.");
-  }
-});
+  // Cerrar pop-up
+  document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('merchPopup').style.display = 'none';
+  });
 </script>
 </body>
 </html>
