@@ -363,16 +363,13 @@ document.getElementById("header").innerHTML = data;
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si ya se cerró el pop-up
-    if (!localStorage.getItem('merchPopupShown')) {
-      document.getElementById('merchPopup').style.display = 'flex';
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostrar siempre
+  document.getElementById('exclusivePopup').style.display = 'flex';
 
-    // Cerrar pop-up y marcar como mostrado
-    document.getElementById('closePopup').addEventListener('click', function() {
-      document.getElementById('merchPopup').style.display = 'none';
-      localStorage.setItem('merchPopupShown', 'true');
+  // Cerrar pop-up al hacer clic en el botón
+  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
+    document.getElementById('exclusivePopup').style.display = 'none';
     });
   });
 </script>
