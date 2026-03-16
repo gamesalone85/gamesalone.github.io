@@ -289,12 +289,16 @@ Al registrarse o realizar compras, el usuario declara haber leído, comprendido 
 </p>
 <p>
   <label>
-    <input type="checkbox" required>
+    <input type="checkbox" id="consent-menor" required>
     Declaro tener más de 13 años y, si soy menor de 18, cuento con consentimiento de mis padres o tutores. He leído y acepto los 
     <a href="/terminos-y-condiciones.html#16">Términos y Condiciones</a> y la 
     <a href="/avisodeprivacidad/">Política de Privacidad</a>.
   </label>
 </p>
+
+<button id="btn-aceptar-consent" style="padding:10px 20px; margin-top:10px; background:#00ff88; color:#000; border:none; border-radius:5px; cursor:pointer;">
+  Aceptar
+</button>
     
 <h2 id="16">16. Protección de menores de edad</h2>
 
@@ -337,6 +341,19 @@ fetch("/header.html")
 .then(data => {
 document.getElementById("header").innerHTML = data;
 });
+</script>
+<script>
+document.getElementById('btn-aceptar-consent').onclick = function() {
+  const checkbox = document.getElementById('consent-menor');
+  if (checkbox.checked) {
+    alert('Gracias, su consentimiento ha sido registrado.');
+    // Aquí puedes habilitar un formulario o permitir continuar con la compra/registro
+    // Por ejemplo, redirigir al checkout o desbloquear campos:
+    // window.location.href = '/registro-o-checkout.html';
+  } else {
+    alert('Debe marcar la casilla para poder continuar.');
+  }
+};
 </script>
 
 </body>
