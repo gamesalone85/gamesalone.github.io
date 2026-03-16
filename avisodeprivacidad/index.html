@@ -207,9 +207,54 @@ El uso del sitio web www.gamesalone.com implica la aceptación de nuestros Térm
     <div class="back-menu">
       <a href="/gamesalone18/" class="btn-back">Volver al menú</a>
     </div>
+    <p>
+  <label>
+    <input type="checkbox" id="consent-aviso" required>
+    He leído, comprendido y acepto los <a href="/terminos-y-condiciones.html">Términos y Condiciones</a> y la <a href="/avisodeprivacidad/">Política de Privacidad</a> de GamesAlone18 Universe.
+  </label>
+</p>
 
-  </div>
+<button id="btn-aceptar-aviso" style="padding:10px 20px; margin-top:10px; background:#00ff88; color:#000; border:none; border-radius:5px; cursor:pointer;">
+  Aceptar
+</button>
+</div>
 </section>
 
+<script>
+document.getElementById('btn-aceptar-aviso').onclick = function() {
+  const checkbox = document.getElementById('consent-aviso');
+  if (!checkbox.checked) {
+    alert('Debe aceptar los Términos y Condiciones y la Política de Privacidad para continuar.');
+    return;
+  }
+
+  // Capturar IP vía fetch a servicio externo
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ip = data.ip;
+      
+      // Enviar registro a Google Sheets
+      fetch('https://script.google.com/macros/s/AKfycbxck-vewRXw5CuLPduaimcgHi3OAXeqleFzlL26jIyui1AWy5QPiyblMJDYJynvMqE/exec', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+          ip: ip,
+          acepto: 'true',
+          pagina: window.location.pathname
+        })
+      }).then(res => res.text())
+        .then(resText => {
+          alert('Gracias, su consentimiento ha sido registrado.');
+          // Redirigir o habilitar contenido
+          // window.location.href = '/gracias.html';
+        })
+        .catch(err => {
+          alert('Error al registrar consentimiento. Intente nuevamente.');
+          console.error(err);
+        });
+    });
+};
+</script>
 </body>
 </html>
