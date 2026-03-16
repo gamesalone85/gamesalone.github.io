@@ -389,16 +389,13 @@ document.addEventListener('scroll', navbarShrink);
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Mostrar pop-up solo una vez
-    if (!localStorage.getItem('exclusivePopupShown')) {
-      document.getElementById('exclusivePopup').style.display = 'flex';
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostrar siempre
+  document.getElementById('exclusivePopup').style.display = 'flex';
 
-    // Cerrar pop-up y marcar como mostrado
-    document.getElementById('closeExclusivePopup').addEventListener('click', function() {
-      document.getElementById('exclusivePopup').style.display = 'none';
-      localStorage.setItem('exclusivePopupShown', 'true');
+  // Cerrar pop-up al hacer clic en el botón
+  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
+    document.getElementById('exclusivePopup').style.display = 'none';
     });
   });
 </script>
