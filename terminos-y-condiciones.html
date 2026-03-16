@@ -321,6 +321,39 @@ Algunos contenidos de nuestra plataforma pueden no ser adecuados para menores de
 <p>
 Los padres o tutores son responsables de supervisar la actividad de los menores en nuestra plataforma y asegurarse de que comprendan y cumplan con nuestras políticas y restricciones de edad.
 </p>
+  <h2>17. Comunidad y conducta</h2>
+<p>
+  GamesAlone18 Universe se reserva el derecho de restringir o suspender el acceso de cualquier usuario que incurra en conductas inapropiadas dentro de nuestras secciones de comunidad o interacción, incluyendo pero no limitado a:
+</p>
+<ul>
+  <li>Acoso o intimidación a otros usuarios.</li>
+  <li>Difusión de spam o publicidad no autorizada.</li>
+  <li>Lenguaje ofensivo, discriminatorio o de odio.</li>
+</ul>
+<p>
+  La suspensión de acceso puede ser temporal o permanente según la gravedad de la conducta, y no requiere aviso previo.
+</p>
+<h2>18. Limitación de responsabilidad del servicio</h2>
+<p>
+  GamesAlone18 Universe no garantiza que el sitio esté libre de errores, interrupciones o fallas técnicas. El usuario acepta que el uso de la plataforma es bajo su propia responsabilidad.
+</p>
+<p>
+  No nos hacemos responsables por daños directos, indirectos, incidentales, especiales o consecuentes derivados de la interacción con nuestros contenidos, productos o servicios.
+</p>
+<h2>19. Aviso sobre contenido</h2>
+<p>
+  Todo el contenido de GamesAlone18 Universe, incluyendo videos, artículos y publicaciones en comunidad, tiene fines de entretenimiento. Las opiniones expresadas son responsabilidad de sus autores y no necesariamente reflejan la postura oficial de la marca.
+</p>
+<p>
+  <label>
+    <input type="checkbox" id="consent-aviso" required>
+    He leído, comprendido y acepto los <a href="/terminos-y-condiciones.html">Términos y Condiciones</a> y la <a href="/avisodeprivacidad/">Política de Privacidad</a> de GamesAlone18 Universe.
+  </label>
+</p>
+
+<button id="btn-aceptar-aviso" style="padding:10px 20px; margin-top:10px; background:#00ff88; color:#000; border:none; border-radius:5px; cursor:pointer;">
+  Aceptar
+</button>
 
     <hr>
     
@@ -353,6 +386,42 @@ document.getElementById('btn-aceptar-consent').onclick = function() {
   } else {
     alert('Debe marcar la casilla para poder continuar.');
   }
+};
+</script>
+<script>
+document.getElementById('btn-aceptar-aviso').onclick = function() {
+  const checkbox = document.getElementById('consent-aviso');
+  if (!checkbox.checked) {
+    alert('Debe aceptar los Términos y Condiciones y la Política de Privacidad para continuar.');
+    return;
+  }
+
+  // Capturar IP vía fetch a servicio externo
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ip = data.ip;
+      
+      // Enviar registro a Google Sheets
+      fetch('https://script.google.com/macros/s/AKfycbxck-vewRXw5CuLPduaimcgHi3OAXeqleFzlL26jIyui1AWy5QPiyblMJDYJynvMqE/exec', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+          ip: ip,
+          acepto: 'true',
+          pagina: window.location.pathname
+        })
+      }).then(res => res.text())
+        .then(resText => {
+          alert('Gracias, su consentimiento ha sido registrado.');
+          // Redirigir o habilitar contenido
+          // window.location.href = '/gracias.html';
+        })
+        .catch(err => {
+          alert('Error al registrar consentimiento. Intente nuevamente.');
+          console.error(err);
+        });
+    });
 };
 </script>
 
