@@ -1,45 +1,21 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Zona de Códigos | Activar Descuentos GamesAlone18 Universe</title>
+<title>Zona de Códigos | GamesAlone18 Universe</title>
 
-<meta name="description" content="Activa tu código de descuento oficial de GamesAlone18 Universe. Ingresa tu correo y tu código para acceder a beneficios exclusivos de la comunidad.">
-
-<meta name="keywords" content="GamesAlone18, código descuento gaming, cupones gamer, descuentos comunidad gamer, merch gamer">
-
-<meta name="author" content="GamesAlone18 Universe">
-
-<meta name="robots" content="index, follow">
-
+<meta name="description" content="Zona exclusiva de GamesAlone18 Universe para activar códigos de descuento y acceder a beneficios especiales para la comunidad.">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.gamesalone.com/zona/">
 
-<link rel="alternate" hreflang="es" href="https://www.gamesalone.com/zona/">
-<link rel="alternate" hreflang="es-mx" href="https://www.gamesalone.com/zona/">
+<!-- CSS GLOBAL DEL SITIO -->
+<link href="../gamesalone18/css/styles.css" rel="stylesheet">
 
-<!-- Open Graph -->
-
-<meta property="og:title" content="Zona de Códigos | GamesAlone18 Universe">
-<meta property="og:description" content="Activa tu código de descuento oficial de GamesAlone18 Universe.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.gamesalone.com/zona/">
-<meta property="og:image" content="https://www.gamesalone.com/assets/img/social-preview.jpg">
-
-<!-- Twitter -->
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zona de Códigos | GamesAlone18 Universe">
-<meta name="twitter:description" content="Activa tu código de descuento oficial de GamesAlone18.">
-<meta name="twitter:image" content="https://www.gamesalone.com/assets/img/social-preview.jpg">
-
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-
-<link href="/css/styles.css" rel="stylesheet">
-
+<!-- CSS DE ESTA PÁGINA -->
 <style>
 
 .codigo-box{
@@ -72,12 +48,43 @@ margin-top:15px;
 font-size:0.95rem;
 }
 
+/* CSS ORIGINAL DE LA ZONA */
+
+#password{
+padding:12px;
+width:260px;
+border-radius:6px;
+border:none;
+text-align:center;
+}
+
+#error{
+color:red;
+margin-top:10px;
+}
+
+.media-card{
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.media-card:hover{
+transform:translateY(-5px);
+}
+
+.media-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
 </style>
 
 <!-- Google Analytics -->
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -90,13 +97,10 @@ gtag('config', 'G-EGZ2977YBH');
 <body>
 
 <!-- HEADER -->
-
 <div id="header"></div>
 
-<!-- HERO -->
-
 <header class="masthead"
-style="background:url('/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
+style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
 
 <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
 
@@ -107,7 +111,7 @@ Zona de Códigos GamesAlone18
 </h1>
 
 <h2 class="text-white-50 mt-3">
-Activa aquí tu código oficial de descuento
+Activa aquí tu código de descuento oficial
 </h2>
 
 </div>
@@ -115,8 +119,6 @@ Activa aquí tu código oficial de descuento
 </div>
 
 </header>
-
-<!-- FORMULARIO -->
 
 <section class="projects-section bg-light">
 
@@ -127,26 +129,22 @@ Activa aquí tu código oficial de descuento
 <h2>Activar Código</h2>
 
 <p style="opacity:0.8;">
-Ingresa tu correo electrónico y el código recibido.  
+Ingresa tu correo y el código recibido.  
 La vigencia del código es de <strong>10 días</strong>.
 </p>
 
 <form id="cuponForm">
 
 <input 
-type="email" 
+type="email"
 id="email"
-name="email"
 placeholder="Tu correo electrónico"
-autocomplete="email"
 required>
 
-<input 
+<input
 type="text"
 id="codigo"
-name="codigo"
 placeholder="Código de descuento"
-autocomplete="off"
 required>
 
 <button type="submit">
@@ -164,21 +162,17 @@ Activar Código
 </section>
 
 <!-- FOOTER -->
-
 <div id="footer"></div>
 
 <script>
-
 fetch("/footer.html")
 .then(response => response.text())
 .then(data => {
 document.getElementById("footer").innerHTML = data;
 });
-
 </script>
 
-<!-- VALIDACIÓN -->
-
+<!-- VALIDACIÓN DEL CUPÓN -->
 <script>
 
 document.getElementById("cuponForm")
@@ -194,11 +188,9 @@ fetch("https://script.google.com/macros/s/AKfycbyp4Y4J79MTtYJL0hZolPnEn-T7gCONY5
 method:"POST",
 
 body:new URLSearchParams({
-
 email:email,
 codigo:codigo,
 token:"GA18SECURE"
-
 })
 
 })
@@ -237,10 +229,8 @@ document.getElementById("resultado").innerHTML=
 
 </script>
 
-<!-- HEADER SCRIPT -->
-
+<!-- CARGAR HEADER -->
 <script>
-
 fetch("/header.html")
 .then(response => response.text())
 .then(data => {
@@ -265,8 +255,9 @@ navbarShrink();
 document.addEventListener('scroll', navbarShrink);
 
 });
-
 </script>
 
 </body>
 </html>
+```
+
