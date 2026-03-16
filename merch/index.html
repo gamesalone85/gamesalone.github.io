@@ -364,14 +364,21 @@ document.getElementById("header").innerHTML = data;
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Mostrar siempre el pop-up de merch al cargar la página
-  document.getElementById('merchPopup').style.display = 'flex';
+  const merchPopup = document.getElementById('merchPopup');
+  const closeBtn = document.getElementById('closeMerchPopup');
 
-  // Cerrar el pop-up al hacer clic en el botón
-  document.getElementById('closeMerchPopup').addEventListener('click', function() {
-    document.getElementById('merchPopup').style.display = 'none';
+  // Mostrar siempre
+  merchPopup.style.display = 'flex';
+
+  // Cerrar al hacer clic, con comprobación
+  if(closeBtn && merchPopup) {
+    closeBtn.addEventListener('click', function() {
+      merchPopup.style.display = 'none';
     });
-  });
+  } else {
+    console.error("No se encontró el pop-up o el botón. Verifica los IDs.");
+  }
+});
 </script>
 </body>
 </html>
