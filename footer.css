@@ -1,0 +1,42 @@
+/* Links estilo premium */
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover elegante (línea animada) */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Línea divisora fina */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+/* Efecto leve al footer (más premium) */
+.footer {
+  letter-spacing: 0.3px;
+}
