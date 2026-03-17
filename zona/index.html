@@ -11,15 +11,12 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.gamesalone.com/zona/">
 
-<!-- CSS BASE -->
 <link href="../gamesalone18/css/styles.css" rel="stylesheet">
-
-<!-- 🔥 TU HEADER (IMPORTANTE QUE VAYA DESPUÉS) -->
-<link href="/header.css" rel="stylesheet">
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <style>
+
 .codigo-box{
 background:#000;
 padding:40px;
@@ -50,10 +47,26 @@ margin-top:15px;
 font-size:0.95rem;
 }
 
+/* Ajuste para centrar el captcha en cajas oscuras */
 .g-recaptcha {
-display:flex;
-justify-content:center;
-margin-bottom:15px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* CSS ORIGINAL DE LA ZONA */
+
+#password{
+padding:12px;
+width:260px;
+border-radius:6px;
+border:none;
+text-align:center;
+}
+
+#error{
+color:red;
+margin-top:10px;
 }
 
 .media-card{
@@ -73,6 +86,7 @@ width:100%;
 border-radius:10px;
 margin-bottom:10px;
 }
+
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
@@ -87,13 +101,13 @@ gtag('config', 'G-EGZ2977YBH');
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <header class="masthead"
 style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') center center / cover no-repeat;">
 
 <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+
 <div class="text-center">
 
 <h1 class="text-white text-uppercase" style="font-size:2rem;">
@@ -105,125 +119,215 @@ Activa aquí tu código de descuento oficial
 </h2>
 
 </div>
+
 </div>
 
 </header>
 
 <section class="projects-section bg-light">
 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-
 <div class="col-lg-6">
-<img class="img-fluid"
+<img
+class="img-fluid"
 src="../gamesalone18/assets/img/suscribete.jpg"
-alt="Suscripción"
-loading="lazy">
+alt="Suscripción GamesAlone18 Universe"
+width="1200"
+height="800"
+loading="lazy"
+decoding="async">
 </div>
-
 <div class="col-lg-6">
 <div class="bg-black text-center h-100 project">
 <div class="d-flex h-100">
 <div class="project-text w-100 my-auto text-center text-lg-right">
-
-<h2 class="text-white">¿Ya nos sigues?</h2>
+<h2 class="text-white">
+¿Ya nos sigues?
+Acceso Anticipado al Universo
+</h2>
 
 <p class="mb-4 text-white-50">
-Acceso anticipado, beneficios exclusivos y códigos antes que nadie.
+Los miembros suscritos reciben lanzamientos antes que nadie y beneficios exclusivos.
 </p>
 
 <form id="suscripcionForm" class="text-start">
 
-<input class="form-control mb-3" type="email" id="emailSuscripcion" placeholder="Tu correo..." required>
+<div class="mb-3">
+<input
+class="form-control"
+type="email"
+id="emailSuscripcion"
+placeholder="Ingresa tu correo electrónico..."
+required>
+</div>
 
-<div class="g-recaptcha" data-sitekey="TU_SITE_KEY" data-theme="dark"></div>
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
 
-<button class="btn btn-primary w-100" type="submit">
+<div class="d-grid">
+<button class="btn btn-primary" type="submit">
 Acceder antes que nadie
 </button>
 
-<p class="mt-3 text-white-50">
-Aceptas <a href="/avisodeprivacidad/">Privacidad</a> y <a href="/terminos-y-condiciones.html">Términos</a>
+<p class="mt-3 mb-4 text-white-50">
+Consulta nuestro <a href="/avisodeprivacidad/">Aviso de Privacidad</a> y <a href="/terminos-y-condiciones.html">Términos y Condiciones</a>
 </p>
+</div>
 
-<p id="respuestaSuscripcion" style="color:white;margin-top:10px;"></p>
+<p id="respuestaSuscripcion"
+style="color:white;margin-top:15px;font-size:0.9rem;"></p>
 
 </form>
-
 </div>
 </div>
 </div>
 </div>
 </div>
 
-</section>
+<script>
+document.getElementById("suscripcionForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+// Validación de Seguridad del Auditor
+var response = grecaptcha.getResponse(0); // 0 indica el primer captcha de la página
+if(response.length == 0) {
+    document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
+    return;
+}
+
+var email=document.getElementById("emailSuscripcion").value;
+
+fetch("https://script.google.com/macros/s/AKfycbysn2gChs38t3eOk9ei7V5uD-pqWYsqx_PRBO_PHls6GITh0-9M0joejtn7yaO9zew/exec",{
+method:"POST",
+mode:"no-cors",
+body:new URLSearchParams({ email:email })
+});
+
+document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
+grecaptcha.reset(0);
+document.getElementById("suscripcionForm").reset();
+
+});
+</script>
 
 <section class="projects-section bg-light py-5">
 <div class="container px-4 px-lg-5">
 <div class="codigo-box">
-
 <h2>Activar Código</h2>
+<p style="opacity:0.8;">
+Ingresa tu correo y el código recibido.
+</p>
 
 <form id="cuponForm">
+<input 
+type="email"
+id="email"
+placeholder="Tu correo electrónico"
+required>
 
-<input type="email" id="email" placeholder="Tu correo" required>
-<input type="text" id="codigo" placeholder="Código" required>
+<input
+type="text"
+id="codigo"
+placeholder="Código de descuento"
+required>
 
-<div class="g-recaptcha" data-sitekey="TU_SITE_KEY" data-theme="dark"></div>
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
 
-<button type="submit">Activar Código</button>
-
+<button type="submit">
+Activar Código
+</button>
 </form>
 
 <p id="resultado"></p>
-
 </div>
 </div>
 </section>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
 fetch("/footer.html")
-.then(res => res.text())
+.then(response => response.text())
 .then(data => {
 document.getElementById("footer").innerHTML = data;
 });
 </script>
 
-<!-- HEADER LOAD -->
+<script>
+document.getElementById("cuponForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+// Validación Auditor: Verificar Captcha
+var response = grecaptcha.getResponse(1); // 1 indica el segundo captcha
+if(response.length == 0) {
+    document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
+    return;
+}
+
+var email = document.getElementById("email").value;
+var codigo = document.getElementById("codigo").value;
+
+fetch("https://script.google.com/macros/s/AKfycbzDtyHKGxwVmGW9jNOpqHSzAXwA6nSHXqqfJQWbY7Zk-gx-DEvt2ZIXg4sBXQLHpOI/exec",{
+method:"POST",
+body:new URLSearchParams({
+email:email,
+codigo:codigo,
+token:"GA18SECURE"
+})
+})
+.then(res=>res.text())
+.then(data=>{
+if(data=="VALIDO"){
+document.getElementById("resultado").innerHTML="✅ Código activado correctamente. Revisa tu correo.";
+}else if(data=="INVALIDO"){
+document.getElementById("resultado").innerHTML="❌ Código inválido o ya utilizado.";
+}else{
+document.getElementById("resultado").innerHTML="⚠ Error de seguridad.";
+}
+grecaptcha.reset(1);
+})
+.catch(error=>{
+document.getElementById("resultado").innerHTML="⚠ Error al validar el código.";
+});
+
+});
+</script>
+
 <script>
 fetch("/header.html")
-.then(res => res.text())
+.then(response => response.text())
 .then(data => {
 document.getElementById("header").innerHTML = data;
+const nav = document.body.querySelector('#mainNav');
+if (!nav) return;
+const shrink = function () {
+window.scrollY === 0 ? nav.classList.remove('navbar-shrink') : nav.classList.add('navbar-shrink');
+};
+shrink();
+document.addEventListener('scroll', shrink);
 });
 </script>
 
-<!-- 🔥 SCROLL HEADER NUEVO -->
-<script>
-window.addEventListener("scroll", function() {
-  const nav = document.querySelector(".custom-navbar");
-  if (!nav) return;
+<div id="exclusivePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; color:#111; max-width:500px; width:90%; padding:35px 25px; border-radius:8px; text-align:center; font-family:Georgia, serif; box-shadow:0 0 15px rgba(0,0,0,0.5);">
+    <h2 style="margin-bottom:15px;">Bienvenido a la Zona Exclusiva</h2>
+    <p style="margin-bottom:25px; line-height:1.5;">
+      Si llegaste hasta aquí, ya estás cerca.
+Solo falta un paso: regístrate y síguenos para acceder a los códigos.
+    </p>
+    <button id="closeExclusivePopup" style="padding:12px 25px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">Entendido</button>
+  </div>
+</div>
 
-  if (window.scrollY > 50) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-</script>
-
-<!-- POPUP -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('exclusivePopup').style.display = 'flex';
-  document.getElementById('closeExclusivePopup').onclick = () => {
+  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
     document.getElementById('exclusivePopup').style.display = 'none';
-  };
+  });
 });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
