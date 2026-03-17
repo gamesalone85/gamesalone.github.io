@@ -46,7 +46,7 @@
 </head>   
     <body id="page-top">
          <!-- Navigation-->
-<div id="header"></div>
+<link href="/header.css" rel="stylesheet">
          <!-- Masthead-->
 <header class="masthead">
     <div class="container px-2 px-lg-3 d-flex h-100 align-items-center justify-content-center">
@@ -398,33 +398,25 @@ document.addEventListener("DOMContentLoaded", function () {
  <!-- Header top-->
 <script>
 fetch("/header.html")
-.then(response => response.text())
+.then(res => res.text())
 .then(data => {
     document.getElementById("header").innerHTML = data;
 
-    const navbarCollapsible = document.body.querySelector('#mainNav');
+    const nav = document.querySelector(".custom-navbar");
+    if (!nav) return;
 
-    if (!navbarCollapsible) return;
-
-    const navbarShrink = function () {
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink');
+    const onScroll = () => {
+        if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
         } else {
-            navbarCollapsible.classList.add('navbar-shrink');
+            nav.classList.remove("scrolled");
         }
     };
 
-    navbarShrink();
-    document.addEventListener('scroll', navbarShrink);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
 });
 </script>
-<script>
-document.getElementById('accept-cookies').onclick = function() {
-  // Guardar en localStorage para que no vuelva a mostrarse
-  localStorage.setItem('cookiesAccepted', 'true');
-  document.getElementById('cookie-consent').style.display = 'none';
-};
-
 // Ocultar banner si ya aceptó
 window.onload = function() {
   if(localStorage.getItem('cookiesAccepted') === 'true'){
