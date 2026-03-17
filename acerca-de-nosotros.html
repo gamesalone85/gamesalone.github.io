@@ -431,15 +431,14 @@ fetch("/header.html")
 .then(data => {
     document.getElementById("header").innerHTML = data;
 
-    const navbarCollapsible = document.body.querySelector('#mainNav');
+    const navbar = document.querySelector('#mainNav');
+    if (!navbar) return;
 
-    if (!navbarCollapsible) return;
-
-    const navbarShrink = function () {
+    const navbarShrink = () => {
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink');
+            navbar.classList.remove('navbar-shrink');
         } else {
-            navbarCollapsible.classList.add('navbar-shrink');
+            navbar.classList.add('navbar-shrink');
         }
     };
 
