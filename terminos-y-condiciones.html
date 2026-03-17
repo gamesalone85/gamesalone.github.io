@@ -5,13 +5,17 @@
   <title>Términos y Condiciones | GamesAlone18 Universe</title>
 <meta name="description" content="Términos y Condiciones de uso del sitio y compras en GamesAlone18 Universe. Política de devoluciones, responsabilidad, restricciones y aceptación.">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-EGZ2977YBH');
+
+  /* 🔒 BLOQUEO POR CONSENTIMIENTO */
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
 </script>
 
   <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -399,70 +403,57 @@ El usuario reconoce que el consentimiento otorgado mediante los mecanismos elect
       <strong>Nota:</strong> El uso continuo del sitio después de cualquier modificación constituye aceptación de los cambios realizados.
     </p>
 
-    <div class="back-menu">
-      <a href="/gamesalone18/" class="btn-back">Volver al menú</a>
-    </div>
+    
+<div class="back-menu">
+<a href="/gamesalone18/" class="btn-back">Volver al menú</a>
+</div>
 
-  </div>
-</section>
-   <!-- Header top-->
+</div>
+
+<!-- HEADER LOAD -->
 <script>
 fetch("/header.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("header").innerHTML = data;
-});
+.then(r=>r.text())
+.then(d=>document.getElementById("header").innerHTML=d);
 </script>
+
+<!-- CONSENTIMIENTO MENOR -->
 <script>
-document.getElementById('btn-aceptar-consent').onclick = function() {
-  const checkbox = document.getElementById('consent-menor');
-  if (checkbox.checked) {
-    alert('Gracias, su consentimiento ha sido registrado.');
-    // Aquí puedes habilitar un formulario o permitir continuar con la compra/registro
-    // Por ejemplo, redirigir al checkout o desbloquear campos:
-    // window.location.href = '/registro-o-checkout.html';
-  } else {
-    alert('Debe marcar la casilla para poder continuar.');
-  }
+document.getElementById('btn-aceptar-consent').onclick=function(){
+const c=document.getElementById('consent-menor');
+if(c.checked){alert('Consentimiento registrado');}
+else{alert('Debe aceptar');}
 };
 </script>
-<script>
-document.getElementById('btn-aceptar-aviso').onclick = function() {
-  const checkbox = document.getElementById('consent-aviso');
-  if (!checkbox.checked) {
-    alert('Debe aceptar los Términos y Condiciones y la Política de Privacidad para continuar.');
-    return;
-  }
 
-  // Capturar IP vía fetch a servicio externo
-  fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-      const ip = data.ip;
-      
-      // Enviar registro a Google Sheets
-      fetch('https://script.google.com/macros/s/AKfycbwyOAEyqCjt3Rg-Bz82bvd_CSv27CYJIFCHccxzp15KSJHL-Os97aL2RX8JFWPk1HY/exec', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: new URLSearchParams({
-          ip: ip,
-          acepto: 'true',
-          pagina: window.location.pathname
-        })
-      }).then(res => res.text())
-        .then(resText => {
-          alert('Gracias, su consentimiento ha sido registrado.');
-          // Redirigir o habilitar contenido
-          // window.location.href = '/gracias.html';
-        })
-        .catch(err => {
-          alert('Error al registrar consentimiento. Intente nuevamente.');
-          console.error(err);
-        });
-    });
+<!-- CONSENTIMIENTO + ANALYTICS -->
+<script>
+document.getElementById('btn-aceptar-aviso').onclick=function(){
+const c=document.getElementById('consent-aviso');
+if(!c.checked){alert('Debe aceptar');return;}
+
+fetch('https://api.ipify.org?format=json')
+.then(r=>r.json())
+.then(data=>{
+
+/* 🔥 ACTIVAR ANALYTICS */
+gtag('consent','update',{'analytics_storage':'granted'});
+gtag('config','G-EGZ2977YBH');
+
+fetch('https://script.google.com/macros/s/AKfycbwyOAEyqCjt3Rg-Bz82bvd_CSv27CYJIFCHccxzp15KSJHL-Os97aL2RX8JFWPk1HY/exec',{
+method:'POST',
+headers:{'Content-Type':'application/x-www-form-urlencoded'},
+body:new URLSearchParams({
+ip:data.ip,
+acepto:'true',
+pagina:window.location.pathname
+})
+});
+
+alert('Consentimiento registrado');
+});
 };
 </script>
 
 </body>
 </html>
-
