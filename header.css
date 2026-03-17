@@ -1,63 +1,49 @@
 /* ===== VARIABLES ===== */
 :root {
   --green-neon: #00ff9c;
-  --green-soft: #00e676;
-  --green-dark: #001a0f;
+  --green-strong: #00e676;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR BASE ===== */
 .navbar.custom-navbar {
-  background: rgba(0, 20, 10, 0.9) !important;
-  backdrop-filter: blur(10px);
-  padding: 12px 0;
+  background: transparent !important;
   transition: all 0.3s ease;
+  padding: 15px 0;
 }
 
-/* SCROLL EFECTO */
+/* ===== SCROLL (AQUÍ ESTÁ LA MAGIA) ===== */
 .navbar.custom-navbar.scrolled {
-  background: rgba(0, 40, 20, 0.95) !important;
-  padding: 6px 0;
+  background: #ffffff !important; /* barra blanca como antes */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 8px 0;
 }
 
 /* ===== LOGO ===== */
 .navbar-brand {
   color: var(--green-neon) !important;
-  letter-spacing: 1px;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-.navbar-brand:hover {
-  text-shadow: 0 0 8px var(--green-neon);
-}
-
-/* ===== LINKS ===== */
-.nav-link {
-  color: rgba(0,255,150,0.7) !important;
+/* ===== LINKS BASE (FUERZA EL VERDE) ===== */
+.navbar.custom-navbar .nav-link {
+  color: var(--green-neon) !important;
   margin-left: 15px;
-  position: relative;
   transition: all 0.3s ease;
 }
 
-/* HOVER */
-.nav-link:hover {
-  color: var(--green-neon) !important;
-  text-shadow: 0 0 6px rgba(0,255,150,0.6);
+/* ===== HOVER ===== */
+.navbar.custom-navbar .nav-link:hover {
+  color: var(--green-strong) !important;
+  text-shadow: 0 0 6px var(--green-neon);
 }
 
-/* LINEA ANIMADA */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background: var(--green-neon);
-  transition: width 0.3s ease;
+/* ===== CUANDO HACES SCROLL (CON FONDO BLANCO) ===== */
+.navbar.custom-navbar.scrolled .nav-link {
+  color: #000 !important;
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.navbar.custom-navbar.scrolled .nav-link:hover {
+  color: var(--green-strong) !important;
 }
 
 /* ===== BOTÓN EXCLUSIVO ===== */
@@ -70,18 +56,33 @@
   transition: all 0.3s ease;
 }
 
-/* HOVER BOTÓN */
 .btn-exclusive:hover {
   background: var(--green-neon);
   color: #000;
-  box-shadow: 0 0 12px var(--green-neon);
+  box-shadow: 0 0 10px var(--green-neon);
 }
 
-/* ===== TOGGLER (MOBILE) ===== */
+/* ===== BOTÓN EN SCROLL ===== */
+.navbar.custom-navbar.scrolled .btn-exclusive {
+  color: #000;
+  border-color: #000;
+}
+
+.navbar.custom-navbar.scrolled .btn-exclusive:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== TOGGLER ===== */
 .navbar-toggler {
   border-color: rgba(0,255,150,0.5);
 }
 
 .navbar-toggler-icon {
   filter: invert(1);
+}
+
+/* ===== FIX IMPORTANTE ===== */
+.navbar.custom-navbar .navbar-nav .nav-link {
+  color: var(--green-neon) !important;
 }
