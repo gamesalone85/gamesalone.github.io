@@ -58,7 +58,7 @@
 
 .btn-exclusive:hover {
   background: var(--green-neon);
-  color: #000;
+  color: #00ff9c;
   box-shadow: 0 0 10px var(--green-neon);
 }
 
