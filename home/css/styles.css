@@ -1,0 +1,85 @@
+/* RESET BÁSICO */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* 🔥 FONDO GLOBAL */
+.bg-image {
+    position: fixed;
+    inset: 0;
+    background: url('../img/bg.jpg') no-repeat center center / cover;
+    z-index: -2;
+}
+
+/* 🔥 OVERLAY OSCURO */
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* CONTENIDO */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* HERO */
+.hero {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #00ff88;
+    margin: 10px 0;
+}
+
+.description {
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+/* BOTONES */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn.primary {
+    background: #00ff88;
+    color: black;
+}
+
+.btn.secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+/* SECCIONES */
+.section {
+    padding: 80px 20px;
+    background: rgba(0,0,0,0.6);
+}
