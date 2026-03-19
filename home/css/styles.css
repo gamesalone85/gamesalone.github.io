@@ -129,3 +129,13 @@ body, html {
 .swiper-slide-active {
     transform: scale(1.1);
 }
+.banner-click {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.banner-click:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
