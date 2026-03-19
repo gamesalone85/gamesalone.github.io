@@ -10,7 +10,7 @@ body, html {
 .bg-image {
     position: fixed;
     inset: 0;
-    background: url('../img/bg.jpg') no-repeat center center / cover;
+    background: url('../img/bg-masthead.jpg') no-repeat center center / cover;
     z-index: -2;
 }
 
