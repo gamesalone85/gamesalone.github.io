@@ -126,3 +126,6 @@ body, html {
         height: 260px;
     }
 }
+.swiper-slide-active {
+    transform: scale(1.1);
+}
