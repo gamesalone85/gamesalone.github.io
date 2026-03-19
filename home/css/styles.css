@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* RESET */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     color: white;
 }
 
-/* 🔥 FONDO GLOBAL */
+/* FONDO */
 .bg-image {
     position: fixed;
     inset: 0;
@@ -14,7 +14,6 @@ body, html {
     z-index: -2;
 }
 
-/* 🔥 OVERLAY OSCURO */
 .bg-overlay {
     position: fixed;
     inset: 0;
@@ -22,7 +21,6 @@ body, html {
     z-index: -1;
 }
 
-/* CONTENIDO */
 .main-content {
     position: relative;
     z-index: 1;
@@ -38,20 +36,14 @@ body, html {
     padding: 80px 20px;
 }
 
-.hero h1 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
 .highlight {
     color: #00ff88;
-    margin: 10px 0;
 }
 
 .description {
     opacity: 0.8;
     max-width: 600px;
-    margin: 0 auto 20px;
+    margin: auto;
 }
 
 /* BOTONES */
@@ -59,13 +51,6 @@ body, html {
     display: flex;
     gap: 10px;
     justify-content: center;
-}
-
-.btn {
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .btn.primary {
@@ -78,93 +63,7 @@ body, html {
     color: white;
 }
 
-/* SECCIONES */
-.section {
-    padding: 80px 20px;
-    background: rgba(0,0,0,0.6);
-}
-/* 🔥 CONTENEDOR */
-.carousel-3d-section {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1200px;
-    position: relative;
-    z-index: 10;
-}
-
-/* 🔥 CARRUSEL */
-.carousel-3d {
-    width: 400px;
-    height: 250px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-}
-
-/* 🔥 ITEMS */
-.carousel-item {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    cursor: pointer;
-}
-
-/* 🔥 IMÁGENES */
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.9);
-}
-
-/* 🔥 TEXTO */
-.carousel-item span {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 8px;
-    background: rgba(0,0,0,0.7);
-    font-weight: bold;
-}
-
-/* 🔥 POSICIONES CORREGIDAS */
-.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }
-.carousel-item:nth-child(2) { transform: rotateY(90deg) translateZ(220px); }
-.carousel-item:nth-child(3) { transform: rotateY(180deg) translateZ(220px); }
-.carousel-item:nth-child(4) { transform: rotateY(270deg) translateZ(220px); }
-
-/* 🔥 BOTONES */
-.carousel-controls {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.carousel-controls button {
-    background: #00ff88;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-/* MÁS PROFUNDIDAD */
-.carousel-card.far-left {
-    transform: translateX(-400px) rotateY(40deg) scale(0.7);
-    opacity: 0.3;
-    z-index: 1;
-}
-
-.carousel-card.far-right {
-    transform: translateX(400px) rotateY(-40deg) scale(0.7);
-    opacity: 0.3;
-    z-index: 1;
-}
+/* SWIPER */
 .swiper-section {
     height: 60vh;
     display: flex;
@@ -178,10 +77,15 @@ body, html {
 }
 
 .swiper-slide {
-    width: 250px;
+    width: 260px;
     height: 180px;
     position: relative;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.05);
 }
 
 .swiper-slide img {
@@ -198,5 +102,4 @@ body, html {
     text-align: center;
     background: rgba(0,0,0,0.6);
     padding: 5px;
-    color: white;
 }
