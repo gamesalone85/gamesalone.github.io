@@ -1,27 +1,59 @@
 // Base para futuras funciones
 console.log("Home cargado correctamente");
+
+// Carrusel
 document.addEventListener("DOMContentLoaded", function () {
 
-    let angle = 0;
-    const carousel = document.getElementById("carousel3d");
+    const cards = document.querySelectorAll(".carousel-card");
+    let index = 0;
 
-    document.getElementById("next").addEventListener("click", () => {
-        angle -= 90;
-        carousel.style.transform = `rotateY(${angle}deg)`;
-    });
+    function updateCarousel() {
+        const total = cards.length;
 
-    document.getElementById("prev").addEventListener("click", () => {
-        angle += 90;
-        carousel.style.transform = `rotateY(${angle}deg)`;
-    });
+        cards.forEach((card, i) => {
+            card.className = "carousel-card";
 
-    document.querySelectorAll(".carousel-item").forEach(item => {
-        item.addEventListener("click", () => {
-            const link = item.getAttribute("data-link");
+            let offset = i - index;
+
+            // Loop infinito
+            if (offset < -Math.floor(total / 2)) offset += total;
+            if (offset > Math.floor(total / 2)) offset -= total;
+
+            if (offset === 0) {
+                card.classList.add("active");
+            } else if (offset === -1) {
+                card.classList.add("left");
+            } else if (offset === 1) {
+                card.classList.add("right");
+            } else if (offset === -2) {
+                card.classList.add("far-left");
+            } else if (offset === 2) {
+                card.classList.add("far-right");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    }
+
+    document.getElementById("next").onclick = () => {
+        index = (index + 1) % cards.length;
+        updateCarousel();
+    };
+
+    document.getElementById("prev").onclick = () => {
+        index = (index - 1 + cards.length) % cards.length;
+        updateCarousel();
+    };
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const link = card.getAttribute("data-link");
             if (link && link !== "#") {
                 window.location.href = link;
             }
         });
     });
+
+    updateCarousel();
 
 });
