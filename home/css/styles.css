@@ -153,3 +153,15 @@ body, html {
     cursor: pointer;
     border-radius: 5px;
 }
+/* MÁS PROFUNDIDAD */
+.carousel-card.far-left {
+    transform: translateX(-400px) rotateY(40deg) scale(0.7);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.carousel-card.far-right {
+    transform: translateX(400px) rotateY(-40deg) scale(0.7);
+    opacity: 0.3;
+    z-index: 1;
+}
