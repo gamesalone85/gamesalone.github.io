@@ -7,12 +7,12 @@ const swiper = new Swiper(".mySwiper", {
     loop: true,
 
     coverflowEffect: {
-        rotate: 25,
-        stretch: 0,
-        depth: 180,
-        modifier: 1,
-        slideShadows: true,
-    },
+    rotate: 35,
+    stretch: 0,
+    depth: 250,
+    modifier: 1.2,
+    slideShadows: true,
+},
 });
 
 // Navegación
