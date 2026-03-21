@@ -1,6 +1,9 @@
+/* =========================
+   CONTACTO - ESTILO GAMING
+========================= */
 .contact-section {
   padding: 60px 20px;
-  background-color: #0f0f0f;
+  background: transparent;
   color: #ffffff;
   text-align: center;
 }
@@ -8,19 +11,24 @@
 .section-title {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .section-description {
   max-width: 600px;
   margin: 0 auto 30px;
-  opacity: 0.8;
+  color: rgba(255,255,255,0.6);
 }
 
 .form-title {
   margin-bottom: 25px;
   font-weight: bold;
+  color: #ffffff;
 }
 
+/* =========================
+   FORMULARIO
+========================= */
 .contact-form {
   max-width: 500px;
   margin: 0 auto;
@@ -37,111 +45,82 @@
   font-size: 0.9rem;
 }
 
+/* INPUTS */
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
-  background-color: #1e1e1e;
+  background-color: #111;
   color: #fff;
+  transition: 0.3s ease;
 }
 
+/* FOCUS NEÓN */
 .form-group input:focus,
 .form-group textarea:focus {
-  border: 1px solid #f5c518;
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 8px rgba(0,255,136,0.5);
 }
 
+/* =========================
+   BOTÓN
+========================= */
 .btn-submit {
   width: 100%;
   padding: 12px;
-  background-color: #f5c518;
+  background-color: #00ff88;
   border: none;
   border-radius: 25px;
   font-weight: bold;
+  color: #000;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .btn-submit:hover {
-  background-color: #ffd84d;
-}
-/* Banner páginas internas */
-.masthead{
-    min-height: 250px;
-    height: 35vh;
+  background-color: #00ffaa;
+  box-shadow: 0 0 10px rgba(0,255,136,0.6);
 }
 
-/* Ajuste para celulares */
-@media (max-width:768px){
-    .masthead{
-        height: 220px;
-        min-height: 220px;
-    }
-}
-/* Reducir espacios entre secciones */
-.projects-section{
-    padding: 60px 0;
-}
-@media (max-width:768px){
-
-    .projects-section{
-        padding:40px 0;
-    }
-
-    .contact-section{
-        padding:40px 0;
-    }
-
-}
-/* Ajustar tamaño del texto del banner */
-.masthead h1{
-    font-size: 2.5rem;
+/* =========================
+   REDES SOCIALES
+========================= */
+.redes-sociales a i {
+  font-size: 40px;
+  margin: 0 15px;
+  color: #00ff88;
+  transition: 0.3s;
 }
 
-.masthead p{
-    font-size: 1.1rem;
+.redes-sociales a i:hover {
+  color: #00ffaa;
+  transform: scale(1.2);
 }
 
-/* Ajuste para celular */
-@media (max-width:768px){
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
 
-.masthead h1{
-    font-size: 1.8rem;
-}
+  .contact-section {
+    padding: 40px 20px;
+  }
 
-.masthead p{
-    font-size: 0.95rem;
-}
+  .redes-sociales a i {
+    font-size: 32px;
+    margin: 0 10px;
+  }
 
 }
 
-/* REDES SOCIALES */
-.redes-sociales a i{
-font-size:40px;
-margin:0 15px;
-color:#000;
-transition:0.3s;
-}
+@media (max-width: 480px) {
 
-.redes-sociales a i:hover{
-color:#00ff88;
-transform:scale(1.2);
-}
+  .redes-sociales a i {
+    font-size: 28px;
+    margin: 0 8px;
+  }
 
-/* TABLET */
-@media (max-width: 768px){
-.redes-sociales a i{
-font-size:32px;
-margin:0 10px;
-}
-}
-
-/* CELULAR */
-@media (max-width: 480px){
-.redes-sociales a i{
-font-size:28px;
-margin:0 8px;
-}
 }
