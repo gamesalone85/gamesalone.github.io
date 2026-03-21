@@ -1,141 +1,105 @@
-/* RESET */
-body, html {
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
+    box-sizing: border-box;
 }
 
-/* FONDO */
-.bg-image {
-    position: fixed;
-    inset: 0;
-    background: url('../img/bg-masthead.jpg') no-repeat center center / cover;
-    z-index: -2;
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
 }
 
-.bg-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-}
-
-.main-content {
-    position: relative;
-    z-index: 1;
-}
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
-    min-height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 40px 20px;
     text-align: center;
-    padding: 80px 20px;
 }
 
-.highlight {
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero .highlight {
     color: #00ff88;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.description {
-    opacity: 0.8;
-    max-width: 600px;
-    margin: auto;
+.hero .description {
+    color: #ccc;
 }
 
-/* BOTONES */
-.buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.btn.primary {
-    background: #00ff88;
-    color: black;
-}
-
-.btn.secondary {
-    border: 1px solid white;
-    color: white;
-}
-
-/* SWIPER RESPONSIVE PRO */
+/* =========================
+   SWIPER SECTION
+========================= */
 .swiper-section {
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR SWIPER */
 .swiper {
     width: 100%;
-    max-width: 1200px;
+    height: 75vh;
 }
 
-/* TARJETAS BASE */
+/* SLIDES */
 .swiper-slide {
-    width: 70%;
-    max-width: 420px;
-    height: 260px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* HOVER DESKTOP */
-.swiper-slide:hover {
-    transform: scale(1.05);
-}
-
-/* IMAGEN */
+/* IMÁGENES */
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 14px;
 }
 
-/* TEXTO */
-.swiper-slide span {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+/* =========================
+   SECCIONES GENERALES
+========================= */
+.section {
+    padding: 40px 20px;
     text-align: center;
-    background: rgba(0,0,0,0.6);
-    padding: 8px;
-    font-size: 1rem;
 }
 
-/* 📱 MOBILE */
+/* =========================
+   ABOUT
+========================= */
+.about-section {
+    padding: 40px 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-    .swiper-slide {
-        width: 85%;
-        height: 220px;
+    .swiper {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
     }
 }
 
-/* 💻 DESKTOP GRANDE */
-@media (min-width: 1200px) {
-    .swiper-slide {
-        width: 400px;
-        height: 260px;
+@media (max-width: 480px) {
+    .swiper {
+        height: 40vh;
     }
-}
-.swiper-slide-active {
-    transform: scale(1.1);
-}
-.banner-click {
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
-.banner-click:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 }
