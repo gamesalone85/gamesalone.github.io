@@ -17,55 +17,43 @@ body {
 }
 
 /* =========================
-   FONDO GLOBAL
+   FONDO (FIX DEFINITIVO)
 ========================= */
 .bg-image {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
-    background: url('https://www.gamesalone.com/home/img/bg-masthead.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-
+    background: url('https://www.gamesalone.com/home/img/bg-masthead.jpg') center/cover no-repeat;
     z-index: -2;
 }
 
 .bg-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
-/* CONTENIDO */
+
+/* =========================
+   CONTENIDO
+========================= */
 .main-content {
     position: relative;
     z-index: 1;
-    padding-top: 90px; /* 🔥 espacio para header */
+    padding-top: 120px; /* 🔥 SOLUCIONA QUE TODO ESTABA ARRIBA */
 }
 
 /* =========================
    HERO
 ========================= */
 .hero {
-    padding: 40px 20px;
+    padding: 60px 20px 30px;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.hero .highlight {
-    color: #00ff88;
-    font-weight: bold;
 }
 
 .hero .description {
@@ -76,62 +64,39 @@ body {
    SECCIONES
 ========================= */
 .section {
-    padding: 50px 20px;
-    text-align: center;
+    padding: 60px 20px;
 }
 
 /* =========================
-   SWIPER
+   FORMULARIOS
 ========================= */
-.swiper-section {
-    margin-top: 60px;
+.form-control {
+    background: #111;
+    border: 1px solid #222;
+    color: #fff;
 }
 
-.swiper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* MÓVIL */
-@media (max-width: 768px) {
-    .swiper-slide img {
-        object-fit: contain;
-        background: transparent;
-    }
-
-    .swiper {
-        height: 50vh;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .swiper {
-        height: 40vh;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
+.form-control:focus {
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 8px rgba(0,255,136,0.5);
 }
 
 /* =========================
-   LINKS (EVITA AZUL)
+   BOTONES
+========================= */
+.btn-success {
+    background: #00ff88;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-success:hover {
+    background: #00ffaa;
+}
+
+/* =========================
+   LINKS
 ========================= */
 a {
     color: #00ff88;
@@ -140,4 +105,32 @@ a {
 
 a:hover {
     color: #00ffaa;
+}
+
+/* =========================
+   REDES
+========================= */
+.redes-sociales i {
+    font-size: 32px;
+    margin: 10px;
+    color: #00ff88;
+}
+
+.redes-sociales i:hover {
+    color: #00ffaa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
 }
