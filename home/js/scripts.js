@@ -1,31 +1,39 @@
-// Swiper Coverflow
+// =========================
+// SWIPER CONFIG
+// =========================
 const swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
+    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1,
-    loop: true,
+    spaceBetween: 0,
 
-    coverflowEffect: {
-    rotate: 35,
-    stretch: 0,
-    depth: 250,
-    modifier: 1.2,
-    slideShadows: true,
-},
-breakpoints: {
-    768: {
-        slidesPerView: 1
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
     },
-    1024: {
-        slidesPerView: 1
-    }
-}
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
 
-// Navegación
+// =========================
+// NAVEGACIÓN
+// =========================
 function go(link) {
-    if (link !== "#") window.location.href = link;
+    if (link !== "#") {
+        window.location.href = link;
+    }
 }
 
+// =========================
+// DEBUG
+// =========================
 console.log("Home cargado correctamente");
