@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mercancía Especial | GamesAlone18 Universe</title>
+    <meta name="description" content="Productos oficiales de GamesAlone18 Universe. Ediciones limitadas de cerveza artesanal, playeras, tazas y chocolates coleccionables.">
 
-<title>Mercancía Especial | GamesAlone18 Universe</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<meta name="description" content="Productos oficiales de GamesAlone18 Universe. Ediciones limitadas de cerveza artesanal, playeras, tazas y chocolates coleccionables.">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- Bootstrap icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-<!-- Font Awesome -->
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
-<!-- CSS GLOBAL -->
-<link href="../gamesalone18/css/styles.css" rel="stylesheet">
-  <!-- 🔥 TU HEADER (IMPORTANTE QUE VAYA DESPUÉS) -->
-<link href="/header.css" rel="stylesheet">
-
-<!-- Google Analytics -->
+    <!-- CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="/header.css" rel="stylesheet">
+    <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -29,12 +28,15 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EGZ2977YBH');
 </script>
-
 </head>
 
-<body id="page-top">
- <!-- HEADER DINÁMICO -->
-<div id="header"></div>
+<body>
+
+<!-- FONDO -->
+<div class="bg-image"></div>
+<div class="bg-overlay"></div>
+
+<div class="main-content">
 
 <!-- Header -->
 <header class="masthead" style="background:url('../gamesalone18/assets/img/bg-masthead.jpg') no-repeat center center; background-size:cover;">
@@ -293,48 +295,48 @@ Volver al menú
 
 </section>
 
-<!-- Footer -->
+ <!-- FOOTER -->
+    <div id="footer"></div>
 
-<div id="footer"></div>
+</div>
 
-<script>
-fetch("/footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer").innerHTML = data;
-});
-</script>
+<!-- JS LIBS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Bootstrap JS -->
+<!-- JS -->
+<script src="js/scripts.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core theme JS -->
-
-<script src="../gamesalone18/js/scripts.js"></script>
-
-<!-- HEADER LOAD -->
+<!-- HEADER -->
 <script>
 fetch("/header.html")
 .then(res => res.text())
 .then(data => {
-document.getElementById("header").innerHTML = data;
+    document.getElementById("header").innerHTML = data;
 });
 </script>
 
-<!-- 🔥 SCROLL HEADER NUEVO -->
+<!-- FOOTER -->
+<script>
+fetch("/footer.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+</script>
+
+<!-- SCROLL NAV -->
 <script>
 window.addEventListener("scroll", function() {
   const nav = document.querySelector(".custom-navbar");
   if (!nav) return;
 
-  if (window.scrollY > 50) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
+  nav.classList.toggle("scrolled", window.scrollY > 50);
 });
 </script>
+
+</body>
+</html>
   
 <!-- POP-UP DE ENTREGA MERCH -->
 <div id="merchPopup" style="
