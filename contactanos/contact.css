@@ -1,5 +1,5 @@
 /* =========================
-   RESET BÁSICO
+   RESET
 ========================= */
 * {
     margin: 0;
@@ -14,6 +14,41 @@ body {
     font-family: Arial, sans-serif;
     background: #000;
     color: #fff;
+}
+
+/* =========================
+   FONDO GLOBAL
+========================= */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url('../home/img/bg-masthead.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* 🔥 clave */
+
+    z-index: -2;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65); /* 🔥 menos opaco para que se vea */
+    z-index: -1;
+}
+
+/* CONTENIDO */
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 90px; /* 🔥 espacio para header */
 }
 
 /* =========================
@@ -32,7 +67,6 @@ body {
 .hero .highlight {
     color: #00ff88;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .hero .description {
@@ -40,59 +74,44 @@ body {
 }
 
 /* =========================
-   SWIPER SECTION
+   SECCIONES
 ========================= */
-.swiper-section {
-    margin-top: 80px;
+.section {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-/* CONTENEDOR SWIPER */
+/* =========================
+   SWIPER
+========================= */
+.swiper-section {
+    margin-top: 60px;
+}
+
 .swiper {
     width: 100%;
     aspect-ratio: 16 / 9;
 }
 
-/* SLIDES */
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* IMÁGENES */
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
-/* En móvil NO recortar */
+/* MÓVIL */
 @media (max-width: 768px) {
     .swiper-slide img {
         object-fit: contain;
-        background: transparent; /* 🔥 IMPORTANTE */
+        background: transparent;
     }
-}
-/* =========================
-   SECCIONES GENERALES
-========================= */
-.section {
-    padding: 40px 20px;
-    text-align: center;
-}
 
-/* =========================
-   ABOUT
-========================= */
-.about-section {
-    padding: 40px 20px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
     .swiper {
         height: 50vh;
     }
@@ -111,62 +130,15 @@ body {
         font-size: 1.5rem;
     }
 }
-.bg-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 
-    background: url('/home/img/bg-masthead.jpg') no-repeat center center/cover;
-
-    z-index: -2;
-}
-.main-content {
-    position: relative;
-    z-index: 1;
-}
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.7);
-
-    z-index: -1;
-}
-.hero a,
-.section a {
-    text-decoration: none;
-    color: #00ff88;
-}
 /* =========================
-   FONDO GLOBAL
+   LINKS (EVITA AZUL)
 ========================= */
-.bg-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/home/img/bg-masthead.jpg') no-repeat center center/cover;
-    z-index: -2;
+a {
+    color: #00ff88;
+    text-decoration: none;
 }
 
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-}
-
-.main-content {
-    position: relative;
-    z-index: 1;
-    padding-top: 80px; /* 🔥 evita choque con header */
+a:hover {
+    color: #00ffaa;
 }
