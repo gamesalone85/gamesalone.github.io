@@ -137,3 +137,8 @@ body {
 
     z-index: -1;
 }
+.hero a,
+.section a {
+    text-decoration: none;
+    color: #00ff88;
+}
