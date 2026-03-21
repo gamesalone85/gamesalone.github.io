@@ -71,7 +71,7 @@ body {
 @media (max-width: 768px) {
     .swiper-slide img {
         object-fit: contain;
-        background: #000;
+        background: transparent; /* 🔥 IMPORTANTE */
     }
 }
 /* =========================
