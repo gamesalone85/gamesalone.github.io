@@ -49,7 +49,7 @@ body {
 /* CONTENEDOR SWIPER */
 .swiper {
     width: 100%;
-    height: 75vh;
+    aspect-ratio: 16 / 9;
 }
 
 /* SLIDES */
@@ -61,14 +61,18 @@ body {
 
 /* IMÁGENES */
 .swiper-slide img {
-    object-fit: cover;
-    object-position: 50% 30%;
-}
-.swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* En móvil NO recortar */
+@media (max-width: 768px) {
+    .swiper-slide img {
+        object-fit: contain;
+        background: #000;
+    }
 }
 /* =========================
    SECCIONES GENERALES
