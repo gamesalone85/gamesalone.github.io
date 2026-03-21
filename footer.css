@@ -42,10 +42,8 @@
 }
 /* Links footer (forzar estilo sobre Bootstrap) */
 .footer .footer-links a {
-  color: #00ff88;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.3s ease;
+    color: #00ff88;
+    text-decoration: none;
 }
 
 /* Línea animada */
