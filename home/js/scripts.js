@@ -13,6 +13,14 @@ const swiper = new Swiper(".mySwiper", {
     modifier: 1.2,
     slideShadows: true,
 },
+breakpoints: {
+    768: {
+        slidesPerView: 1
+    },
+    1024: {
+        slidesPerView: 1
+    }
+}
 });
 
 // Navegación
