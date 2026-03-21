@@ -285,6 +285,14 @@ this.reset();
 
 });
 </script>
+<!-- SCROLL NAV -->
+<script>
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".custom-navbar");
+  if (!nav) return;
 
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 </body>
 </html>
