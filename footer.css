@@ -40,3 +40,32 @@
 .footer {
   letter-spacing: 0.3px;
 }
+/* Links footer (forzar estilo sobre Bootstrap) */
+.footer .footer-links a {
+  color: #00ff88;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Línea animada */
+.footer .footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: #00ff88;
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.footer .footer-links a:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 6px #00ff88;
+}
+
+.footer .footer-links a:hover::after {
+  width: 100%;
+}
