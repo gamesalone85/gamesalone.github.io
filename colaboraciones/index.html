@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Colaboraciones Oficiales | GamesAlone18 Universe</title>
+
+<meta name="description" content="Conoce las colaboraciones oficiales de GamesAlone18 Universe con marcas, eventos y espacios culturales en México.">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gamesalone.com/colaboraciones/">
+
+<link href="/home/css/styles.css" rel="stylesheet">
+<link href="/header.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg-image"></div>
+<div class="bg-overlay"></div>
+
+<div class="main-content">
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="section">
+    <div class="container text-center">
+        <h1>Colaboraciones Oficiales</h1>
+        <p class="text-white-50">
+            Trabajamos con marcas, creadores y espacios culturales que comparten nuestra visión. 
+            Cada colaboración fortalece el ecosistema de GamesAlone18 Universe.
+        </p>
+    </div>
+</section>
+
+<!-- COLABORACIONES -->
+<section class="projects-section">
+<div class="container px-4 px-lg-5">
+
+<!-- BLOQUE 1 -->
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+
+    <div class="col-lg-6">
+        <img class="img-fluid" src="assets/img/familia.jpg" alt="Colaboradores GamesAlone18 Universo">
+    </div>
+
+    <div class="col-lg-6">
+        <img class="img-fluid" src="assets/img/ruta3.jpg" alt="Eventos Ruta 3 colaboración">
+    </div>
+
+    <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+
+                    <h4 class="text-white">La Familia</h4>
+                    <h5 class="text-white mb-3">Aliados del Universo</h5>
+
+                    <p class="mb-4 text-white-50">
+                        Desde 2024, GamesAlone18 Universe ha fortalecido su presencia siendo parte de eventos organizados por Ruta 3, 
+                        consolidándose como medio de cobertura y generación de contenido en vivo. 
+                        Asimismo, colaboramos con Cervecería Maldito Elixir como aliados en experiencias y activaciones dentro del ecosistema.
+                    </p>
+
+                    <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+
+                        <a href="https://cerveceriamalditoelixir.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-success">
+                           Maldito Elixir
+                        </a>
+
+                        <a href="https://www.facebook.com/gruporuta3mx"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-success">
+                           Ruta 3
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- BLOQUE 2 -->
+<div class="row gx-0 justify-content-center">
+
+    <div class="col-lg-6">
+        <img class="img-fluid" src="assets/img/indio.jpg" alt="Teatro Emilio El Indio Fernández colaboración">
+    </div>
+
+    <div class="col-lg-6 order-lg-first">
+        <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+
+                    <h4 class="text-white">Casa Fuerte Emilio "El Indio" Fernández</h4>
+
+                    <p class="mb-3 text-white-50">
+                        Uno de los espacios culturales más emblemáticos en la Ciudad de México, donde el teatro, la historia y la narrativa 
+                        convergen. GamesAlone18 Universe colabora en la difusión y cobertura de sus temporadas, acercando nuevas audiencias 
+                        al mundo escénico.
+                    </p>
+
+                    <a href="https://www.instagram.com/teatroemilioelindiofernandez"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-outline-light">
+                       Ver cartelera
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="row gx-0 justify-content-center mt-5">
+    <div class="col-lg-8 text-center">
+
+        <h3 class="text-white mb-3">¿Quieres colaborar con nosotros?</h3>
+
+        <p class="text-white-50">
+            Estamos abiertos a trabajar con marcas, creadores y espacios que busquen generar impacto dentro del ecosistema digital y cultural.
+        </p>
+
+        <a href="/contactanos/" class="btn btn-success btn-lg">
+            Proponer colaboración
+        </a>
+
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/js/scripts.js"></script>
+
+<script>
+fetch("/header.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("header").innerHTML = data;
+});
+
+fetch("/footer.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+</script>
+
+</body>
+</html>
