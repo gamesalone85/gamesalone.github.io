@@ -190,22 +190,21 @@ document.getElementById("suscripcionForm")
 e.preventDefault();
 
 // Validación de Seguridad del Auditor
-var response = grecaptcha.getResponse(captchaSuscripcion); // 0 indica el primer captcha de la página
+var response = grecaptcha.getResponse();
+
 if(response.length == 0) {
     document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
     return;
 }
-
 var email=document.getElementById("emailSuscripcion").value;
 
 fetch("https://script.google.com/macros/s/AKfycbysn2gChs38t3eOk9ei7V5uD-pqWYsqx_PRBO_PHls6GITh0-9M0joejtn7yaO9zew/exec",{
 method:"POST",
-mode:"no-cors",
 body:new URLSearchParams({ email:email })
 });
 
 document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
-grecaptcha.reset(captchaSuscripcion);
+grecaptcha.reset();
 document.getElementById("suscripcionForm").reset();
 
 });
@@ -221,6 +220,7 @@ Ingresa tu correo y el código recibido.
 </p>
 
 <form id="cuponForm">
+
 <input 
 type="email"
 id="email"
@@ -233,11 +233,15 @@ id="codigo"
 placeholder="Código de descuento"
 required>
 
-<div id="captcha-codigos" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+<div class="g-recaptcha" 
+     data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+     data-theme="dark">
+</div>
 
 <button type="submit">
 Activar Código
 </button>
+
 </form>
 
 <p id="resultado"></p>
@@ -246,75 +250,65 @@ Activar Código
 
     <!-- JS DE CDDIGOS -->
 <script>
-var captchaCodigo;
-
-function onLoadCaptcha(){
-    captchaCodigo = grecaptcha.render('captcha-codigos', {
-        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-    });
-
-    grecaptcha.render('captcha-suscripcion', {
-        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-    });
-}
-
 document.getElementById("cuponForm")
-.addEventListener("submit",function(e){
+.addEventListener("submit", function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
-var response = grecaptcha.getResponse(captchaCodigo);
+    // ✅ Captcha validación correcta
+    var response = grecaptcha.getResponse();
 
-if(!response){
-    document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
-    return;
-}
+    if(response.length === 0){
+        document.getElementById("resultado").innerHTML =
+        "❌ Verifica que no eres un robot.";
+        return;
+    }
 
-var email = document.getElementById("email").value;
-var codigo = document.getElementById("codigo").value;
+    var email = document.getElementById("email").value;
+    var codigo = document.getElementById("codigo").value;
 
-fetch("https://script.google.com/macros/s/AKfycbw8qL8Td7YWtF1Ni5IVg2gIcGATz3Ffxj-o1ueE6BlC99nPEy82xwlphn4usWAzb1Q/exec",{
-method:"POST",
-body:new URLSearchParams({
-email:email,
-codigo:codigo,
-token:"GA18SECURE"
-})
-})
-.then(res=>res.text())
-.then(data=>{
+    fetch("https://script.google.com/macros/s/AKfycbw8qL8Td7YWtF1Ni5IVg2gIcGATz3Ffxj-o1ueE6BlC99nPEy82xwlphn4usWAzb1Q/exec",{
+        method:"POST",
+        body:new URLSearchParams({
+            email: email,
+            codigo: codigo,
+            token: "GA18SECURE"
+        })
+    })
+    .then(res => res.text())
+    .then(data => {
 
-console.log("RESPUESTA:", data);
+        console.log("RESPUESTA:", data);
 
-switch(data){
+        if(data === "VALIDO"){
+            document.getElementById("resultado").innerHTML =
+            "✅ Código activado correctamente.";
+        }
+        else if(data === "INVALIDO"){
+            document.getElementById("resultado").innerHTML =
+            "❌ Código inválido.";
+        }
+        else if(data === "INVALIDO_USADO"){
+            document.getElementById("resultado").innerHTML =
+            "⚠ Código ya utilizado.";
+        }
+        else if(data === "INVALIDO_EXPIRADO"){
+            document.getElementById("resultado").innerHTML =
+            "⏳ Código expirado.";
+        }
+        else {
+            document.getElementById("resultado").innerHTML =
+            "⚠ Error: " + data;
+        }
 
-case "VALIDO":
-document.getElementById("resultado").innerHTML="✅ Código activado correctamente.";
-break;
+        // ✅ Reset correcto
+        grecaptcha.reset();
 
-case "INVALIDO":
-document.getElementById("resultado").innerHTML="❌ Código inválido.";
-break;
-
-case "INVALIDO_USADO":
-document.getElementById("resultado").innerHTML="⚠ Este código ya fue usado.";
-break;
-
-case "INVALIDO_EXPIRADO":
-document.getElementById("resultado").innerHTML="⏳ Este código ya expiró.";
-break;
-
-default:
-document.getElementById("resultado").innerHTML="⚠ Error: "+data;
-
-}
-
-grecaptcha.reset(captchaCodigo);
-
-})
-.catch(()=>{
-document.getElementById("resultado").innerHTML="⚠ Error al validar el código.";
-});
+    })
+    .catch(() => {
+        document.getElementById("resultado").innerHTML =
+        "⚠ Error al validar el código.";
+    });
 
 });
 </script>
@@ -380,23 +374,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
  <!-- FUNCION DE BOTONES -->   
-    
-<script>
-var captchaSuscripcion;
-
-function onLoadCaptcha(){
-
-    captchaSuscripcion = grecaptcha.render('captcha-suscripcion', {
-        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-    });
-
-    captchaCodigo = grecaptcha.render('captcha-codigos', {
-        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-    });
-
-}
-</script>
-
-<script src="https://www.google.com/recaptcha/api.js?onload=onLoadCaptcha&render=explicit" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
