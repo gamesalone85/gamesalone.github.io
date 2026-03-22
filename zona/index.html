@@ -248,7 +248,7 @@ document.getElementById("cuponForm")
 e.preventDefault();
 
 // SOLO 1 CAPTCHA → SIN ÍNDICE
-var response = grecaptcha.getResponse();
+var response = grecaptcha.getResponse(2);
 
 if(response.length == 0) {
     document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
