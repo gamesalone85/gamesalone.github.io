@@ -86,3 +86,29 @@
 .navbar.custom-navbar .navbar-nav .nav-link {
   color: var(--green-neon) !important;
 }
+/* ===== FIX MOBILE NAVBAR (CLAVE) ===== */
+@media (max-width: 991px) {
+
+  /* Navbar sólida en mobile */
+  .navbar.custom-navbar {
+    background: #000 !important;
+  }
+
+  /* Contenedor del menú desplegado */
+  .navbar-collapse {
+    background: #000;
+    padding: 15px 20px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* Espaciado entre items */
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  /* Botón separado */
+  .btn-exclusive {
+    margin-top: 10px;
+  }
+}
