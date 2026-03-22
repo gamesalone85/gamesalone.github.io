@@ -241,6 +241,53 @@ Activar Código
 <p id="resultado"></p>
 </div>
 </div>
+<script>
+document.getElementById("cuponForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+// SOLO 1 CAPTCHA → SIN ÍNDICE
+var response = grecaptcha.getResponse();
+
+if(response.length == 0) {
+    document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
+    return;
+}
+
+var email = document.getElementById("email").value;
+var codigo = document.getElementById("codigo").value;
+
+fetch("https://script.google.com/macros/s/AKfycbwo_ZDAgTBIivMRW7QzFHjF8kaP0qMyjVmnjoyCwF5Lx2kZ1YsgSpPTV063rNq4EuQ/exec",{
+method:"POST",
+body:new URLSearchParams({
+email:email,
+codigo:codigo,
+token:"GA18SECURE"
+})
+})
+.then(res=>res.text())
+.then(data=>{
+
+var respuesta = data.trim().toUpperCase();
+
+if(respuesta=="VALIDO"){
+document.getElementById("resultado").innerHTML="✅ Código activado correctamente.";
+}else if(respuesta=="INVALIDO"){
+document.getElementById("resultado").innerHTML="❌ Código inválido o ya utilizado.";
+}else{
+document.getElementById("resultado").innerHTML="⚠ Error de seguridad: " + data;
+}
+
+grecaptcha.reset();
+
+})
+.catch(()=>{
+document.getElementById("resultado").innerHTML="⚠ Error al validar el código.";
+});
+
+});
+</script>
 
 <!-- FOOTER -->
     <div id="footer"></div>
@@ -280,51 +327,7 @@ window.addEventListener("scroll", function() {
 
   nav.classList.toggle("scrolled", window.scrollY > 50);
 });
-</script>
-
-    
-    
-<script>
-document.getElementById("cuponForm")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-// Validación Auditor: Verificar Captcha
-var response = grecaptcha.getResponse(1); // 1 indica el segundo captcha
-if(response.length == 0) {
-    document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
-    return;
-}
-
-var email = document.getElementById("email").value;
-var codigo = document.getElementById("codigo").value;
-
-fetch("https://script.google.com/macros/s/AKfycbwo_ZDAgTBIivMRW7QzFHjF8kaP0qMyjVmnjoyCwF5Lx2kZ1YsgSpPTV063rNq4EuQ/exec",{
-method:"POST",
-body:new URLSearchParams({
-email:email,
-codigo:codigo,
-token:"GA18SECURE"
-})
-})
-.then(res=>res.text())
-.then(data=>{
-if(data=="VALIDO"){
-document.getElementById("resultado").innerHTML="✅ Código activado correctamente. Revisa tu correo.";
-}else if(data=="INVALIDO"){
-document.getElementById("resultado").innerHTML="❌ Código inválido o ya utilizado.";
-}else{
-document.getElementById("resultado").innerHTML="⚠ Error de seguridad.";
-}
-grecaptcha.reset(1);
-})
-.catch(error=>{
-document.getElementById("resultado").innerHTML="⚠ Error al validar el código.";
-});
-
-});
-</script>
+</script>   
 
 <div id="exclusivePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
   <div style="background:#fff; color:#111; max-width:500px; width:90%; padding:35px 25px; border-radius:8px; text-align:center; font-family:Georgia, serif; box-shadow:0 0 15px rgba(0,0,0,0.5);">
