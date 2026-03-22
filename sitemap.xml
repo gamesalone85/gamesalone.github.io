@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.gamesalone.com/home/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/merch/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/prensa/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/zona/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/acerca-de-nosotros/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/contactanos/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/preguntas-frecuentes/</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/avisodeprivacidad/</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gamesalone.com/terminos-y-condiciones.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
