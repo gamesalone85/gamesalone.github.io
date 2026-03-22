@@ -244,14 +244,13 @@ Activar Código
 </div>
 </div>
 
-    
+    <!-- JS DE CDDIGOS -->
 <script>
 document.getElementById("cuponForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
-// CAPTCHA (IMPORTANTE)
 var response = grecaptcha.getResponse();
 
 if(response.length == 0) {
@@ -262,7 +261,7 @@ if(response.length == 0) {
 var email = document.getElementById("email").value;
 var codigo = document.getElementById("codigo").value;
 
-fetch("https://script.google.com/macros/s/AKfycbx7F43l1v4BRvhnFuk8LEeIFbtT7j385_805b2GAQcv4nqkTrsWGPy0XkRVI9qjsGI/exec",{
+fetch("https://script.google.com/macros/s/AKfycbw8qL8Td7YWtF1Ni5IVg2gIcGATz3Ffxj-o1ueE6BlC99nPEy82xwlphn4usWAzb1Q/exec",{
 method:"POST",
 body:new URLSearchParams({
 email:email,
@@ -275,14 +274,27 @@ token:"GA18SECURE"
 
 console.log("RESPUESTA:", data);
 
-var respuesta = data.trim().toUpperCase();
+switch(data){
 
-if(respuesta=="VALIDO"){
+case "VALIDO":
 document.getElementById("resultado").innerHTML="✅ Código activado correctamente.";
-}else if(respuesta=="INVALIDO"){
-document.getElementById("resultado").innerHTML="❌ Código inválido o ya utilizado.";
-}else{
-document.getElementById("resultado").innerHTML="⚠ Error: " + data;
+break;
+
+case "INVALIDO":
+document.getElementById("resultado").innerHTML="❌ Código inválido.";
+break;
+
+case "INVALIDO_USADO":
+document.getElementById("resultado").innerHTML="⚠ Este código ya fue usado.";
+break;
+
+case "INVALIDO_EXPIRADO":
+document.getElementById("resultado").innerHTML="⏳ Este código ya expiró.";
+break;
+
+default:
+document.getElementById("resultado").innerHTML="⚠ Error: "+data;
+
 }
 
 grecaptcha.reset();
