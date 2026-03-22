@@ -190,7 +190,7 @@ document.getElementById("suscripcionForm")
 e.preventDefault();
 
 // Validación de Seguridad del Auditor
-var response = grecaptcha.getResponse(); // 0 indica el primer captcha de la página
+var response = grecaptcha.getResponse(captchaSuscripcion); // 0 indica el primer captcha de la página
 if(response.length == 0) {
     document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
     return;
@@ -205,7 +205,7 @@ body:new URLSearchParams({ email:email })
 });
 
 document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
-grecaptcha.reset();
+grecaptcha.reset(captchaSuscripcion);
 document.getElementById("suscripcionForm").reset();
 
 });
@@ -246,14 +246,26 @@ Activar Código
 
     <!-- JS DE CDDIGOS -->
 <script>
+var captchaCodigo;
+
+function onLoadCaptcha(){
+    captchaCodigo = grecaptcha.render('captcha-codigos', {
+        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    });
+
+    grecaptcha.render('captcha-suscripcion', {
+        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    });
+}
+
 document.getElementById("cuponForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
-var response = grecaptcha.getResponse();
+var response = grecaptcha.getResponse(captchaCodigo);
 
-if(response.length == 0) {
+if(!response){
     document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
     return;
 }
@@ -297,7 +309,7 @@ document.getElementById("resultado").innerHTML="⚠ Error: "+data;
 
 }
 
-grecaptcha.reset();
+grecaptcha.reset(captchaCodigo);
 
 })
 .catch(()=>{
@@ -368,15 +380,20 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
  <!-- FUNCION DE BOTONES -->   
+    
 <script>
+var captchaSuscripcion;
+
 function onLoadCaptcha(){
-    grecaptcha.render('captcha-suscripcion', {
+
+    captchaSuscripcion = grecaptcha.render('captcha-suscripcion', {
         'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
     });
 
-    grecaptcha.render('captcha-codigos', {
+    captchaCodigo = grecaptcha.render('captcha-codigos', {
         'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
     });
+
 }
 </script>
 
