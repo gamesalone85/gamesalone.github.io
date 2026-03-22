@@ -265,6 +265,24 @@ fetch("/footer.html")
     document.getElementById("footer").innerHTML = data;
 });
 </script>
+<div id="exclusivePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; color:#111; max-width:500px; width:90%; padding:35px 25px; border-radius:8px; text-align:center; font-family:Georgia, serif; box-shadow:0 0 15px rgba(0,0,0,0.5);">
+    <h2 style="margin-bottom:15px;">Bienvenido a la Zona Exclusiva</h2>
+    <p style="margin-bottom:25px; line-height:1.5;">
+      Si llegaste hasta aquí, ya estás cerca.
+Solo falta un paso: regístrate y síguenos para acceder a los códigos.
+    </p>
+    <button id="closeExclusivePopup" style="padding:12px 25px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">Entendido</button>
+  </div>
+</div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('exclusivePopup').style.display = 'flex';
+  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
+    document.getElementById('exclusivePopup').style.display = 'none';
+  });
+});
+</script>
 </body>
 </html>
