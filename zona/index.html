@@ -7,96 +7,46 @@
 
 <title>Zona de Códigos | GamesAlone18 Universe</title>
 
-<meta name="description" content="Zona exclusiva de GamesAlone18 Universe para activar códigos de descuento y acceder a beneficios especiales para la comunidad.">
+<meta name="description" content="Zona exclusiva de GamesAlone18 Universe para activar códigos de descuento.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.gamesalone.com/zona/">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="/home/css/styles.css" rel="stylesheet">
 <link href="/header.css" rel="stylesheet">
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-EGZ2977YBH');
-</script>
 
 <style>
 
+body {
+    background: #111;
+    color: #fff;
+}
+
 .codigo-box{
-background:#000;
-padding:40px;
-border-radius:12px;
-color:#fff;
-max-width:500px;
-margin:auto;
-text-align:center;
+    background:#000;
+    padding:40px;
+    border-radius:12px;
+    max-width:500px;
+    margin:auto;
+    text-align:center;
 }
 
 .codigo-box input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border-radius:6px;
-border:none;
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    border:none;
 }
 
 .codigo-box button{
-width:100%;
-padding:12px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    padding:12px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 #resultado{
-margin-top:15px;
-font-size:0.95rem;
-}
-
-/* Ajuste para centrar el captcha en cajas oscuras */
-.g-recaptcha {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-/* CSS ORIGINAL DE LA ZONA */
-
-#password{
-padding:12px;
-width:260px;
-border-radius:6px;
-border:none;
-text-align:center;
-}
-
-#error{
-color:red;
-margin-top:10px;
-}
-
-.media-card{
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.media-card:hover{
-transform:translateY(-5px);
-}
-
-.media-card img{
-width:100%;
-border-radius:10px;
-margin-bottom:10px;
+    margin-top:15px;
 }
 
 </style>
@@ -105,119 +55,23 @@ margin-bottom:10px;
 
 <body>
 
-<div class="bg-image"></div>
-<div class="bg-overlay"></div>
-
 <div class="main-content">
 
 <div id="header"></div>
 
 <!-- HERO -->
-<section class="hero">
-<div class="container text-center">
-
-<h1>Zona de Códigos GamesAlone18</h1>
-
-<p class="description">
-Activa aquí tu código de descuento oficial
-</p>
-
-</div>
+<section class="text-center py-5">
+    <div class="container">
+        <h1>Zona de Códigos</h1>
+        <p>Activa tu código de descuento</p>
+    </div>
 </section>
-    
 
-<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-<div class="col-lg-6">
-<img
-class="img-fluid"
-src="/home/img/suscribete.jpg"
-alt="Suscripción GamesAlone18 Universe"
-width="1200"
-height="800"
-loading="lazy"
-decoding="async">
-</div>
-<div class="col-lg-6">
-<div class="bg-black text-center h-100 project">
-<div class="d-flex h-100">
-<div class="project-text w-100 my-auto text-center text-lg-right">
-<h2 class="text-white">
-¿Ya nos sigues en YouTube?
-Acceso Anticipado al Universo
-</h2>
-
-<p class="mb-4 text-white-50">
-Los miembros suscritos reciben lanzamientos antes que nadie y beneficios exclusivos.
-</p>
-
-<form id="suscripcionForm" class="text-start">
-
-<div class="mb-3">
-<input
-class="form-control"
-type="email"
-id="emailSuscripcion"
-placeholder="Ingresa tu correo electrónico..."
-required>
-</div>
-
-<div id="captcha-suscripcion" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
-
-<div class="d-grid">
-<button class="btn btn-primary" type="submit">
-Acceder antes que nadie
-</button>
-
-<p class="mt-3 mb-4 text-white-50">
-Al hacer clic aceptas nuestro <a href="/avisodeprivacidad/">Aviso de Privacidad</a> y nuestros <a href="/terminos-y-condiciones.html">Términos y Condiciones</a>
-</p>
-</div>
-
-<p id="respuestaSuscripcion"
-style="color:white;margin-top:15px;font-size:0.9rem;"></p>
-
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<script>
-document.getElementById("suscripcionForm")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-// Validación de Seguridad del Auditor
-var response = grecaptcha.getResponse();
-
-if(response.length == 0) {
-    document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
-    return;
-}
-var email=document.getElementById("emailSuscripcion").value;
-
-fetch("https://script.google.com/macros/s/AKfycbysn2gChs38t3eOk9ei7V5uD-pqWYsqx_PRBO_PHls6GITh0-9M0joejtn7yaO9zew/exec",{
-method:"POST",
-body:new URLSearchParams({ email:email })
-});
-
-document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
-grecaptcha.reset();
-document.getElementById("suscripcionForm").reset();
-
-});
-</script>
-
-<!-- REGISTRO DE CDDIGOS -->
-    
+<!-- FORMULARIO CÓDIGOS -->
 <div class="container px-4 px-lg-5">
 <div class="codigo-box">
+
 <h2>Activar Código</h2>
-<p style="opacity:0.8;">
-Ingresa tu correo y el código recibido.
-</p>
 
 <form id="cuponForm">
 
@@ -233,11 +87,6 @@ id="codigo"
 placeholder="Código de descuento"
 required>
 
-<div class="g-recaptcha" 
-     data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-     data-theme="dark">
-</div>
-
 <button type="submit">
 Activar Código
 </button>
@@ -245,24 +94,15 @@ Activar Código
 </form>
 
 <p id="resultado"></p>
+
 </div>
 </div>
 
-    <!-- JS DE CDDIGOS -->
 <script>
 document.getElementById("cuponForm")
 .addEventListener("submit", function(e){
 
     e.preventDefault();
-
-    // ✅ Captcha validación correcta
-    var response = grecaptcha.getResponse();
-
-    if(response.length === 0){
-        document.getElementById("resultado").innerHTML =
-        "❌ Verifica que no eres un robot.";
-        return;
-    }
 
     var email = document.getElementById("email").value;
     var codigo = document.getElementById("codigo").value;
@@ -277,8 +117,6 @@ document.getElementById("cuponForm")
     })
     .then(res => res.text())
     .then(data => {
-
-        console.log("RESPUESTA:", data);
 
         if(data === "VALIDO"){
             document.getElementById("resultado").innerHTML =
@@ -301,29 +139,14 @@ document.getElementById("cuponForm")
             "⚠ Error: " + data;
         }
 
-        // ✅ Reset correcto
-        grecaptcha.reset();
-
     })
     .catch(() => {
         document.getElementById("resultado").innerHTML =
-        "⚠ Error al validar el código.";
+        "⚠ Error al procesar la solicitud.";
     });
 
 });
 </script>
-
-<!-- FOOTER -->
-    <div id="footer"></div>
-
-</div>
-
-<!-- JS LIBS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- JS -->
-<script src="js/scripts.js"></script>
 
 <!-- HEADER -->
 <script>
@@ -334,46 +157,9 @@ fetch("/header.html")
 });
 </script>
 
-<!-- FOOTER -->
-<script>
-fetch("/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});
-</script>
-
-<!-- SCROLL NAV -->
-<script>
-window.addEventListener("scroll", function() {
-  const nav = document.querySelector(".custom-navbar");
-  if (!nav) return;
-
-  nav.classList.toggle("scrolled", window.scrollY > 50);
-});
-</script>   
-
-<div id="exclusivePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; color:#111; max-width:500px; width:90%; padding:35px 25px; border-radius:8px; text-align:center; font-family:Georgia, serif; box-shadow:0 0 15px rgba(0,0,0,0.5);">
-    <h2 style="margin-bottom:15px;">Bienvenido a la Zona Exclusiva</h2>
-    <p style="margin-bottom:25px; line-height:1.5;">
-      Si llegaste hasta aquí, ya estás cerca.
-Solo falta un paso: regístrate y síguenos para acceder a los códigos.
-    </p>
-    <button id="closeExclusivePopup" style="padding:12px 25px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">Entendido</button>
-  </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('exclusivePopup').style.display = 'flex';
-  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
-    document.getElementById('exclusivePopup').style.display = 'none';
-  });
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
- <!-- FUNCION DE BOTONES -->   
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
