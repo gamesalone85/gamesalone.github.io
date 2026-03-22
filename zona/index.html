@@ -161,7 +161,7 @@ placeholder="Ingresa tu correo electrónico..."
 required>
 </div>
 
-<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+<div id="captcha-suscripcion" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
 
 <div class="d-grid">
 <button class="btn btn-primary" type="submit">
@@ -190,7 +190,7 @@ document.getElementById("suscripcionForm")
 e.preventDefault();
 
 // Validación de Seguridad del Auditor
-var response = grecaptcha.getResponse(0); // 0 indica el primer captcha de la página
+var response = grecaptcha.getResponse(); // 0 indica el primer captcha de la página
 if(response.length == 0) {
     document.getElementById("respuestaSuscripcion").innerHTML="❌ Por favor, marca la casilla 'No soy un robot'.";
     return;
@@ -205,12 +205,14 @@ body:new URLSearchParams({ email:email })
 });
 
 document.getElementById("respuestaSuscripcion").innerHTML="✅ Revisa tu correo para acceder al universo.";
-grecaptcha.reset(0);
+grecaptcha.reset();
 document.getElementById("suscripcionForm").reset();
 
 });
 </script>
 
+// COLOCACION DE CODIGO (CORRECTA)
+    
 <div class="container px-4 px-lg-5">
 <div class="codigo-box">
 <h2>Activar Código</h2>
@@ -231,7 +233,7 @@ id="codigo"
 placeholder="Código de descuento"
 required>
 
-<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+<div id="captcha-codigos" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
 
 <button type="submit">
 Activar Código
@@ -247,8 +249,8 @@ document.getElementById("cuponForm")
 
 e.preventDefault();
 
-// SOLO 1 CAPTCHA → SIN ÍNDICE
-var response = grecaptcha.getResponse(2);
+// VALIDACIÓN CAPTCHA (CORRECTA)
+var response = grecaptcha.getResponse();
 
 if(response.length == 0) {
     document.getElementById("resultado").innerHTML="❌ Verifica que no eres un robot.";
@@ -348,5 +350,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+ <!-- FUNCION DE BOTONES -->   
+<script>
+function onLoadCaptcha(){
+    grecaptcha.render('captcha-suscripcion', {
+        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    });
+
+    grecaptcha.render('captcha-codigos', {
+        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    });
+}
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onLoadCaptcha&render=explicit" async defer></script>
 </body>
 </html>
