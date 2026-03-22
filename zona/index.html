@@ -28,7 +28,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: url('/home/img/fondo.jpg') no-repeat center center/cover;
+    background: url('/home/img/bg-masthead.jpg') no-repeat center center/cover;
     z-index: -2;
 }
 
@@ -188,7 +188,7 @@ e.preventDefault();
 var email = document.getElementById("email").value;
 var codigo = document.getElementById("codigo").value;
 
-fetch("https://script.google.com/macros/s/AKfycbw8qL8Td7YWtF1Ni5IVg2gIcGATz3Ffxj-o1ueE6BlC99nPEy82xwlphn4usWAzb1Q/exec",{
+fetch("https://script.google.com/macros/s/AKfycbzk6IndBG57SPL_ZkAXihQ6bN0DLTj7xy1zto_45LJ-hlzyKQKkkUDRTzoVEV87xVI/exec",{
 method:"POST",
 body:new URLSearchParams({
 email: email,
@@ -221,6 +221,25 @@ fetch("/header.html")
 .then(res => res.text())
 .then(data => {
 document.getElementById("header").innerHTML = data;
+});
+</script>
+<!-- SCROLL NAV -->
+<script>
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".custom-navbar");
+  if (!nav) return;
+
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+<!-- FOOTER -->
+    <div id="footer"></div>
+<!-- FOOTER -->
+<script>
+fetch("/footer.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
 });
 </script>
 
