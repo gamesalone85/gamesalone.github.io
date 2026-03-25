@@ -37,3 +37,18 @@ function go(link) {
 // DEBUG
 // =========================
 console.log("Home cargado correctamente");
+
+// =========================
+// TRAKING WHATS
+// =========================
+function trackClick(origen) {
+    console.log("Click en:", origen);
+
+    if (typeof gtag === "function") {
+        gtag('event', 'click_whatsapp', {
+            'event_category': 'conversion',
+            'event_label': origen
+        });
+    }
+}
+
