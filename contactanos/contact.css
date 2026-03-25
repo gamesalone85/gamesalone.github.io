@@ -148,7 +148,19 @@ a:hover {
     color: #00ff88;
     transform: scale(1.2);
 }
+.whatsapp-link {
+    color: #25d366;
+    font-weight: bold;
+    text-decoration: none;
+}
 
+.whatsapp-link i {
+    margin-right: 8px;
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
 /* =========================
    RESPONSIVE
 ========================= */
