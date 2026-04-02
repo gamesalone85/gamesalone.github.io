@@ -63,13 +63,18 @@
 </script>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH"></script>
+<script type="text/plain" data-cookiecategory="analytics">
+(function(){
+  var script = document.createElement('script');
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH";
+  script.async = true;
+  document.head.appendChild(script);
 
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-EGZ2977YBH');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EGZ2977YBH');
+})();
 </script>
 
 </head>
@@ -135,22 +140,47 @@ Merch Oficial
 
 </div>
 <div id="cookie-consent" style="position:fixed; bottom:0; left:0; width:100%; background:#000; color:#fff; padding:15px; text-align:center; z-index:9999;">
-  <span>Este sitio utiliza cookies propias y de terceros para mejorar su experiencia y análisis de uso. 
-  Al continuar navegando, acepta nuestra <a href="/avisodeprivacidad/" style="color:#00ff88; text-decoration:underline;">Política de Privacidad</a>.</span>
-  <button id="accept-cookies" style="margin-left:15px; padding:8px 15px; background:#00ff88; border:none; border-radius:5px; cursor:pointer;">Aceptar</button>
+  <span>
+    Este sitio utiliza cookies para análisis y mejorar la experiencia. 
+    Puedes aceptar o rechazar su uso. 
+    <a href="/avisodeprivacidad/" style="color:#00ff88;">Política de Privacidad</a>
+  </span>
+
+  <button id="accept-cookies">Aceptar</button>
+  <button id="reject-cookies">Rechazar</button>
 </div>
 
-</section>
 <script>
+function loadAnalytics() {
+  const scripts = document.querySelectorAll('script[type="text/plain"][data-cookiecategory="analytics"]');
+  scripts.forEach(script => {
+    const newScript = document.createElement('script');
+    newScript.text = script.textContent;
+    document.head.appendChild(newScript);
+  });
+}
+
+// Aceptar
 document.getElementById('accept-cookies').onclick = function() {
-  // Guardar en localStorage para que no vuelva a mostrarse
   localStorage.setItem('cookiesAccepted', 'true');
+  document.getElementById('cookie-consent').style.display = 'none';
+  loadAnalytics();
+};
+
+// Rechazar
+document.getElementById('reject-cookies').onclick = function() {
+  localStorage.setItem('cookiesAccepted', 'false');
   document.getElementById('cookie-consent').style.display = 'none';
 };
 
-// Ocultar banner si ya aceptó
+// Al cargar
 window.onload = function() {
-  if(localStorage.getItem('cookiesAccepted') === 'true'){
+  const consent = localStorage.getItem('cookiesAccepted');
+
+  if(consent === 'true'){
+    document.getElementById('cookie-consent').style.display = 'none';
+    loadAnalytics();
+  } else if(consent === 'false'){
     document.getElementById('cookie-consent').style.display = 'none';
   }
 };
