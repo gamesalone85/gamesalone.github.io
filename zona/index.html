@@ -197,14 +197,17 @@ var email = document.getElementById("emailSuscripcion").value;
 
 fetch("https://script.google.com/macros/s/AKfycbysn2gChs38t3eOk9ei7V5uD-pqWYsqx_PRBO_PHls6GITh0-9M0joejtn7yaO9zew/exec",{
 method:"POST",
-body:new URLSearchParams({ email: email })
+  body:new URLSearchParams({ email: email })
+})
+.then(()=> {
+  document.getElementById("respuestaSuscripcion").innerHTML =
+  "✅ Revisa tu correo para acceder.";
+})
+.catch(()=>{
+  document.getElementById("respuestaSuscripcion").innerHTML =
+  "⚠ Error al enviar.";
 });
-
-document.getElementById("respuestaSuscripcion").innerHTML =
-"✅ Revisa tu correo para acceder.";
-
 });
-
 /* CÓDIGOS */
 document.getElementById("cuponForm")
 .addEventListener("submit", function(e){
@@ -213,32 +216,58 @@ e.preventDefault();
 
 var email = document.getElementById("email").value;
 var codigo = document.getElementById("codigo").value;
-
+document.getElementById("resultado").innerHTML = "⏳ Validando código...";
 fetch("https://script.google.com/macros/s/AKfycbx4kITxi6EkSpcCaNCUsoO5nHxHjPsCBmZbTKYejXjYccTUkSrZnHEFpT2rMceuBPk/exec",{
-method:"POST",
-body:new URLSearchParams({
-email: email,
-codigo: codigo,
-token: "GA18SECURE"
-})
+  method:"POST",
+  body:new URLSearchParams({
+    email: email,
+    codigo: codigo,
+    token: "GA18SECURE"
+  })
 })
 .then(res => res.text())
 .then(data => {
 
-if(data === "VALIDO"){
-document.getElementById("resultado").innerHTML = "✅ Código activado.";
-}
-else{
-document.getElementById("resultado").innerHTML = "❌ Código inválido.";
-}
+  if(data.startsWith("VALIDO")){
+
+    var partes = data.split("|");
+
+    var producto = partes[1] || "";
+    var descuento = partes[2] || "";
+    var mes = partes[3] || "";
+
+    document.getElementById("resultado").innerHTML = `
+      <div style="background:#111; padding:20px; border-radius:10px; margin-top:15px;">
+        <p style="color:#00ffae; font-weight:bold;">✅ Código activado</p>
+        
+        <p>🎁 <b>Ganaste:</b> ${producto}</p>
+        <p>💸 <b>Descuento:</b> ${descuento}</p>
+        <p>📅 <b>Mes:</b> ${mes}</p>
+
+        <hr style="border-color:#333;">
+
+        <p style="color:#00ffae;">
+          📲 En breve te contactaremos para darte detalles de tu descuento
+        </p>
+      </div>
+    `;
+
+  }
+  else if(data === "INVALIDO_USADO"){
+    document.getElementById("resultado").innerHTML = "⚠ Este código ya fue utilizado.";
+  }
+  else if(data === "INVALIDO_EXPIRADO"){
+    document.getElementById("resultado").innerHTML = "⏳ Este código ya expiró.";
+  }
+  else{
+    document.getElementById("resultado").innerHTML = "❌ Código inválido.";
+  }
 
 })
 .catch(()=>{
-document.getElementById("resultado").innerHTML = "⚠ Error.";
+  document.getElementById("resultado").innerHTML = "⚠ Error de conexión.";
 });
-
 });
-
 </script>
 
 <!-- HEADER -->
@@ -281,10 +310,10 @@ Solo falta un paso: regístrate y síguenos para acceder a los códigos.
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  if(!localStorage.getItem("popupVisto")){
   document.getElementById('exclusivePopup').style.display = 'flex';
-  document.getElementById('closeExclusivePopup').addEventListener('click', function() {
-    document.getElementById('exclusivePopup').style.display = 'none';
-  });
+  localStorage.setItem("popupVisto", "true");
+}
 });
 </script>
 </body>
