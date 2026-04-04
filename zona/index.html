@@ -314,6 +314,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('exclusivePopup').style.display = 'flex';
   localStorage.setItem("popupVisto", "true");
 }
+// 🔥 ESTE ES EL QUE FALTA
+  document.getElementById('closeExclusivePopup')
+  .addEventListener('click', function() {
+    document.getElementById('exclusivePopup').style.display = 'none';
+  });
 });
 </script>
 </body>
