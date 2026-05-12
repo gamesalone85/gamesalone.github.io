@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -118,133 +120,6 @@
 
     </div>
 </section> 
-
-
-<!-- 🔥 SWIPER ESTILO ADENERGY -->
-<section class="swiper-section">
-
-    <div class="swiper mySwiper">
-
-        <div class="swiper-wrapper">
-
-            <!-- SLIDE -->
-            <div class="swiper-slide">
-
-                <a href="https://axomatsuri.com/event/kakahuates-sinfonico/"
-                   target="_blank">
-
-                    <img src="/home/img/kakahuates.jpg"
-                         alt="Kakahuates Sinfónico">
-
-                </a>
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/merch/')">
-
-                <img src="/home/img/dulce.jpg"
-                     alt="Merch">
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/zona/')">
-
-                <img src="/home/img/coddomingo.jpg"
-                     alt="Zona">
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide">
-
-                <a href="https://www.youtube.com/@GAMESALONE18"
-                   target="_blank">
-
-                    <img src="/home/img/youtube.jpg"
-                         alt="YouTube">
-
-                </a>
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide">
-
-                <a href="https://open.spotify.com/show/6bM9ZYxIvB80iDBsEW5Us7?si=40f52d9d7765442d"
-                   target="_blank">
-
-                    <img src="/home/img/cuentos.jpg"
-                         alt="Spotify">
-
-                </a>
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide">
-
-                <a href="https://www.instagram.com/teatroemilioelindiofernandez"
-                   target="_blank">
-
-                    <img src="/home/img/teatro.jpg"
-                         alt="Teatro">
-
-                </a>
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/zona/')">
-
-                <img src="/home/img/suscribete.jpg"
-                     alt="Suscríbete">
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/merch/')">
-
-                <img src="/home/img/tienda.jpg"
-                     alt="Tienda">
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/zona/')">
-
-                <img src="/home/img/acceso.jpg"
-                     alt="Acceso">
-
-            </div>
-
-            <!-- SLIDE -->
-            <div class="swiper-slide"
-                 onclick="go('/contactanos/')">
-
-                <img src="/home/img/colabora.jpg"
-                     alt="Colabora">
-
-            </div>
-
-        </div>
-
-        <!-- CONTROLES -->
-        <div class="swiper-button-next"></div>
-
-        <div class="swiper-button-prev"></div>
-
-        <div class="swiper-pagination"></div>
-
-    </div>
-
-</section>
       
 <!-- About -->
 <section class="about-section text-center" id="about">
@@ -375,6 +250,373 @@ window.onload = function() {
     document.getElementById('cookie-consent').style.display = 'none';
   }
 };
+</script>
+<!-- =========================
+🤖 GAMESALONE18 CHATBOT
+========================= -->
+
+<style>
+.chat-toggle{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#8b00ff,#ff0099);
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    z-index:999999;
+    box-shadow:0 0 25px rgba(183,0,255,.7);
+    transition:.3s;
+}
+
+.chat-toggle:hover{
+    transform:scale(1.1);
+}
+
+.chatbot{
+    position:fixed;
+    right:25px;
+    bottom:110px;
+    width:380px;
+    max-width:95%;
+    height:620px;
+    background:#0d0d15;
+    border-radius:25px;
+    overflow:hidden;
+    z-index:999999;
+    display:none;
+    flex-direction:column;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 35px rgba(0,0,0,.6);
+}
+
+.chat-header{
+    background:linear-gradient(135deg,#8b00ff,#ff0099);
+    padding:20px;
+    color:#fff;
+}
+
+.chat-header h2{
+    font-size:20px;
+    margin:0;
+}
+
+.chat-header p{
+    margin:5px 0 0;
+    opacity:.8;
+    font-size:13px;
+}
+
+.chat-body{
+    flex:1;
+    overflow-y:auto;
+    padding:20px;
+    background:#101018;
+}
+
+.bot-message,
+.user-message{
+    padding:14px 16px;
+    border-radius:18px;
+    margin-bottom:15px;
+    max-width:90%;
+    line-height:1.5;
+}
+
+.bot-message{
+    background:#1b1b29;
+    color:#fff;
+}
+
+.user-message{
+    background:linear-gradient(135deg,#8b00ff,#ff0099);
+    color:#fff;
+    margin-left:auto;
+}
+
+.chat-options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:15px;
+}
+
+.chat-options button{
+    background:#1f1f2f;
+    border:none;
+    color:#fff;
+    padding:14px;
+    border-radius:14px;
+    text-align:left;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.chat-options button:hover{
+    background:linear-gradient(135deg,#8b00ff,#ff0099);
+}
+
+.chat-footer{
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,.06);
+    background:#0b0b12;
+}
+
+.chat-footer input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:#1b1b29;
+    color:#fff;
+    outline:none;
+}
+
+@media(max-width:768px){
+    .chatbot{
+        width:95%;
+        right:2.5%;
+        height:80vh;
+    }
+}
+</style>
+
+<!-- BOTÓN -->
+<button class="chat-toggle" id="chatToggle">
+💬
+</button>
+
+<!-- CHAT -->
+<div class="chatbot" id="chatbot">
+
+    <div class="chat-header">
+        <h2>GamesAlone18 AI</h2>
+        <p>Tu asistente gamer oficial</p>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+
+        <div class="bot-message">
+            👋 Bienvenido a GamesAlone18 Universe.<br><br>
+            ¿Qué deseas hacer hoy?
+
+            <div class="chat-options">
+
+                <button onclick="chatOption('productos')">
+                    🎮 Comprar productos
+                </button>
+
+                <button onclick="chatOption('cobertura')">
+                    📸 Agendar cobertura
+                </button>
+
+                <button onclick="chatOption('registro')">
+                    ⭐ Zona exclusiva
+                </button>
+
+                <button onclick="chatOption('eventos')">
+                    🎟️ Ver eventos
+                </button>
+
+                <button onclick="chatOption('contacto')">
+                    💬 Contactar al equipo
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="chat-footer">
+        <input type="text"
+               id="chatInput"
+               placeholder="Escribe un mensaje...">
+    </div>
+
+</div>
+
+<script>
+const chatbot = document.getElementById('chatbot');
+const toggle = document.getElementById('chatToggle');
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+
+toggle.addEventListener('click', () => {
+    chatbot.style.display =
+    chatbot.style.display === 'flex'
+    ? 'none'
+    : 'flex';
+});
+
+function addMessage(text,type='bot'){
+
+    const div = document.createElement('div');
+
+    div.className =
+    type === 'bot'
+    ? 'bot-message'
+    : 'user-message';
+
+    div.innerHTML = text;
+
+    chatBody.appendChild(div);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function chatOption(option){
+
+    addMessage(option,'user');
+
+    if(option === 'productos'){
+
+        setTimeout(()=>{
+            addMessage(`
+                🎮 Visita nuestra tienda y descubre:
+                <br><br>
+
+                ✅ Merch oficial<br>
+                ✅ Productos exclusivos<br>
+                ✅ Accesorios gamer<br>
+                ✅ Artículos coleccionables
+
+                <br><br>
+
+                <a href="/merch/"
+                   style="color:#00ffcc;">
+                   👉 Ir a tienda
+                </a>
+            `);
+        },500);
+
+    }
+
+    if(option === 'cobertura'){
+
+        setTimeout(()=>{
+            addMessage(`
+                📸 ¿Necesitas cobertura para tu evento?
+
+                <br><br>
+
+                Podemos ayudarte con:
+                <br><br>
+
+                🎤 Cobertura de eventos<br>
+                📹 Video y entrevistas<br>
+                📷 Fotografía<br>
+                🎮 Eventos gaming y geek
+
+                <br><br>
+
+                <a href="/contactanos/"
+                   style="color:#00ffcc;">
+                   👉 Solicitar cobertura
+                </a>
+            `);
+        },500);
+
+    }
+
+    if(option === 'registro'){
+
+        setTimeout(()=>{
+            addMessage(`
+                ⭐ Únete a la zona exclusiva.
+
+                <br><br>
+
+                Obtén:
+                <br><br>
+
+                🔥 Contenido premium<br>
+                🎁 Sorteos exclusivos<br>
+                🎟️ Beneficios especiales<br>
+                👾 Acceso anticipado
+
+                <br><br>
+
+                <a href="/zona/"
+                   style="color:#00ffcc;">
+                   👉 Registrarme
+                </a>
+            `);
+        },500);
+
+    }
+
+    if(option === 'eventos'){
+
+        setTimeout(()=>{
+            addMessage(`
+                🎟️ Descubre eventos,
+                experiencias y coberturas especiales.
+
+                <br><br>
+
+                <a href="/eventos/"
+                   style="color:#00ffcc;">
+                   👉 Ver eventos
+                </a>
+            `);
+        },500);
+
+    }
+
+    if(option === 'contacto'){
+
+        setTimeout(()=>{
+            addMessage(`
+                💬 Puedes contactar al equipo aquí:
+
+                <br><br>
+
+                📧 contacto@gamesalone.com
+
+                <br><br>
+
+                <a href="/contactanos/"
+                   style="color:#00ffcc;">
+                   👉 Contactar
+                </a>
+            `);
+        },500);
+
+    }
+}
+
+chatInput.addEventListener('keypress',function(e){
+
+    if(e.key === 'Enter' && chatInput.value.trim() !== ''){
+
+        const text = chatInput.value;
+
+        addMessage(text,'user');
+
+        setTimeout(()=>{
+
+            addMessage(`
+                🤖 Gracias por tu mensaje.<br><br>
+
+                Nuestro sistema IA responderá
+                próximamente de forma inteligente.
+
+                <br><br>
+
+                Mientras tanto puedes usar
+                las opciones rápidas del menú.
+            `);
+
+        },700);
+
+        chatInput.value = '';
+    }
+
+});
 </script>
 
 </body>
