@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CRM Cotizaciones Sarita</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#0b0502;
+    color:white;
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th, td{
+    padding:10px;
+    border-bottom:1px solid #333;
+}
+
+th{
+    color:#d4af37;
+    text-align:left;
+}
+
+.badge{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.nuevo{background:#3498db;}
+.proceso{background:#f39c12;}
+.cotizado{background:#9b59b6;}
+.enviado{background:#2ecc71;}
+.cancelado{background:#e74c3c;}
+
+button{
+    padding:6px 10px;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>CRM Cotizaciones Sarita</h1>
+
+<button onclick="loadData()">Actualizar</button>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Evento</th>
+<th>Estado</th>
+</tr>
+</thead>
+
+<tbody id="crmTable"></tbody>
+</table>
+
+<script>
+
+const API = "https://script.google.com/macros/s/AKfycbwJ1sPwB8CVwlP9Pueh7NVUnfxncjRwP903wFpxxkyKiQn4wTlnZQQRbuWI-VIA5F8/exec";
+
+async function loadData(){
+
+    const res = await fetch(API);
+    const data = await res.json();
+
+    const table = document.getElementById("crmTable");
+    table.innerHTML = "";
+
+    data.forEach(row => {
+
+        table.innerHTML += `
+        <tr>
+            <td>${row.id}</td>
+            <td>${row.nombre}</td>
+            <td>${row.evento}</td>
+            <td>
+                <span class="badge ${row.estado?.toLowerCase()}">
+                    ${row.estado}
+                </span>
+            </td>
+        </tr>`;
+    });
+}
+
+loadData();
+
+</script>
+
+</body>
+</html>
