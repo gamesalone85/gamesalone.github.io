@@ -82,17 +82,25 @@ function initChatbot(){
     box.className = "chatbot";
 
     box.innerHTML = `
-        <div class="chat-header">
-            <h2>GamesAlone18</h2>
-            <p>Ardilla asistente</p>
+    <div class="chat-header">
+
+        <div class="squirrel-wrapper">
+            <div id="squirrel" class="squirrel state-idle">🐿️</div>
         </div>
 
-        <div class="chat-body" id="chatBody"></div>
-
-        <div class="chat-footer">
-            <input id="chatInput" placeholder="Escribe..." />
+        <div>
+            <h2>GamesAlone18 AI</h2>
+            <p id="botStatus">Ardilla en espera...</p>
         </div>
-    `;
+
+    </div>
+
+    <div class="chat-body" id="chatBody"></div>
+
+    <div class="chat-footer">
+        <input id="chatInput" placeholder="Escribe..." />
+    </div>
+`;
 
     document.body.appendChild(btn);
     document.body.appendChild(box);
