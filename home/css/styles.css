@@ -232,68 +232,46 @@ body {
     border-radius:10px;
 }
 /* =========================
-🐿️ ARDILLA ANIMADA GA18
+🐿️ ARDILLA REAL (SPRITE BASE)
 ========================= */
 
-.squirrel-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
 .squirrel {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #ffcc66, #ff7a00);
-    box-shadow: 0 0 15px rgba(255, 120, 0, .6);
-    position: relative;
-    transition: all .25s ease;
+    width: 90px;
+    height: 90px;
+
+    background-image: url("/home/img/squirrel-sprite.png");
+    background-size: 360px 90px; /* 4 frames horizontales */
+    background-repeat: no-repeat;
+
+    margin: auto;
 }
 
-/* ojos */
-.squirrel::before,
-.squirrel::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #1a1a1a;
-    border-radius: 50%;
-    top: 18px;
-}
-
-.squirrel::before { left: 16px; }
-.squirrel::after { right: 16px; }
-
-/* boca */
-.squirrel::after {
-    content: "";
-}
-
+/* FRAME 1 - idle */
 .squirrel.idle {
-    transform: scale(1);
+    animation: squirrelIdle 1s steps(1) infinite;
+    background-position: 0 0;
 }
 
+/* FRAME 2 - thinking */
 .squirrel.thinking {
-    transform: scale(1.15) rotate(8deg);
-    animation: shake .6s infinite;
-    filter: brightness(1.2);
+    animation: squirrelThink 0.6s steps(1) infinite;
+    background-position: -90px 0;
 }
 
+/* FRAME 3 - happy */
 .squirrel.happy {
-    transform: scale(1.1);
-    animation: bounce .6s infinite;
-    box-shadow: 0 0 25px #ff00ff;
+    animation: squirrelHappy 0.5s steps(1) infinite;
+    background-position: -180px 0;
 }
 
-/* animaciones */
-@keyframes bounce {
+/* FRAME 4 - excited */
+.squirrel.excited {
+    animation: squirrelExcited 0.4s steps(1) infinite;
+    background-position: -270px 0;
+}
+
+/* micro bounce general */
+@keyframes float {
     0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-@keyframes shake {
-    0%,100% { transform: rotate(8deg); }
-    50% { transform: rotate(-8deg); }
+    50% { transform: translateY(-4px); }
 }
