@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CRM Sarita</title>
+
+<style>
+body {
+  font-family: Arial;
+  background:#111;
+  color:white;
+}
+
+.container {
+  width:90%;
+  margin:auto;
+}
+
+input, button, select {
+  padding:10px;
+  margin:5px;
+}
+
+.card {
+  background:#222;
+  padding:15px;
+  margin-top:10px;
+  border-radius:10px;
+}
+
+table {
+  width:100%;
+  border-collapse: collapse;
+  margin-top:20px;
+}
+
+th, td {
+  border:1px solid #444;
+  padding:10px;
+}
+
+button {
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= LOGIN ================= -->
+<div id="loginBox">
+  <h2>Login CRM Sarita</h2>
+
+  <input id="user" placeholder="Usuario">
+  <input id="pass" type="password" placeholder="Contraseña">
+
+  <button onclick="login()">Entrar</button>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard" style="display:none;">
+
+  <h2>📊 Cotizaciones Sarita</h2>
+
+  <button onclick="loadData()">Recargar</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Evento</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody id="table"></tbody>
+  </table>
+
+</div>
+
+</div>
+
+<script>
+
+const URL = "https://script.google.com/macros/s/AKfycbwJ1sPwB8CVwlP9Pueh7NVUnfxncjRwP903wFpxxkyKiQn4wTlnZQQRbuWI-VIA5F8/exec";
+
+/* ================= LOGIN ================= */
+async function login() {
+
+  const res = await fetch(URL, {
+    method:"POST",
+    body: JSON.stringify({
+      action:"login",
+      usuario: user.value,
+      password: pass.value
+    })
+  });
+
+  const data = await res.json();
+
+  if(data.status === "success") {
+
+    localStorage.setItem("user", data.user);
+
+    loginBox.style.display = "none";
+    dashboard.style.display = "block";
+
+    loadData();
+
+  } else {
+    alert("Login incorrecto");
+  }
+}
+
+/* ================= LOAD DATA ================= */
+async function loadData() {
+
+  const res = await fetch(URL, {
+    method:"POST",
+    body: JSON.stringify({
+      action:"getCotizaciones"
+    })
+  });
+
+  const data = await res.json();
+
+  let html = "";
+
+  data.forEach(row => {
+
+    html += `
+    <tr>
+      <td>${row.id}</td>
+      <td>${row.nombre}</td>
+      <td>${row.evento}</td>
+      <td>
+        <select onchange="updateStatus('${row.id}', this.value)">
+          <option ${row.estado==="Nuevo"?"selected":""}>Nuevo</option>
+          <option ${row.estado==="En proceso"?"selected":""}>En proceso</option>
+          <option ${row.estado==="Cotizado"?"selected":""}>Cotizado</option>
+          <option ${row.estado==="Enviado"?"selected":""}>Enviado</option>
+          <option ${row.estado==="Cancelado"?"selected":""}>Cancelado</option>
+        </select>
+      </td>
+      <td>-</td>
+    </tr>`;
+  });
+
+  table.innerHTML = html;
+}
+
+/* ================= UPDATE STATUS ================= */
+async function updateStatus(id, estado) {
+
+  await fetch(URL, {
+    method:"POST",
+    body: JSON.stringify({
+      action:"updateStatus",
+      id,
+      estado
+    })
+  });
+
+  alert("Estado actualizado");
+}
+
+</script>
+
+</body>
+</html>
