@@ -1,118 +1,55 @@
 //////////////////////////////////////////////////
-// 🤖 GAMESALONE18 CHATBOT ENGINE (CLEAN + MENU)
+// 🐿️ GAMESALONE18 CHATBOT NPC v2 (CLEAN FINAL)
 //////////////////////////////////////////////////
 
-const BOT_INTENTS = [
-    {
-        name: "merch",
-        keywords: ["tienda", "comprar", "merch", "productos", "ropa", "accesorios"],
-        route: "/merch/",
-        responses: [
-            "🛒 Tenemos merch oficial de GamesAlone18 Universe.",
-            "🔥 Colecciones exclusivas y limitadas disponibles ahora."
+const BOT_STATES = {
+
+    start: {
+        message: "👋 Bienvenido a GamesAlone18 Universe. Soy tu guía ardilla.",
+        options: [
+            { label: "🚀 Entrar al menú", next: "menu" }
         ]
     },
-    {
-        name: "zona",
-        keywords: ["zona", "vip", "exclusivo", "registro", "premium", "miembros"],
-        route: "/zona/",
-        responses: [
-            "⭐ Zona Exclusiva para miembros.",
-            "👾 Acceso premium con beneficios únicos."
+
+    menu: {
+        message: "🎮 Elige una ruta del universo:",
+        options: [
+            { label: "🛒 Tienda", next: "shop" },
+            { label: "⭐ Zona Exclusiva", next: "zone" },
+            { label: "📰 Sala de Prensa", next: "prensa" },
+            { label: "💬 Contacto", next: "contact" }
         ]
     },
-    {
-        name: "contacto",
-        keywords: ["contacto", "correo", "hablar", "equipo", "soporte"],
-        route: "/contactanos/",
-        responses: [
-            "💬 Contacta al equipo aquí.",
-            "📩 Soporte y colaboraciones disponibles."
-        ]
+
+    shop: {
+        message: "🛒 Redirigiendo a la tienda oficial...",
+        route: "/merch/"
     },
-    {
-        name: "eventos",
-        keywords: ["eventos", "torneos", "agenda", "event", "actividades"],
-        route: "/eventos/",
-        responses: [
-            "🎟️ Eventos disponibles en el universo GA18."
-        ]
+
+    zone: {
+        message: "⭐ Accediendo a Zona Exclusiva...",
+        route: "/zona/"
+    },
+
+    prensa: {
+        message: "📰 Abriendo Sala de Prensa...",
+        route: "/prensa/"
+    },
+
+    contact: {
+        message: "💬 Conectando con el equipo...",
+        route: "/contactanos/"
     }
-];
+};
 
 //////////////////////////////////////////////////
-// 🧠 MOTOR
+// 🧠 STATE ENGINE
 //////////////////////////////////////////////////
 
-function detectIntent(text) {
-    const input = text.toLowerCase();
-
-    for (const intent of BOT_INTENTS) {
-        if (intent.keywords.some(k => input.includes(k))) {
-            return intent;
-        }
-    }
-
-    return null;
-}
-
-function handleBotMessage(text) {
-    const intent = detectIntent(text);
-
-    if (!intent) {
-        return {
-            message: "🤖 No entendí eso. Usa las opciones del menú.",
-            route: null
-        };
-    }
-
-    return {
-        message: intent.responses[
-            Math.floor(Math.random() * intent.responses.length)
-        ],
-        route: intent.route
-    };
-}
+let currentState = "start";
 
 //////////////////////////////////////////////////
-// 🎮 MENÚ RÁPIDO (OPCIONES UI)
-//////////////////////////////////////////////////
-
-const BOT_MENU = [
-    { label: "🎮 Tienda", text: "quiero comprar merch" },
-    { label: "⭐ Zona Exclusiva", text: "zona exclusiva" },
-    { label: "📸 Cobertura", text: "cobertura de eventos" },
-    { label: "🎟️ Eventos", text: "eventos" },
-    { label: "💬 Contacto", text: "contacto equipo" }
-];
-
-function renderMenu(chatBody, chatInput) {
-
-    const container = document.createElement("div");
-    container.className = "chat-options";
-
-    BOT_MENU.forEach(opt => {
-
-        const btn = document.createElement("button");
-        btn.innerText = opt.label;
-
-        btn.onclick = () => {
-
-            chatInput.value = opt.text;
-
-            chatInput.dispatchEvent(
-                new KeyboardEvent("keypress", { key: "Enter" })
-            );
-        };
-
-        container.appendChild(btn);
-    });
-
-    chatBody.appendChild(container);
-}
-
-//////////////////////////////////////////////////
-// 🐿️ CHATBOT UI + ARDILLA
+// 🚀 INIT CHATBOT
 //////////////////////////////////////////////////
 
 function initChatbot() {
@@ -131,16 +68,12 @@ function initChatbot() {
             </div>
 
             <div>
-                <h2>GamesAlone18 AI</h2>
+                <h2>GamesAlone18 NPC</h2>
                 <p id="botStatus">Ardilla en espera...</p>
             </div>
         </div>
 
         <div class="chat-body" id="chatBody"></div>
-
-        <div class="chat-footer">
-            <input id="chatInput" placeholder="Escribe..." />
-        </div>
     `;
 
     document.body.appendChild(btn);
@@ -149,16 +82,14 @@ function initChatbot() {
     const squirrel = box.querySelector("#squirrel");
     const botStatus = box.querySelector("#botStatus");
     const chatBody = box.querySelector("#chatBody");
-    const chatInput = box.querySelector("#chatInput");
 
-    function setSquirrelState(state) {
+    //////////////////////////////////////////////////
+    // 🐿️ VISUAL STATE
+    //////////////////////////////////////////////////
 
-        squirrel.classList.remove(
-            "state-idle",
-            "state-happy",
-            "state-thinking"
-        );
+    function setState(state) {
 
+        squirrel.classList.remove("state-idle", "state-thinking", "state-happy");
         squirrel.classList.add(state);
 
         if (state === "state-thinking") botStatus.innerText = "Procesando...";
@@ -166,7 +97,11 @@ function initChatbot() {
         if (state === "state-idle") botStatus.innerText = "Ardilla en espera...";
     }
 
-    function addMessage(text, type) {
+    //////////////////////////////////////////////////
+    // 💬 MENSAJES
+    //////////////////////////////////////////////////
+
+    function addMessage(text, type = "bot") {
 
         const div = document.createElement("div");
 
@@ -179,32 +114,67 @@ function initChatbot() {
         chatBody.scrollTop = chatBody.scrollHeight;
     }
 
-    function runBot(text) {
+    //////////////////////////////////////////////////
+    // 🎮 OPCIONES
+    //////////////////////////////////////////////////
 
-        setSquirrelState("state-thinking");
+    function renderOptions(options) {
 
-        const res = handleBotMessage(text);
+        const container = document.createElement("div");
+        container.className = "chat-options";
+
+        options.forEach(opt => {
+
+            const btn = document.createElement("button");
+            btn.innerText = opt.label;
+
+            btn.onclick = () => {
+                addMessage(opt.label, "user");
+                goState(opt.next);
+            };
+
+            container.appendChild(btn);
+        });
+
+        chatBody.appendChild(container);
+    }
+
+    //////////////////////////////////////////////////
+    // 🧭 ENGINE
+    //////////////////////////////////////////////////
+
+    function goState(state) {
+
+        const data = BOT_STATES[state];
+        if (!data) return;
+
+        setState("state-thinking");
 
         setTimeout(() => {
 
-            addMessage(res.message, "bot");
-            setSquirrelState("state-happy");
+            addMessage(data.message, "bot");
 
-            if (res.route) {
+            setState("state-happy");
+
+            if (data.options) {
+                renderOptions(data.options);
+            }
+
+            if (data.route) {
                 setTimeout(() => {
-                    window.location.href = res.route;
+                    window.location.href = data.route;
                 }, 900);
             }
 
             setTimeout(() => {
-                setSquirrelState("state-idle");
+                setState("state-idle");
             }, 2000);
 
         }, 400);
     }
 
     //////////////////////////////////////////////////
-    // EVENTOS
+    // TOGGLE BOT
     //////////////////////////////////////////////////
 
     btn.onclick = () => {
@@ -212,27 +182,13 @@ function initChatbot() {
             box.style.display === "flex" ? "none" : "flex";
     };
 
-    chatInput.addEventListener("keypress", (e) => {
-
-        if (e.key !== "Enter") return;
-        if (!chatInput.value.trim()) return;
-
-        const text = chatInput.value;
-
-        addMessage(text, "user");
-        runBot(text);
-
-        chatInput.value = "";
-    });
-
     //////////////////////////////////////////////////
-    // INICIO
+    // START
     //////////////////////////////////////////////////
 
-    addMessage("👋 Bienvenido a GamesAlone18 Universe. Elige una opción:", "bot");
-    renderMenu(chatBody, chatInput);
+    goState("start");
 
-    console.log("🐿️ CHATBOT READY");
+    console.log("🐿️ CHATBOT NPC v2 READY");
 }
 
 document.addEventListener("DOMContentLoaded", initChatbot);
