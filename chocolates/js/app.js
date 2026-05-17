@@ -1,220 +1,145 @@
-const modal =
-    document.getElementById(
-        "cotizacionModal"
-    );
+/* ===================================
+   MODAL COTIZACIÓN
+=================================== */
 
-const openBtn =
-    document.getElementById(
-        "openModal"
-    );
+const modal = document.getElementById("cotizacionModal");
+const openBtn = document.getElementById("openModal");
+const openNavBtn = document.getElementById("openModalNav");
+const closeBtn = document.getElementById("closeModal");
 
-const closeBtn =
-    document.getElementById(
-        "closeModal"
-    );
+function openModal() {
+    modal.classList.add("active");
+}
 
-openBtn.addEventListener(
-    "click",
-    () => {
+function closeModal() {
+    modal.classList.remove("active");
+}
 
-        modal.classList.add(
-            "active"
-        );
-    }
-);
+if (openBtn) openBtn.addEventListener("click", openModal);
 
-closeBtn.addEventListener(
-    "click",
-    () => {
+if (openNavBtn) {
+    openNavBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+    });
+}
 
-        modal.classList.remove(
-            "active"
-        );
-    }
-);
+if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
 /* ===================================
-   GOOGLE SHEETS
+   GOOGLE SHEETS - COTIZACIONES
 =================================== */
 
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbz6yJXPduACkrPlb8H-rLHP8Fl9wcZGzDQXDD6Jx5UUZQ5_yxlE_T2udMgi-_vPI_o/exec";
 
-document
-.getElementById(
-    "cotizacionForm"
-)
-.addEventListener(
-    "submit",
-    async(e) => {
+const form = document.getElementById("cotizacionForm");
 
-        e.preventDefault();
+if (form) {
 
-        const submitBtn =
-            document.querySelector(
-                ".submit-btn"
-            );
+form.addEventListener("submit", async (e) => {
 
-        submitBtn.disabled = true;
+    e.preventDefault();
 
-        submitBtn.innerText =
-            "Enviando...";
+    const submitBtn = document.querySelector(".submit-btn");
 
-        const data = {
+    /* loading UI */
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Enviando...";
 
-            nombre:
-            document.getElementById(
-                "nombre"
-            ).value,
+    /* VALIDACIÓN CHECKBOX */
+    const consentimiento = document.getElementById("consentimiento");
 
-            telefono:
-            document.getElementById(
-                "telefono"
-            ).value,
+    if (!consentimiento.checked) {
+        alert("Debes aceptar términos y aviso de privacidad");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Enviar Solicitud";
+        return;
+    }
 
-            correo:
-            document.getElementById(
-                "correo"
-            ).value,
+    /* DATA FORM */
+    const data = {
+        nombre: document.getElementById("nombre").value,
+        telefono: document.getElementById("telefono").value,
+        correo: document.getElementById("correo").value,
+        evento: document.getElementById("evento").value,
+        cantidad: document.getElementById("cantidad").value,
+        fechaEvento: document.getElementById("fechaEvento").value,
+        descripcion: document.getElementById("descripcion").value
+    };
 
-            evento:
-            document.getElementById(
-                "evento"
-            ).value,
+    try {
 
-            cantidad:
-            document.getElementById(
-                "cantidad"
-            ).value,
+        await fetch(scriptURL, {
 
-            fechaEvento:
-            document.getElementById(
-                "fechaEvento"
-            ).value,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
 
-            descripcion:
-            document.getElementById(
-                "descripcion"
-            ).value
-        };
+            body: new URLSearchParams({
 
-        try{
+                nombre: data.nombre,
+                telefono: data.telefono,
+                correo: data.correo,
+                evento: data.evento,
+                cantidad: data.cantidad,
+                fecha_evento: data.fechaEvento,
+                descripcion: data.descripcion
 
-            await fetch(
-                scriptURL,
-                {
+            })
 
-                    method:"POST",
+        });
 
-                    body:JSON.stringify(
-                        data
-                    )
-                }
-            );
+        alert("Solicitud enviada correctamente 🍫");
 
-            alert(
-                "Solicitud enviada correctamente"
-            );
+        form.reset();
+        modal.classList.remove("active");
 
-            document
-            .getElementById(
-                "cotizacionForm"
-            )
-            .reset();
+    } catch (error) {
 
-            modal.classList.remove(
-                "active"
-            );
+        alert("Error al enviar solicitud. Intenta nuevamente.");
+        console.error(error);
 
-        }catch(error){
-
-            alert(
-                "Error al enviar solicitud"
-            );
-
-            console.error(
-                error
-            );
-        }
+    } finally {
 
         submitBtn.disabled = false;
+        submitBtn.innerText = "Enviar Solicitud";
 
-        submitBtn.innerText =
-            "Enviar Solicitud";
     }
-);
+
+});
+
+}
 
 /* ===================================
    HEADER DINÁMICO
 =================================== */
 
-window.addEventListener(
-    "scroll",
-    () => {
+window.addEventListener("scroll", () => {
 
-        const header =
-            document.querySelector(
-                ".header"
-            );
+    const header = document.querySelector(".header");
 
-        if(window.scrollY > 50){
+    if (!header) return;
 
-            header.style.background =
-                "rgba(0,0,0,.75)";
+    header.style.background =
+        window.scrollY > 50
+            ? "rgba(0,0,0,.75)"
+            : "rgba(0,0,0,.2)";
 
-        }else{
-
-            header.style.background =
-                "rgba(0,0,0,.2)";
-        }
-    }
-);
+});
 
 /* ===================================
    WHATSAPP CHATBOT
 =================================== */
 
-const whatsappBot =
-    document.getElementById(
-        "whatsappBot"
-    );
+const whatsappBot = document.getElementById("whatsappBot");
+const toggleWhatsapp = document.getElementById("toggleWhatsapp");
 
-const toggleWhatsapp =
-    document.getElementById(
-        "toggleWhatsapp"
-    );
+if (toggleWhatsapp && whatsappBot) {
 
-toggleWhatsapp.addEventListener(
-    "click",
-    () => {
-
-        whatsappBot.classList.toggle(
-            "active"
-        );
-    }
-);
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const modal = document.getElementById("cotizacionModal");
-    const openBtn = document.getElementById("openModal");
-    const openNavBtn = document.getElementById("openModalNav");
-    const closeBtn = document.getElementById("closeModal");
-
-    function openModal(){
-        modal.classList.add("active");
-    }
-
-    function closeModal(){
-        modal.classList.remove("active");
-    }
-
-    if(openBtn) openBtn.addEventListener("click", openModal);
-    if(openNavBtn) openNavBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
-    });
-
-    if(closeBtn) closeBtn.addEventListener("click", closeModal);
-
+toggleWhatsapp.addEventListener("click", () => {
+    whatsappBot.classList.toggle("active");
 });
+
+}
