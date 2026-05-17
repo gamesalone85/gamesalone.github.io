@@ -1,21 +1,17 @@
 //////////////////////////////////////////////////
-// 🐿️ GAMESALONE18 CHATBOT - NIVEL 4 PRO CLEAN
+// 🐿️ GAMESALONE18 CHATBOT - NIVEL 5 (ANIMATED)
 //////////////////////////////////////////////////
 
 (function () {
 
-    if (window.__GA18_CHATBOT_V4) return;
-    window.__GA18_CHATBOT_V4 = true;
+    if (window.__GA18_CHATBOT_V5) return;
+    window.__GA18_CHATBOT_V5 = true;
 
     //////////////////////////////////////////////////
-    // 🧠 DATA LAYER (MODOS)
+    // 🧠 DATA
     //////////////////////////////////////////////////
 
-    const MODES = {
-        home: {
-            title: "🏠 Inicio",
-            options: ["merch", "zona", "prensa", "contacto"]
-        },
+    const DATA = {
         merch: {
             title: "🎮 Tienda",
             message: "🔥 Merch oficial y colecciones limitadas.",
@@ -23,7 +19,7 @@
         },
         zona: {
             title: "⭐ Zona Exclusiva",
-            message: "👾 Acceso premium, comunidad y beneficios.",
+            message: "👾 Acceso premium y comunidad privada.",
             route: "/zona/"
         },
         prensa: {
@@ -33,7 +29,7 @@
         },
         contacto: {
             title: "💬 Contacto",
-            message: "📩 Colaboraciones, eventos y soporte.",
+            message: "📩 Colaboraciones y soporte directo.",
             route: "/contactanos/"
         }
     };
@@ -53,7 +49,10 @@
 
         box.innerHTML = `
             <div class="chat-header">
-                <div class="ga-squirrel" id="ga-squirrel">🐿️</div>
+                <div class="squirrel-container">
+                    <div id="ga-squirrel" class="squirrel idle"></div>
+                </div>
+
                 <div>
                     <h2>GA18 Assistant</h2>
                     <p id="ga-status">Ardilla en espera...</p>
@@ -61,6 +60,7 @@
             </div>
 
             <div class="chat-body" id="ga-body"></div>
+
             <div class="chat-footer">
                 <div id="ga-options"></div>
             </div>
@@ -75,15 +75,15 @@
         const squirrel = box.querySelector("#ga-squirrel");
 
         let open = false;
-        let currentMode = "home";
 
         //////////////////////////////////////////////////
-        // 🐿️ STATE SYSTEM
+        // 🐿️ ANIMATION STATES
         //////////////////////////////////////////////////
 
         function setState(state) {
 
             squirrel.classList.remove("idle", "thinking", "happy");
+
             squirrel.classList.add(state);
 
             if (state === "idle") status.innerText = "Ardilla en espera...";
@@ -92,7 +92,7 @@
         }
 
         //////////////////////////////////////////////////
-        // 💬 MESSAGE SYSTEM
+        // 💬 MESSAGES
         //////////////////////////////////////////////////
 
         function msg(text, type = "bot") {
@@ -104,14 +104,14 @@
         }
 
         //////////////////////////////////////////////////
-        // 🎯 MENU RENDER
+        // 🎯 MENU
         //////////////////////////////////////////////////
 
         function renderMenu() {
 
             options.innerHTML = "";
 
-            MODES.home.options.forEach(key => {
+            Object.keys(DATA).forEach(key => {
 
                 const b = document.createElement("button");
 
@@ -131,60 +131,58 @@
         }
 
         //////////////////////////////////////////////////
-        // 🧠 HANDLER CORE
+        // 🧠 CORE LOGIC
         //////////////////////////////////////////////////
 
         function handle(key) {
 
-            const data = MODES[key];
-            if (!data) return;
+            const item = DATA[key];
 
-            currentMode = key;
-
-            msg(data.title, "user");
+            msg(item.title, "user");
 
             setState("thinking");
 
             setTimeout(() => {
 
-                msg(data.message, "bot");
+                msg(item.message, "bot");
 
                 setState("happy");
 
-                renderAction(data.route);
+                showAction(item.route);
 
-            }, 500);
+            }, 600);
         }
 
         //////////////////////////////////////////////////
-        // 🚀 ACTION BUTTON
+        // 🚀 ACTION
         //////////////////////////////////////////////////
 
-        function renderAction(route) {
+        function showAction(route) {
 
             options.innerHTML = "";
 
-            const a = document.createElement("button");
-            a.className = "chat-action";
-            a.innerText = "👉 Ir ahora";
+            const btn = document.createElement("button");
+            btn.className = "chat-action";
+            btn.innerText = "👉 Ir ahora";
 
-            a.onclick = () => window.location.href = route;
+            btn.onclick = () => window.location.href = route;
 
-            options.appendChild(a);
+            options.appendChild(btn);
 
             setTimeout(() => {
                 renderMenu();
                 setState("idle");
-            }, 3500);
+            }, 3000);
         }
 
         //////////////////////////////////////////////////
-        // 🧠 OPEN / CLOSE
+        // 🧠 TOGGLE
         //////////////////////////////////////////////////
 
         btn.onclick = () => {
 
             open = !open;
+
             box.style.display = open ? "flex" : "none";
 
             if (open && body.childElementCount === 0) {
@@ -194,11 +192,7 @@
             }
         };
 
-        //////////////////////////////////////////////////
-        // INIT LOG
-        //////////////////////////////////////////////////
-
-        console.log("🐿️ GA18 CHATBOT V4 READY");
+        console.log("🐿️ GA18 CHATBOT V5 READY (ANIMATED)");
     }
 
     document.addEventListener("DOMContentLoaded", init);
