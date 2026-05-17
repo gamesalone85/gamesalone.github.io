@@ -84,7 +84,8 @@
                     Ver Catálogo
                 </button>
 
-                <button class="btn-secondary">
+                <button class="btn-secondary"
+                    id="openModal">
                     Cotizar Evento
                 </button>
 
@@ -174,6 +175,126 @@
         </div>
 
     </section>
+
+    <!-- MODAL -->
+<div class="modal"
+     id="cotizacionModal">
+
+    <div class="modal-content">
+
+        <h2>
+            Solicitar Cotización
+        </h2>
+
+        <p class="modal-subtitle">
+            Cuéntanos sobre tu evento
+            y personalización deseada.
+        </p>
+
+        <form id="cotizacionForm">
+
+            <div class="form-group">
+
+                <label>
+                    Nombre
+                </label>
+
+                <input type="text"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Teléfono
+                </label>
+
+                <input type="tel"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Correo
+                </label>
+
+                <input type="email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Tipo de Evento
+                </label>
+
+                <input type="text"
+                       placeholder="Bautizo, hotel, cumpleaños..."
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Cantidad Aproximada
+                </label>
+
+                <input type="number"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Fecha del Evento
+                </label>
+
+                <input type="date"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Descripción
+                </label>
+
+                <textarea rows="5"
+                          placeholder="Describe tu idea o temática..."></textarea>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button type="button"
+                        class="cancel-btn"
+                        id="closeModal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="submit"
+                        class="submit-btn">
+
+                    Enviar Solicitud
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
     <!-- FOOTER -->
     <footer class="footer">
