@@ -69,14 +69,16 @@ if (form) {
 
         try {
 
-            const response = await fetch(scriptURL, {
+            await fetch(scriptURL, {
                 method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(data)
             });
 
-            const result = await response.json();
-
-            alert(`Solicitud enviada correctamente 🍫\nID: ${result.id || "N/A"}`);
+            alert("Solicitud enviada correctamente 🍫");
 
             form.reset();
             closeModal();
