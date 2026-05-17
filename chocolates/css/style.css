@@ -474,6 +474,8 @@ body{
     transition:.3s;
 
     z-index:2000;
+
+    overflow-y:auto;
 }
 
 .modal.active{
@@ -483,11 +485,15 @@ body{
     visibility:visible;
 }
 
-.modal-content{
+.modal-content{    
 
     width:100%;
 
     max-width:650px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
 
     background:#1e120c;
 
@@ -651,4 +657,35 @@ body{
 .instagram-float:hover{
 
     transform:translateY(-5px);
+}
+/* MOBILE FIX MODAL */
+
+@media(max-width:768px){
+
+    .modal{
+
+        align-items:flex-start;
+
+        padding-top:40px;
+
+        padding-bottom:40px;
+    }
+
+    .modal-content{
+
+        max-height:none;
+
+        border-radius:25px;
+    }
+
+    .modal-buttons{
+
+        position:sticky;
+
+        bottom:0;
+
+        background:#1e120c;
+
+        padding-top:15px;
+    }
 }
