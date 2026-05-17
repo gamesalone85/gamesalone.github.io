@@ -232,55 +232,68 @@ body {
     border-radius:10px;
 }
 /* =========================
-   🐿️ ARDILLA NPC
+🐿️ ARDILLA ANIMADA GA18
 ========================= */
 
-.squirrel-wrapper{
-    width:50px;
-    height:50px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:5px;
+.squirrel-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
-.squirrel{
-    font-size:34px;
-    transition:0.3s ease;
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+.squirrel {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffcc66, #ff7a00);
+    box-shadow: 0 0 15px rgba(255, 120, 0, .6);
+    position: relative;
+    transition: all .25s ease;
 }
 
-/* ESTADOS */
-
-.state-idle{
-    transform: translateY(0px);
-    opacity:0.9;
+/* ojos */
+.squirrel::before,
+.squirrel::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    top: 18px;
 }
 
-.state-happy{
-    transform: translateY(-2px) scale(1.1);
-    filter: drop-shadow(0 0 10px #ff00ff);
+.squirrel::before { left: 16px; }
+.squirrel::after { right: 16px; }
+
+/* boca */
+.squirrel::after {
+    content: "";
 }
 
-.state-thinking{
-    transform: rotate(-10deg);
-    opacity:0.8;
-}
-.ga-squirrel {
-    font-size: 28px;
-    transition: all .3s ease;
-}
-
-.ga-squirrel.idle {
+.squirrel.idle {
     transform: scale(1);
 }
 
-.ga-squirrel.thinking {
-    transform: scale(1.2) rotate(10deg);
+.squirrel.thinking {
+    transform: scale(1.15) rotate(8deg);
+    animation: shake .6s infinite;
     filter: brightness(1.2);
 }
 
-.ga-squirrel.happy {
+.squirrel.happy {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px #ff00ff);
+    animation: bounce .6s infinite;
+    box-shadow: 0 0 25px #ff00ff;
+}
+
+/* animaciones */
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes shake {
+    0%,100% { transform: rotate(8deg); }
+    50% { transform: rotate(-8deg); }
 }
