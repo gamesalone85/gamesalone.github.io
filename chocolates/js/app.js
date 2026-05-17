@@ -193,3 +193,28 @@ toggleWhatsapp.addEventListener(
         );
     }
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.getElementById("cotizacionModal");
+    const openBtn = document.getElementById("openModal");
+    const openNavBtn = document.getElementById("openModalNav");
+    const closeBtn = document.getElementById("closeModal");
+
+    function openModal(){
+        modal.classList.add("active");
+    }
+
+    function closeModal(){
+        modal.classList.remove("active");
+    }
+
+    if(openBtn) openBtn.addEventListener("click", openModal);
+    if(openNavBtn) openNavBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+    });
+
+    if(closeBtn) closeBtn.addEventListener("click", closeModal);
+
+});
