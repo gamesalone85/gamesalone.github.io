@@ -1,94 +1,101 @@
 //////////////////////////////////////////////////
-// 🐿️ GAMESALONE18 CHATBOT - NIVEL 3 CLEAN
+// 🐿️ GAMESALONE18 CHATBOT - NIVEL 4 PRO CLEAN
 //////////////////////////////////////////////////
 
 (function () {
 
-    if (window.__GA18_CHATBOT_LOADED) return;
-    window.__GA18_CHATBOT_LOADED = true;
+    if (window.__GA18_CHATBOT_V4) return;
+    window.__GA18_CHATBOT_V4 = true;
 
     //////////////////////////////////////////////////
-    // 🎯 CONFIG INTENTS
+    // 🧠 DATA LAYER (MODOS)
     //////////////////////////////////////////////////
 
-    const INTENTS = {
+    const MODES = {
+        home: {
+            title: "🏠 Inicio",
+            options: ["merch", "zona", "prensa", "contacto"]
+        },
         merch: {
-            title: "🎮 Tienda / Merch",
-            message: "🔥 Merch oficial y colecciones limitadas de GamesAlone18.",
+            title: "🎮 Tienda",
+            message: "🔥 Merch oficial y colecciones limitadas.",
             route: "/merch/"
         },
         zona: {
             title: "⭐ Zona Exclusiva",
-            message: "👾 Acceso premium con beneficios, contenido y comunidad.",
+            message: "👾 Acceso premium, comunidad y beneficios.",
             route: "/zona/"
+        },
+        prensa: {
+            title: "📰 Prensa",
+            message: "🎤 Cobertura de eventos y medios oficiales.",
+            route: "/prensa/"
         },
         contacto: {
             title: "💬 Contacto",
-            message: "📩 Contacta al equipo para colaboraciones o soporte.",
+            message: "📩 Colaboraciones, eventos y soporte.",
             route: "/contactanos/"
-        },
-        prensa: {
-            title: "📰 Sala de Prensa",
-            message: "🎤 Cobertura de eventos, entrevistas y prensa oficial.",
-            route: "/prensa/"
         }
     };
 
     //////////////////////////////////////////////////
-    // 🧠 UI CREATION
+    // 🐿️ CREATE UI
     //////////////////////////////////////////////////
 
-    function createChatbot() {
+    function init() {
 
-        // BOTÓN
         const btn = document.createElement("button");
         btn.className = "chat-toggle";
         btn.innerHTML = "🐿️";
 
-        // CAJA
         const box = document.createElement("div");
         box.className = "chatbot";
 
         box.innerHTML = `
             <div class="chat-header">
-                <div class="squirrel">🐿️</div>
+                <div class="ga-squirrel" id="ga-squirrel">🐿️</div>
                 <div>
-                    <h2>GamesAlone18 Assistant</h2>
-                    <p id="ga18-status">Ardilla en espera...</p>
+                    <h2>GA18 Assistant</h2>
+                    <p id="ga-status">Ardilla en espera...</p>
                 </div>
             </div>
 
-            <div class="chat-body" id="ga18-body"></div>
-
+            <div class="chat-body" id="ga-body"></div>
             <div class="chat-footer">
-                <div id="ga18-options"></div>
+                <div id="ga-options"></div>
             </div>
         `;
 
         document.body.appendChild(btn);
         document.body.appendChild(box);
 
-        const body = box.querySelector("#ga18-body");
-        const options = box.querySelector("#ga18-options");
-        const status = box.querySelector("#ga18-status");
+        const body = box.querySelector("#ga-body");
+        const options = box.querySelector("#ga-options");
+        const status = box.querySelector("#ga-status");
+        const squirrel = box.querySelector("#ga-squirrel");
 
         let open = false;
+        let currentMode = "home";
 
         //////////////////////////////////////////////////
-        // 🐿️ STATE
+        // 🐿️ STATE SYSTEM
         //////////////////////////////////////////////////
 
         function setState(state) {
+
+            squirrel.classList.remove("idle", "thinking", "happy");
+            squirrel.classList.add(state);
+
             if (state === "idle") status.innerText = "Ardilla en espera...";
             if (state === "thinking") status.innerText = "Procesando...";
-            if (state === "ready") status.innerText = "Listo ✨";
+            if (state === "happy") status.innerText = "Listo ✨";
         }
 
         //////////////////////////////////////////////////
-        // 💬 MESSAGE
+        // 💬 MESSAGE SYSTEM
         //////////////////////////////////////////////////
 
-        function addMessage(text, type = "bot") {
+        function msg(text, type = "bot") {
             const div = document.createElement("div");
             div.className = type === "user" ? "user-message" : "bot-message";
             div.innerHTML = text;
@@ -97,52 +104,54 @@
         }
 
         //////////////////////////////////////////////////
-        // 🎯 MENU OPTIONS (UI PRINCIPAL)
+        // 🎯 MENU RENDER
         //////////////////////////////////////////////////
 
         function renderMenu() {
 
             options.innerHTML = "";
 
-            const menu = [
-                { key: "merch", label: "🎮 Tienda" },
-                { key: "zona", label: "⭐ Zona Exclusiva" },
-                { key: "prensa", label: "📰 Prensa" },
-                { key: "contacto", label: "💬 Contacto" }
-            ];
+            MODES.home.options.forEach(key => {
 
-            menu.forEach(item => {
+                const b = document.createElement("button");
 
-                const btn = document.createElement("button");
-                btn.innerText = item.label;
+                const labels = {
+                    merch: "🎮 Tienda",
+                    zona: "⭐ Zona",
+                    prensa: "📰 Prensa",
+                    contacto: "💬 Contacto"
+                };
 
-                btn.onclick = () => handleSelection(item.key);
+                b.innerText = labels[key];
 
-                options.appendChild(btn);
+                b.onclick = () => handle(key);
+
+                options.appendChild(b);
             });
         }
 
         //////////////////////////////////////////////////
-        // 🧠 LOGIC
+        // 🧠 HANDLER CORE
         //////////////////////////////////////////////////
 
-        function handleSelection(key) {
+        function handle(key) {
 
-            const intent = INTENTS[key];
+            const data = MODES[key];
+            if (!data) return;
 
-            if (!intent) return;
+            currentMode = key;
 
-            addMessage(intent.title, "user");
+            msg(data.title, "user");
 
             setState("thinking");
 
             setTimeout(() => {
 
-                addMessage(intent.message, "bot");
+                msg(data.message, "bot");
 
-                setState("ready");
+                setState("happy");
 
-                renderAction(intent.route);
+                renderAction(data.route);
 
             }, 500);
         }
@@ -153,40 +162,45 @@
 
         function renderAction(route) {
 
-            const action = document.createElement("button");
-            action.className = "chat-action";
-            action.innerText = "👉 Ir ahora";
-
-            action.onclick = () => {
-                window.location.href = route;
-            };
-
             options.innerHTML = "";
-            options.appendChild(action);
 
-            setTimeout(renderMenu, 4000);
+            const a = document.createElement("button");
+            a.className = "chat-action";
+            a.innerText = "👉 Ir ahora";
+
+            a.onclick = () => window.location.href = route;
+
+            options.appendChild(a);
+
+            setTimeout(() => {
+                renderMenu();
+                setState("idle");
+            }, 3500);
         }
 
         //////////////////////////////////////////////////
-        // TOGGLE
+        // 🧠 OPEN / CLOSE
         //////////////////////////////////////////////////
 
         btn.onclick = () => {
 
             open = !open;
-
             box.style.display = open ? "flex" : "none";
 
             if (open && body.childElementCount === 0) {
-                addMessage("👋 Bienvenido a GamesAlone18 Universe");
+                msg("👋 Bienvenido a GamesAlone18 Universe");
                 renderMenu();
                 setState("idle");
             }
         };
 
-        console.log("🐿️ GA18 CHATBOT NIVEL 3 LISTO");
+        //////////////////////////////////////////////////
+        // INIT LOG
+        //////////////////////////////////////////////////
+
+        console.log("🐿️ GA18 CHATBOT V4 READY");
     }
 
-    document.addEventListener("DOMContentLoaded", createChatbot);
+    document.addEventListener("DOMContentLoaded", init);
 
 })();
