@@ -31,7 +31,7 @@ if (closeBtn) closeBtn.addEventListener("click", closeModal);
 =================================== */
 
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbz6yJXPduACkrPlb8H-rLHP8Fl9wcZGzDQXDD6Jx5UUZQ5_yxlE_T2udMgi-_vPI_o/exec";
+"https://script.google.com/macros/s/AKfycbw5UdfG5otEdGmBZdqmddwHEEvQp_hmZTxeP0yY32XDVMdOjKjVT62QmYpkUnAn-Fs/exec";
 
 const form = document.getElementById("cotizacionForm");
 
