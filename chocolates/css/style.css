@@ -443,6 +443,14 @@ body{
         width:70px;
     }
 }
+.instagram-float{
+
+    right:15px;
+
+    bottom:85px;
+
+    padding:14px 20px;
+}
 /* MODAL */
 
 .modal{
