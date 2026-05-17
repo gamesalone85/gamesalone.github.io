@@ -266,3 +266,21 @@ body {
     transform: rotate(-10deg);
     opacity:0.8;
 }
+.ga-squirrel {
+    font-size: 28px;
+    transition: all .3s ease;
+}
+
+.ga-squirrel.idle {
+    transform: scale(1);
+}
+
+.ga-squirrel.thinking {
+    transform: scale(1.2) rotate(10deg);
+    filter: brightness(1.2);
+}
+
+.ga-squirrel.happy {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #ff00ff);
+}
