@@ -38,7 +38,7 @@ closeBtn.addEventListener(
 =================================== */
 
 const scriptURL =
-"PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
+"https://script.google.com/macros/s/AKfycbwgma0MjJ_EC1xsaQu9ximCLgmSVwioP3OPa8B5JAnbDs4MS1WRXghiCAJiMdyVpV4/exec";
 
 document
 .getElementById(
