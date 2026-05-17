@@ -38,7 +38,7 @@ closeBtn.addEventListener(
 =================================== */
 
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbwgma0MjJ_EC1xsaQu9ximCLgmSVwioP3OPa8B5JAnbDs4MS1WRXghiCAJiMdyVpV4/exec";
+"https://script.google.com/macros/s/AKfycbz6yJXPduACkrPlb8H-rLHP8Fl9wcZGzDQXDD6Jx5UUZQ5_yxlE_T2udMgi-_vPI_o/exec";
 
 document
 .getElementById(
