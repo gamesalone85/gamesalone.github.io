@@ -31,8 +31,7 @@ if (closeBtn) closeBtn.addEventListener("click", closeModal);
    GOOGLE SHEETS - COTIZACIONES
 =================================== */
 
-const scriptURL =
-"https://script.google.com/macros/s/AKfycbwJ1sPwB8CVwlP9Pueh7NVUnfxncjRwP903wFpxxkyKiQn4wTlnZQQRbuWI-VIA5F8/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwJ1sPwB8CVwlP9Pueh7NVUnfxncjRwP903wFpxxkyKiQn4wTlnZQQRbuWI-VIA5F8/exec";
 
 const form = document.getElementById("cotizacionForm");
 
@@ -44,19 +43,14 @@ if (form) {
         const submitBtn = document.querySelector(".submit-btn");
         const checkbox = document.getElementById("consentimiento");
 
-        /* =========================
-           VALIDACIÓN CHECKBOX
-        ========================= */
         if (checkbox && !checkbox.checked) {
             alert("Debes aceptar términos y aviso de privacidad");
             return;
         }
 
-        /* UI LOADING */
         submitBtn.disabled = true;
         submitBtn.innerText = "Enviando...";
 
-        /* DATA */
         const data = {
             nombre: document.getElementById("nombre")?.value || "",
             telefono: document.getElementById("telefono")?.value || "",
@@ -69,12 +63,14 @@ if (form) {
 
         try {
 
+            /* IMPORTANTE:
+               - NO usamos response.json()
+               - NO usamos headers
+               - NO usamos CORS
+            */
+
             await fetch(scriptURL, {
                 method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type": "application/json"
-                },
                 body: JSON.stringify(data)
             });
 
@@ -86,7 +82,7 @@ if (form) {
         } catch (error) {
 
             console.error(error);
-            alert("Error al enviar solicitud. Intenta nuevamente.");
+            alert("Error al enviar solicitud.");
 
         } finally {
 
@@ -121,9 +117,7 @@ const whatsappBot = document.getElementById("whatsappBot");
 const toggleWhatsapp = document.getElementById("toggleWhatsapp");
 
 if (toggleWhatsapp && whatsappBot) {
-
     toggleWhatsapp.addEventListener("click", () => {
         whatsappBot.classList.toggle("active");
     });
-
 }
