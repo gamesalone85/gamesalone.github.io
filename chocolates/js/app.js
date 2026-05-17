@@ -169,3 +169,27 @@ window.addEventListener(
         }
     }
 );
+
+/* ===================================
+   WHATSAPP CHATBOT
+=================================== */
+
+const whatsappBot =
+    document.getElementById(
+        "whatsappBot"
+    );
+
+const toggleWhatsapp =
+    document.getElementById(
+        "toggleWhatsapp"
+    );
+
+toggleWhatsapp.addEventListener(
+    "click",
+    () => {
+
+        whatsappBot.classList.toggle(
+            "active"
+        );
+    }
+);
