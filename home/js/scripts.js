@@ -125,4 +125,8 @@ function handleBotMessage(text){
         route: intent.route
     };
 }
+console.log("🔥 BOT SYSTEM TEST ACTIVE");
 
+console.log(
+    handleBotMessage("quiero comprar merch")
+);
