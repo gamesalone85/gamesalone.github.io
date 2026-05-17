@@ -287,24 +287,23 @@ body{
 
 .card{
 
-    background:var(--soft);
+    background: linear-gradient(145deg, #1a0f0a, #120a07);
 
-    border-radius:25px;
+    border: 1px solid rgba(255,255,255,.06);
 
-    padding:25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
 
-    transition:.4s;
+    transform: translateY(0);
 
-    border:1px solid rgba(255,255,255,.05);
+    transition: .4s ease;
 }
 
 .card:hover{
 
-    transform:translateY(-10px);
+    transform: translateY(-12px);
 
-    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    box-shadow: 0 25px 60px rgba(0,0,0,.6);
 }
-
 /* CARD IMAGES */
 
 .card{
