@@ -4,22 +4,39 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --chocolate:#24130d;
+    --gold:#d4af37;
+    --cream:#f7f0e8;
+    --soft:#3a2418;
+    --dark:#120905;
+}
+
 body{
 
     font-family:'Poppins', sans-serif;
 
-    background:#1a1a1a;
+    background:var(--dark);
 
-    color:#fff;
+    color:white;
+
+    overflow-x:hidden;
 }
 
 /* HEADER */
 
 .header{
 
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
     width:100%;
 
-    padding:20px 50px;
+    padding:20px 60px;
 
     display:flex;
 
@@ -27,43 +44,65 @@ body{
 
     align-items:center;
 
-    position:absolute;
+    z-index:1000;
 
-    top:0;
+    background:rgba(0,0,0,.2);
 
-    left:0;
-
-    z-index:10;
+    backdrop-filter:blur(10px);
 }
 
 .logo{
 
-    font-size:1.5rem;
+    width:90px;
 
-    font-weight:600;
-
-    color:#f4ede4;
+    object-fit:contain;
 }
 
 .nav{
 
     display:flex;
 
-    gap:25px;
+    gap:35px;
 }
 
 .nav a{
 
     text-decoration:none;
 
-    color:#fff;
+    color:white;
+
+    transition:.3s;
+
+    position:relative;
+}
+
+.nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
 
     transition:.3s;
 }
 
+.nav a:hover::after{
+
+    width:100%;
+}
+
 .nav a:hover{
 
-    color:#c8a96b;
+    color:var(--gold);
 }
 
 /* HERO */
@@ -76,8 +115,8 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.55)
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
     ),
     url('../img/fondo.jpg');
 
@@ -87,9 +126,9 @@ body{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
+
+    align-items:center;
 
     text-align:center;
 
@@ -98,69 +137,132 @@ body{
 
 .overlay{
 
-    max-width:700px;
+    max-width:900px;
+
+    animation:fadeUp 1s ease;
+}
+
+.tag{
+
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:var(--gold);
+
+    font-size:.9rem;
 }
 
 .hero h1{
 
+    font-size:5rem;
+
     font-family:'Playfair Display', serif;
 
-    font-size:4rem;
+    margin-bottom:25px;
 
-    margin-bottom:20px;
+    color:var(--cream);
+
+    line-height:1.1;
 }
 
 .hero p{
 
     font-size:1.2rem;
 
-    line-height:1.7;
+    line-height:1.9;
 
-    margin-bottom:30px;
+    margin-bottom:40px;
+
+    color:#eee;
 }
 
-.btn-primary{
+.hero-buttons{
 
-    padding:15px 40px;
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+}
+
+.btn-primary,
+.btn-secondary{
+
+    padding:16px 38px;
 
     border:none;
 
-    background:#c8a96b;
-
-    color:#000;
-
-    font-size:1rem;
+    border-radius:50px;
 
     cursor:pointer;
 
-    border-radius:50px;
+    font-weight:600;
 
     transition:.3s;
 }
 
-.btn-primary:hover{
+.btn-primary{
 
-    transform:scale(1.05);
+    background:var(--gold);
+
+    color:black;
+}
+
+.btn-secondary{
+
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+
+    transform:translateY(-4px);
+}
+
+.collab{
+
+    color:#ccc;
+
+    font-size:.95rem;
 }
 
 /* PRODUCTOS */
 
 .productos{
 
-    padding:100px 50px;
+    padding:120px 70px;
 
-    background:#23150d;
+    background:var(--chocolate);
 }
 
 .productos h2{
 
     text-align:center;
 
-    margin-bottom:50px;
+    font-size:3rem;
 
-    font-size:2.5rem;
+    margin-bottom:70px;
 
     font-family:'Playfair Display', serif;
+
+    color:var(--cream);
 }
 
 .productos-grid{
@@ -168,83 +270,142 @@ body{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(280px,1fr));
+    repeat(auto-fit,minmax(300px,1fr));
 
-    gap:30px;
+    gap:40px;
 }
 
 .card{
 
-    background:#2e1c12;
+    background:var(--soft);
 
-    border-radius:20px;
+    border-radius:25px;
 
-    overflow:hidden;
+    padding:25px;
 
-    padding:20px;
+    transition:.4s;
 
-    transition:.3s;
+    border:1px solid rgba(255,255,255,.05);
 }
 
 .card:hover{
 
     transform:translateY(-10px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 
 .img-placeholder{
 
     width:100%;
 
-    height:250px;
+    height:260px;
 
-    background:#4b2d1d;
+    border-radius:20px;
 
-    border-radius:15px;
+    margin-bottom:25px;
 
-    margin-bottom:20px;
+    background:
+    linear-gradient(
+        135deg,
+        #5a3827,
+        #24130d
+    );
 }
 
 .card h3{
 
     margin-bottom:15px;
+
+    color:var(--cream);
+
+    font-size:1.5rem;
 }
 
 .card p{
 
-    margin-bottom:20px;
+    line-height:1.8;
 
-    line-height:1.6;
+    margin-bottom:25px;
+
+    color:#ddd;
 }
 
 .card button{
 
     width:100%;
 
-    padding:14px;
+    padding:15px;
 
     border:none;
 
-    background:#c8a96b;
-
     border-radius:50px;
+
+    background:var(--gold);
 
     cursor:pointer;
 
     font-weight:600;
+
+    transition:.3s;
+}
+
+.card button:hover{
+
+    transform:scale(1.03);
 }
 
 /* FOOTER */
 
 .footer{
 
-    padding:30px;
+    padding:40px;
+
+    background:#0b0502;
 
     text-align:center;
+}
 
-    background:#120b07;
+.footer p{
+
+    margin-bottom:10px;
+
+    color:var(--cream);
+}
+
+.footer span{
+
+    color:#999;
+}
+
+/* ANIMACIÓN */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
 }
 
 /* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .hero h1{
+
+        font-size:4rem;
+    }
+}
 
 @media(max-width:768px){
 
@@ -255,16 +416,44 @@ body{
 
     .nav{
 
-        gap:15px;
+        gap:18px;
     }
 
     .hero h1{
 
-        font-size:2.8rem;
+        font-size:3rem;
+    }
+
+    .hero p{
+
+        font-size:1rem;
     }
 
     .productos{
 
-        padding:80px 20px;
+        padding:90px 20px;
+    }
+
+    .productos h2{
+
+        font-size:2.2rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .nav{
+
+        display:none;
+    }
+
+    .hero h1{
+
+        font-size:2.3rem;
+    }
+
+    .logo{
+
+        width:70px;
     }
 }
