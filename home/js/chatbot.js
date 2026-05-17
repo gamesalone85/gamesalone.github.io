@@ -73,6 +73,8 @@ function handleBotMessage(text){
 //////////////////////////////////////////////////
 
 function initChatbot(){
+    const squirrel = box.querySelector("#squirrel");
+    const botStatus = box.querySelector("#botStatus");
 
     const btn = document.createElement("button");
     btn.className = "chat-toggle";
