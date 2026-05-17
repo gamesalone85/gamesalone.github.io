@@ -52,8 +52,9 @@ function trackClick(origen) {
     }
 }
 
+
 //////////////////////////////////////////////////
-// 🤖 GAMESALONE18 CHATBOT - SYSTEM CLEAN
+// 🤖 GAMESALONE18 CHATBOT SYSTEM (CLEAN CORE)
 //////////////////////////////////////////////////
 
 const BOT_INTENTS = [
@@ -94,10 +95,6 @@ const BOT_INTENTS = [
     }
 ];
 
-//////////////////////////////////////////////////
-// 🧠 DETECTOR DE INTENCIÓN
-//////////////////////////////////////////////////
-
 function detectIntent(text) {
     const input = text.toLowerCase();
 
@@ -109,10 +106,6 @@ function detectIntent(text) {
 
     return null;
 }
-
-//////////////////////////////////////////////////
-// 🤖 MOTOR PRINCIPAL
-//////////////////////////////////////////////////
 
 function handleBotMessage(text) {
 
@@ -136,43 +129,4 @@ function handleBotMessage(text) {
     };
 }
 
-//////////////////////////////////////////////////
-// 💬 CONEXIÓN CON TU CHAT UI
-//////////////////////////////////////////////////
-
-chatInput.addEventListener('keypress', function (e) {
-
-    if (e.key === 'Enter' && chatInput.value.trim() !== '') {
-
-        const text = chatInput.value;
-
-        // mensaje usuario
-        addMessage(text, 'user');
-
-        // lógica bot
-        const result = handleBotMessage(text);
-
-        setTimeout(() => {
-
-            // respuesta bot
-            addMessage(result.message, 'bot');
-
-            // navegación opcional
-            if (result.route) {
-                setTimeout(() => {
-                    window.location.href = result.route;
-                }, 1200);
-            }
-
-        }, 500);
-
-        chatInput.value = '';
-    }
-});
-
-//////////////////////////////////////////////////
-// 🧪 TEST OPCIONAL (puedes borrarlo luego)
-//////////////////////////////////////////////////
-
-console.log("🤖 BOT SYSTEM READY");
-console.log(handleBotMessage("quiero comprar merch"));
+console.log("🤖 BOT ENGINE READY");
