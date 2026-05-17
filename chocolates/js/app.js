@@ -33,7 +33,12 @@ closeBtn.addEventListener(
     }
 );
 
-/* EVITAR RECARGA */
+/* ===================================
+   GOOGLE SHEETS
+=================================== */
+
+const scriptURL =
+"PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
 
 document
 .getElementById(
@@ -41,21 +46,107 @@ document
 )
 .addEventListener(
     "submit",
-    (e) => {
+    async(e) => {
 
         e.preventDefault();
 
-        alert(
-            "Solicitud enviada correctamente"
-        );
+        const submitBtn =
+            document.querySelector(
+                ".submit-btn"
+            );
 
-        modal.classList.remove(
-            "active"
-        );
+        submitBtn.disabled = true;
+
+        submitBtn.innerText =
+            "Enviando...";
+
+        const data = {
+
+            nombre:
+            document.getElementById(
+                "nombre"
+            ).value,
+
+            telefono:
+            document.getElementById(
+                "telefono"
+            ).value,
+
+            correo:
+            document.getElementById(
+                "correo"
+            ).value,
+
+            evento:
+            document.getElementById(
+                "evento"
+            ).value,
+
+            cantidad:
+            document.getElementById(
+                "cantidad"
+            ).value,
+
+            fechaEvento:
+            document.getElementById(
+                "fechaEvento"
+            ).value,
+
+            descripcion:
+            document.getElementById(
+                "descripcion"
+            ).value
+        };
+
+        try{
+
+            await fetch(
+                scriptURL,
+                {
+
+                    method:"POST",
+
+                    body:JSON.stringify(
+                        data
+                    )
+                }
+            );
+
+            alert(
+                "Solicitud enviada correctamente"
+            );
+
+            document
+            .getElementById(
+                "cotizacionForm"
+            )
+            .reset();
+
+            modal.classList.remove(
+                "active"
+            );
+
+        }catch(error){
+
+            alert(
+                "Error al enviar solicitud"
+            );
+
+            console.error(
+                error
+            );
+        }
+
+        submitBtn.disabled = false;
+
+        submitBtn.innerText =
+            "Enviar Solicitud";
     }
 );
 
-/* HEADER DINÁMICO */
+/* ===================================
+   HEADER DINÁMICO
+=================================== */
 
 window.addEventListener(
     "scroll",
