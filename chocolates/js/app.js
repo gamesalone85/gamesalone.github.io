@@ -71,7 +71,15 @@ if (form) {
 
             await fetch(scriptURL, {
                 method: "POST",
-                body: JSON.stringify(data)
+                body: new URLSearchParams({
+                nombre: data.nombre,
+               telefono: data.telefono,
+                 correo: data.correo,
+                 evento: data.evento,
+                 cantidad: data.cantidad,
+                 fechaEvento: data.fechaEvento,
+                 descripcion: data.descripcion
+                })
             });
 
             alert("Solicitud enviada correctamente 🍫");
