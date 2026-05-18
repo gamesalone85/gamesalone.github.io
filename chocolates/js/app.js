@@ -31,7 +31,7 @@ if (closeBtn) closeBtn.addEventListener("click", closeModal);
    GOOGLE SHEETS - COTIZACIONES
 =================================== */
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzXaWkiURaEmg7uh4kJca4Maqos7Xba09Q-25r-pDcP0dp4zt3wJI79xbFVSeQhqyw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzRZaIMwQynbLdUyuDiz1vG-SgmJx4dnp2NKj7CYP36lvBgsC4SFiWXnG1tmxuh_Ik/exec";
 
 const form = document.getElementById("cotizacionForm");
 
