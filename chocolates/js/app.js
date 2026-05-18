@@ -2,29 +2,33 @@
    MODAL COTIZACIÓN
 =================================== */
 
-const modal = document.getElementById("cotizacionModal");
-const openBtn = document.getElementById("openModal");
-const openNavBtn = document.getElementById("openModalNav");
-const closeBtn = document.getElementById("closeModal");
+document.addEventListener("DOMContentLoaded", () => {
 
-function openModal() {
-    if (modal) modal.classList.add("active");
-}
+    const modal = document.getElementById("cotizacionModal");
+    const openBtn = document.getElementById("openModal");
+    const openNavBtn = document.getElementById("openModalNav");
+    const closeBtn = document.getElementById("closeModal");
 
-function closeModal() {
-    if (modal) modal.classList.remove("active");
-}
+    function openModal() {
+        if (modal) modal.classList.add("active");
+    }
 
-if (openBtn) openBtn.addEventListener("click", openModal);
+    function closeModal() {
+        if (modal) modal.classList.remove("active");
+    }
 
-if (openNavBtn) {
-    openNavBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
-    });
-}
+    if (openBtn) openBtn.addEventListener("click", openModal);
 
-if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (openNavBtn) {
+        openNavBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+});
 
 
 /* ===================================
