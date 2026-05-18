@@ -2,6 +2,8 @@
    MODAL COTIZACIÓN
 =================================== */
 
+let closeModalRef = null;
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const modal = document.getElementById("cotizacionModal");
@@ -17,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (modal) modal.classList.remove("active");
     }
 
+    // exportamos referencia para uso global seguro
+    closeModalRef = closeModal;
+
     if (openBtn) openBtn.addEventListener("click", openModal);
 
     if (openNavBtn) {
@@ -27,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
-
 });
 
 
@@ -52,6 +56,8 @@ if (form) {
             return;
         }
 
+        if (!submitBtn) return;
+
         submitBtn.disabled = true;
         submitBtn.innerText = "Enviando...";
 
@@ -75,7 +81,8 @@ if (form) {
             alert("Solicitud enviada correctamente 🍫");
 
             form.reset();
-            closeModal();
+
+            if (closeModalRef) closeModalRef();
 
         } catch (error) {
 
@@ -118,4 +125,4 @@ if (toggleWhatsapp && whatsappBot) {
     toggleWhatsapp.addEventListener("click", () => {
         whatsappBot.classList.toggle("active");
     });
-});
+}
