@@ -1,128 +1,257 @@
 /* ===================================
-   MODAL COTIZACIÓN
+   CHOCOLATES ARTÍSTICOS SARITA
+   APP.JS PREMIUM FINAL
 =================================== */
 
-let closeModalRef = null;
+/* ===================================
+   DOM READY
+=================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* ===================================
+       MODAL COTIZACIÓN
+    ==================================== */
+
     const modal = document.getElementById("cotizacionModal");
+
     const openBtn = document.getElementById("openModal");
-    const openNavBtn = document.getElementById("openModalNav");
-    const closeBtn = document.getElementById("closeModal");
+
+    const openNavBtn =
+        document.getElementById("openModalNav");
+
+    const closeBtn =
+        document.getElementById("closeModal");
 
     function openModal() {
-        if (modal) modal.classList.add("active");
+
+        if (!modal) return;
+
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
-        if (modal) modal.classList.remove("active");
+
+        if (!modal) return;
+
+        modal.classList.remove("active");
+
+        document.body.style.overflow = "auto";
     }
 
-    // exportamos referencia para uso global seguro
-    closeModalRef = closeModal;
+    /* BOTONES ABRIR */
 
-    if (openBtn) openBtn.addEventListener("click", openModal);
+    if (openBtn) {
+
+        openBtn.addEventListener(
+            "click",
+            openModal
+        );
+    }
 
     if (openNavBtn) {
-        openNavBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            openModal();
-        });
+
+        openNavBtn.addEventListener(
+            "click",
+            (e) => {
+
+                e.preventDefault();
+
+                openModal();
+            }
+        );
     }
 
-    if (closeBtn) closeBtn.addEventListener("click", closeModal);
-});
+    /* BOTÓN CERRAR */
 
+    if (closeBtn) {
 
-/* ===================================
-   GOOGLE SHEETS - COTIZACIONES
-=================================== */
+        closeBtn.addEventListener(
+            "click",
+            closeModal
+        );
+    }
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbwnUhCbwnsoJHfFITA_3G43rmTvsQ2fZ6VLFVB1x_fBtf8a_MNE6IJa2XuwVAce-C8/exec";
+    /* CERRAR AL DAR CLICK AFUERA */
 
-const form = document.getElementById("cotizacionForm");
+    if (modal) {
 
-if (form) {
+        modal.addEventListener(
+            "click",
+            (e) => {
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+                if (e.target === modal) {
 
-        const submitBtn = document.querySelector(".submit-btn");
-        const checkbox = document.getElementById("consentimiento");
+                    closeModal();
+                }
+            }
+        );
+    }
 
-        if (checkbox && !checkbox.checked) {
-            alert("Debes aceptar términos y aviso de privacidad");
-            return;
+    /* CERRAR CON ESC */
+
+    document.addEventListener(
+        "keydown",
+        (e) => {
+
+            if (
+                e.key === "Escape" &&
+                modal.classList.contains("active")
+            ) {
+
+                closeModal();
+            }
         }
+    );
 
-        if (!submitBtn) return;
+    /* ===================================
+       GOOGLE SHEETS FORM
+    ==================================== */
 
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Enviando...";
+    const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwnUhCbwnsoJHfFITA_3G43rmTvsQ2fZ6VLFVB1x_fBtf8a_MNE6IJa2XuwVAce-C8/exec";
 
-        const data = {
-            nombre: document.getElementById("nombre")?.value || "",
-            telefono: document.getElementById("telefono")?.value || "",
-            correo: document.getElementById("correo")?.value || "",
-            evento: document.getElementById("evento")?.value || "",
-            cantidad: document.getElementById("cantidad")?.value || "",
-            fechaEvento: document.getElementById("fechaEvento")?.value || "",
-            descripcion: document.getElementById("descripcion")?.value || ""
-        };
+    const form =
+        document.getElementById("cotizacionForm");
 
-        try {
+    if (form) {
 
-            await fetch(scriptURL, {
-                method: "POST",
-                body: new URLSearchParams(data)
-            });
+        form.addEventListener(
+            "submit",
+            async (e) => {
 
-            alert("Solicitud enviada correctamente 🍫");
+                e.preventDefault();
 
-            form.reset();
+                const submitBtn =
+                    document.querySelector(".submit-btn");
 
-            if (closeModalRef) closeModalRef();
+                const checkbox =
+                    document.getElementById("consentimiento");
 
-        } catch (error) {
+                if (
+                    checkbox &&
+                    !checkbox.checked
+                ) {
 
-            console.error(error);
-            alert("Error al enviar solicitud.");
+                    alert(
+                        "Debes aceptar términos y aviso de privacidad."
+                    );
 
-        } finally {
+                    return;
+                }
 
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Enviar Solicitud";
+                submitBtn.disabled = true;
+
+                submitBtn.innerText =
+                    "Enviando...";
+
+                const data = {
+
+                    nombre:
+                        document.getElementById("nombre")?.value || "",
+
+                    telefono:
+                        document.getElementById("telefono")?.value || "",
+
+                    correo:
+                        document.getElementById("correo")?.value || "",
+
+                    evento:
+                        document.getElementById("evento")?.value || "",
+
+                    cantidad:
+                        document.getElementById("cantidad")?.value || "",
+
+                    fechaEvento:
+                        document.getElementById("fechaEvento")?.value || "",
+
+                    descripcion:
+                        document.getElementById("descripcion")?.value || ""
+                };
+
+                try {
+
+                    await fetch(scriptURL, {
+
+                        method: "POST",
+
+                        body: new URLSearchParams(data)
+                    });
+
+                    alert(
+                        "Solicitud enviada correctamente 🍫"
+                    );
+
+                    form.reset();
+
+                    closeModal();
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    alert(
+                        "Error al enviar solicitud."
+                    );
+
+                } finally {
+
+                    submitBtn.disabled = false;
+
+                    submitBtn.innerText =
+                        "Enviar Solicitud";
+                }
+            }
+        );
+    }
+
+    /* ===================================
+       HEADER DINÁMICO
+    ==================================== */
+
+    const header =
+        document.querySelector(".header");
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (!header) return;
+
+            if (window.scrollY > 50) {
+
+                header.classList.add("scrolled");
+
+            } else {
+
+                header.classList.remove("scrolled");
+            }
         }
-    });
-}
+    );
 
+    /* ===================================
+       WHATSAPP CHATBOT
+    ==================================== */
 
-/* ===================================
-   HEADER DINÁMICO
-=================================== */
+    const whatsappBot =
+        document.getElementById("whatsappBot");
 
-window.addEventListener("scroll", () => {
+    const toggleWhatsapp =
+        document.getElementById("toggleWhatsapp");
 
-    const header = document.querySelector(".header");
-    if (!header) return;
+    if (
+        toggleWhatsapp &&
+        whatsappBot
+    ) {
 
-    header.style.background =
-        window.scrollY > 50
-            ? "rgba(0,0,0,.75)"
-            : "rgba(0,0,0,.2)";
+        toggleWhatsapp.addEventListener(
+            "click",
+            () => {
+
+                whatsappBot.classList.toggle("active");
+            }
+        );
+    }
 });
-
-
-/* ===================================
-   WHATSAPP CHATBOT
-=================================== */
-
-const whatsappBot = document.getElementById("whatsappBot");
-const toggleWhatsapp = document.getElementById("toggleWhatsapp");
-
-if (toggleWhatsapp && whatsappBot) {
-    toggleWhatsapp.addEventListener("click", () => {
-        whatsappBot.classList.toggle("active");
-    });
-}
