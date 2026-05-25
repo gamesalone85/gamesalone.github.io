@@ -1,9 +1,6 @@
-/* ========================================
+/* =========================================
    GAMESALONE18 UNIVERSE
-   LANDING CINEMÁTICA OFICIAL
-======================================== */
-
-/* RESET BÁSICO */
+========================================= */
 
 *{
 margin:0;
@@ -11,35 +8,38 @@ padding:0;
 box-sizing:border-box;
 }
 
-/* BODY GENERAL */
-
 body.home{
-font-family:'Orbitron',sans-serif;
+font-family:
+'Segoe UI',
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;
+
 background:#000;
 color:#fff;
 overflow:hidden;
 }
 
-/* ========================================
-   HERO FULLSCREEN
-======================================== */
+/* HERO */
 
 .hero{
 position:relative;
-height:100vh;
 width:100%;
+height:100vh;
+
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
+
 padding:20px;
 overflow:hidden;
+text-align:center;
 }
-
-/* VIDEO DE FONDO AJUSTADO */
 
 .hero-video{
 position:absolute;
+
 top:50%;
 left:50%;
 
@@ -51,157 +51,275 @@ height:auto;
 
 transform:translate(-50%,-50%);
 
+object-fit:cover;
+
 z-index:0;
 }
 
-/* OVERLAY OSCURO */
-
 .hero::after{
 content:"";
+
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.55);
+
+background:
+linear-gradient(
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.75)
+);
+
 z-index:1;
 }
-
-/* CONTENIDO CENTRAL */
 
 .hero-content{
 position:relative;
 z-index:2;
 max-width:900px;
+
 animation:fadeIn 1.2s ease forwards;
+
 opacity:0;
 }
 
-/* LOGO HERO */
-
-.hero-logo{
-width:130px;
-margin-bottom:25px;
-filter:drop-shadow(0 0 10px #00DD00);
-}
-
-/* TÍTULO PRINCIPAL */
-
 .hero h1{
-font-size:3.2rem;
-color:#00DD00;
-letter-spacing:6px;
+font-size:3.5rem;
+font-weight:800;
+
+letter-spacing:5px;
+
+color:#00dd55;
+
 margin-bottom:25px;
 
 text-shadow:
-0 0 5px #00DD00,
-0 0 10px #00DD00,
-0 0 20px #00DD00,
-0 0 40px #00DD00;
+0 0 8px rgba(0,221,85,.8),
+0 0 20px rgba(0,221,85,.5);
 }
-
-/* SUBTÍTULO */
 
 .hero-subtitle{
-font-size:1.3rem;
-color:#ccc;
-margin-bottom:45px;
+font-size:1.25rem;
+line-height:1.7;
 letter-spacing:2px;
-line-height:1.6;
-}
 
-/* TEXTO COMUNIDAD */
+color:#d0d0d0;
+
+margin-bottom:45px;
+}
 
 .hero-proof{
 margin-top:35px;
-font-size:0.9rem;
-color:#aaa;
+
+font-size:.95rem;
+
+color:#a0a0a0;
+
 letter-spacing:1px;
 }
 
-/* ========================================
-   BOTONES
-======================================== */
+/* BOTONES */
 
 .hero-buttons{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:20px;
 flex-wrap:wrap;
 }
 
-/* BOTÓN PRINCIPAL */
+.btn-primary,
+.btn-secondary{
+
+padding:15px 40px;
+
+border-radius:6px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s ease;
+
+letter-spacing:1px;
+
+min-width:230px;
+}
 
 .btn-primary{
-padding:15px 40px;
-background:#00DD00;
+
+background:#00dd55;
+
 color:#000;
-text-decoration:none;
-font-weight:bold;
-border-radius:4px;
-transition:all .3s ease;
-letter-spacing:1px;
 }
 
 .btn-primary:hover{
-background:#00ff55;
-transform:scale(1.08);
-box-shadow:0 0 20px #00DD00;
+
+background:#00ff66;
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 15px rgba(0,255,102,.5);
 }
 
-/* BOTÓN SECUNDARIO */
-
 .btn-secondary{
-padding:15px 40px;
-border:2px solid #00DD00;
-color:#00DD00;
-text-decoration:none;
-border-radius:4px;
-transition:all .3s ease;
-letter-spacing:1px;
+
+border:2px solid #00dd55;
+
+color:#00dd55;
 }
 
 .btn-secondary:hover{
-background:#00DD00;
+
+background:#00dd55;
+
 color:#000;
-transform:scale(1.08);
-box-shadow:0 0 20px #00DD00;
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 15px rgba(0,255,102,.5);
 }
 
-/* ========================================
-   ANIMACIÓN
-======================================== */
+/* COOKIE BANNER */
+
+.cookie-banner{
+
+position:fixed;
+
+bottom:0;
+left:0;
+
+width:100%;
+
+background:
+rgba(10,10,10,.96);
+
+backdrop-filter:blur(10px);
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+padding:18px;
+
+z-index:9999;
+}
+
+.cookie-content{
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+justify-content:space-between;
+
+gap:20px;
+
+flex-wrap:wrap;
+}
+
+.cookie-content p{
+
+font-size:.95rem;
+
+line-height:1.6;
+
+color:#ddd;
+
+flex:1;
+}
+
+.cookie-content a{
+
+color:#00dd55;
+
+text-decoration:none;
+font-weight:600;
+}
+
+.cookie-buttons{
+display:flex;
+gap:12px;
+}
+
+.cookie-buttons button{
+
+padding:10px 22px;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:5px;
+
+font-weight:700;
+
+transition:.3s ease;
+}
+
+#accept-cookies{
+
+background:#00dd55;
+color:#000;
+}
+
+#reject-cookies{
+
+background:#222;
+color:#fff;
+}
+
+#accept-cookies:hover,
+#reject-cookies:hover{
+
+transform:translateY(-2px);
+}
+
+/* ANIMACIÓN */
 
 @keyframes fadeIn{
+
 to{
 opacity:1;
 }
 }
 
-/* ========================================
-   RESPONSIVE
-======================================== */
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
+body.home{
+overflow:auto;
+}
+
 .hero h1{
 font-size:2.2rem;
-letter-spacing:3px;
+letter-spacing:2px;
 }
 
 .hero-subtitle{
-font-size:1.1rem;
-}
-
-.hero-logo{
-width:100px;
+font-size:1rem;
 }
 
 .btn-primary,
 .btn-secondary{
+
 width:100%;
-max-width:300px;
+max-width:320px;
 }
 
-.hero-proof{
-font-size:0.8rem;
+.cookie-content{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.cookie-buttons{
+width:100%;
+}
+
+.cookie-buttons button{
+flex:1;
 }
 
 }
