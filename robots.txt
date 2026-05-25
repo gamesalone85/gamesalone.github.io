@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Bloqueo de rutas técnicas futuras
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+
+# Evita indexar archivos internos
+Disallow: /*.json$
+Disallow: /*?*
+
+# Sitemap oficial
 Sitemap: https://www.gamesalone.com/sitemap.xml
