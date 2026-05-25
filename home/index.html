@@ -1,40 +1,99 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
+
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GamesAlone18 Universe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>GamesAlone18 Universe | Comunidad Geek y Gaming en CDMX</title>
 
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta name="description" content="GamesAlone18 Universe: comunidad geek, gaming, experiencias reales, merch oficial y contenido exclusivo en Ciudad de México.">
 
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<meta name="robots" content="index,follow">
 
-    <!-- CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="/header.css" rel="stylesheet">
-    <!-- Google Analytics -->
+<meta name="theme-color" content="#000000">
+
+<meta name="color-scheme" content="dark">
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<meta http-equiv="Permissions-Policy"
+content="camera=(), microphone=(), geolocation=()">
+
+<link rel="canonical"
+href="https://www.gamesalone.com/home/">
+
+<!-- BOOTSTRAP -->
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- ICONS -->
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- SWIPER -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- CSS -->
+<link href="css/styles.css" rel="stylesheet">
+
+<link href="/header.css" rel="stylesheet">
+
+<!-- CONSENT MODE V2 -->
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+</script>
+
+<!-- ANALYTICS -->
 <script type="text/plain" data-cookiecategory="analytics">
 (function(){
+
   var script = document.createElement('script');
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH";
+
+  script.src =
+  "https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH";
+
   script.async = true;
+
   document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-EGZ2977YBH');
+
+  gtag('consent', 'update', {
+    analytics_storage: 'granted'
+  });
+
+  gtag('config', 'G-EGZ2977YBH', {
+    anonymize_ip: true
+  });
+
 })();
 </script>
+
 </head>
 
 <body>
@@ -45,132 +104,184 @@
 
 <div class="main-content">
 
-    <!-- HEADER -->
-    <div id="header"></div>
+<!-- HEADER -->
+<div id="header"></div>
 
 <!-- HERO -->
-    <section class="hero">
-        <div class="container text-center">
-            <h1>Bienvenido a GamesAlone18 Universe CDMX</h1>
+<section class="hero">
 
-            <p class="highlight">
-                +3,477 miembros ya están dentro. 
-                ¿Te unes?
-            </p>
+<div class="container text-center">
 
-            <p class="description">
-                Cobertura de eventos, contenido exclusivo y experiencias reales.
-            </p>            
-        </div>
-    </section>  
+<h1>
+Bienvenido a GamesAlone18 Universe CDMX
+</h1>
 
-    <!-- 🔥 CARRUSEL SWIPER -->    
-<section class="swiper-section">
-    <div class="swiper mySwiper">
+<p class="highlight">
++3,477 miembros ya están dentro.
+¿Te unes?
+</p>
 
-        <div class="swiper-wrapper">            
-           
-            <div class="swiper-slide" onclick="go('../chocolates/index.html')">
-                <img src="/home/img/chocolates.jpg">                    
-            </div>
-
-            <div class="swiper-slide" onclick="go('/zona/')">
-                <img src="/home/img/coddomingo.jpg">                    
-            </div>
-
-            <a href="https://www.youtube.com/@GAMESALONE18" target="_blank" class="swiper-slide">
-                <img src="/home/img/youtube.jpg">
-            </a>
-
-            <a href="https://open.spotify.com/show/6bM9ZYxIvB80iDBsEW5Us7?si=40f52d9d7765442d" target="_blank" class="swiper-slide">
-                <img src="/home/img/cuentos.jpg">
-            </a>
-
-            <a href="https://www.instagram.com/teatroemilioelindiofernandez" target="_blank" class="swiper-slide">
-                <img src="/home/img/teatro.jpg">
-            </a>
-
-            <div class="swiper-slide" onclick="go('/zona/')">
-                <img src="/home/img/suscribete.jpg">                    
-            </div>
-
-            <div class="swiper-slide" onclick="go('/merch/')">
-                <img src="/home/img/tienda.jpg">                    
-            </div>
-
-            <div class="swiper-slide" onclick="go('/zona/')">
-                <img src="/home/img/acceso.jpg">                    
-            </div>
-            
-            <div class="swiper-slide" onclick="go('/contactanos/')">
-                <img src="/home/img/colabora.jpg">                    
-            </div>
-
-        </div>
-
-        <!-- Flechas -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        <!-- (opcional pero recomendado) -->
-        <div class="swiper-pagination"></div>
-
-    </div>
-</section> 
-      
-<!-- About -->
-<section class="about-section text-center" id="about">
-    <div class="container px-4 px-lg-5">
-
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8">
-
-                <h2 class="text-white mb-4">
-                    ¿Qué es GamesAlone18 Universe?
-                </h2>
-
-                <p class="text-white-50">
-                    GamesAlone18 Universe no es solo un canal.
-                    Es un ecosistema digital donde el gaming, el terror y la cultura geek se transforman en experiencias reales.
-
-                    Creamos contenido con identidad, narrativa y visión.
-                    Desde coberturas de eventos hasta proyectos originales como <strong>NotAlone18</strong>, cada pieza forma parte de un universo en expansión.
-
-                    No seguimos tendencias.
-                    Construimos comunidad.
-                    Más de +3,477 miembros ya forman parte de esta historia.
-
-                    <br><br>
-
-                    <a href="/acerca-de-nosotros" class="text-success fw-bold">
-                        Descubre cómo comenzó todo →
-                    </a>
-                </p>
-
-            </div>
-        </div>                
-
-        <!-- 🔥 IMAGEN CLICKEABLE -->
-        <div class="mt-4">
-            <a href="/acerca-de-nosotros/" target="_blank">
-                <img class="img-fluid banner-click"
-                     src="/home/img/Banner.jpg"
-                     alt="Banner GamesAlone18">
-            </a>
-        </div>
-
-    </div>
-</section>
-    <!-- FOOTER -->
-    <div id="footer"></div>
+<p class="description">
+Cobertura de eventos, contenido exclusivo y experiencias reales.
+</p>
 
 </div>
 
-<!-- JS LIBS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</section>
+
+<!-- SWIPER -->
+<section class="swiper-section">
+
+<div class="swiper mySwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide" onclick="go('../chocolates/index.html')">
+<img src="/home/img/chocolates.jpg"
+alt="Chocolates GamesAlone18">
+</div>
+
+<div class="swiper-slide" onclick="go('/zona/')">
+<img src="/home/img/coddomingo.jpg"
+alt="Zona de códigos">
+</div>
+
+<a
+href="https://www.youtube.com/@GAMESALONE18"
+target="_blank"
+rel="noopener noreferrer"
+class="swiper-slide">
+
+<img src="/home/img/youtube.jpg"
+alt="YouTube GamesAlone18">
+
+</a>
+
+<a
+href="https://open.spotify.com/show/6bM9ZYxIvB80iDBsEW5Us7"
+target="_blank"
+rel="noopener noreferrer"
+class="swiper-slide">
+
+<img src="/home/img/cuentos.jpg"
+alt="Podcast GamesAlone18">
+
+</a>
+
+<a
+href="https://www.instagram.com/teatroemilioelindiofernandez"
+target="_blank"
+rel="noopener noreferrer"
+class="swiper-slide">
+
+<img src="/home/img/teatro.jpg"
+alt="Teatro">
+
+</a>
+
+<div class="swiper-slide" onclick="go('/zona/')">
+<img src="/home/img/suscribete.jpg"
+alt="Suscríbete">
+</div>
+
+<div class="swiper-slide" onclick="go('/merch/')">
+<img src="/home/img/tienda.jpg"
+alt="Merch GamesAlone18">
+</div>
+
+<div class="swiper-slide" onclick="go('/zona/')">
+<img src="/home/img/acceso.jpg"
+alt="Acceso exclusivo">
+</div>
+
+<div class="swiper-slide" onclick="go('/contactanos/')">
+<img src="/home/img/colabora.jpg"
+alt="Colabora con GamesAlone18">
+</div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+
+<div class="swiper-button-prev"></div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about-section text-center" id="about">
+
+<div class="container px-4 px-lg-5">
+
+<div class="row gx-4 gx-lg-5 justify-content-center">
+
+<div class="col-lg-8">
+
+<h2 class="text-white mb-4">
+¿Qué es GamesAlone18 Universe?
+</h2>
+
+<p class="text-white-50">
+
+GamesAlone18 Universe es un ecosistema digital
+donde el gaming, el terror y la cultura geek
+se convierten en experiencias reales.
+
+Creamos contenido con identidad, narrativa y visión.
+
+Más de +3,477 miembros ya forman parte
+de esta comunidad.
+
+<br><br>
+
+<a
+href="/acerca-de-nosotros"
+class="text-success fw-bold">
+
+Descubre cómo comenzó todo →
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<a href="/acerca-de-nosotros/">
+
+<img
+class="img-fluid banner-click"
+src="/home/img/Banner.jpg"
+alt="Banner oficial GamesAlone18">
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+</div>
 
 <!-- JS -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script
+src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+</script>
+
 <script src="js/scripts.js"></script>
 
 <!-- HEADER -->
@@ -178,7 +289,7 @@
 fetch("/header.html")
 .then(res => res.text())
 .then(data => {
-    document.getElementById("header").innerHTML = data;
+  document.getElementById("header").innerHTML = data;
 });
 </script>
 
@@ -187,67 +298,136 @@ fetch("/header.html")
 fetch("/footer.html")
 .then(res => res.text())
 .then(data => {
-    document.getElementById("footer").innerHTML = data;
+  document.getElementById("footer").innerHTML = data;
 });
 </script>
 
-<!-- SCROLL NAV -->
+<!-- SCROLL -->
 <script>
-window.addEventListener("scroll", function() {
-  const nav = document.querySelector(".custom-navbar");
-  if (!nav) return;
+window.addEventListener("scroll", function(){
 
-  nav.classList.toggle("scrolled", window.scrollY > 50);
+  const nav = document.querySelector(".custom-navbar");
+
+  if(!nav) return;
+
+  nav.classList.toggle(
+    "scrolled",
+    window.scrollY > 50
+  );
+
 });
 </script>
-    
-<!-- COOKIES -->
-<div id="cookie-consent" style="position:fixed; bottom:0; left:0; width:100%; background:#000; color:#fff; padding:15px; text-align:center; z-index:9999;">
-  <span>
-    Este sitio utiliza cookies para análisis y mejorar la experiencia. 
-    Puedes aceptar o rechazar su uso. 
-    <a href="/avisodeprivacidad/" style="color:#00ff88;">Política de Privacidad</a>
-  </span>
 
-  <button id="accept-cookies">Aceptar</button>
-  <button id="reject-cookies">Rechazar</button>
+<!-- COOKIE BANNER -->
+<div id="cookie-consent" class="cookie-banner">
+
+<div class="cookie-content">
+
+<p>
+
+Utilizamos cookies analíticas para mejorar
+la experiencia del usuario y obtener
+estadísticas generales de navegación.
+
+<a href="/avisodeprivacidad/">
+Política de Privacidad
+</a>
+
+</p>
+
+<div class="cookie-buttons">
+
+<button id="accept-cookies">
+Aceptar
+</button>
+
+<button id="reject-cookies">
+Rechazar
+</button>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
-function loadAnalytics() {
-  const scripts = document.querySelectorAll('script[type="text/plain"][data-cookiecategory="analytics"]');
+
+function loadAnalytics(){
+
+  const scripts = document.querySelectorAll(
+    'script[type="text/plain"][data-cookiecategory="analytics"]'
+  );
+
   scripts.forEach(script => {
+
     const newScript = document.createElement('script');
+
     newScript.text = script.textContent;
+
     document.head.appendChild(newScript);
+
   });
+
 }
 
-// Aceptar
-document.getElementById('accept-cookies').onclick = function() {
-  localStorage.setItem('cookiesAccepted', 'true');
-  document.getElementById('cookie-consent').style.display = 'none';
+function saveConsent(status){
+
+  localStorage.setItem(
+    'cookieConsent',
+    JSON.stringify({
+      analytics: status,
+      timestamp: new Date().toISOString(),
+      version: '1.0'
+    })
+  );
+
+}
+
+document.getElementById('accept-cookies')
+.addEventListener('click', function(){
+
+  saveConsent(true);
+
+  document.getElementById('cookie-consent')
+  .style.display = 'none';
+
   loadAnalytics();
-};
 
-// Rechazar
-document.getElementById('reject-cookies').onclick = function() {
-  localStorage.setItem('cookiesAccepted', 'false');
-  document.getElementById('cookie-consent').style.display = 'none';
-};
+});
 
-// Al cargar
-window.onload = function() {
-  const consent = localStorage.getItem('cookiesAccepted');
+document.getElementById('reject-cookies')
+.addEventListener('click', function(){
 
-  if(consent === 'true'){
-    document.getElementById('cookie-consent').style.display = 'none';
-    loadAnalytics();
-  } else if(consent === 'false'){
-    document.getElementById('cookie-consent').style.display = 'none';
+  saveConsent(false);
+
+  document.getElementById('cookie-consent')
+  .style.display = 'none';
+
+});
+
+window.addEventListener('load', function(){
+
+  const consent = JSON.parse(
+    localStorage.getItem('cookieConsent')
+  );
+
+  if(consent){
+
+    document.getElementById('cookie-consent')
+    .style.display = 'none';
+
+    if(consent.analytics === true){
+      loadAnalytics();
+    }
+
   }
-};
+
+});
 </script>
+
+<!-- CHATBOT -->
 <script src="/home/js/chatbot.js"></script>
+
 </body>
 </html>
