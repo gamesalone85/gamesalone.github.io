@@ -175,6 +175,8 @@ Abrir WhatsApp
 
 </div>
 
+<!-- BOTÓN FLOTANTE -->
+
 <button class="whatsapp-toggle"
 id="toggleWhatsapp">
 
@@ -206,7 +208,8 @@ Inicio
 Catálogo
 </a>
 
-<a href="#cotizacion">
+<a href="#"
+id="openModalNav">
 Cotizar
 </a>
 
@@ -411,6 +414,148 @@ Comprar Ahora
 
 </section>
 
+<!-- MODAL COTIZACIÓN -->
+
+<div class="modal"
+id="cotizacionModal">
+
+<div class="modal-content">
+
+<h2>
+Solicitar Cotización
+</h2>
+
+<p class="modal-subtitle">
+Cuéntanos sobre tu evento
+y personalización deseada.
+</p>
+
+<form id="cotizacionForm">
+
+<div class="form-group">
+
+<label>
+Nombre
+</label>
+
+<input type="text"
+id="nombre"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Teléfono
+</label>
+
+<input type="tel"
+id="telefono"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Correo
+</label>
+
+<input type="email"
+id="correo"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Tipo de Evento
+</label>
+
+<input type="text"
+id="evento"
+placeholder="Bautizo, hotel, cumpleaños..."
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Cantidad Aproximada
+</label>
+
+<input type="number"
+id="cantidad"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Fecha del Evento
+</label>
+
+<input type="date"
+id="fechaEvento"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Descripción
+</label>
+
+<textarea rows="5"
+id="descripcion"
+placeholder="Describe tu idea o temática..."></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+<input type="checkbox"
+id="consentimiento"
+required>
+
+Acepto términos y condiciones y aviso de privacidad
+
+</label>
+
+</div>
+
+<div class="modal-buttons">
+
+<button type="button"
+class="cancel-btn"
+id="closeModal">
+
+Cancelar
+
+</button>
+
+<button type="submit"
+class="submit-btn">
+
+Enviar Solicitud
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
 <!-- GALERÍA -->
 
 <section class="galeria">
@@ -448,6 +593,88 @@ para crear experiencias memorables.
 
 <div class="galeria-item">
 <img src="img/galeria6.jpg" loading="lazy">
+</div>
+
+</div>
+
+</section>
+
+<!-- COMO FUNCIONA -->
+
+<section class="proceso">
+
+<h2>
+¿Cómo Funciona?
+</h2>
+
+<div class="proceso-grid">
+
+<div class="paso">
+
+<span>
+01
+</span>
+
+<h3>
+Comparte tu Idea
+</h3>
+
+<p>
+Cuéntanos el estilo,
+temática o evento.
+</p>
+
+</div>
+
+<div class="paso">
+
+<span>
+02
+</span>
+
+<h3>
+Nos amoldamos a tu diseño
+</h3>
+
+<p>
+Creamos una experiencia
+visual personalizada.
+</p>
+
+</div>
+
+<div class="paso">
+
+<span>
+03
+</span>
+
+<h3>
+Elaboración Artesanal
+</h3>
+
+<p>
+Cada chocolate es preparado
+cuidadosamente.
+</p>
+
+</div>
+
+<div class="paso">
+
+<span>
+04
+</span>
+
+<h3>
+Entrega Especial
+</h3>
+
+<p>
+Recibe una experiencia
+memorable.
+</p>
+
 </div>
 
 </div>
@@ -501,37 +728,17 @@ Aviso de Privacidad
 
 </footer>
 
-<script>
+<!-- JS -->
 
-window.addEventListener("scroll", function(){
+<script src="js/app.js"></script>
 
-const header = document.querySelector(".header");
+<a href="https://www.instagram.com/chocolateartisticosarita"
+class="instagram-float"
+target="_blank">
 
-if(window.scrollY > 50){
+Instagram
 
-header.classList.add("scrolled");
-
-}else{
-
-header.classList.remove("scrolled");
-
-}
-
-});
-
-const toggleBtn =
-document.getElementById("toggleWhatsapp");
-
-const bot =
-document.getElementById("whatsappBot");
-
-toggleBtn.addEventListener("click", function(){
-
-bot.classList.toggle("active");
-
-});
-
-</script>
+</a>
 
 </body>
 </html>
