@@ -119,18 +119,27 @@ color:#ccc;
 ========================= */
 
 .swiper-section{
-margin-top:50px;
+    margin-top:50px;
+
+    display:flex;
+    justify-content:center;
+
+    padding:0 20px;
 }
 
 .swiper{
 
-width:100%;
+    width:100%;
+    max-width:1200px; /* ajusta entre 1000 y 1400 según gusto */
 
-aspect-ratio:16/9;
+    aspect-ratio:16/9;
 
-position:relative;
+    position:relative;
+    z-index:2;
 
-z-index:2;
+    border-radius:12px;
+
+    overflow:hidden;
 }
 
 .swiper-slide{
