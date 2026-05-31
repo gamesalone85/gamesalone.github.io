@@ -130,15 +130,16 @@ color:#ccc;
 .swiper{
 
     width:100%;
-    max-width:1200px; /* ajusta entre 1000 y 1400 según gusto */
+    max-width:1200px;
 
     aspect-ratio:16/9;
+
+    max-height:650px;
 
     position:relative;
     z-index:2;
 
     border-radius:12px;
-
     overflow:hidden;
 }
 
