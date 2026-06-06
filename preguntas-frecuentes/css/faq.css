@@ -1,0 +1,151 @@
+body{
+    background:#050505;
+    color:#fff;
+    font-family:Poppins,sans-serif;
+}
+
+.faq-hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero-badge{
+    background:#28a745;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:50px;
+    display:inline-block;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.faq-hero h1{
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.faq-hero p{
+    max-width:800px;
+    margin:auto;
+    color:#cfcfcf;
+}
+
+.hero-stats{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.hero-stats strong{
+    display:block;
+    font-size:2rem;
+}
+
+.hero-stats span{
+    color:#bdbdbd;
+}
+
+.faq-highlight{
+    padding:80px 20px;
+}
+
+.highlight-box{
+    background:#111;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.highlight-box span{
+    color:#28a745;
+    font-weight:700;
+}
+
+.highlight-box h2{
+    margin:20px 0;
+}
+
+.faq-search{
+    padding:40px 20px;
+}
+
+.faq-search input{
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:auto;
+    background:#111;
+    border:none;
+    border-radius:50px;
+    padding:18px 25px;
+    color:white;
+}
+
+.faq-section{
+    padding:80px 20px;
+}
+
+.faq-card{
+    background:#111;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.faq-card:hover{
+    transform:translateY(-5px);
+}
+
+.faq-card h3{
+    margin-bottom:15px;
+}
+
+.faq-card p{
+    color:#cfcfcf;
+}
+
+.faq-cta{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.faq-whatsapp{
+    display:inline-block;
+    margin-top:25px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+.faq-whatsapp:hover{
+    color:white;
+}
+
+@media(max-width:768px){
+
+.faq-hero h1{
+    font-size:2.5rem;
+}
+
+.hero-stats{
+    gap:25px;
+}
+
+.highlight-box{
+    padding:30px;
+}
+
+}
