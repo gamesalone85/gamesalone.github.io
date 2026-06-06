@@ -1579,3 +1579,167 @@ body{
     font-size:.8rem;
     font-weight:700;
 }
+
+
+/* =========================
+   TERMINOS Y CONDICIONES
+========================= */
+
+.legal-header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:5000;
+    padding:20px 40px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(15px);
+}
+
+.back-btn{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.legal-hero{
+    min-height:70vh;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.80)
+    ),
+    url('../img/fondo.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    padding:140px 20px;
+}
+
+.legal-overlay{
+    max-width:900px;
+}
+
+.legal-tag{
+    color:#d4af37;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.legal-hero h1{
+    font-size:5rem;
+    margin:25px 0;
+    font-family:'Playfair Display',serif;
+}
+
+.legal-hero p{
+    line-height:2;
+    color:#ddd;
+}
+
+.update-date{
+    margin-top:25px;
+    color:#aaa;
+}
+
+.legal-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    padding:80px;
+    background:#1a0f0a;
+}
+
+.summary-card{
+    text-align:center;
+    background:#24130d;
+    padding:30px;
+    border-radius:25px;
+}
+
+.summary-card span{
+    font-size:2rem;
+}
+
+.legal-container{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 30px;
+}
+
+.legal-card{
+    background:linear-gradient(
+        180deg,
+        rgba(58,36,24,.95),
+        rgba(25,14,9,.95)
+    );
+
+    border-radius:28px;
+    padding:35px;
+    margin-bottom:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.featured{
+    border:1px solid rgba(212,175,55,.35);
+}
+
+.legal-card h2{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.legal-card p,
+.legal-card li{
+    line-height:2;
+    color:#ddd;
+}
+
+.featured ul{
+    margin:20px 0 20px 25px;
+}
+
+.legal-cta{
+    padding:120px 20px;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url('../img/fondo.jpg');
+
+    background-size:cover;
+}
+
+.legal-cta h2{
+    font-size:3rem;
+    font-family:'Playfair Display',serif;
+}
+
+.legal-cta p{
+    margin:20px 0 35px;
+}
+
+.legal-cta a{
+    background:#d4af37;
+    color:black;
+    text-decoration:none;
+    padding:18px 40px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+.legal-footer{
+    padding:40px;
+    text-align:center;
+    background:#0b0502;
+}
