@@ -323,25 +323,28 @@ setInterval(() => {
    COOKIES SARITA
 ========================== */
 
-const cookieBar =
-document.getElementById('cookieBar');
+document.addEventListener('DOMContentLoaded', () => {
 
-const acceptCookies =
-document.getElementById('acceptCookies');
+    const cookieBar = document.getElementById('cookieBar');
+    const acceptCookies = document.getElementById('acceptCookies');
 
-if(localStorage.getItem('sarita_cookie_consent')){
+    if (!cookieBar || !acceptCookies) {
+        return;
+    }
 
-    cookieBar.style.display = 'none';
+    if (localStorage.getItem('sarita_cookie_consent')) {
+        cookieBar.style.display = 'none';
+    }
 
-}
+    acceptCookies.addEventListener('click', () => {
 
-acceptCookies.addEventListener('click', () => {
+        localStorage.setItem(
+            'sarita_cookie_consent',
+            'accepted'
+        );
 
-    localStorage.setItem(
-        'sarita_cookie_consent',
-        'accepted'
-    );
+        cookieBar.style.display = 'none';
 
-    cookieBar.style.display = 'none';
+    });
 
 });
