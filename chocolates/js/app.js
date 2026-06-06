@@ -318,3 +318,30 @@ setInterval(() => {
     moveCarousel();
 
 }, 5000);
+
+/* ==========================
+   COOKIES SARITA
+========================== */
+
+const cookieBar =
+document.getElementById('cookieBar');
+
+const acceptCookies =
+document.getElementById('acceptCookies');
+
+if(localStorage.getItem('sarita_cookie_consent')){
+
+    cookieBar.style.display = 'none';
+
+}
+
+acceptCookies.addEventListener('click', () => {
+
+    localStorage.setItem(
+        'sarita_cookie_consent',
+        'accepted'
+    );
+
+    cookieBar.style.display = 'none';
+
+});
