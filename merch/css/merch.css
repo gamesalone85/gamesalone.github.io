@@ -508,3 +508,41 @@
 }
 
 }
+/* =====================================
+   FAQ FIX (IMPORTANTE)
+===================================== */
+
+.faq-box{
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq-accordion .accordion-item{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 15px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-accordion .accordion-button{
+    background: transparent !important;
+    color: white !important;
+    font-weight: 600;
+    box-shadow: none !important;
+    padding: 18px 20px;
+}
+
+.faq-accordion .accordion-button:not(.collapsed){
+    background: rgba(40,167,69,.15) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.faq-accordion .accordion-body{
+    color: #cfcfcf;
+    padding: 18px 20px;
+}
+
+.faq-accordion .accordion-button:focus{
+    box-shadow: none !important;
+}
