@@ -5,146 +5,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Preguntas Frecuentes | GamesAlone18 Universe</title>
+    <title>FAQ | GamesAlone18 Universe</title>
 
-    <meta name="description" content="Resuelve dudas sobre entregas en CDMX, merch gamer y comunidad GamesAlone18 Universe.">
-
-    <link rel="canonical" href="https://www.gamesalone.com/preguntas-frecuentes/">
-
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- SOLO ESTE CSS (aislado) -->
     <link href="/preguntas-frecuentes/css/faq.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<body class="faq-page">
 
-<!-- HERO -->
-<header class="merch-hero" style="background: radial-gradient(circle at top, #0b0b0b, #000);">
+<section class="faq-hero">
 
-    <div class="hero-particles"></div>
+    <div class="faq-hero-inner">
 
-    <div class="container">
-
-        <div class="hero-badge">
-            Centro de ayuda
-        </div>
+        <span class="faq-badge">Centro de ayuda</span>
 
         <h1>Preguntas Frecuentes</h1>
 
-        <p class="description">
-            Respuestas oficiales sobre merch, entregas en CDMX y la Zona GamesAlone18.
+        <p>
+            Respuestas oficiales de GamesAlone18 Universe
         </p>
 
-        <div class="hero-buttons">
-            <a href="/zona/" class="btn-primary-merch">
-                <i class="bi bi-stars me-2"></i> Entrar a la Zona
-            </a>
-
-            <a href="#faq" class="btn-secondary-merch">
-                Ver FAQ
-            </a>
-        </div>
-
-        <div class="hero-note">
-            Soporte oficial GamesAlone18 Universe
+        <div class="faq-actions">
+            <a href="/zona/" class="btn-main">Entrar a la Zona</a>
+            <a href="#faq" class="btn-sec">Ver FAQ</a>
         </div>
 
     </div>
-</header>
 
-<!-- FAQ -->
-<section id="faq" class="py-5">
+</section>
 
-    <div class="container">
+<section id="faq" class="faq-section">
 
-        <div class="section-title text-center">
-            <div class="section-tag">FAQ</div>
-            <h2>Centro de soporte</h2>
-            <p>Respuestas oficiales del sistema GamesAlone18</p>
-        </div>
+    <div class="faq-container">
 
-        <!-- IMPORTANTE: ya NO uses merch-box aquí -->
-        <div class="faq-wrapper">
+        <h2>Soporte</h2>
 
-            <div class="accordion faq-accordion" id="faqAccordion">
+        <div class="accordion faq-accordion" id="faqAccordion">
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f1">
-                            ¿Cómo obtengo mi membresía?
-                        </button>
-                    </h2>
-                    <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Regístrate en la <a href="/zona/" class="legal-links">Zona exclusiva</a>.
-                        </div>
-                    </div>
+            <div class="faq-item">
+                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f1">
+                    ¿Cómo obtengo mi membresía?
+                </button>
+                <div id="f1" class="collapse faq-a" data-bs-parent="#faqAccordion">
+                    Regístrate en la Zona exclusiva.
                 </div>
+            </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
-                            ¿Dónde entregan?
-                        </button>
-                    </h2>
-                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Solo en CDMX en puntos acordados.
-                        </div>
-                    </div>
+            <div class="faq-item">
+                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f2">
+                    ¿Dónde entregan?
+                </button>
+                <div id="f2" class="collapse faq-a" data-bs-parent="#faqAccordion">
+                    Solo en CDMX en puntos acordados.
                 </div>
+            </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
-                            ¿Cómo se paga?
-                        </button>
-                    </h2>
-                    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Pago contra entrega en efectivo.
-                        </div>
-                    </div>
+            <div class="faq-item">
+                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f3">
+                    ¿Cómo se paga?
+                </button>
+                <div id="f3" class="collapse faq-a" data-bs-parent="#faqAccordion">
+                    Pago contra entrega en efectivo.
                 </div>
-
             </div>
 
         </div>
 
     </div>
+
 </section>
 
-<!-- CTA -->
-<section class="promo-banner">
+<section class="faq-cta">
 
-    <div class="promo-content">
-
-        <span>Soporte directo</span>
-        <h2>¿Aún tienes dudas?</h2>
-        <p>Contacta al equipo oficial</p>
-
-        <a href="https://wa.me/message/4H3TFP6JKO6NN1" target="_blank">
-            WhatsApp
-        </a>
-
+    <div>
+        <h3>¿Aún tienes dudas?</h3>
+        <a href="https://wa.me/message/4H3TFP6JKO6NN1">WhatsApp</a>
     </div>
 
 </section>
 
-<!-- FOOTER -->
-<div id="footer"></div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-fetch("/footer.html")
-    .then(r => r.text())
-    .then(d => document.getElementById("footer").innerHTML = d);
-</script>
 
 </body>
 </html>
