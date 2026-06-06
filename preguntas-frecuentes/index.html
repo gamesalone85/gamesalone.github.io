@@ -5,89 +5,187 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>FAQ | GamesAlone18 Universe</title>
+    <title>Preguntas Frecuentes | GamesAlone18 Universe</title>
 
+    <meta name="description" content="Resuelve dudas sobre entregas en CDMX, merch gamer, pagos contra entrega y la comunidad GamesAlone18 Universe.">
+    <meta name="keywords" content="FAQ GamesAlone18, merch gamer México, comunidad gamer CDMX, entregas CDMX, pagos contra entrega">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.gamesalone.com/preguntas-frecuentes/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ | GamesAlone18 Universe">
+    <meta property="og:description" content="Todo lo que necesitas saber sobre la comunidad y merch gamer en CDMX.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gamesalone.com/preguntas-frecuentes/">
+    <meta property="og:image" content="https://www.gamesalone.com/assets/img/social-preview.jpg">
+
+    <!-- Bootstrap + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- SOLO ESTE CSS (aislado) -->
+    <!-- Styles -->
+    <link href="/css/styles.css" rel="stylesheet">
     <link href="/preguntas-frecuentes/css/faq.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.png">
+
+    <!-- Schema FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": []
+    }
+    </script>
 
 </head>
 
-<body class="faq-page">
+<body id="page-top" class="bg-dark text-light">
 
-<section class="faq-hero">
+<!-- HERO -->
+<header class="faq-hero d-flex align-items-center text-center">
+    <div class="container">
 
-    <div class="faq-hero-inner">
+        <div class="badge bg-primary mb-3 px-3 py-2">
+            Centro de ayuda oficial
+        </div>
 
-        <span class="faq-badge">Centro de ayuda</span>
+        <h1 class="display-5 fw-bold text-uppercase">
+            Preguntas Frecuentes
+        </h1>
 
-        <h1>Preguntas Frecuentes</h1>
-
-        <p>
-            Respuestas oficiales de GamesAlone18 Universe
+        <p class="lead text-white-50 mx-auto mt-3" style="max-width:720px;">
+            Todo lo que necesitas saber sobre <strong>GamesAlone18 Universe</strong>:
+            merch, entregas en CDMX, pagos y acceso a la Zona exclusiva.
         </p>
 
-        <div class="faq-actions">
-            <a href="/zona/" class="btn-main">Entrar a la Zona</a>
-            <a href="#faq" class="btn-sec">Ver FAQ</a>
+        <div class="mt-4 d-flex gap-2 justify-content-center flex-wrap">
+            <a href="/zona/" class="btn btn-primary btn-lg">
+                <i class="bi bi-stars me-2"></i> Entrar a la Zona
+            </a>
+
+            <a href="#faq" class="btn btn-outline-light btn-lg">
+                Ver preguntas
+            </a>
         </div>
 
     </div>
+</header>
 
-</section>
+<!-- FAQ SECTION -->
+<section id="faq" class="py-5">
+    <div class="container">
 
-<section id="faq" class="faq-section">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Centro de soporte</h2>
+            <p class="text-white-50">
+                Respuestas rápidas para la comunidad GamesAlone18
+            </p>
+        </div>
 
-    <div class="faq-container">
+        <div class="faq-card">
 
-        <h2>Soporte</h2>
+            <div class="accordion accordion-flush" id="faqAccordion">
 
-        <div class="accordion faq-accordion" id="faqAccordion">
-
-            <div class="faq-item">
-                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f1">
-                    ¿Cómo obtengo mi membresía?
-                </button>
-                <div id="f1" class="collapse faq-a" data-bs-parent="#faqAccordion">
-                    Regístrate en la Zona exclusiva.
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f1">
+                            ¿Cómo obtengo mi membresía o número de afiliación?
+                        </button>
+                    </h2>
+                    <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Regístrate en la <a href="/zona/">Zona exclusiva</a> para obtener tu ID único dentro del universo GamesAlone18.
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f2">
-                    ¿Dónde entregan?
-                </button>
-                <div id="f2" class="collapse faq-a" data-bs-parent="#faqAccordion">
-                    Solo en CDMX en puntos acordados.
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
+                            ¿Dónde entregan los productos?
+                        </button>
+                    </h2>
+                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Entregas únicamente en <strong>CDMX</strong> en puntos acordados (principalmente Metro o transporte público).
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <button class="faq-q" data-bs-toggle="collapse" data-bs-target="#f3">
-                    ¿Cómo se paga?
-                </button>
-                <div id="f3" class="collapse faq-a" data-bs-parent="#faqAccordion">
-                    Pago contra entrega en efectivo.
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
+                            ¿Cómo se realiza el pago?
+                        </button>
+                    </h2>
+                    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            El pago es <strong>contra entrega en efectivo</strong>, sin depósitos ni transferencias.
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">
+                            ¿Qué tipo de productos venden?
+                        </button>
+                    </h2>
+                    <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Merch oficial gamer: playeras, tazas y drops exclusivos de la comunidad.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">
+                            ¿Es seguro registrarse?
+                        </button>
+                    </h2>
+                    <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sí. Tus datos están protegidos bajo políticas de privacidad y solo se usan para tu membresía.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
     </div>
-
 </section>
 
-<section class="faq-cta">
+<!-- CTA -->
+<section class="faq-cta text-center py-5">
+    <div class="container">
 
-    <div>
-        <h3>¿Aún tienes dudas?</h3>
-        <a href="https://wa.me/message/4H3TFP6JKO6NN1">WhatsApp</a>
+        <h2 class="fw-bold mb-3">¿Aún tienes dudas?</h2>
+        <p class="text-white-50 mb-4">
+            Habla directamente con el equipo GamesAlone18 Universe
+        </p>
+
+        <a href="https://wa.me/message/4H3TFP6JKO6NN1" target="_blank" class="btn btn-success btn-lg">
+            <i class="bi bi-whatsapp me-2"></i> Contactar soporte
+        </a>
+
     </div>
-
 </section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+fetch("/footer.html")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer").innerHTML = d);
+</script>
 
 </body>
 </html>
