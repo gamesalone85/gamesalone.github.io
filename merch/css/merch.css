@@ -1,548 +1,270 @@
 /* =====================================
-   HERO
+   GAMESALONE18 - DESIGN SYSTEM BASE
+===================================== */
+
+:root{
+    --ga-bg: #0b0b0b;
+    --ga-card: rgba(255,255,255,.04);
+    --ga-border: rgba(255,255,255,.08);
+    --ga-text: #ffffff;
+    --ga-muted: #cfcfcf;
+    --ga-green: #28a745;
+    --ga-yellow: #fbbf24;
+}
+
+/* RESET LOCAL SOLO FAQ */
+body{
+    background: var(--ga-bg);
+    color: var(--ga-text);
+}
+
+/* =====================================
+   HERO FAQ (derivado de merch-hero)
 ===================================== */
 
 .merch-hero{
-    min-height:85vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    padding:120px 20px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 20px;
+    background: radial-gradient(circle at top, #111, #000);
 }
 
 .hero-particles{
-    position:absolute;
-    inset:0;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,.06), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 30%);
-    pointer-events:none;
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.05), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.04), transparent 40%);
 }
 
 .hero-badge{
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:50px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    color:#fff;
-    font-size:.9rem;
-    margin-bottom:25px;
-    border:1px solid rgba(255,255,255,.15);
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--ga-border);
+    font-size: .85rem;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
 }
 
 .merch-hero h1{
-    color:#fff;
-    font-size:4rem;
-    font-weight:800;
-    margin-bottom:25px;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 .merch-hero .description{
-    color:#cfcfcf;
-    max-width:850px;
-    margin:auto;
-    font-size:1.2rem;
-    line-height:1.8;
+    max-width: 800px;
+    margin: auto;
+    color: var(--ga-muted);
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
 
 .hero-note{
-    margin-top:25px;
-    color:#9ae6b4;
-    font-weight:600;
+    margin-top: 20px;
+    color: #9ae6b4;
+    font-weight: 600;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    margin-top:35px;
-    flex-wrap:wrap;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
+/* botones */
 .btn-primary-merch{
-    background:#28a745;
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:50px;
-    font-weight:700;
-    transition:.3s;
+    background: var(--ga-green);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .25s ease;
 }
 
 .btn-primary-merch:hover{
-    transform:translateY(-3px);
-    color:white;
+    transform: translateY(-3px);
+    color: #fff;
 }
 
 .btn-secondary-merch{
-    border:1px solid rgba(255,255,255,.3);
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:50px;
-    transition:.3s;
+    border: 1px solid var(--ga-border);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: .25s ease;
 }
 
 .btn-secondary-merch:hover{
-    background:white;
-    color:black;
+    background: #fff;
+    color: #000;
 }
 
 /* =====================================
-   PROMO BANNER
-===================================== */
-
-.promo-banner{
-    padding:70px 20px;
-}
-
-.promo-content{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:25px;
-    padding:50px;
-    backdrop-filter:blur(15px);
-}
-
-.promo-content span{
-    color:#fbbf24;
-    font-weight:700;
-}
-
-.promo-content h2{
-    color:white;
-    margin:15px 0;
-}
-
-.promo-content p{
-    color:#cfcfcf;
-}
-
-.promo-content a{
-    display:inline-block;
-    margin-top:20px;
-    background:#28a745;
-    color:white;
-    text-decoration:none;
-    padding:12px 30px;
-    border-radius:50px;
-}
-
-/* =====================================
-   TITULOS
+   TITULOS (SYSTEM)
 ===================================== */
 
 .section-title{
-    margin-bottom:70px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 .section-tag{
-    display:inline-block;
-    padding:8px 18px;
-    background:#28a745;
-    color:white;
-    border-radius:50px;
-    font-size:.8rem;
-    font-weight:700;
-    margin-bottom:15px;
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--ga-green);
+    font-size: .8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .section-title h2{
-    color:white;
-    font-size:2.8rem;
-    margin-bottom:15px;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 .section-title p{
-    color:#bdbdbd;
+    color: var(--ga-muted);
 }
 
 /* =====================================
-   PRODUCTOS
+   FAQ WRAPPER (NUEVO CORE)
 ===================================== */
 
-.merch-card{
-    margin-bottom:90px !important;
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
+.faq-wrapper{
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.merch-card.show{
-    opacity:1;
-    transform:none;
+/* ACCORDION FIX TOTAL */
+.faq-accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.merch-img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:25px;
-    transition:.4s;
+/* ITEM */
+.faq-accordion .accordion-item{
+    background: var(--ga-card);
+    border: 1px solid var(--ga-border);
+    border-radius: 16px;
+    overflow: hidden;
 }
 
-.merch-img:hover{
-    transform:scale(1.02);
+/* BUTTON RESET COMPLETO BOOTSTRAP */
+.faq-accordion .accordion-button{
+    background: transparent !important;
+    color: var(--ga-text) !important;
+    font-weight: 600;
+    padding: 18px 20px;
+    box-shadow: none !important;
 }
 
-.merch-box{
-    border-radius:25px;
-    padding:40px;
-    background:rgba(0,0,0,.75)!important;
-    border:1px solid rgba(255,255,255,.08);
+/* estado activo */
+.faq-accordion .accordion-button:not(.collapsed){
+    background: rgba(40,167,69,.15) !important;
 }
 
-.product-tag{
-    display:inline-block;
-    background:#28a745;
-    color:white;
-    padding:6px 15px;
-    border-radius:50px;
-    margin-bottom:15px;
-    font-size:.8rem;
-    font-weight:700;
+/* eliminar icono azul bootstrap raro */
+.faq-accordion .accordion-button:focus{
+    box-shadow: none !important;
+    border: none !important;
 }
 
-.product-list{
-    color:#ddd;
-    text-align:left;
-    margin-top:20px;
+/* BODY */
+.faq-accordion .accordion-body{
+    color: var(--ga-muted);
+    padding: 18px 20px;
 }
 
-.product-list li{
-    margin-bottom:10px;
+/* links */
+.faq-accordion a{
+    color: var(--ga-green);
+    text-decoration: none;
 }
 
-.product-list-right{
-    text-align:right;
-}
-
-.collector-box{
-    margin-top:25px;
-    background:rgba(255,255,255,.05);
-    border-radius:20px;
-    padding:20px;
-}
-
-.collector-box h3{
-    color:white;
-    font-size:1.1rem;
-}
-
-.collector-box ul{
-    color:#d5d5d5;
-    padding-left:20px;
-}
-
-.legal-warning{
-    color:#fbbf24;
-    margin-top:15px;
+.faq-accordion a:hover{
+    text-decoration: underline;
 }
 
 /* =====================================
-   TEMPORADAS
+   PROMO CTA
 ===================================== */
 
-.temporadas{
-    padding:100px 0;
+.promo-banner{
+    padding: 80px 20px;
 }
 
-.temporadas-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.promo-content{
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--ga-border);
+    backdrop-filter: blur(12px);
 }
 
-.temporada-card{
-    background:rgba(255,255,255,.04);
-    border-radius:25px;
-    padding:35px;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.08);
-
-    opacity:0;
-    transform:translateY(40px);
-    transition:.7s;
+.promo-content span{
+    color: var(--ga-yellow);
+    font-weight: 700;
 }
 
-.temporada-card.show{
-    opacity:1;
-    transform:none;
+.promo-content h2{
+    margin: 15px 0;
 }
 
-.temporada-card span{
-    font-size:3rem;
+.promo-content p{
+    color: var(--ga-muted);
 }
 
-.temporada-card h3{
-    color:white;
-    margin-top:15px;
-}
-
-.temporada-card p{
-    color:#cfcfcf;
-}
-
-/* =====================================
-   COLABORACIONES
-===================================== */
-
-.collab-section{
-    padding:100px 0;
-}
-
-.collab-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
-
-.collab-card{
-    background:rgba(255,255,255,.04);
-    border-radius:25px;
-    padding:40px;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.08);
-
-    opacity:0;
-    transform:translateY(40px);
-    transition:.7s;
-}
-
-.collab-card.show{
-    opacity:1;
-    transform:none;
-}
-
-.collab-icon{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.collab-card h3{
-    color:white;
-}
-
-.collab-card p{
-    color:#cfcfcf;
-}
-
-/* =====================================
-   BOTON WHATSAPP
-===================================== */
-
-.merch-btn{
-    padding:15px 40px;
-    border-radius:50px;
-    font-weight:700;
-    font-size:1.1rem;
-}
-
-.legal-text{
-    color:#bdbdbd;
-}
-
-.legal-links a{
-    color:#28a745;
-    text-decoration:none;
-}
-
-/* =====================================
-   POPUP
-===================================== */
-
-.merch-popup{
-    position:fixed;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
-}
-
-.popup-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.85);
-}
-
-.popup-box{
-    position:relative;
-    background:#111;
-    width:90%;
-    max-width:600px;
-    padding:40px;
-    border-radius:25px;
-    border:1px solid rgba(255,255,255,.1);
-    z-index:2;
-    text-align:center;
-}
-
-.popup-badge{
-    display:inline-block;
-    background:#28a745;
-    color:white;
-    padding:8px 15px;
-    border-radius:50px;
-    margin-bottom:20px;
-    font-size:.8rem;
-    font-weight:700;
-}
-
-.popup-box h2{
-    color:white;
-    margin-bottom:20px;
-}
-
-.popup-box p,
-.popup-box li{
-    color:#d5d5d5;
-}
-
-.popup-box ul{
-    text-align:left;
-    margin-top:15px;
-    margin-bottom:15px;
-}
-
-.popup-box button{
-    background:#28a745;
-    color:white;
-    border:none;
-    border-radius:50px;
-    padding:12px 30px;
-    margin-top:15px;
-    cursor:pointer;
-}
-
-/* =====================================
-   COOKIES
-===================================== */
-
-.cookie-bar{
-    position:fixed;
-    left:20px;
-    right:20px;
-    bottom:20px;
-    z-index:9999;
-
-    background:#111;
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:20px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.cookie-info{
-    display:flex;
-    align-items:flex-start;
-    gap:15px;
-}
-
-.cookie-icon{
-    font-size:2rem;
-}
-
-.cookie-text h4{
-    color:white;
-    margin-bottom:5px;
-}
-
-.cookie-text p{
-    color:#cfcfcf;
-    margin:0;
-}
-
-.cookie-text a{
-    color:#28a745;
-}
-
-.cookie-accept{
-    border:none;
-    background:#28a745;
-    color:white;
-    border-radius:50px;
-    padding:12px 30px;
-    cursor:pointer;
+.promo-content a{
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--ga-green);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 /* =====================================
    RESPONSIVE
 ===================================== */
 
-@media(max-width:768px){
+@media (max-width: 768px){
 
-.merch-hero h1{
-    font-size:2.5rem;
-}
+    .merch-hero h1{
+        font-size: 2.6rem;
+    }
 
-.hero-buttons{
-    flex-direction:column;
-}
+    .hero-buttons{
+        flex-direction: column;
+        align-items: center;
+    }
 
-.cookie-bar{
-    flex-direction:column;
-    align-items:flex-start;
-}
+    .section-title h2{
+        font-size: 2rem;
+    }
 
-.popup-box{
-    padding:25px;
-}
-
-.section-title h2{
-    font-size:2rem;
-}
-
-}
-/* =====================================
-   FAQ FIX (IMPORTANTE)
-===================================== */
-
-.faq-box{
-    max-width: 900px;
-    margin: auto;
-}
-
-.faq-accordion .accordion-item{
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 15px;
-    margin-bottom: 12px;
-    overflow: hidden;
-}
-
-.faq-accordion .accordion-button{
-    background: transparent !important;
-    color: white !important;
-    font-weight: 600;
-    box-shadow: none !important;
-    padding: 18px 20px;
-}
-
-.faq-accordion .accordion-button:not(.collapsed){
-    background: rgba(40,167,69,.15) !important;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.faq-accordion .accordion-body{
-    color: #cfcfcf;
-    padding: 18px 20px;
-}
-
-.faq-accordion .accordion-button:focus{
-    box-shadow: none !important;
+    .promo-content{
+        padding: 30px;
+    }
 }
