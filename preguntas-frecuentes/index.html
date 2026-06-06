@@ -42,33 +42,38 @@
 
 </head>
 
-<body id="page-top" class="bg-dark text-light">
+<body id="page-top">
 
-<!-- HERO -->
-<header class="faq-hero d-flex align-items-center text-center">
+<!-- HERO (adaptado a tu sistema merch-hero) -->
+<header class="merch-hero" style="background: radial-gradient(circle at top, #111, #000);">
+    
+    <div class="hero-particles"></div>
+
     <div class="container">
 
-        <div class="badge bg-primary mb-3 px-3 py-2">
-            Centro de ayuda oficial
+        <div class="hero-badge">
+            Centro de ayuda GamesAlone18
         </div>
 
-        <h1 class="display-5 fw-bold text-uppercase">
-            Preguntas Frecuentes
-        </h1>
+        <h1>Preguntas Frecuentes</h1>
 
-        <p class="lead text-white-50 mx-auto mt-3" style="max-width:720px;">
-            Todo lo que necesitas saber sobre <strong>GamesAlone18 Universe</strong>:
-            merch, entregas en CDMX, pagos y acceso a la Zona exclusiva.
+        <p class="description">
+            Resolvemos tus dudas sobre <strong>merch gamer</strong>, 
+            <strong>entregas en CDMX</strong> y acceso a la comunidad exclusiva.
         </p>
 
-        <div class="mt-4 d-flex gap-2 justify-content-center flex-wrap">
-            <a href="/zona/" class="btn btn-primary btn-lg">
+        <div class="hero-buttons">
+            <a href="/zona/" class="btn-primary-merch">
                 <i class="bi bi-stars me-2"></i> Entrar a la Zona
             </a>
 
-            <a href="#faq" class="btn btn-outline-light btn-lg">
+            <a href="#faq" class="btn-secondary-merch">
                 Ver preguntas
             </a>
+        </div>
+
+        <div class="hero-note">
+            Respuestas oficiales del universo GamesAlone18
         </div>
 
     </div>
@@ -76,104 +81,107 @@
 
 <!-- FAQ SECTION -->
 <section id="faq" class="py-5">
+
     <div class="container">
 
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Centro de soporte</h2>
-            <p class="text-white-50">
-                Respuestas rápidas para la comunidad GamesAlone18
-            </p>
+        <div class="section-title text-center">
+            <div class="section-tag">FAQ</div>
+            <h2>Centro de soporte</h2>
+            <p>Todo lo que necesitas saber antes de entrar al universo</p>
         </div>
 
-        <div class="faq-card">
+        <!-- FAQ BOX (usa tu estilo merch-box) -->
+        <div class="merch-box">
 
             <div class="accordion accordion-flush" id="faqAccordion">
 
-                <div class="accordion-item">
+                <div class="accordion-item bg-transparent border-0 mb-3">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f1">
-                            ¿Cómo obtengo mi membresía o número de afiliación?
+                        <button class="accordion-button collapsed bg-transparent text-white" data-bs-toggle="collapse" data-bs-target="#f1">
+                            ¿Cómo obtengo mi membresía?
                         </button>
                     </h2>
                     <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Regístrate en la <a href="/zona/">Zona exclusiva</a> para obtener tu ID único dentro del universo GamesAlone18.
+                        <div class="accordion-body text-white-50">
+                            Regístrate en la <a href="/zona/" class="legal-links">Zona exclusiva</a> para obtener tu ID único.
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                <div class="accordion-item bg-transparent border-0 mb-3">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
+                        <button class="accordion-button collapsed bg-transparent text-white" data-bs-toggle="collapse" data-bs-target="#f2">
                             ¿Dónde entregan los productos?
                         </button>
                     </h2>
                     <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Entregas únicamente en <strong>CDMX</strong> en puntos acordados (principalmente Metro o transporte público).
+                        <div class="accordion-body text-white-50">
+                            Entregas únicamente en CDMX en puntos acordados (Metro o transporte público).
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                <div class="accordion-item bg-transparent border-0 mb-3">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
+                        <button class="accordion-button collapsed bg-transparent text-white" data-bs-toggle="collapse" data-bs-target="#f3">
                             ¿Cómo se realiza el pago?
                         </button>
                     </h2>
                     <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            El pago es <strong>contra entrega en efectivo</strong>, sin depósitos ni transferencias.
+                        <div class="accordion-body text-white-50">
+                            El pago es contra entrega en efectivo, sin depósitos.
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                <div class="accordion-item bg-transparent border-0 mb-3">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">
+                        <button class="accordion-button collapsed bg-transparent text-white" data-bs-toggle="collapse" data-bs-target="#f4">
                             ¿Qué tipo de productos venden?
                         </button>
                     </h2>
                     <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Merch oficial gamer: playeras, tazas y drops exclusivos de la comunidad.
+                        <div class="accordion-body text-white-50">
+                            Merch oficial gamer: playeras, tazas y drops exclusivos.
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
+                <div class="accordion-item bg-transparent border-0">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">
+                        <button class="accordion-button collapsed bg-transparent text-white" data-bs-toggle="collapse" data-bs-target="#f5">
                             ¿Es seguro registrarse?
                         </button>
                     </h2>
                     <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sí. Tus datos están protegidos bajo políticas de privacidad y solo se usan para tu membresía.
+                        <div class="accordion-body text-white-50">
+                            Sí, tus datos están protegidos bajo políticas internas del sistema.
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
 
     </div>
 </section>
 
 <!-- CTA -->
-<section class="faq-cta text-center py-5">
-    <div class="container">
+<section class="promo-banner">
 
-        <h2 class="fw-bold mb-3">¿Aún tienes dudas?</h2>
-        <p class="text-white-50 mb-4">
-            Habla directamente con el equipo GamesAlone18 Universe
-        </p>
+    <div class="promo-content">
 
-        <a href="https://wa.me/message/4H3TFP6JKO6NN1" target="_blank" class="btn btn-success btn-lg">
-            <i class="bi bi-whatsapp me-2"></i> Contactar soporte
+        <span>Soporte directo</span>
+        <h2>¿Aún tienes dudas?</h2>
+        <p>Habla con el equipo oficial de GamesAlone18 Universe</p>
+
+        <a href="https://wa.me/message/4H3TFP6JKO6NN1" target="_blank">
+            Contactar por WhatsApp
         </a>
 
     </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -186,6 +194,8 @@ fetch("/footer.html")
     .then(r => r.text())
     .then(d => document.getElementById("footer").innerHTML = d);
 </script>
+
+</body>
 
 </body>
 </html>
