@@ -1,307 +1,510 @@
-/* ==========================
-   MERCH 2026
-========================== */
+/* =====================================
+   HERO
+===================================== */
 
 .merch-hero{
-
-    min-height:80vh;
-
+    min-height:85vh;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
     position:relative;
+    overflow:hidden;
+    padding:120px 20px;
 }
 
-.merch-hero::before{
-
-    content:'';
-
+.hero-particles{
     position:absolute;
-
     inset:0;
-
     background:
-    radial-gradient(
-        circle at center,
-        rgba(0,255,170,.12),
-        transparent 60%
-    );
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.06), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 30%);
+    pointer-events:none;
 }
 
 .hero-badge{
-
     display:inline-block;
-
-    background:rgba(0,255,170,.10);
-
-    border:1px solid rgba(0,255,170,.25);
-
-    color:#00ffae;
-
     padding:10px 20px;
-
     border-radius:50px;
-
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:.9rem;
     margin-bottom:25px;
-
-    font-weight:600;
+    border:1px solid rgba(255,255,255,.15);
 }
 
 .merch-hero h1{
-
-    font-size:clamp(2.5rem,6vw,5rem);
-
-    font-weight:800;
-
     color:#fff;
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.merch-hero .description{
+    color:#cfcfcf;
+    max-width:850px;
+    margin:auto;
+    font-size:1.2rem;
+    line-height:1.8;
 }
 
 .hero-note{
-
-    color:#00ffae;
-
+    margin-top:25px;
+    color:#9ae6b4;
     font-weight:600;
 }
 
-.merch-card{
-
-    transition:.4s;
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:35px;
+    flex-wrap:wrap;
 }
 
-.merch-card:hover{
-
-    transform:translateY(-6px);
-}
-
-.merch-box{
-
-    border:1px solid rgba(255,255,255,.06);
-
+.btn-primary-merch{
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:50px;
+    font-weight:700;
     transition:.3s;
 }
 
-.merch-box:hover{
+.btn-primary-merch:hover{
+    transform:translateY(-3px);
+    color:white;
+}
 
-    border-color:rgba(0,255,170,.25);
+.btn-secondary-merch{
+    border:1px solid rgba(255,255,255,.3);
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-secondary-merch:hover{
+    background:white;
+    color:black;
+}
+
+/* =====================================
+   PROMO BANNER
+===================================== */
+
+.promo-banner{
+    padding:70px 20px;
+}
+
+.promo-content{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:50px;
+    backdrop-filter:blur(15px);
+}
+
+.promo-content span{
+    color:#fbbf24;
+    font-weight:700;
+}
+
+.promo-content h2{
+    color:white;
+    margin:15px 0;
+}
+
+.promo-content p{
+    color:#cfcfcf;
+}
+
+.promo-content a{
+    display:inline-block;
+    margin-top:20px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:50px;
+}
+
+/* =====================================
+   TITULOS
+===================================== */
+
+.section-title{
+    margin-bottom:70px;
+}
+
+.section-tag{
+    display:inline-block;
+    padding:8px 18px;
+    background:#28a745;
+    color:white;
+    border-radius:50px;
+    font-size:.8rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    color:white;
+    font-size:2.8rem;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#bdbdbd;
+}
+
+/* =====================================
+   PRODUCTOS
+===================================== */
+
+.merch-card{
+    margin-bottom:90px !important;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.merch-card.show{
+    opacity:1;
+    transform:none;
 }
 
 .merch-img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.merch-img:hover{
+    transform:scale(1.02);
+}
+
+.merch-box{
+    border-radius:25px;
+    padding:40px;
+    background:rgba(0,0,0,.75)!important;
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .product-tag{
-
     display:inline-block;
-
-    padding:8px 15px;
-
-    border-radius:40px;
-
-    background:#00ffae;
-
-    color:#000;
-
+    background:#28a745;
+    color:white;
+    padding:6px 15px;
+    border-radius:50px;
+    margin-bottom:15px;
+    font-size:.8rem;
     font-weight:700;
-
-    margin-bottom:20px;
 }
 
 .product-list{
-
-    list-style:none;
-
-    padding-left:0;
+    color:#ddd;
+    text-align:left;
+    margin-top:20px;
 }
 
 .product-list li{
-
-    padding:8px 0;
-
-    color:#ddd;
+    margin-bottom:10px;
 }
 
-.merch-btn{
+.product-list-right{
+    text-align:right;
+}
 
-    border-radius:50px;
+.collector-box{
+    margin-top:25px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:20px;
+}
 
-    padding:15px 35px;
-
+.collector-box h3{
+    color:white;
     font-size:1.1rem;
-
-    font-weight:700;
 }
 
-/* ==========================
+.collector-box ul{
+    color:#d5d5d5;
+    padding-left:20px;
+}
+
+.legal-warning{
+    color:#fbbf24;
+    margin-top:15px;
+}
+
+/* =====================================
    TEMPORADAS
-========================== */
+===================================== */
 
-.season-section{
-
-    padding:100px 20px;
-
-    text-align:center;
+.temporadas{
+    padding:100px 0;
 }
 
-.season-title{
-
-    color:#fff;
-
-    margin-bottom:50px;
-}
-
-.season-grid{
-
+.temporadas-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-
-    max-width:1200px;
-
-    margin:auto;
 }
 
-.season-card{
-
-    background:#111;
-
+.temporada-card{
+    background:rgba(255,255,255,.04);
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
     border:1px solid rgba(255,255,255,.08);
 
-    border-radius:20px;
-
-    padding:30px;
-
-    transition:.3s;
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s;
 }
 
-.season-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#00ffae;
+.temporada-card.show{
+    opacity:1;
+    transform:none;
 }
 
-.season-card h3{
-
-    color:#00ffae;
+.temporada-card span{
+    font-size:3rem;
 }
 
-/* ==========================
+.temporada-card h3{
+    color:white;
+    margin-top:15px;
+}
+
+.temporada-card p{
+    color:#cfcfcf;
+}
+
+/* =====================================
+   COLABORACIONES
+===================================== */
+
+.collab-section{
+    padding:100px 0;
+}
+
+.collab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.collab-card{
+    background:rgba(255,255,255,.04);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s;
+}
+
+.collab-card.show{
+    opacity:1;
+    transform:none;
+}
+
+.collab-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.collab-card h3{
+    color:white;
+}
+
+.collab-card p{
+    color:#cfcfcf;
+}
+
+/* =====================================
+   BOTON WHATSAPP
+===================================== */
+
+.merch-btn{
+    padding:15px 40px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:1.1rem;
+}
+
+.legal-text{
+    color:#bdbdbd;
+}
+
+.legal-links a{
+    color:#28a745;
+    text-decoration:none;
+}
+
+/* =====================================
    POPUP
-========================== */
+===================================== */
 
 .merch-popup{
-
     position:fixed;
-
     inset:0;
-
     display:none;
-
     justify-content:center;
-
     align-items:center;
-
     z-index:99999;
 }
 
 .popup-overlay{
-
     position:absolute;
-
     inset:0;
-
-    background:rgba(0,0,0,.8);
-
-    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,.85);
 }
 
 .popup-box{
-
     position:relative;
-
-    width:min(90%,600px);
-
     background:#111;
-
-    border:1px solid rgba(0,255,170,.25);
-
-    border-radius:25px;
-
+    width:90%;
+    max-width:600px;
     padding:40px;
-
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
     z-index:2;
-
     text-align:center;
 }
 
 .popup-badge{
-
     display:inline-block;
-
-    background:rgba(0,255,170,.12);
-
-    color:#00ffae;
-
+    background:#28a745;
+    color:white;
     padding:8px 15px;
-
     border-radius:50px;
-
     margin-bottom:20px;
+    font-size:.8rem;
+    font-weight:700;
 }
 
 .popup-box h2{
-
     color:white;
-
     margin-bottom:20px;
 }
 
-.popup-box p{
-
-    color:#ddd;
-
-    line-height:1.8;
+.popup-box p,
+.popup-box li{
+    color:#d5d5d5;
 }
 
 .popup-box ul{
-
     text-align:left;
-
-    color:#ddd;
-
-    max-width:350px;
-
-    margin:20px auto;
+    margin-top:15px;
+    margin-bottom:15px;
 }
 
 .popup-box button{
-
-    margin-top:20px;
-
+    background:#28a745;
+    color:white;
     border:none;
-
-    background:#00ffae;
-
-    color:#000;
-
-    padding:14px 35px;
-
     border-radius:50px;
-
-    font-weight:700;
-
+    padding:12px 30px;
+    margin-top:15px;
     cursor:pointer;
+}
+
+/* =====================================
+   COOKIES
+===================================== */
+
+.cookie-bar{
+    position:fixed;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.cookie-info{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.cookie-icon{
+    font-size:2rem;
+}
+
+.cookie-text h4{
+    color:white;
+    margin-bottom:5px;
+}
+
+.cookie-text p{
+    color:#cfcfcf;
+    margin:0;
+}
+
+.cookie-text a{
+    color:#28a745;
+}
+
+.cookie-accept{
+    border:none;
+    background:#28a745;
+    color:white;
+    border-radius:50px;
+    padding:12px 30px;
+    cursor:pointer;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+.merch-hero h1{
+    font-size:2.5rem;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.cookie-bar{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.popup-box{
+    padding:25px;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
 }
