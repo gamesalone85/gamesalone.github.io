@@ -203,75 +203,64 @@ Rechazar
 
 <script>
 
-function loadAnalytics() {
+function loadAnalytics(){
 
-  const scripts = document.querySelectorAll(
-    'script[type="text/plain"][data-cookiecategory="analytics"]'
-  );
+    const scripts = document.querySelectorAll(
+        'script[type="text/plain"][data-cookiecategory="analytics"]'
+    );
 
-  scripts.forEach(script => {
+    scripts.forEach(script => {
 
-    const newScript = document.createElement('script');
+        const newScript = document.createElement('script');
 
-    newScript.text = script.textContent;
+        newScript.text = script.textContent;
 
-    document.head.appendChild(newScript);
+        document.head.appendChild(newScript);
 
-  });
-
-}
-
-function saveConsent(status){
-
-  localStorage.setItem(
-    'cookieConsent',
-    JSON.stringify({
-      analytics: status,
-      timestamp: new Date().toISOString(),
-      version: '1.0'
-    })
-  );
+    });
 
 }
 
-document.getElementById('accept-cookies')
-.addEventListener('click', function(){
+document.addEventListener('DOMContentLoaded', () => {
 
-  saveConsent(true);
+    const banner =
+    document.getElementById('cookie-consent');
 
-  document.getElementById('cookie-consent')
-  .style.display = 'none';
+    const acceptBtn =
+    document.getElementById('accept-cookies');
 
-  loadAnalytics();
+    const rejectBtn =
+    document.getElementById('reject-cookies');
 
-});
-
-document.getElementById('reject-cookies')
-.addEventListener('click', function(){
-
-  saveConsent(false);
-
-  document.getElementById('cookie-consent')
-  .style.display = 'none';
-
-});
-
-window.addEventListener('load', function(){
-
-  const consent = JSON.parse(
-    localStorage.getItem('cookieConsent')
-  );
-
-  if(consent){
-
-    document.getElementById('cookie-consent')
-    .style.display = 'none';
-
-    if(consent.analytics === true){
-      loadAnalytics();
+    if(!banner || !acceptBtn || !rejectBtn){
+        return;
     }
 
-  }
+    acceptBtn.addEventListener('click', () => {
+
+        banner.style.opacity = '0';
+
+        setTimeout(() => {
+
+            banner.style.display = 'none';
+
+            loadAnalytics();
+
+        }, 300);
+
+    });
+
+    rejectBtn.addEventListener('click', () => {
+
+        banner.style.opacity = '0';
+
+        setTimeout(() => {
+
+            banner.style.display = 'none';
+
+        }, 300);
+
+    });
 
 });
 </script>
