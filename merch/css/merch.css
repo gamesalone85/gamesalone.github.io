@@ -1,270 +1,110 @@
 /* =====================================
-   GAMESALONE18 - DESIGN SYSTEM BASE
+   FAQ PAGE ISOLATED (NO CONFLICTS)
 ===================================== */
 
-:root{
-    --ga-bg: #0b0b0b;
-    --ga-card: rgba(255,255,255,.04);
-    --ga-border: rgba(255,255,255,.08);
-    --ga-text: #ffffff;
-    --ga-muted: #cfcfcf;
-    --ga-green: #28a745;
-    --ga-yellow: #fbbf24;
+.faq-page{
+    margin: 0;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: system-ui, sans-serif;
 }
 
-/* RESET LOCAL SOLO FAQ */
-body{
-    background: var(--ga-bg);
-    color: var(--ga-text);
-}
-
-/* =====================================
-   HERO FAQ (derivado de merch-hero)
-===================================== */
-
-.merch-hero{
-    min-height: 85vh;
+/* HERO */
+.faq-hero{
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding: 120px 20px;
-    background: radial-gradient(circle at top, #111, #000);
+    padding: 40px;
 }
 
-.hero-particles{
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 35%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,.05), transparent 35%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,.04), transparent 40%);
+.faq-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    margin-bottom:15px;
 }
 
-.hero-badge{
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 999px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid var(--ga-border);
-    font-size: .85rem;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
+.faq-hero h1{
+    font-size: 3.5rem;
+    margin: 10px 0;
 }
 
-.merch-hero h1{
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 20px;
+.faq-hero p{
+    color:#cfcfcf;
 }
 
-.merch-hero .description{
-    max-width: 800px;
-    margin: auto;
-    color: var(--ga-muted);
-    font-size: 1.2rem;
-    line-height: 1.7;
+/* BOTONES */
+.faq-actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    margin-top:20px;
 }
 
-.hero-note{
-    margin-top: 20px;
-    color: #9ae6b4;
-    font-weight: 600;
+.btn-main{
+    background:#28a745;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
 }
 
-.hero-buttons{
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+.btn-sec{
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;
+    padding:12px 24px;
+    border-radius:999px;
+    text-decoration:none;
 }
 
-/* botones */
-.btn-primary-merch{
-    background: var(--ga-green);
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: .25s ease;
+/* FAQ SECTION */
+.faq-section{
+    padding:80px 20px;
 }
 
-.btn-primary-merch:hover{
-    transform: translateY(-3px);
-    color: #fff;
+.faq-container{
+    max-width:800px;
+    margin:auto;
 }
 
-.btn-secondary-merch{
-    border: 1px solid var(--ga-border);
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: .25s ease;
+.faq-container h2{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.btn-secondary-merch:hover{
-    background: #fff;
-    color: #000;
+/* ITEMS */
+.faq-item{
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:rgba(255,255,255,.03);
 }
 
-/* =====================================
-   TITULOS (SYSTEM)
-===================================== */
-
-.section-title{
-    margin-bottom: 60px;
-    text-align: center;
+/* QUESTION */
+.faq-q{
+    width:100%;
+    text-align:left;
+    padding:18px;
+    background:transparent;
+    border:none;
+    color:#fff;
+    font-weight:600;
 }
 
-.section-tag{
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 999px;
-    background: var(--ga-green);
-    font-size: .8rem;
-    font-weight: 700;
-    margin-bottom: 12px;
+/* ANSWER */
+.faq-a{
+    padding:18px;
+    color:#cfcfcf;
 }
 
-.section-title h2{
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.section-title p{
-    color: var(--ga-muted);
-}
-
-/* =====================================
-   FAQ WRAPPER (NUEVO CORE)
-===================================== */
-
-.faq-wrapper{
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* ACCORDION FIX TOTAL */
-.faq-accordion{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* ITEM */
-.faq-accordion .accordion-item{
-    background: var(--ga-card);
-    border: 1px solid var(--ga-border);
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-/* BUTTON RESET COMPLETO BOOTSTRAP */
-.faq-accordion .accordion-button{
-    background: transparent !important;
-    color: var(--ga-text) !important;
-    font-weight: 600;
-    padding: 18px 20px;
-    box-shadow: none !important;
-}
-
-/* estado activo */
-.faq-accordion .accordion-button:not(.collapsed){
-    background: rgba(40,167,69,.15) !important;
-}
-
-/* eliminar icono azul bootstrap raro */
-.faq-accordion .accordion-button:focus{
-    box-shadow: none !important;
-    border: none !important;
-}
-
-/* BODY */
-.faq-accordion .accordion-body{
-    color: var(--ga-muted);
-    padding: 18px 20px;
-}
-
-/* links */
-.faq-accordion a{
-    color: var(--ga-green);
-    text-decoration: none;
-}
-
-.faq-accordion a:hover{
-    text-decoration: underline;
-}
-
-/* =====================================
-   PROMO CTA
-===================================== */
-
-.promo-banner{
-    padding: 80px 20px;
-}
-
-.promo-content{
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    padding: 50px;
-    border-radius: 25px;
-    background: rgba(255,255,255,.03);
-    border: 1px solid var(--ga-border);
-    backdrop-filter: blur(12px);
-}
-
-.promo-content span{
-    color: var(--ga-yellow);
-    font-weight: 700;
-}
-
-.promo-content h2{
-    margin: 15px 0;
-}
-
-.promo-content p{
-    color: var(--ga-muted);
-}
-
-.promo-content a{
-    display: inline-block;
-    margin-top: 20px;
-    background: var(--ga-green);
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 768px){
-
-    .merch-hero h1{
-        font-size: 2.6rem;
-    }
-
-    .hero-buttons{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section-title h2{
-        font-size: 2rem;
-    }
-
-    .promo-content{
-        padding: 30px;
-    }
+/* CTA */
+.faq-cta{
+    text-align:center;
+    padding:60px 20px;
+    background:#111;
 }
