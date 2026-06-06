@@ -325,23 +325,17 @@ setInterval(() => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const cookieBar = document.getElementById('cookieBar');
-    const acceptCookies = document.getElementById('acceptCookies');
+    const cookieBar =
+    document.getElementById('cookieBar');
 
-    if (!cookieBar || !acceptCookies) {
+    const acceptCookies =
+    document.getElementById('acceptCookies');
+
+    if(!cookieBar || !acceptCookies){
         return;
     }
 
-    if (localStorage.getItem('sarita_cookie_consent')) {
-        cookieBar.style.display = 'none';
-    }
-
     acceptCookies.addEventListener('click', () => {
-
-        localStorage.setItem(
-            'sarita_cookie_consent',
-            'accepted'
-        );
 
         cookieBar.style.display = 'none';
 
