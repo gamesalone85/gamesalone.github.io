@@ -1572,17 +1572,33 @@ body{
     font-weight:600;
 }
 
-.badge{
-    position:absolute;
-    margin:15px;
-    background:#d4af37;
-    color:black;
-    padding:8px 15px;
-    border-radius:30px;
-    font-size:.8rem;
-    font-weight:700;
+.temporada-card{
+    position:relative;
+
+    background:#1f120c;
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+    border:1px solid rgba(255,255,255,.08);
 }
 
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    background:#d4af37;
+    color:black;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+    font-weight:700;
+
+    z-index:10;
+}
 
 /* =========================
    TERMINOS Y CONDICIONES
