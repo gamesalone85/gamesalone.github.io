@@ -1,1494 +1,1359 @@
 /* =========================================================
-GAMESALONE18 UNIVERSE
-HOME / INDEX
-STYLESHEET PRINCIPAL
+   GAMESALONE18 UNIVERSE
+   HOME / INDEX
+   PRODUCTION STYLESHEET
 ========================================================= */
 
+
 /* =========================================================
-RESET
+   RESET
 ========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 /* =========================================================
-HTML / BODY
+   HTML
 ========================================================= */
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-body {
-
-```
-font-family:
-    'Segoe UI',
-    Tahoma,
-    Geneva,
-    Verdana,
-    sans-serif;
-
-background: #000;
-
-color: #fff;
-
-overflow-x: hidden;
-
-min-height: 100vh;
-```
-
-}
 
 /* =========================================================
-LINKS
+   BODY
+========================================================= */
+
+body {
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    background: #000;
+
+    color: #fff;
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   LINKS
 ========================================================= */
 
 a {
-text-decoration: none;
+    text-decoration: none;
 }
 
+
 /* =========================================================
-FONDO
+   FONDO
 ========================================================= */
 
 .bg-image {
+    position: fixed;
 
-```
-position: fixed;
+    top: 0;
+    left: 0;
 
-top: 0;
-left: 0;
+    width: 100%;
+    height: 100%;
 
-width: 100%;
-height: 100%;
+    background:
+        url("/home/img/bg-masthead.jpg")
+        no-repeat
+        center center / cover;
 
-background:
-    url('/home/img/bg-masthead.jpg')
-    no-repeat
-    center center / cover;
+    z-index: -2;
 
-z-index: -2;
-```
-
+    pointer-events: none;
 }
+
 
 .bg-overlay {
+    position: fixed;
 
-```
-position: fixed;
+    top: 0;
+    left: 0;
 
-top: 0;
-left: 0;
+    width: 100%;
+    height: 100%;
 
-width: 100%;
-height: 100%;
+    background:
+        rgba(0, 0, 0, 0.72);
 
-background:
-    rgba(0, 0, 0, .72);
+    z-index: -1;
 
-z-index: -1;
-```
-
+    pointer-events: none;
 }
 
+
 /* =========================================================
-CONTENIDO PRINCIPAL
+   CONTENIDO PRINCIPAL
 ========================================================= */
 
 .main-content {
+    position: relative;
 
-```
-position: relative;
+    z-index: 1;
 
-z-index: 1;
+    padding-top: 100px;
 
-/*
-   El header es fixed.
-   Este espacio evita que el contenido
-   quede debajo del navbar.
-*/
-
-padding-top: 100px;
-```
-
+    min-height: 100vh;
 }
 
+
 /* =========================================================
-HERO
+   HERO
 ========================================================= */
 
 .hero {
+    padding:
+        60px 20px 40px;
 
-```
-padding:
-    60px 20px 40px;
-
-text-align:
-    center;
-```
-
+    text-align: center;
 }
+
 
 .hero h1 {
+    font-size:
+        2.8rem;
 
-```
-font-size:
-    2.8rem;
+    font-weight:
+        800;
 
-font-weight:
-    800;
+    line-height:
+        1.15;
 
-line-height:
-    1.15;
+    margin-bottom:
+        18px;
 
-margin-bottom:
-    18px;
-
-color:
-    #fff;
-```
-
+    color:
+        #fff;
 }
+
 
 .highlight {
+    font-size:
+        1.1rem;
 
-```
-font-size:
-    1.1rem;
+    font-weight:
+        700;
 
-font-weight:
-    700;
+    color:
+        #00ff88;
 
-color:
-    #00ff88;
-
-margin-bottom:
-    14px;
-```
-
+    margin-bottom:
+        14px;
 }
+
 
 .description {
+    font-size:
+        1rem;
 
-```
-font-size:
-    1rem;
+    line-height:
+        1.6;
 
-line-height:
-    1.6;
-
-color:
-    #ccc;
-```
-
+    color:
+        #ccc;
 }
 
+
 /* =========================================================
-SWIPER
+   SWIPER
 ========================================================= */
 
 .swiper-section {
+    margin-top:
+        50px;
 
-```
-margin-top:
-    50px;
+    display:
+        flex;
 
-display:
-    flex;
+    justify-content:
+        center;
 
-justify-content:
-    center;
-
-padding:
-    0 20px;
-```
-
+    padding:
+        0 20px;
 }
+
 
 .swiper {
+    width:
+        90%;
 
-```
-width:
-    90%;
+    max-width:
+        1100px;
 
-max-width:
-    1100px;
+    aspect-ratio:
+        16 / 9;
 
-aspect-ratio:
-    16 / 9;
+    margin:
+        0 auto;
 
-margin:
-    0 auto;
+    border-radius:
+        14px;
 
-border-radius:
-    14px;
+    overflow:
+        hidden;
 
-overflow:
-    hidden;
+    position:
+        relative;
 
-position:
-    relative;
-
-background:
-    #050505;
-```
-
+    background:
+        #050505;
 }
 
-/* =========================================================
-SLIDES
-========================================================= */
 
 .swiper-slide {
+    display:
+        flex;
 
-```
-display:
-    flex;
+    justify-content:
+        center;
 
-justify-content:
-    center;
+    align-items:
+        center;
 
-align-items:
-    center;
+    cursor:
+        pointer;
 
-cursor:
-    pointer;
-
-overflow:
-    hidden;
-```
-
+    overflow:
+        hidden;
 }
+
 
 .swiper-slide img {
-
-```
-display:
-    block;
-
-width:
-    100%;
-
-height:
-    100%;
-
-object-fit:
-    cover;
-
-border-radius:
-    12px;
-```
-
-}
-
-/* =========================================================
-SWIPER NAVIGATION
-========================================================= */
-
-.swiper-button-next,
-.swiper-button-prev {
-
-```
-color:
-    #fff !important;
-
-background:
-    rgba(0, 0, 0, .65);
-
-width:
-    48px;
-
-height:
-    48px;
-
-border-radius:
-    50%;
-
-transition:
-    .3s ease;
-```
-
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-
-```
-transform:
-    scale(1.08);
-
-background:
-    rgba(0, 0, 0, .9);
-```
-
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-
-```
-font-size:
-    18px;
-
-font-weight:
-    bold;
-```
-
-}
-
-/* =========================================================
-SWIPER PAGINATION
-========================================================= */
-
-.swiper-pagination-bullet {
-
-```
-background:
-    #fff !important;
-
-opacity:
-    .5;
-```
-
-}
-
-.swiper-pagination-bullet-active {
-
-```
-background:
-    #00ff88 !important;
-
-opacity:
-    1;
-```
-
-}
-
-/* =========================================================
-ABOUT
-========================================================= */
-
-.about-section {
-
-```
-padding:
-    80px 20px;
-```
-
-}
-
-.about-section h2 {
-
-```
-font-weight:
-    800;
-```
-
-}
-
-.about-section p {
-
-```
-line-height:
-    1.8;
-```
-
-}
-
-.banner-click {
-
-```
-display:
-    block;
-
-width:
-    100%;
-
-height:
-    auto;
-
-border-radius:
-    14px;
-
-transition:
-    .3s ease;
-```
-
-}
-
-.banner-click:hover {
-
-```
-transform:
-    scale(1.02);
-
-box-shadow:
-    0 0 30px
-    rgba(0, 255, 136, .2);
-```
-
-}
-
-/* =========================================================
-COOKIE CONSENT
-========================================================= */
-
-.cookie-banner {
-
-```
-position:
-    fixed;
-
-left:
-    20px;
-
-right:
-    20px;
-
-bottom:
-    20px;
-
-z-index:
-    99999;
-
-background:
-    linear-gradient(
-        135deg,
-        rgba(10, 10, 10, .98),
-        rgba(25, 25, 25, .98)
-    );
-
-border:
-    1px solid
-    rgba(0, 255, 170, .15);
-
-border-radius:
-    20px;
-
-backdrop-filter:
-    blur(18px);
-
-box-shadow:
-    0 20px 50px
-    rgba(0, 0, 0, .45);
-
-transition:
-    opacity .3s ease,
-    transform .3s ease;
-```
-
-}
-
-.cookie-content {
-
-```
-max-width:
-    1200px;
-
-margin:
-    auto;
-
-padding:
-    20px 25px;
-
-display:
-    flex;
-
-align-items:
-    center;
-
-justify-content:
-    space-between;
-
-gap:
-    25px;
-```
-
-}
-
-.cookie-content p {
-
-```
-margin:
-    0;
-
-flex:
-    1;
-
-color:
-    #d7d7d7;
-
-font-size:
-    .95rem;
-
-line-height:
-    1.7;
-```
-
-}
-
-.cookie-content a {
-
-```
-color:
-    #00ffae;
-
-font-weight:
-    600;
-```
-
-}
-
-.cookie-content a:hover {
-
-```
-text-decoration:
-    underline;
-```
-
-}
-
-/* =========================================================
-COOKIE BUTTONS
-========================================================= */
-
-.cookie-buttons {
-
-```
-display:
-    flex;
-
-gap:
-    12px;
-
-flex-shrink:
-    0;
-```
-
-}
-
-.cookie-buttons button {
-
-```
-border:
-    none;
-
-padding:
-    12px 24px;
-
-border-radius:
-    50px;
-
-font-weight:
-    600;
-
-cursor:
-    pointer;
-
-transition:
-    .3s ease;
-```
-
-}
-
-.cookie-buttons button:hover {
-
-```
-transform:
-    translateY(-2px);
-```
-
-}
-
-#accept-cookies {
-
-```
-background:
-    #00ffae;
-
-color:
-    #000;
-```
-
-}
-
-#reject-cookies {
-
-```
-background:
-    transparent;
-
-color:
-    #fff;
-
-border:
-    1px solid
-    rgba(255, 255, 255, .15);
-```
-
-}
-
-#reject-cookies:hover {
-
-```
-background:
-    rgba(255, 255, 255, .05);
-```
-
-}
-
-/* =========================================================
-CHATBOT
-BOTÓN FLOTANTE
-========================================================= */
-
-body > .chat-toggle {
-
-```
-position:
-    fixed !important;
-
-right:
-    25px !important;
-
-bottom:
-    25px !important;
-
-width:
-    70px !important;
-
-height:
-    70px !important;
-
-margin:
-    0 !important;
-
-padding:
-    0 !important;
-
-display:
-    flex !important;
-
-align-items:
-    center;
-
-justify-content:
-    center;
-
-border:
-    none !important;
-
-border-radius:
-    50% !important;
-
-background:
-    linear-gradient(
-        135deg,
-        #8b00ff,
-        #ff0099
-    ) !important;
-
-color:
-    #fff !important;
-
-font-size:
-    28px;
-
-line-height:
-    1;
-
-z-index:
-    999999 !important;
-
-cursor:
-    pointer;
-
-box-shadow:
-    0 12px 35px
-    rgba(0, 0, 0, .45);
-
-transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-```
-
-}
-
-body > .chat-toggle:hover {
-
-```
-transform:
-    translateY(-3px)
-    scale(1.04);
-
-box-shadow:
-    0 16px 40px
-    rgba(0, 0, 0, .55);
-```
-
-}
-
-/* =========================================================
-CHATBOT WINDOW
-========================================================= */
-
-body > .chatbot {
-
-```
-position:
-    fixed !important;
-
-right:
-    25px !important;
-
-bottom:
-    110px !important;
-
-width:
-    380px !important;
-
-height:
-    600px !important;
-
-margin:
-    0 !important;
-
-padding:
-    0 !important;
-
-display:
-    flex !important;
-
-flex-direction:
-    column;
-
-background:
-    #0d0d15 !important;
-
-border-radius:
-    20px;
-
-overflow:
-    hidden;
-
-z-index:
-    999998 !important;
-
-/*
-   Cerrado por defecto.
-*/
-
-visibility:
-    hidden;
-
-opacity:
-    0;
-
-pointer-events:
-    none;
-
-transform:
-    translateY(15px);
-
-transition:
-    opacity .25s ease,
-    transform .25s ease,
-    visibility .25s ease;
-```
-
-}
-
-/* =========================================================
-CHATBOT ABIERTO
-========================================================= */
-
-body > .chatbot.chatbot-open {
-
-```
-visibility:
-    visible;
-
-opacity:
-    1;
-
-pointer-events:
-    auto;
-
-transform:
-    translateY(0);
-```
-
-}
-
-/* =========================================================
-CHAT HEADER
-========================================================= */
-
-.chat-header {
-
-```
-flex:
-    0 0 auto;
-
-min-height:
-    78px;
-
-padding:
-    14px 18px;
-
-display:
-    flex;
-
-align-items:
-    center;
-
-gap:
-    12px;
-
-background:
-    linear-gradient(
-        135deg,
-        rgba(139, 0, 255, .25),
-        rgba(255, 0, 153, .12)
-    );
-
-border-bottom:
-    1px solid
-    rgba(255, 255, 255, .08);
-```
-
-}
-
-.chat-header h2 {
-
-```
-margin:
-    0;
-
-color:
-    #fff;
-
-font-size:
-    1rem;
-
-font-weight:
-    800;
-```
-
-}
-
-.chat-header p {
-
-```
-margin:
-    3px 0 0;
-
-color:
-    #aaa;
-
-font-size:
-    .75rem;
-```
-
-}
-
-/* =========================================================
-SQUIRREL
-========================================================= */
-
-.squirrel-container {
-
-```
-width:
-    42px;
-
-height:
-    42px;
-
-flex:
-    0 0 42px;
-
-display:
-    flex;
-
-align-items:
-    center;
-
-justify-content:
-    center;
-
-border-radius:
-    50%;
-
-background:
-    rgba(255, 255, 255, .08);
-```
-
-}
-
-.squirrel::before {
-
-```
-content:
-    "🐿️";
-```
-
-}
-
-.squirrel.thinking {
-
-```
-animation:
-    ga18Thinking .7s infinite alternate;
-```
-
-}
-
-.squirrel.happy {
-
-```
-animation:
-    ga18Happy .5s ease;
-```
-
-}
-
-@keyframes ga18Thinking {
-
-```
-from {
-    transform:
-        translateY(0);
-}
-
-to {
-    transform:
-        translateY(-4px);
-}
-```
-
-}
-
-@keyframes ga18Happy {
-
-```
-0% {
-    transform:
-        scale(1);
-}
-
-50% {
-    transform:
-        scale(1.2)
-        rotate(8deg);
-}
-
-100% {
-    transform:
-        scale(1);
-}
-```
-
-}
-
-/* =========================================================
-CHAT CLOSE
-========================================================= */
-
-.ga18-chat-close {
-
-```
-width:
-    32px;
-
-height:
-    32px;
-
-margin-left:
-    auto;
-
-border:
-    none;
-
-border-radius:
-    50%;
-
-background:
-    rgba(255, 255, 255, .08);
-
-color:
-    #fff;
-
-font-size:
-    22px;
-
-line-height:
-    1;
-
-cursor:
-    pointer;
-```
-
-}
-
-.ga18-chat-close:hover {
-
-```
-background:
-    rgba(255, 255, 255, .15);
-```
-
-}
-
-/* =========================================================
-CHAT BODY
-========================================================= */
-
-.chat-body {
-
-```
-flex:
-    1 1 auto;
-
-min-height:
-    0;
-
-overflow-y:
-    auto;
-
-padding:
-    15px;
-```
-
-}
-
-.bot-message,
-.user-message {
-
-```
-max-width:
-    88%;
-
-margin:
-    10px 0;
-
-padding:
-    12px;
-
-border-radius:
-    10px;
-
-line-height:
-    1.45;
-```
-
-}
-
-.bot-message {
-
-```
-background:
-    #1b1b29;
-
-color:
-    #fff;
-```
-
-}
-
-.user-message {
-
-```
-margin-left:
-    auto;
-
-background:
-    #ff0099;
-
-color:
-    #fff;
-```
-
-}
-
-/* =========================================================
-CHAT FOOTER
-========================================================= */
-
-.chat-footer {
-
-```
-flex:
-    0 0 auto;
-
-padding:
-    10px;
-
-border-top:
-    1px solid
-    rgba(255,255,255,.06);
-
-background:
-    rgba(0,0,0,.2);
-```
-
-}
-
-.chat-footer input {
-
-```
-width:
-    100%;
-
-padding:
-    10px;
-
-border-radius:
-    10px;
-
-border:
-    none;
-```
-
-}
-
-/* =========================================================
-CHAT OPTIONS
-========================================================= */
-
-#ga-options {
-
-```
-display:
-    grid;
-
-grid-template-columns:
-    1fr 1fr;
-
-gap:
-    8px;
-```
-
-}
-
-.ga18-option,
-.chat-action {
-
-```
-width:
-    100%;
-
-padding:
-    10px;
-
-border:
-    1px solid
-    rgba(255,255,255,.10);
-
-border-radius:
-    10px;
-
-background:
-    rgba(255,255,255,.05);
-
-color:
-    #fff;
-
-font-weight:
-    700;
-
-cursor:
-    pointer;
-
-transition:
-    .2s ease;
-```
-
-}
-
-.ga18-option:hover {
-
-```
-background:
-    rgba(0,255,174,.12);
-
-border-color:
-    rgba(0,255,174,.3);
-```
-
-}
-
-.chat-action {
-
-```
-background:
-    #00ffae;
-
-color:
-    #000;
-
-border:
-    none;
-```
-
-}
-
-/* =========================================================
-RESPONSIVE
-========================================================= */
-
-@media (max-width: 768px) {
-
-```
-/* HERO */
-
-.hero h1 {
-
-    font-size:
-        2rem;
-
-}
-
-
-/* SWIPER */
-
-.swiper {
+    display:
+        block;
 
     width:
         100%;
 
-    aspect-ratio:
-        16 / 10;
-
-}
-
-
-.swiper-slide img {
+    height:
+        100%;
 
     object-fit:
         cover;
 
+    border-radius:
+        12px;
 }
 
 
-/* COOKIES */
+/* =========================================================
+   SWIPER NAVIGATION
+========================================================= */
+
+.swiper-button-next,
+.swiper-button-prev {
+    color:
+        #fff !important;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border-radius:
+        50%;
+
+    transition:
+        0.3s ease;
+}
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform:
+        scale(1.08);
+
+    background:
+        rgba(0, 0, 0, 0.9);
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size:
+        18px;
+
+    font-weight:
+        bold;
+}
+
+
+/* =========================================================
+   PAGINACIÓN
+========================================================= */
+
+.swiper-pagination-bullet {
+    background:
+        #fff !important;
+
+    opacity:
+        0.5;
+}
+
+
+.swiper-pagination-bullet-active {
+    background:
+        #00ff88 !important;
+
+    opacity:
+        1;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    padding:
+        80px 20px;
+}
+
+
+.about-section h2 {
+    font-weight:
+        800;
+}
+
+
+.about-section p {
+    line-height:
+        1.8;
+}
+
+
+.banner-click {
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    border-radius:
+        14px;
+
+    transition:
+        0.3s ease;
+}
+
+
+.banner-click:hover {
+    transform:
+        scale(1.02);
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 255, 136, 0.2);
+}
+
+
+/* =========================================================
+   COOKIE CONSENT
+========================================================= */
 
 .cookie-banner {
+    position:
+        fixed;
 
     left:
-        10px;
+        20px;
 
     right:
-        10px;
+        20px;
 
     bottom:
-        10px;
+        20px;
 
+    z-index:
+        99990;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10, 10, 10, 0.98),
+            rgba(25, 25, 25, 0.98)
+        );
+
+    border:
+        1px solid
+        rgba(0, 255, 170, 0.15);
+
+    border-radius:
+        20px;
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.45);
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.cookie-banner.cookie-hidden {
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transform:
+        translateY(20px);
 }
 
 
 .cookie-content {
+    max-width:
+        1200px;
 
-    flex-direction:
-        column;
+    margin:
+        auto;
+
+    padding:
+        20px 25px;
+
+    display:
+        flex;
 
     align-items:
-        flex-start;
+        center;
 
-    padding:
-        18px;
+    justify-content:
+        space-between;
 
-}
-
-
-.cookie-buttons {
-
-    width:
-        100%;
-
-}
-
-
-.cookie-buttons button {
-
-    flex:
-        1;
-
-}
-
-
-/* CHATBOT */
-
-body > .chatbot {
-
-    right:
-        2.5% !important;
-
-    bottom:
-        90px !important;
-
-    width:
-        95% !important;
-
-    height:
-        75vh !important;
-
-    max-height:
-        600px;
-
-}
-
-
-body > .chat-toggle {
-
-    right:
-        18px !important;
-
-    bottom:
-        18px !important;
-
-    width:
-        60px !important;
-
-    height:
-        60px !important;
-
-    font-size:
+    gap:
         25px;
-
-}
-
-
-#ga-options {
-
-    grid-template-columns:
-        1fr;
-
-}
-```
-
-}
-
-/* =========================================================
-SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-```
-.main-content {
-
-    padding-top:
-        90px;
-
-}
-
-
-.hero {
-
-    padding:
-        45px 15px 30px;
-
-}
-
-
-.hero h1 {
-
-    font-size:
-        1.6rem;
-
-}
-
-
-.highlight {
-
-    font-size:
-        1rem;
-
-}
-
-
-.description {
-
-    font-size:
-        .92rem;
-
-}
-
-
-.swiper-section {
-
-    margin-top:
-        30px;
-
-    padding:
-        0 10px;
-
-}
-
-
-.swiper {
-
-    aspect-ratio:
-        4 / 3;
-
-    border-radius:
-        12px;
-
-}
-
-
-.about-section {
-
-    padding:
-        60px 15px;
-
 }
 
 
 .cookie-content p {
+    margin:
+        0;
+
+    flex:
+        1;
+
+    color:
+        #d7d7d7;
 
     font-size:
-        .86rem;
+        0.95rem;
 
+    line-height:
+        1.7;
 }
 
 
+.cookie-content a {
+    color:
+        #00ffae;
+
+    font-weight:
+        600;
+}
+
+
+.cookie-content a:hover {
+    text-decoration:
+        underline;
+}
+
+
+/* =========================================================
+   COOKIE BUTTONS
+========================================================= */
+
 .cookie-buttons {
+    display:
+        flex;
 
-    flex-direction:
-        column;
+    gap:
+        12px;
 
+    flex-shrink:
+        0;
 }
 
 
 .cookie-buttons button {
+    border:
+        none;
 
+    padding:
+        12px 24px;
+
+    border-radius:
+        50px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s ease;
+}
+
+
+.cookie-buttons button:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+#accept-cookies {
+    background:
+        #00ffae;
+
+    color:
+        #000;
+}
+
+
+#reject-cookies {
+    background:
+        transparent;
+
+    color:
+        #fff;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+}
+
+
+#reject-cookies:hover {
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   CHATBOT
+   BOTÓN FLOTANTE
+========================================================= */
+
+#ga18-chat-toggle {
+    position:
+        fixed !important;
+
+    right:
+        25px !important;
+
+    bottom:
+        25px !important;
+
+    top:
+        auto !important;
+
+    left:
+        auto !important;
+
+    width:
+        70px !important;
+
+    height:
+        70px !important;
+
+    min-width:
+        70px !important;
+
+    min-height:
+        70px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b00ff,
+            #ff0099
+        ) !important;
+
+    color:
+        #fff !important;
+
+    font-size:
+        28px !important;
+
+    line-height:
+        1 !important;
+
+    z-index:
+        2147483647 !important;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+#ga18-chat-toggle:hover {
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 40px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+#ga18-chat-toggle:focus-visible {
+    outline:
+        3px solid
+        #00ffae;
+
+    outline-offset:
+        4px;
+}
+
+
+/* =========================================================
+   CHATBOT WINDOW
+========================================================= */
+
+#ga18-chatbot {
+    position:
+        fixed !important;
+
+    right:
+        25px !important;
+
+    bottom:
+        110px !important;
+
+    top:
+        auto !important;
+
+    left:
+        auto !important;
+
+    width:
+        380px !important;
+
+    height:
+        600px !important;
+
+    max-height:
+        calc(100vh - 135px) !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    display:
+        flex !important;
+
+    flex-direction:
+        column !important;
+
+    background:
+        #0d0d15 !important;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+    z-index:
+        2147483646 !important;
+
+    visibility:
+        hidden;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transform:
+        translateY(15px)
+        scale(0.98);
+
+    transform-origin:
+        bottom right;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+#ga18-chatbot.ga18-chatbot-open {
+    visibility:
+        visible;
+
+    opacity:
+        1;
+
+    pointer-events:
+        auto;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.ga18-chat-header {
+    flex:
+        0 0 auto;
+
+    min-height:
+        78px;
+
+    padding:
+        14px 14px 14px 18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 0, 255, 0.25),
+            rgba(255, 0, 153, 0.12)
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.ga18-chat-title {
+    min-width:
+        0;
+
+    flex:
+        1;
+}
+
+
+.ga18-chat-title h2 {
+    margin:
+        0;
+
+    color:
+        #fff;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        800;
+}
+
+
+.ga18-chat-title p {
+    margin:
+        3px 0 0;
+
+    color:
+        #aaa;
+
+    font-size:
+        0.75rem;
+}
+
+
+/* =========================================================
+   SQUIRREL
+========================================================= */
+
+.ga18-squirrel-container {
+    width:
+        42px;
+
+    height:
+        42px;
+
+    flex:
+        0 0 42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.ga18-squirrel {
+    font-size:
+        25px;
+
+    line-height:
+        1;
+}
+
+
+.ga18-squirrel.thinking {
+    animation:
+        ga18Thinking 0.7s
+        infinite alternate;
+}
+
+
+.ga18-squirrel.happy {
+    animation:
+        ga18Happy 0.5s ease;
+}
+
+
+@keyframes ga18Thinking {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-4px);
+    }
+
+}
+
+
+@keyframes ga18Happy {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.2)
+            rotate(8deg);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR
+========================================================= */
+
+#ga18-chat-close {
+    width:
+        32px;
+
+    height:
+        32px;
+
+    margin-left:
+        auto;
+
+    flex:
+        0 0 32px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        #fff;
+
+    font-size:
+        24px;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+}
+
+
+#ga18-chat-close:hover {
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   CHAT BODY
+========================================================= */
+
+.ga18-chat-body {
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    overflow-y:
+        auto;
+
+    padding:
+        15px;
+}
+
+
+.ga18-chat-body::-webkit-scrollbar {
+    width:
+        6px;
+}
+
+
+.ga18-chat-body::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        10px;
+}
+
+
+.ga18-bot-message,
+.ga18-user-message {
+    max-width:
+        88%;
+
+    margin:
+        10px 0;
+
+    padding:
+        12px;
+
+    border-radius:
+        10px;
+
+    line-height:
+        1.45;
+
+    word-break:
+        break-word;
+}
+
+
+.ga18-bot-message {
+    background:
+        #1b1b29;
+
+    color:
+        #fff;
+}
+
+
+.ga18-user-message {
+    margin-left:
+        auto;
+
+    background:
+        #ff0099;
+
+    color:
+        #fff;
+}
+
+
+/* =========================================================
+   CHAT FOOTER
+========================================================= */
+
+.ga18-chat-footer {
+    flex:
+        0 0 auto;
+
+    padding:
+        10px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    background:
+        rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   CHAT OPTIONS
+========================================================= */
+
+#ga18-chat-options {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        8px;
+}
+
+
+.ga18-option,
+.ga18-chat-action {
     width:
         100%;
 
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color:
+        #fff;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
 }
 
 
-body > .chatbot {
+.ga18-option:hover {
+    background:
+        rgba(0, 255, 174, 0.12);
 
-    right:
-        10px !important;
+    border-color:
+        rgba(0, 255, 174, 0.3);
+}
 
-    bottom:
-        85px !important;
 
-    width:
-        calc(100% - 20px) !important;
+.ga18-chat-action {
+    background:
+        #00ffae;
 
-    height:
-        70vh !important;
+    color:
+        #000;
+
+    border:
+        none;
+}
+
+
+.ga18-chat-action:hover {
+    transform:
+        translateY(-1px);
+
+    background:
+        #20ffc0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size:
+            2rem;
+    }
+
+
+    .swiper {
+        width:
+            100%;
+
+        aspect-ratio:
+            16 / 10;
+    }
+
+
+    .swiper-slide img {
+        object-fit:
+            cover;
+    }
+
+
+    .cookie-banner {
+        left:
+            10px;
+
+        right:
+            10px;
+
+        bottom:
+            10px;
+    }
+
+
+    .cookie-content {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding:
+            18px;
+    }
+
+
+    .cookie-buttons {
+        width:
+            100%;
+    }
+
+
+    .cookie-buttons button {
+        flex:
+            1;
+    }
+
+
+    #ga18-chatbot {
+        right:
+            2.5% !important;
+
+        bottom:
+            90px !important;
+
+        width:
+            95% !important;
+
+        height:
+            75vh !important;
+
+        max-height:
+            600px !important;
+    }
+
+
+    #ga18-chat-toggle {
+        right:
+            18px !important;
+
+        bottom:
+            18px !important;
+
+        width:
+            60px !important;
+
+        height:
+            60px !important;
+
+        min-width:
+            60px !important;
+
+        min-height:
+            60px !important;
+
+        font-size:
+            25px !important;
+    }
+
+
+    #ga18-chat-options {
+        grid-template-columns:
+            1fr;
+    }
 
 }
-```
+
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding-top:
+            90px;
+    }
+
+
+    .hero {
+        padding:
+            45px 15px 30px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            1.6rem;
+    }
+
+
+    .highlight {
+        font-size:
+            1rem;
+    }
+
+
+    .description {
+        font-size:
+            0.92rem;
+    }
+
+
+    .swiper-section {
+        margin-top:
+            30px;
+
+        padding:
+            0 10px;
+    }
+
+
+    .swiper {
+        aspect-ratio:
+            4 / 3;
+
+        border-radius:
+            12px;
+    }
+
+
+    .about-section {
+        padding:
+            60px 15px;
+    }
+
+
+    .cookie-content p {
+        font-size:
+            0.86rem;
+    }
+
+
+    .cookie-buttons {
+        flex-direction:
+            column;
+    }
+
+
+    .cookie-buttons button {
+        width:
+            100%;
+    }
+
+
+    #ga18-chatbot {
+        right:
+            10px !important;
+
+        bottom:
+            85px !important;
+
+        width:
+            calc(100% - 20px) !important;
+
+        height:
+            70vh !important;
+    }
 
 }
