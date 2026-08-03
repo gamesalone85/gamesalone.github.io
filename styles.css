@@ -1,96 +1,44 @@
 /* =========================================================
 GAMESALONE18 UNIVERSE
-MAIN STYLESHEET
+HOME / INDEX
+STYLESHEET PRINCIPAL
 ========================================================= */
 
 /* =========================================================
 RESET
 ========================================================= */
 
-*,
-*::before,
-*::after {
-
-```
-box-sizing: border-box;
-```
-
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
 /* =========================================================
-VARIABLES
-========================================================= */
-
-:root {
-
-```
---ga-green: #00ffae;
-
---ga-purple: #8b00ff;
-
---ga-background: #050505;
-
---ga-text: #ffffff;
-
---ga-muted: #b8b8b8;
-
---ga-border:
-    rgba(255, 255, 255, .10);
-
---ga-radius: 18px;
-```
-
-}
-
-/* =========================================================
-HTML
+HTML / BODY
 ========================================================= */
 
 html {
-
-```
 scroll-behavior: smooth;
-```
-
 }
-
-/* =========================================================
-BODY
-========================================================= */
 
 body {
 
 ```
-margin: 0;
-
-min-height: 100vh;
-
 font-family:
-    "Segoe UI",
+    'Segoe UI',
     Tahoma,
     Geneva,
     Verdana,
     sans-serif;
 
-background:
-    var(--ga-background);
+background: #000;
 
-color:
-    var(--ga-text);
+color: #fff;
 
 overflow-x: hidden;
-```
 
-}
-
-/* =========================================================
-IMAGES
-========================================================= */
-
-img {
-
-```
-max-width: 100%;
+min-height: 100vh;
 ```
 
 }
@@ -100,17 +48,11 @@ LINKS
 ========================================================= */
 
 a {
-
-```
 text-decoration: none;
-
-color: inherit;
-```
-
 }
 
 /* =========================================================
-BACKGROUND
+FONDO
 ========================================================= */
 
 .bg-image {
@@ -118,22 +60,18 @@ BACKGROUND
 ```
 position: fixed;
 
-inset: 0;
+top: 0;
+left: 0;
 
 width: 100%;
-
 height: 100%;
 
 background:
-    url("/home/img/bg-masthead.jpg")
-    center center /
-    cover
-    no-repeat;
+    url('/home/img/bg-masthead.jpg')
+    no-repeat
+    center center / cover;
 
 z-index: -2;
-
-transform:
-    translateZ(0);
 ```
 
 }
@@ -143,18 +81,14 @@ transform:
 ```
 position: fixed;
 
-inset: 0;
+top: 0;
+left: 0;
 
 width: 100%;
-
 height: 100%;
 
 background:
-    linear-gradient(
-        180deg,
-        rgba(0, 0, 0, .72),
-        rgba(0, 0, 0, .88)
-    );
+    rgba(0, 0, 0, .72);
 
 z-index: -1;
 ```
@@ -162,7 +96,7 @@ z-index: -1;
 }
 
 /* =========================================================
-MAIN CONTENT
+CONTENIDO PRINCIPAL
 ========================================================= */
 
 .main-content {
@@ -170,9 +104,15 @@ MAIN CONTENT
 ```
 position: relative;
 
-min-height: 100vh;
-
 z-index: 1;
+
+/*
+   El header es fixed.
+   Este espacio evita que el contenido
+   quede debajo del navbar.
+*/
+
+padding-top: 100px;
 ```
 
 }
@@ -185,46 +125,10 @@ HERO
 
 ```
 padding:
-    120px 20px 55px;
+    60px 20px 40px;
 
-text-align: center;
-```
-
-}
-
-.hero-content {
-
-```
-max-width:
-    850px;
-
-margin:
-    0 auto;
-```
-
-}
-
-.hero-eyebrow,
-.section-eyebrow {
-
-```
-display:
-    inline-block;
-
-margin-bottom:
-    15px;
-
-font-size:
-    .78rem;
-
-font-weight:
-    800;
-
-letter-spacing:
-    .18em;
-
-color:
-    var(--ga-green);
+text-align:
+    center;
 ```
 
 }
@@ -232,33 +136,20 @@ color:
 .hero h1 {
 
 ```
-margin:
-    0 auto 20px;
-
 font-size:
-    clamp(
-        2rem,
-        5vw,
-        3.7rem
-    );
-
-line-height:
-    1.08;
+    2.8rem;
 
 font-weight:
     800;
 
-letter-spacing:
-    -.03em;
-```
+line-height:
+    1.15;
 
-}
+margin-bottom:
+    18px;
 
-.hero h1 span {
-
-```
-display:
-    block;
+color:
+    #fff;
 ```
 
 }
@@ -266,21 +157,17 @@ display:
 .highlight {
 
 ```
-margin:
-    0 auto 15px;
-
 font-size:
-    clamp(
-        1rem,
-        2vw,
-        1.2rem
-    );
+    1.1rem;
 
 font-weight:
     700;
 
 color:
-    var(--ga-green);
+    #00ff88;
+
+margin-bottom:
+    14px;
 ```
 
 }
@@ -288,40 +175,36 @@ color:
 .description {
 
 ```
-max-width:
-    700px;
-
-margin:
-    0 auto;
-
-color:
-    var(--ga-muted);
-
 font-size:
-    clamp(
-        .95rem,
-        1.5vw,
-        1.05rem
-    );
+    1rem;
 
 line-height:
-    1.7;
+    1.6;
+
+color:
+    #ccc;
 ```
 
 }
 
 /* =========================================================
-SWIPER SECTION
+SWIPER
 ========================================================= */
 
 .swiper-section {
 
 ```
-width:
-    100%;
+margin-top:
+    50px;
+
+display:
+    flex;
+
+justify-content:
+    center;
 
 padding:
-    10px 20px 70px;
+    0 20px;
 ```
 
 }
@@ -330,10 +213,10 @@ padding:
 
 ```
 width:
-    min(
-        1100px,
-        100%
-    );
+    90%;
+
+max-width:
+    1100px;
 
 aspect-ratio:
     16 / 9;
@@ -342,7 +225,7 @@ margin:
     0 auto;
 
 border-radius:
-    var(--ga-radius);
+    14px;
 
 overflow:
     hidden;
@@ -351,42 +234,32 @@ position:
     relative;
 
 background:
-    rgba(0, 0, 0, .35);
-
-border:
-    1px solid
-    rgba(255, 255, 255, .08);
-
-box-shadow:
-    0 25px 80px
-    rgba(0, 0, 0, .45);
+    #050505;
 ```
 
 }
+
+/* =========================================================
+SLIDES
+========================================================= */
 
 .swiper-slide {
 
 ```
-width:
-    100%;
-
-height:
-    100%;
-```
-
-}
-
-.swiper-slide a {
-
-```
 display:
-    block;
+    flex;
 
-width:
-    100%;
+justify-content:
+    center;
 
-height:
-    100%;
+align-items:
+    center;
+
+cursor:
+    pointer;
+
+overflow:
+    hidden;
 ```
 
 }
@@ -406,57 +279,37 @@ height:
 object-fit:
     cover;
 
-transition:
-    transform .6s ease;
-```
-
-}
-
-.swiper-slide a:hover img {
-
-```
-transform:
-    scale(1.025);
+border-radius:
+    12px;
 ```
 
 }
 
 /* =========================================================
-SWIPER BUTTONS
+SWIPER NAVIGATION
 ========================================================= */
 
 .swiper-button-next,
 .swiper-button-prev {
 
 ```
+color:
+    #fff !important;
+
+background:
+    rgba(0, 0, 0, .65);
+
 width:
-    46px;
+    48px;
 
 height:
-    46px;
-
-margin-top:
-    -23px;
+    48px;
 
 border-radius:
     50%;
 
-background:
-    rgba(0, 0, 0, .68);
-
-color:
-    #fff !important;
-
-border:
-    1px solid
-    rgba(255, 255, 255, .12);
-
-backdrop-filter:
-    blur(8px);
-
 transition:
-    transform .25s ease,
-    background .25s ease;
+    .3s ease;
 ```
 
 }
@@ -479,10 +332,10 @@ background:
 
 ```
 font-size:
-    17px;
+    18px;
 
 font-weight:
-    800;
+    bold;
 ```
 
 }
@@ -494,17 +347,11 @@ SWIPER PAGINATION
 .swiper-pagination-bullet {
 
 ```
-width:
-    8px;
-
-height:
-    8px;
-
 background:
     #fff !important;
 
 opacity:
-    .45;
+    .5;
 ```
 
 }
@@ -512,14 +359,8 @@ opacity:
 .swiper-pagination-bullet-active {
 
 ```
-width:
-    22px;
-
-border-radius:
-    20px;
-
 background:
-    var(--ga-green) !important;
+    #00ff88 !important;
 
 opacity:
     1;
@@ -535,163 +376,30 @@ ABOUT
 
 ```
 padding:
-    80px 20px 100px;
+    80px 20px;
 ```
 
 }
 
-.about-content {
+.about-section h2 {
 
 ```
-max-width:
-    820px;
-
-margin:
-    0 auto;
-
-text-align:
-    center;
-```
-
-}
-
-.about-content h2 {
-
-```
-margin-bottom:
-    25px;
-
-font-size:
-    clamp(
-        1.8rem,
-        4vw,
-        2.6rem
-    );
-
 font-weight:
     800;
 ```
 
 }
 
-.about-content p {
+.about-section p {
 
 ```
-margin-bottom:
-    18px;
-
-color:
-    #c7c7c7;
-
-font-size:
-    1.02rem;
-
 line-height:
     1.8;
 ```
 
 }
 
-.about-content strong {
-
-```
-color:
-    #fff;
-```
-
-}
-
-.about-action {
-
-```
-margin-top:
-    30px;
-```
-
-}
-
-.btn-about {
-
-```
-display:
-    inline-flex;
-
-align-items:
-    center;
-
-gap:
-    10px;
-
-padding:
-    12px 22px;
-
-border-radius:
-    999px;
-
-background:
-    var(--ga-green);
-
-color:
-    #000;
-
-font-weight:
-    800;
-
-transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-```
-
-}
-
-.btn-about:hover {
-
-```
-color:
-    #000;
-
-transform:
-    translateY(-2px);
-
-box-shadow:
-    0 10px 30px
-    rgba(0, 255, 174, .18);
-```
-
-}
-
-/* =========================================================
-ABOUT BANNER
-========================================================= */
-
-.about-banner {
-
-```
-max-width:
-    1100px;
-
-margin:
-    50px auto 0;
-```
-
-}
-
-.about-banner a {
-
-```
-display:
-    block;
-
-overflow:
-    hidden;
-
-border-radius:
-    var(--ga-radius);
-```
-
-}
-
-.about-banner img {
+.banner-click {
 
 ```
 display:
@@ -703,21 +411,24 @@ width:
 height:
     auto;
 
+border-radius:
+    14px;
+
 transition:
-    transform .5s ease,
-    filter .5s ease;
+    .3s ease;
 ```
 
 }
 
-.about-banner a:hover img {
+.banner-click:hover {
 
 ```
 transform:
     scale(1.02);
 
-filter:
-    brightness(1.08);
+box-shadow:
+    0 0 30px
+    rgba(0, 255, 136, .2);
 ```
 
 }
@@ -753,7 +464,7 @@ background:
 
 border:
     1px solid
-    rgba(0, 255, 174, .15);
+    rgba(0, 255, 170, .15);
 
 border-radius:
     20px;
@@ -762,27 +473,12 @@ backdrop-filter:
     blur(18px);
 
 box-shadow:
-    0 20px 60px
-    rgba(0, 0, 0, .5);
+    0 20px 50px
+    rgba(0, 0, 0, .45);
 
 transition:
     opacity .3s ease,
     transform .3s ease;
-```
-
-}
-
-.cookie-hidden {
-
-```
-opacity:
-    0;
-
-transform:
-    translateY(20px);
-
-pointer-events:
-    none;
 ```
 
 }
@@ -794,7 +490,7 @@ max-width:
     1200px;
 
 margin:
-    0 auto;
+    auto;
 
 padding:
     20px 25px;
@@ -814,29 +510,23 @@ gap:
 
 }
 
-.cookie-text {
-
-```
-flex:
-    1;
-```
-
-}
-
 .cookie-content p {
 
 ```
 margin:
     0;
 
+flex:
+    1;
+
 color:
     #d7d7d7;
 
 font-size:
-    .92rem;
+    .95rem;
 
 line-height:
-    1.6;
+    1.7;
 ```
 
 }
@@ -845,13 +535,26 @@ line-height:
 
 ```
 color:
-    var(--ga-green);
+    #00ffae;
 
 font-weight:
-    700;
+    600;
 ```
 
 }
+
+.cookie-content a:hover {
+
+```
+text-decoration:
+    underline;
+```
+
+}
+
+/* =========================================================
+COOKIE BUTTONS
+========================================================= */
 
 .cookie-buttons {
 
@@ -860,7 +563,7 @@ display:
     flex;
 
 gap:
-    10px;
+    12px;
 
 flex-shrink:
     0;
@@ -875,20 +578,28 @@ border:
     none;
 
 padding:
-    11px 22px;
+    12px 24px;
 
 border-radius:
-    999px;
+    50px;
 
 font-weight:
-    700;
+    600;
 
 cursor:
     pointer;
 
 transition:
-    transform .25s ease,
-    background .25s ease;
+    .3s ease;
+```
+
+}
+
+.cookie-buttons button:hover {
+
+```
+transform:
+    translateY(-2px);
 ```
 
 }
@@ -897,7 +608,7 @@ transition:
 
 ```
 background:
-    var(--ga-green);
+    #00ffae;
 
 color:
     #000;
@@ -921,496 +632,23 @@ border:
 
 }
 
-.cookie-buttons button:hover {
+#reject-cookies:hover {
 
 ```
-transform:
-    translateY(-2px);
+background:
+    rgba(255, 255, 255, .05);
 ```
 
 }
 
 /* =========================================================
 CHATBOT
+BOTÓN FLOTANTE
 ========================================================= */
 
-.chat-toggle {
+body > .chat-toggle {
 
 ```
-position:
-    fixed;
-
-right:
-    25px;
-
-bottom:
-    25px;
-
-width:
-    65px;
-
-height:
-    65px;
-
-border:
-    none;
-
-border-radius:
-    50%;
-
-background:
-    linear-gradient(
-        135deg,
-        #8b00ff,
-        #ff0099
-    );
-
-color:
-    #fff;
-
-font-size:
-    26px;
-
-z-index:
-    99998;
-
-cursor:
-    pointer;
-
-box-shadow:
-    0 10px 30px
-    rgba(0, 0, 0, .35);
-```
-
-}
-
-.chatbot {
-
-```
-position:
-    fixed;
-
-right:
-    25px;
-
-bottom:
-    105px;
-
-width:
-    380px;
-
-height:
-    600px;
-
-display:
-    none;
-
-flex-direction:
-    column;
-
-background:
-    #0d0d15;
-
-border:
-    1px solid
-    rgba(255, 255, 255, .08);
-
-border-radius:
-    20px;
-
-z-index:
-    99998;
-
-overflow:
-    hidden;
-
-box-shadow:
-    0 20px 70px
-    rgba(0, 0, 0, .5);
-```
-
-}
-
-.chat-body {
-
-```
-flex:
-    1;
-
-overflow-y:
-    auto;
-
-padding:
-    15px;
-```
-
-}
-
-.bot-message,
-.user-message {
-
-```
-margin:
-    10px 0;
-
-padding:
-    12px;
-
-border-radius:
-    10px;
-```
-
-}
-
-.bot-message {
-
-```
-background:
-    #1b1b29;
-```
-
-}
-
-.user-message {
-
-```
-background:
-    #ff0099;
-
-margin-left:
-    auto;
-```
-
-}
-
-.chat-footer {
-
-```
-padding:
-    10px;
-```
-
-}
-
-.chat-footer input {
-
-```
-width:
-    100%;
-
-padding:
-    10px;
-
-border:
-    none;
-
-border-radius:
-    10px;
-```
-
-}
-
-/* =========================================================
-TABLET
-========================================================= */
-
-@media (max-width: 768px) {
-
-```
-.hero {
-
-    padding:
-        105px 18px 40px;
-
-}
-
-
-.swiper-section {
-
-    padding:
-        5px 12px 55px;
-
-}
-
-
-.swiper {
-
-    aspect-ratio:
-        16 / 10;
-
-    border-radius:
-        14px;
-
-}
-
-
-.swiper-button-next,
-.swiper-button-prev {
-
-    width:
-        38px;
-
-    height:
-        38px;
-
-    margin-top:
-        -19px;
-
-}
-
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-
-    font-size:
-        14px;
-
-}
-
-
-.about-section {
-
-    padding:
-        60px 18px 80px;
-
-}
-
-
-.cookie-banner {
-
-    left:
-        10px;
-
-    right:
-        10px;
-
-    bottom:
-        10px;
-
-}
-
-
-.cookie-content {
-
-    flex-direction:
-        column;
-
-    align-items:
-        stretch;
-
-    padding:
-        18px;
-
-}
-
-
-.cookie-buttons {
-
-    width:
-        100%;
-
-}
-
-
-.cookie-buttons button {
-
-    flex:
-        1;
-
-}
-
-
-.chatbot {
-
-    width:
-        calc(100% - 20px);
-
-    right:
-        10px;
-
-    bottom:
-        90px;
-
-    height:
-        min(70vh, 600px);
-
-}
-
-
-.chat-toggle {
-
-    right:
-        18px;
-
-    bottom:
-        18px;
-
-}
-
-}
-
-/* =========================================================
-MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-.hero {
-
-    padding-top:
-        95px;
-
-}
-
-
-.hero h1 {
-
-    font-size:
-        1.85rem;
-
-}
-
-
-.highlight {
-
-    font-size:
-        .98rem;
-
-}
-
-
-.description {
-
-    font-size:
-        .92rem;
-
-}
-
-
-.swiper {
-
-    aspect-ratio:
-        4 / 3;
-
-    border-radius:
-        12px;
-
-}
-
-
-.swiper-button-next,
-.swiper-button-prev {
-
-    width:
-        34px;
-
-    height:
-        34px;
-
-    margin-top:
-        -17px;
-
-}
-
-
-.swiper-pagination {
-
-    bottom:
-        8px !important;
-
-}
-
-
-.swiper-pagination-bullet {
-
-    width:
-        6px;
-
-    height:
-        6px;
-
-}
-
-
-.swiper-pagination-bullet-active {
-
-    width:
-        18px;
-
-}
-
-
-.about-section {
-
-    padding:
-        50px 15px 70px;
-
-}
-
-
-.cookie-content p {
-
-    font-size:
-        .84rem;
-
-}
-
-
-.cookie-buttons {
-
-    flex-direction:
-        column;
-
-}
-
-
-.cookie-buttons button {
-
-    width:
-        100%;
-
-}
-
-}
-
-/* =========================================================
-ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-html {
-
-    scroll-behavior:
-        auto;
-
-}
-
-
-*,
-*::before,
-*::after {
-
-    animation-duration:
-        .01ms !important;
-
-    animation-iteration-count:
-        1 !important;
-
-    transition-duration:
-        .01ms !important;
-
-}
-
-}
-/* =========================================================
-GA18 ASSISTANT
-CHATBOT FLOATING UI
-========================================================= */
-
-.chat-toggle.ga18-chat-toggle {
-
-
 position:
     fixed !important;
 
@@ -1421,16 +659,19 @@ bottom:
     25px !important;
 
 width:
-    64px;
+    70px !important;
 
 height:
-    64px;
+    70px !important;
+
+margin:
+    0 !important;
 
 padding:
-    0;
+    0 !important;
 
 display:
-    flex;
+    flex !important;
 
 align-items:
     center;
@@ -1439,20 +680,20 @@ justify-content:
     center;
 
 border:
-    0;
+    none !important;
 
 border-radius:
-    50%;
+    50% !important;
 
 background:
     linear-gradient(
         135deg,
         #8b00ff,
         #ff0099
-    );
+    ) !important;
 
 color:
-    #fff;
+    #fff !important;
 
 font-size:
     28px;
@@ -1460,11 +701,11 @@ font-size:
 line-height:
     1;
 
+z-index:
+    999999 !important;
+
 cursor:
     pointer;
-
-z-index:
-    99990;
 
 box-shadow:
     0 12px 35px
@@ -1473,12 +714,13 @@ box-shadow:
 transition:
     transform .25s ease,
     box-shadow .25s ease;
-
+```
 
 }
 
-.chat-toggle.ga18-chat-toggle:hover {
+body > .chat-toggle:hover {
 
+```
 transform:
     translateY(-3px)
     scale(1.04);
@@ -1486,25 +728,17 @@ transform:
 box-shadow:
     0 16px 40px
     rgba(0, 0, 0, .55);
-
-
-}
-
-.chat-toggle.ga18-chat-toggle.chat-button-open {
-
-transform:
-    rotate(8deg);
-
+```
 
 }
 
 /* =========================================================
-CHAT WINDOW
+CHATBOT WINDOW
 ========================================================= */
 
-.chatbot.ga18-chatbot {
+body > .chatbot {
 
-
+```
 position:
     fixed !important;
 
@@ -1512,19 +746,41 @@ right:
     25px !important;
 
 bottom:
-    105px !important;
+    110px !important;
 
 width:
-    380px;
+    380px !important;
 
 height:
-    580px;
+    600px !important;
+
+margin:
+    0 !important;
+
+padding:
+    0 !important;
 
 display:
-    flex;
+    flex !important;
 
 flex-direction:
     column;
+
+background:
+    #0d0d15 !important;
+
+border-radius:
+    20px;
+
+overflow:
+    hidden;
+
+z-index:
+    999998 !important;
+
+/*
+   Cerrado por defecto.
+*/
 
 visibility:
     hidden;
@@ -1536,40 +792,23 @@ pointer-events:
     none;
 
 transform:
-    translateY(15px)
-    scale(.97);
-
-background:
-    #0d0d15;
-
-border:
-    1px solid
-    rgba(255, 255, 255, .10);
-
-border-radius:
-    20px;
-
-overflow:
-    hidden;
-
-z-index:
-    99989;
-
-box-shadow:
-    0 25px 80px
-    rgba(0, 0, 0, .55);
+    translateY(15px);
 
 transition:
     opacity .25s ease,
     transform .25s ease,
     visibility .25s ease;
-
+```
 
 }
 
-.chatbot.ga18-chatbot.chatbot-open {
+/* =========================================================
+CHATBOT ABIERTO
+========================================================= */
 
+body > .chatbot.chatbot-open {
 
+```
 visibility:
     visible;
 
@@ -1580,8 +819,8 @@ pointer-events:
     auto;
 
 transform:
-    translateY(0)
-    scale(1);
+    translateY(0);
+```
 
 }
 
@@ -1589,7 +828,7 @@ transform:
 CHAT HEADER
 ========================================================= */
 
-.ga18-chatbot .chat-header {
+.chat-header {
 
 ```
 flex:
@@ -1620,12 +859,13 @@ background:
 border-bottom:
     1px solid
     rgba(255, 255, 255, .08);
-
+```
 
 }
 
-.ga18-chatbot .chat-header h2 {
+.chat-header h2 {
 
+```
 margin:
     0;
 
@@ -1637,13 +877,13 @@ font-size:
 
 font-weight:
     800;
-
+```
 
 }
 
-.ga18-chatbot .chat-header p {
+.chat-header p {
 
-
+```
 margin:
     3px 0 0;
 
@@ -1652,54 +892,7 @@ color:
 
 font-size:
     .75rem;
-
-}
-
-/* =========================================================
-CLOSE BUTTON
-========================================================= */
-
-.ga18-chat-close {
-
-width:
-    32px;
-
-height:
-    32px;
-
-margin-left:
-    auto;
-
-border:
-    0;
-
-border-radius:
-    50%;
-
-background:
-    rgba(255, 255, 255, .08);
-
-color:
-    #fff;
-
-font-size:
-    22px;
-
-line-height:
-    1;
-
-cursor:
-    pointer;
-
-
-}
-
-.ga18-chat-close:hover {
-
-
-background:
-    rgba(255, 255, 255, .15);
-
+```
 
 }
 
@@ -1709,6 +902,7 @@ SQUIRREL
 
 .squirrel-container {
 
+```
 width:
     42px;
 
@@ -1732,69 +926,121 @@ border-radius:
 
 background:
     rgba(255, 255, 255, .08);
-
-
-}
-
-.squirrel {
-
-font-size:
-    23px;
-
+```
 
 }
 
 .squirrel::before {
 
+```
 content:
     "🐿️";
-
+```
 
 }
 
 .squirrel.thinking {
 
+```
 animation:
     ga18Thinking .7s infinite alternate;
-
+```
 
 }
 
 .squirrel.happy {
 
+```
 animation:
     ga18Happy .5s ease;
-
+```
 
 }
 
 @keyframes ga18Thinking {
 
+```
 from {
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 to {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 }
-
+```
 
 }
 
 @keyframes ga18Happy {
 
+```
 0% {
-    transform: scale(1);
+    transform:
+        scale(1);
 }
 
 50% {
-    transform: scale(1.2) rotate(8deg);
+    transform:
+        scale(1.2)
+        rotate(8deg);
 }
 
 100% {
-    transform: scale(1);
+    transform:
+        scale(1);
+}
+```
+
 }
 
+/* =========================================================
+CHAT CLOSE
+========================================================= */
+
+.ga18-chat-close {
+
+```
+width:
+    32px;
+
+height:
+    32px;
+
+margin-left:
+    auto;
+
+border:
+    none;
+
+border-radius:
+    50%;
+
+background:
+    rgba(255, 255, 255, .08);
+
+color:
+    #fff;
+
+font-size:
+    22px;
+
+line-height:
+    1;
+
+cursor:
+    pointer;
+```
+
+}
+
+.ga18-chat-close:hover {
+
+```
+background:
+    rgba(255, 255, 255, .15);
+```
 
 }
 
@@ -1802,9 +1048,9 @@ to {
 CHAT BODY
 ========================================================= */
 
-.ga18-chatbot .chat-body {
+.chat-body {
 
-
+```
 flex:
     1 1 auto;
 
@@ -1815,56 +1061,48 @@ overflow-y:
     auto;
 
 padding:
-    16px;
-
-scrollbar-width:
-    thin;
-
+    15px;
+```
 
 }
 
-.ga18-chatbot .bot-message,
-.ga18-chatbot .user-message {
+.bot-message,
+.user-message {
 
-
-width:
-    fit-content;
-
+```
 max-width:
     88%;
 
 margin:
-    9px 0;
+    10px 0;
 
 padding:
-    10px 12px;
+    12px;
 
 border-radius:
-    13px;
-
-font-size:
-    .88rem;
+    10px;
 
 line-height:
     1.45;
-
+```
 
 }
 
-.ga18-chatbot .bot-message {
+.bot-message {
 
-
+```
 background:
     #1b1b29;
 
 color:
     #fff;
-
+```
 
 }
 
-.ga18-chatbot .user-message {
+.user-message {
 
+```
 margin-left:
     auto;
 
@@ -1873,6 +1111,7 @@ background:
 
 color:
     #fff;
+```
 
 }
 
@@ -1880,28 +1119,50 @@ color:
 CHAT FOOTER
 ========================================================= */
 
-.ga18-chatbot .chat-footer {
+.chat-footer {
 
-
+```
 flex:
     0 0 auto;
 
 padding:
-    12px;
-
-background:
-    rgba(0, 0, 0, .25);
+    10px;
 
 border-top:
     1px solid
-    rgba(255, 255, 255, .06);
+    rgba(255,255,255,.06);
 
+background:
+    rgba(0,0,0,.2);
+```
 
 }
 
+.chat-footer input {
+
+```
+width:
+    100%;
+
+padding:
+    10px;
+
+border-radius:
+    10px;
+
+border:
+    none;
+```
+
+}
+
+/* =========================================================
+CHAT OPTIONS
+========================================================= */
+
 #ga-options {
 
-
+```
 display:
     grid;
 
@@ -1910,17 +1171,14 @@ grid-template-columns:
 
 gap:
     8px;
-
+```
 
 }
 
-/* =========================================================
-OPTION BUTTONS
-========================================================= */
-
 .ga18-option,
-.ga18-chatbot .chat-action {
+.chat-action {
 
+```
 width:
     100%;
 
@@ -1929,19 +1187,16 @@ padding:
 
 border:
     1px solid
-    rgba(255, 255, 255, .10);
+    rgba(255,255,255,.10);
 
 border-radius:
     10px;
 
 background:
-    rgba(255, 255, 255, .05);
+    rgba(255,255,255,.05);
 
 color:
     #fff;
-
-font-size:
-    .82rem;
 
 font-weight:
     700;
@@ -1950,89 +1205,160 @@ cursor:
     pointer;
 
 transition:
-    background .2s ease,
-    transform .2s ease;
-
+    .2s ease;
+```
 
 }
 
-.ga18-option:hover,
-.ga18-chatbot .chat-action:hover {
+.ga18-option:hover {
 
-
+```
 background:
-    rgba(0, 255, 174, .12);
+    rgba(0,255,174,.12);
 
 border-color:
-    rgba(0, 255, 174, .3);
-
-transform:
-    translateY(-1px);
-
+    rgba(0,255,174,.3);
+```
 
 }
 
-.ga18-chatbot .chat-action {
+.chat-action {
 
-
+```
 background:
-    var(--ga-green);
+    #00ffae;
 
 color:
     #000;
 
 border:
     none;
-
+```
 
 }
 
 /* =========================================================
-MOBILE CHATBOT
+RESPONSIVE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
+```
+/* HERO */
 
-.chat-toggle.ga18-chat-toggle {
-
-    right:
-        16px !important;
-
-    bottom:
-        16px !important;
-
-    width:
-        58px;
-
-    height:
-        58px;
+.hero h1 {
 
     font-size:
-        25px;
+        2rem;
 
 }
 
 
-.chatbot.ga18-chatbot {
+/* SWIPER */
 
-    right:
-        10px !important;
-
-    bottom:
-        86px !important;
+.swiper {
 
     width:
-        calc(100vw - 20px);
+        100%;
+
+    aspect-ratio:
+        16 / 10;
+
+}
+
+
+.swiper-slide img {
+
+    object-fit:
+        cover;
+
+}
+
+
+/* COOKIES */
+
+.cookie-banner {
+
+    left:
+        10px;
+
+    right:
+        10px;
+
+    bottom:
+        10px;
+
+}
+
+
+.cookie-content {
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    padding:
+        18px;
+
+}
+
+
+.cookie-buttons {
+
+    width:
+        100%;
+
+}
+
+
+.cookie-buttons button {
+
+    flex:
+        1;
+
+}
+
+
+/* CHATBOT */
+
+body > .chatbot {
+
+    right:
+        2.5% !important;
+
+    bottom:
+        90px !important;
+
+    width:
+        95% !important;
 
     height:
-        min(
-            70vh,
-            560px
-        );
+        75vh !important;
 
-    border-radius:
-        18px;
+    max-height:
+        600px;
+
+}
+
+
+body > .chat-toggle {
+
+    right:
+        18px !important;
+
+    bottom:
+        18px !important;
+
+    width:
+        60px !important;
+
+    height:
+        60px !important;
+
+    font-size:
+        25px;
 
 }
 
@@ -2043,35 +1369,126 @@ MOBILE CHATBOT
         1fr;
 
 }
-
+```
 
 }
 
-@media (max-width: 380px) {
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+```
+.main-content {
+
+    padding-top:
+        90px;
+
+}
 
 
-.chatbot.ga18-chatbot {
+.hero {
+
+    padding:
+        45px 15px 30px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        1.6rem;
+
+}
+
+
+.highlight {
+
+    font-size:
+        1rem;
+
+}
+
+
+.description {
+
+    font-size:
+        .92rem;
+
+}
+
+
+.swiper-section {
+
+    margin-top:
+        30px;
+
+    padding:
+        0 10px;
+
+}
+
+
+.swiper {
+
+    aspect-ratio:
+        4 / 3;
+
+    border-radius:
+        12px;
+
+}
+
+
+.about-section {
+
+    padding:
+        60px 15px;
+
+}
+
+
+.cookie-content p {
+
+    font-size:
+        .86rem;
+
+}
+
+
+.cookie-buttons {
+
+    flex-direction:
+        column;
+
+}
+
+
+.cookie-buttons button {
+
+    width:
+        100%;
+
+}
+
+
+body > .chatbot {
+
+    right:
+        10px !important;
+
+    bottom:
+        85px !important;
+
+    width:
+        calc(100% - 20px) !important;
 
     height:
-        65vh;
+        70vh !important;
 
 }
-
-
-.ga18-chatbot .chat-header {
-
-    padding:
-        12px;
-
-}
-
-
-.ga18-chatbot .chat-body {
-
-    padding:
-        12px;
-
-}
-
+```
 
 }
