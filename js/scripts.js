@@ -1,134 +1,343 @@
-/* =========================================================
-GAMESALONE18 UNIVERSE
-JAVASCRIPT PRINCIPAL
-========================================================= */
-
-(function () {
-
-```
 "use strict";
 
+/* =========================================================
+   GAMESALONE18 UNIVERSE
+   MAIN JAVASCRIPT
+========================================================= */
 
-/* =====================================================
-   SWIPER
-===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-function initSwiper() {
+    console.log(
+        "GamesAlone18 Universe: scripts.js cargado correctamente."
+    );
+
+
+    /* =====================================================
+       SWIPER
+    ====================================================== */
+
+    const swiperElement =
+        document.querySelector(".mySwiper");
+
 
     if (
-        typeof Swiper === "undefined" ||
-        !document.querySelector(".mySwiper")
+        swiperElement &&
+        typeof Swiper !== "undefined"
     ) {
 
-        return;
+        new Swiper(".mySwiper", {
+
+            loop: true,
+
+            centeredSlides: true,
+
+            grabCursor: true,
+
+            watchOverflow: true,
+
+            speed: 700,
+
+            spaceBetween: 16,
+
+            autoplay: {
+
+                delay: 4500,
+
+                disableOnInteraction: false,
+
+                pauseOnMouseEnter: true
+
+            },
+
+            keyboard: {
+
+                enabled: true,
+
+                onlyInViewport: true
+
+            },
+
+            pagination: {
+
+                el: ".swiper-pagination",
+
+                clickable: true
+
+            },
+
+            navigation: {
+
+                nextEl: ".swiper-button-next",
+
+                prevEl: ".swiper-button-prev"
+
+            },
+
+            breakpoints: {
+
+                0: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 10
+
+                },
+
+                576: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 12
+
+                },
+
+                768: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 16
+
+                },
+
+                992: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 18
+
+                },
+
+                1200: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 20
+
+                }
+
+            }
+
+        });
 
     }
 
 
-    new Swiper(".mySwiper", {
+    /* =====================================================
+       NAVEGACIÓN
+    ====================================================== */
 
-        loop: true,
+    window.go = function (link) {
 
-        grabCursor: true,
-
-        centeredSlides: true,
-
-        slidesPerView: 1,
-
-        spaceBetween: 0,
-
-        speed: 700,
-
-        autoplay: {
-
-            delay: 4000,
-
-            disableOnInteraction: false,
-
-            pauseOnMouseEnter: true
-
-        },
-
-        pagination: {
-
-            el: ".swiper-pagination",
-
-            clickable: true
-
-        },
-
-        navigation: {
-
-            nextEl: ".swiper-button-next",
-
-            prevEl: ".swiper-button-prev"
-
-        },
-
-        keyboard: {
-
-            enabled: true
-
-        },
-
-        observer: true,
-
-        observeParents: true
-
-    });
-
-}
-
-
-/* =====================================================
-   HEADER SCROLL
-===================================================== */
-
-function initHeaderScroll() {
-
-    function updateHeader() {
-
-        const nav =
-            document.querySelector(".custom-navbar");
-
-
-        if (!nav) {
+        if (!link || link === "#") {
 
             return;
 
         }
 
+        window.location.href = link;
 
-        nav.classList.toggle(
-            "scrolled",
-            window.scrollY > 50
+    };
+
+
+    /* =====================================================
+       TRACKING WHATSAPP
+    ====================================================== */
+
+    window.trackClick = function (origen) {
+
+        console.log(
+            "GamesAlone18: click registrado:",
+            origen
         );
+
+        if (
+            typeof gtag === "function"
+        ) {
+
+            gtag(
+                "event",
+                "click_whatsapp",
+                {
+
+                    event_category:
+                        "conversion",
+
+                    event_label:
+                        origen
+
+                }
+            );
+
+        }
+
+    };
+
+
+    /* =====================================================
+       COOKIE CONSENT
+    ====================================================== */
+
+    initCookieConsent();
+
+
+    /* =====================================================
+       CHATBOT
+    ====================================================== */
+
+    initChatbot();
+
+
+});
+
+
+/* =========================================================
+   COOKIE CONSENT
+========================================================= */
+
+function initCookieConsent() {
+
+    const banner =
+        document.getElementById(
+            "cookie-consent"
+        );
+
+    const acceptBtn =
+        document.getElementById(
+            "accept-cookies"
+        );
+
+    const rejectBtn =
+        document.getElementById(
+            "reject-cookies"
+        );
+
+
+    if (
+        !banner ||
+        !acceptBtn ||
+        !rejectBtn
+    ) {
+
+        console.warn(
+            "GamesAlone18: elementos de cookies no encontrados."
+        );
+
+        return;
 
     }
 
 
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        {
-            passive: true
+    const consent =
+        localStorage.getItem(
+            "ga18_cookie_consent"
+        );
+
+
+    /* =====================================================
+       SI YA EXISTE DECISIÓN
+    ====================================================== */
+
+    if (consent === "accepted") {
+
+        banner.style.display = "none";
+
+        loadAnalytics();
+
+        return;
+
+    }
+
+
+    if (consent === "rejected") {
+
+        banner.style.display = "none";
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       MOSTRAR BANNER
+    ====================================================== */
+
+    banner.style.display = "block";
+
+
+    /* =====================================================
+       ACEPTAR
+    ====================================================== */
+
+    acceptBtn.addEventListener(
+        "click",
+        function () {
+
+            localStorage.setItem(
+                "ga18_cookie_consent",
+                "accepted"
+            );
+
+            banner.classList.add(
+                "cookie-hidden"
+            );
+
+            setTimeout(
+                function () {
+
+                    banner.style.display =
+                        "none";
+
+                },
+                350
+            );
+
+            loadAnalytics();
+
         }
     );
 
 
-    updateHeader();
+    /* =====================================================
+       RECHAZAR
+    ====================================================== */
+
+    rejectBtn.addEventListener(
+        "click",
+        function () {
+
+            localStorage.setItem(
+                "ga18_cookie_consent",
+                "rejected"
+            );
+
+            banner.classList.add(
+                "cookie-hidden"
+            );
+
+            setTimeout(
+                function () {
+
+                    banner.style.display =
+                        "none";
+
+                },
+                350
+            );
+
+        }
+    );
 
 }
 
 
-/* =====================================================
-   CHATBOT
-===================================================== */
+/* =========================================================
+   GOOGLE ANALYTICS
+========================================================= */
 
-function initChatbot() {
+function loadAnalytics() {
 
     if (
-        window.__GA18_CHATBOT_INITIALIZED
+        window.__GA18_ANALYTICS_LOADED
     ) {
 
         return;
@@ -136,7 +345,185 @@ function initChatbot() {
     }
 
 
-    window.__GA18_CHATBOT_INITIALIZED =
+    window.__GA18_ANALYTICS_LOADED =
+        true;
+
+
+    const script =
+        document.createElement("script");
+
+
+    script.async = true;
+
+
+    script.src =
+        "https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH";
+
+
+    document.head.appendChild(script);
+
+
+    gtag(
+        "js",
+        new Date()
+    );
+
+
+    gtag(
+        "consent",
+        "update",
+        {
+
+            analytics_storage:
+                "granted",
+
+            ad_storage:
+                "denied",
+
+            ad_user_data:
+                "denied",
+
+            ad_personalization:
+                "denied"
+
+        }
+    );
+
+
+    gtag(
+        "config",
+        "G-EGZ2977YBH",
+        {
+
+            anonymize_ip:
+                true
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+window.initHeader = function () {
+
+    const nav =
+        document.querySelector(
+            ".custom-navbar"
+        );
+
+
+    if (!nav) {
+
+        console.warn(
+            "GamesAlone18: navbar no encontrada."
+        );
+
+        return;
+
+    }
+
+
+    let lastScroll =
+        window.scrollY;
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            const currentScroll =
+                window.scrollY;
+
+
+            /* =============================================
+               ARRIBA DE LA PÁGINA
+            ============================================== */
+
+            if (
+                currentScroll <= 20
+            ) {
+
+                nav.classList.remove(
+                    "header-hidden"
+                );
+
+                nav.classList.remove(
+                    "scrolled"
+                );
+
+                lastScroll =
+                    currentScroll;
+
+                return;
+
+            }
+
+
+            /* =============================================
+               SCROLL HACIA ABAJO
+            ============================================== */
+
+            if (
+                currentScroll >
+                lastScroll &&
+                currentScroll > 80
+            ) {
+
+                nav.classList.add(
+                    "header-hidden"
+                );
+
+            }
+
+
+            /* =============================================
+               SCROLL HACIA ARRIBA
+            ============================================== */
+
+            else if (
+                currentScroll <
+                lastScroll
+            ) {
+
+                nav.classList.remove(
+                    "header-hidden"
+                );
+
+            }
+
+
+            lastScroll =
+                currentScroll;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+};
+
+
+/* =========================================================
+   CHATBOT
+========================================================= */
+
+function initChatbot() {
+
+    if (
+        window.__GA18_CHATBOT_V5
+    ) {
+
+        return;
+
+    }
+
+
+    window.__GA18_CHATBOT_V5 =
         true;
 
 
@@ -149,9 +536,11 @@ function initChatbot() {
             message:
                 "🔥 Merch oficial y colecciones limitadas.",
 
-            route: "/merch/"
+            route:
+                "/merch/"
 
         },
+
 
         zona: {
 
@@ -160,9 +549,11 @@ function initChatbot() {
             message:
                 "👾 Acceso premium y comunidad privada.",
 
-            route: "/zona/"
+            route:
+                "/zona/"
 
         },
+
 
         prensa: {
 
@@ -171,9 +562,11 @@ function initChatbot() {
             message:
                 "🎤 Cobertura de eventos y medios oficiales.",
 
-            route: "/prensa/"
+            route:
+                "/prensa/"
 
         },
+
 
         contacto: {
 
@@ -182,27 +575,30 @@ function initChatbot() {
             message:
                 "📩 Colaboraciones y soporte directo.",
 
-            route: "/contactanos/"
+            route:
+                "/contactanos/"
 
         }
 
     };
 
 
-    /* =================================================
+    /* =====================================================
        BOTÓN
-    ================================================= */
+    ====================================================== */
 
     const btn =
-        document.createElement("button");
-
-
-    btn.type =
-        "button";
+        document.createElement(
+            "button"
+        );
 
 
     btn.className =
         "chat-toggle";
+
+
+    btn.type =
+        "button";
 
 
     btn.setAttribute(
@@ -211,38 +607,22 @@ function initChatbot() {
     );
 
 
-    btn.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-
     btn.innerHTML =
         "🐿️";
 
 
-    /* =================================================
-       CHAT
-    ================================================= */
+    /* =====================================================
+       CAJA
+    ====================================================== */
 
     const box =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     box.className =
         "chatbot";
-
-
-    box.setAttribute(
-        "role",
-        "dialog"
-    );
-
-
-    box.setAttribute(
-        "aria-label",
-        "GA18 Assistant"
-    );
 
 
     box.innerHTML = `
@@ -253,13 +633,12 @@ function initChatbot() {
 
                 <div
                     id="ga-squirrel"
-                    class="squirrel idle">
-                </div>
+                    class="squirrel idle"
+                ></div>
 
             </div>
 
-
-            <div class="chat-title">
+            <div>
 
                 <h2>
                     GA18 Assistant
@@ -271,68 +650,66 @@ function initChatbot() {
 
             </div>
 
-
-            <button
-                type="button"
-                class="ga18-chat-close"
-                aria-label="Cerrar asistente">
-
-                ×
-
-            </button>
-
         </div>
 
 
         <div
             class="chat-body"
-            id="ga-body">
-        </div>
+            id="ga-body"
+        ></div>
 
 
         <div class="chat-footer">
 
             <div
-                id="ga-options">
-            </div>
+                id="ga-options"
+            ></div>
 
         </div>
 
     `;
 
 
-    document.body.appendChild(btn);
+    document.body.appendChild(
+        btn
+    );
 
-    document.body.appendChild(box);
+    document.body.appendChild(
+        box
+    );
 
 
     const body =
-        box.querySelector("#ga-body");
+        box.querySelector(
+            "#ga-body"
+        );
 
 
     const options =
-        box.querySelector("#ga-options");
+        box.querySelector(
+            "#ga-options"
+        );
 
 
     const status =
-        box.querySelector("#ga-status");
+        box.querySelector(
+            "#ga-status"
+        );
 
 
     const squirrel =
-        box.querySelector("#ga-squirrel");
-
-
-    const closeBtn =
-        box.querySelector(".ga18-chat-close");
+        box.querySelector(
+            "#ga-squirrel"
+        );
 
 
     let open =
         false;
 
 
-    /* =================================================
-       ESTADO
-    ================================================= */
+    /* =====================================================
+       ESTADOS
+    ====================================================== */
 
     function setState(state) {
 
@@ -348,7 +725,9 @@ function initChatbot() {
         );
 
 
-        if (state === "idle") {
+        if (
+            state === "idle"
+        ) {
 
             status.innerText =
                 "Ardilla en espera...";
@@ -356,7 +735,9 @@ function initChatbot() {
         }
 
 
-        if (state === "thinking") {
+        if (
+            state === "thinking"
+        ) {
 
             status.innerText =
                 "Procesando...";
@@ -364,7 +745,9 @@ function initChatbot() {
         }
 
 
-        if (state === "happy") {
+        if (
+            state === "happy"
+        ) {
 
             status.innerText =
                 "Listo ✨";
@@ -374,9 +757,9 @@ function initChatbot() {
     }
 
 
-    /* =================================================
+    /* =====================================================
        MENSAJES
-    ================================================= */
+    ====================================================== */
 
     function msg(
         text,
@@ -384,7 +767,9 @@ function initChatbot() {
     ) {
 
         const div =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         div.className =
@@ -397,7 +782,9 @@ function initChatbot() {
             text;
 
 
-        body.appendChild(div);
+        body.appendChild(
+            div
+        );
 
 
         body.scrollTop =
@@ -406,9 +793,9 @@ function initChatbot() {
     }
 
 
-    /* =================================================
+    /* =====================================================
        MENÚ
-    ================================================= */
+    ====================================================== */
 
     function renderMenu() {
 
@@ -434,46 +821,46 @@ function initChatbot() {
 
 
         Object.keys(DATA)
-            .forEach(function (key) {
+            .forEach(
+                function (key) {
 
-                const button =
-                    document.createElement("button");
-
-
-                button.type =
-                    "button";
-
-
-                button.className =
-                    "ga18-option";
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
 
 
-                button.innerText =
-                    labels[key];
+                    button.type =
+                        "button";
 
 
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        handle(key);
-
-                    }
-                );
+                    button.innerText =
+                        labels[key];
 
 
-                options.appendChild(
-                    button
-                );
+                    button.addEventListener(
+                        "click",
+                        function () {
 
-            });
+                            handle(key);
+
+                        }
+                    );
+
+
+                    options.appendChild(
+                        button
+                    );
+
+                }
+            );
 
     }
 
 
-    /* =================================================
+    /* =====================================================
        LÓGICA
-    ================================================= */
+    ====================================================== */
 
     function handle(key) {
 
@@ -517,9 +904,9 @@ function initChatbot() {
     }
 
 
-    /* =================================================
+    /* =====================================================
        ACCIÓN
-    ================================================= */
+    ====================================================== */
 
     function showAction(route) {
 
@@ -528,7 +915,9 @@ function initChatbot() {
 
 
         const action =
-            document.createElement("button");
+            document.createElement(
+                "button"
+            );
 
 
         action.type =
@@ -562,13 +951,6 @@ function initChatbot() {
         setTimeout(
             function () {
 
-                if (!open) {
-
-                    return;
-
-                }
-
-
                 renderMenu();
 
                 setState(
@@ -582,181 +964,59 @@ function initChatbot() {
     }
 
 
-    /* =================================================
+    /* =====================================================
        ABRIR / CERRAR
-    ================================================= */
-
-    function toggleChat() {
-
-        open =
-            !open;
-
-
-        box.style.display =
-            open
-                ? "flex"
-                : "none";
-
-
-        btn.setAttribute(
-            "aria-expanded",
-            String(open)
-        );
-
-
-        if (open) {
-
-            box.classList.add(
-                "chatbot-open"
-            );
-
-
-            if (
-                body.childElementCount === 0
-            ) {
-
-                msg(
-                    "👋 Bienvenido a GamesAlone18 Universe"
-                );
-
-
-                renderMenu();
-
-
-                setState(
-                    "idle"
-                );
-
-            }
-
-        } else {
-
-            box.classList.remove(
-                "chatbot-open"
-            );
-
-        }
-
-    }
-
+    ====================================================== */
 
     btn.addEventListener(
         "click",
-        toggleChat
-    );
-
-
-    closeBtn.addEventListener(
-        "click",
         function () {
+
+            open =
+                !open;
+
 
             if (open) {
 
-                toggleChat();
-
-            }
-
-        }
-    );
+                box.classList.add(
+                    "chatbot-open"
+                );
 
 
-    /* =================================================
-       ESC
-    ================================================= */
+                if (
+                    body.childElementCount === 0
+                ) {
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                open
-            ) {
-
-                toggleChat();
-
-            }
-
-        }
-    );
+                    msg(
+                        "👋 Bienvenido a GamesAlone18 Universe"
+                    );
 
 
-    console.log(
-        "🐿️ GA18 Assistant iniciado correctamente."
-    );
-
-}
+                    renderMenu();
 
 
-/* =====================================================
-   WHATSAPP TRACKING
-===================================================== */
-
-window.trackClick =
-    function (origen) {
-
-        console.log(
-            "Click en:",
-            origen
-        );
-
-
-        if (
-            typeof gtag === "function"
-        ) {
-
-            gtag(
-                "event",
-                "click_whatsapp",
-                {
-
-                    event_category:
-                        "conversion",
-
-                    event_label:
-                        origen
+                    setState(
+                        "idle"
+                    );
 
                 }
-            );
+
+            }
+
+            else {
+
+                box.classList.remove(
+                    "chatbot-open"
+                );
+
+            }
 
         }
+    );
 
-    };
-
-
-/* =====================================================
-   INICIALIZACIÓN
-===================================================== */
-
-function init() {
-
-    initSwiper();
-
-    initHeaderScroll();
-
-    initChatbot();
 
     console.log(
-        "🎮 GamesAlone18 Universe cargado correctamente."
+        "🐿️ GA18 CHATBOT READY"
     );
 
 }
-
-
-if (
-    document.readyState === "loading"
-) {
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        init
-    );
-
-} else {
-
-    init();
-
-}
-```
-
-})();
