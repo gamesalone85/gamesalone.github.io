@@ -1,110 +1,2630 @@
-/* =====================================
-   FAQ PAGE ISOLATED (NO CONFLICTS)
-===================================== */
+/* =========================================================
+   GAMESALONE18 UNIVERSE
+   MERCH — PRODUCTION CSS
+========================================================= */
 
-.faq-page{
-    margin: 0;
-    background: #0b0b0b;
-    color: #fff;
-    font-family: system-ui, sans-serif;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --merch-black:#050505;
+
+    --merch-black-2:#0b0b0b;
+
+    --merch-black-3:#111111;
+
+    --merch-white:#ffffff;
+
+    --merch-gray:#b8b8b8;
+
+    --merch-gray-2:#777777;
+
+    --merch-border:rgba(255,255,255,.10);
+
+    --merch-border-hover:rgba(255,255,255,.22);
+
+    --merch-green:#25D366;
+
+    --merch-green-dark:#128C7E;
+
+    --merch-warning:#ffc107;
+
+    --merch-radius:18px;
+
+    --merch-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
 }
 
-/* HERO */
-.faq-hero{
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-.faq-badge{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:999px;
-    background:rgba(255,255,255,.06);
-    margin-bottom:15px;
+
+body{
+
+    margin:0;
+
+    padding:0;
+
+    background:
+        var(--merch-black);
+
+    color:
+        var(--merch-white);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
 }
 
-.faq-hero h1{
-    font-size: 3.5rem;
-    margin: 10px 0;
+
+body.popup-open{
+
+    overflow:hidden;
+
 }
 
-.faq-hero p{
-    color:#cfcfcf;
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
 }
 
-/* BOTONES */
-.faq-actions{
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+button{
+
+    font-family:inherit;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.bg-image{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    background-image:
+        url("../merchimg/flyer.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    filter:
+        blur(20px);
+
+    transform:scale(1.08);
+
+    opacity:.16;
+
+}
+
+
+.bg-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.94),
+            rgba(0,0,0,.98)
+        );
+
+}
+
+
+.main-content{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.merch-hero{
+
+    min-height:720px;
+
     display:flex;
-    gap:12px;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.30),
+            rgba(0,0,0,.90)
+        );
+
+}
+
+
+.hero-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+        radial-gradient(
+            rgba(255,255,255,.25) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    opacity:.15;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:
+        120px 20px 90px;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        9px 18px;
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        #ddd;
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.4px;
+
+}
+
+
+.merch-hero h1{
+
+    margin:
+        25px 0 20px;
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6rem
+        );
+
+    line-height:
+        .98;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -3px;
+
+}
+
+
+.merch-hero h1 strong{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #aaa
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+.hero-description{
+
+    max-width:760px;
+
+    margin:
+        0 auto;
+
+    color:
+        #c5c5c5;
+
+    font-size:
+        1.15rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
     justify-content:center;
-    margin-top:20px;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
 }
 
-.btn-main{
-    background:#28a745;
-    color:#fff;
-    padding:12px 24px;
-    border-radius:999px;
-    text-decoration:none;
-    font-weight:700;
+
+.btn-primary-merch,
+.btn-secondary-merch{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    min-height:52px;
+
+    padding:
+        0 27px;
+
+    border-radius:
+        999px;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s ease;
+
 }
 
-.btn-sec{
-    border:1px solid rgba(255,255,255,.3);
-    color:#fff;
-    padding:12px 24px;
-    border-radius:999px;
-    text-decoration:none;
+
+.btn-primary-merch{
+
+    background:
+        var(--merch-white);
+
+    color:
+        #000;
+
 }
 
-/* FAQ SECTION */
+
+.btn-primary-merch:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        #ddd;
+
+    color:
+        #000;
+
+}
+
+
+.btn-secondary-merch{
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    color:
+        #fff;
+
+    background:
+        rgba(255,255,255,.04);
+
+}
+
+
+.btn-secondary-merch:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255,255,255,.5);
+
+    color:
+        #fff;
+
+}
+
+
+.hero-trust{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+    color:
+        #999;
+
+    font-size:
+        .85rem;
+
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.value-section{
+
+    padding:
+        70px 20px;
+
+    background:
+        #080808;
+
+    border-top:
+        1px solid
+        var(--merch-border);
+
+    border-bottom:
+        1px solid
+        var(--merch-border);
+
+}
+
+
+.value-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.value-card{
+
+    padding:
+        30px 22px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        var(--merch-radius);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.value-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--merch-border-hover);
+
+}
+
+
+.value-icon{
+
+    width:55px;
+
+    height:55px;
+
+    margin:
+        0 auto 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.08);
+
+    font-size:
+        1.35rem;
+
+}
+
+
+.value-card h3{
+
+    font-size:
+        1.05rem;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.value-card p{
+
+    color:
+        var(--merch-gray-2);
+
+    font-size:
+        .9rem;
+
+    line-height:
+        1.6;
+
+    margin:
+        0;
+
+}
+
+
+/* =========================================================
+   PROMO
+========================================================= */
+
+.promo-banner{
+
+    padding:
+        80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #050505
+        );
+
+}
+
+
+.promo-content{
+
+    max-width:
+        850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.promo-content > span{
+
+    color:
+        #aaa;
+
+    font-size:
+        .78rem;
+
+    letter-spacing:
+        2px;
+
+    font-weight:
+        700;
+
+}
+
+
+.promo-content h2{
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.5rem
+        );
+
+    margin:
+        14px 0;
+
+}
+
+
+.promo-content p{
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 25px;
+
+    color:
+        #999;
+
+    line-height:
+        1.7;
+
+}
+
+
+.promo-content a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        #fff;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title{
+
+    text-align:center;
+
+    max-width:
+        780px;
+
+    margin:
+        0 auto 60px;
+
+}
+
+
+.section-tag{
+
+    display:inline-block;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        .75rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #999;
+
+}
+
+
+.section-title h2{
+
+    font-size:
+        clamp(
+            2.1rem,
+            5vw,
+            3.5rem
+        );
+
+    margin:
+        0 0 15px;
+
+}
+
+
+.section-title p{
+
+    color:
+        #999;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-section{
+
+    padding:
+        110px 20px;
+
+}
+
+
+.product-card{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    max-width:
+        1100px;
+
+    margin:
+        0 auto 70px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        var(--merch-radius);
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--merch-shadow);
+
+    opacity:0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        border-color .3s ease;
+
+}
+
+
+.product-card.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.product-card:hover{
+
+    border-color:
+        var(--merch-border-hover);
+
+}
+
+
+.product-card.reverse
+.product-image{
+
+    order:2;
+
+}
+
+
+.product-card.reverse
+.product-content{
+
+    order:1;
+
+}
+
+
+.product-image{
+
+    position:relative;
+
+    min-height:
+        480px;
+
+    background:
+        #000;
+
+}
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.product-badge{
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(0,0,0,.8);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.product-content{
+
+    padding:
+        55px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.product-tag{
+
+    color:
+        #999;
+
+    font-size:
+        .72rem;
+
+    letter-spacing:
+        2px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.product-content h3{
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    margin:
+        0 0 18px;
+
+}
+
+
+.product-description{
+
+    color:
+        #999;
+
+    line-height:
+        1.75;
+
+}
+
+
+.product-prices{
+
+    display:grid;
+
+    gap:10px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.product-prices > div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:
+        14px 16px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-radius:
+        10px;
+
+}
+
+
+.product-prices span{
+
+    color:
+        #aaa;
+
+    font-size:
+        .9rem;
+
+}
+
+
+.product-prices strong{
+
+    white-space:
+        nowrap;
+
+}
+
+
+.product-prices .featured-price{
+
+    border-color:
+        rgba(255,193,7,.25);
+
+}
+
+
+.product-prices .featured-price strong{
+
+    color:
+        var(--merch-warning);
+
+}
+
+
+.single-price{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:
+        20px 0 25px;
+
+}
+
+
+.single-price span{
+
+    color:
+        #888;
+
+}
+
+
+.single-price strong{
+
+    font-size:
+        1.7rem;
+
+}
+
+
+.collector-box{
+
+    margin:
+        10px 0 20px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.025);
+
+}
+
+
+.collector-box h4{
+
+    margin:
+        0 0 12px;
+
+}
+
+
+.collector-box ul,
+.product-list{
+
+    margin:
+        0;
+
+    padding-left:
+        20px;
+
+}
+
+
+.collector-box li,
+.product-list li{
+
+    color:
+        #999;
+
+    margin-bottom:
+        8px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.product-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.product-list li{
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:flex-start;
+
+}
+
+
+.product-list i{
+
+    color:
+        var(--merch-green);
+
+    margin-top:
+        4px;
+
+}
+
+
+.legal-warning{
+
+    color:
+        #ffca28;
+
+    font-size:
+        .82rem;
+
+    margin:
+        0 0 20px;
+
+}
+
+
+.product-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    min-height:
+        50px;
+
+    padding:
+        0 22px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--merch-green);
+
+    color:
+        #000;
+
+    font-weight:
+        800;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.product-button:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        #52e07d;
+
+    color:
+        #000;
+
+}
+
+
+/* =========================================================
+   SEASONS
+========================================================= */
+
+.season-section{
+
+    padding:
+        100px 20px;
+
+    background:
+        #080808;
+
+}
+
+
+.season-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.season-card{
+
+    padding:
+        35px 25px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        var(--merch-radius);
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        .6s ease;
+
+}
+
+
+.season-card.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.season-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--merch-border-hover);
+
+}
+
+
+.season-icon{
+
+    display:block;
+
+    font-size:
+        2.5rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.season-card h3{
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.season-card p{
+
+    color:
+        #888;
+
+    font-size:
+        .9rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-section{
+
+    padding:
+        100px 20px;
+
+}
+
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.process-card{
+
+    position:relative;
+
+    padding:
+        30px;
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        var(--merch-radius);
+
+    background:
+        rgba(255,255,255,.025);
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        .6s ease;
+
+}
+
+
+.process-card.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.process-card > span{
+
+    font-size:
+        2.5rem;
+
+    font-weight:
+        800;
+
+    color:
+        #333;
+
+}
+
+
+.process-card h3{
+
+    margin:
+        15px 0 10px;
+
+    font-size:
+        1.15rem;
+
+}
+
+
+.process-card p{
+
+    color:
+        #888;
+
+    line-height:
+        1.6;
+
+    margin:
+        0;
+
+}
+
+
+/* =========================================================
+   COLLAB
+========================================================= */
+
+.collab-section{
+
+    padding:
+        100px 20px;
+
+    background:
+        #080808;
+
+}
+
+
+.collab-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+    max-width:
+        900px;
+
+    margin:auto;
+
+}
+
+
+.collab-card{
+
+    padding:
+        40px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        var(--merch-radius);
+
+    background:
+        rgba(255,255,255,.025);
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        .6s ease;
+
+}
+
+
+.collab-card.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.collab-icon{
+
+    font-size:
+        3rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.collab-card h3{
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.collab-card p{
+
+    color:
+        #888;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
 .faq-section{
-    padding:80px 20px;
+
+    padding:
+        100px 20px;
+
 }
+
 
 .faq-container{
-    max-width:800px;
+
+    max-width:
+        850px;
+
     margin:auto;
+
 }
 
-.faq-container h2{
-    text-align:center;
-    margin-bottom:40px;
-}
 
-/* ITEMS */
 .faq-item{
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-    margin-bottom:12px;
-    overflow:hidden;
-    background:rgba(255,255,255,.03);
+
+    margin-bottom:
+        12px;
+
+    padding:
+        0 20px;
+
+    border:
+        1px solid
+        var(--merch-border);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    opacity:0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        .5s ease;
+
 }
 
-/* QUESTION */
-.faq-q{
-    width:100%;
-    text-align:left;
-    padding:18px;
-    background:transparent;
-    border:none;
-    color:#fff;
-    font-weight:600;
+
+.faq-item.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
 }
 
-/* ANSWER */
-.faq-a{
-    padding:18px;
-    color:#cfcfcf;
+
+.faq-item summary{
+
+    cursor:pointer;
+
+    padding:
+        20px 0;
+
+    font-weight:
+        700;
+
+    list-style:none;
+
 }
 
-/* CTA */
-.faq-cta{
+
+.faq-item summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+
+.faq-item summary::after{
+
+    content:"+";
+
+    float:right;
+
+    font-size:
+        1.3rem;
+
+    color:
+        #888;
+
+}
+
+
+.faq-item[open]
+summary::after{
+
+    content:"−";
+
+}
+
+
+.faq-item p{
+
+    color:
+        #999;
+
+    line-height:
+        1.7;
+
+    padding:
+        0 0 20px;
+
+    margin:
+        0;
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta{
+
+    padding:
+        120px 20px;
+
     text-align:center;
-    padding:60px 20px;
-    background:#111;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(37,211,102,.10),
+            transparent 40%
+        ),
+
+        #050505;
+
+    border-top:
+        1px solid
+        var(--merch-border);
+
+}
+
+
+.final-cta > div{
+
+    max-width:
+        800px;
+
+    margin:auto;
+
+}
+
+
+.final-cta > div > span{
+
+    font-size:
+        .75rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #888;
+
+}
+
+
+.final-cta h2{
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            4rem
+        );
+
+    margin:
+        15px 0;
+
+}
+
+
+.final-cta p{
+
+    color:
+        #999;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.final-whatsapp{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:
+        15px 28px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--merch-green);
+
+    color:
+        #000;
+
+    font-weight:
+        800;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.final-whatsapp:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        #52e07d;
+
+    color:
+        #000;
+
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.merch-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.merch-popup.show{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+
+.popup-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.86);
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+.popup-box{
+
+    position:relative;
+
+    z-index:2;
+
+    width:
+        min(520px,100%);
+
+    max-height:
+        90vh;
+
+    overflow:auto;
+
+    padding:
+        45px 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        20px;
+
+    background:
+        #0d0d0d;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.7);
+
+    text-align:center;
+
+}
+
+
+.popup-close{
+
+    position:absolute;
+
+    top:12px;
+
+    right:15px;
+
+    width:40px;
+
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:#fff;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+
+.popup-badge{
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    font-size:.72rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:#aaa;
+
+}
+
+
+.popup-box h2{
+
+    margin-bottom:18px;
+
+}
+
+
+.popup-box p{
+
+    color:#999;
+
+    line-height:1.7;
+
+}
+
+
+.popup-box ul{
+
+    display:inline-block;
+
+    text-align:left;
+
+    color:#bbb;
+
+    margin:
+        10px auto 20px;
+
+}
+
+
+.popup-note{
+
+    font-size:.85rem;
+
+}
+
+
+.popup-button{
+
+    border:0;
+
+    min-height:48px;
+
+    padding:
+        0 25px;
+
+    border-radius:999px;
+
+    background:#fff;
+
+    color:#000;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   WHATSAPP CHATBOT
+========================================================= */
+
+.whatsapp-chatbot{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:85px;
+
+    width:
+        min(370px,calc(100vw - 30px));
+
+    z-index:9990;
+
+    background:
+        #111;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:
+        18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.65);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(20px)
+        scale(.96);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.whatsapp-chatbot.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.chat-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:
+        16px;
+
+    background:
+        #128C7E;
+
+}
+
+
+.chat-avatar{
+
+    width:45px;
+
+    height:45px;
+
+    flex:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#128C7E;
+
+    font-size:1.4rem;
+
+}
+
+
+.chat-header-info{
+
+    flex:1;
+
+}
+
+
+.chat-header h3{
+
+    margin:0;
+
+    font-size:.95rem;
+
+}
+
+
+.chat-header span{
+
+    font-size:.72rem;
+
+    opacity:.85;
+
+}
+
+
+.chat-close{
+
+    border:0;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+
+.chat-body{
+
+    padding:
+        20px;
+
+}
+
+
+.chat-body p{
+
+    margin:
+        0 0 10px;
+
+    color:#ccc;
+
+    font-size:.9rem;
+
+    line-height:1.6;
+
+}
+
+
+.chat-options{
+
+    display:grid;
+
+    gap:8px;
+
+    padding:
+        0 20px 15px;
+
+}
+
+
+.chat-option{
+
+    padding:
+        11px 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        10px;
+
+    color:#ddd;
+
+    font-size:.85rem;
+
+    transition:.2s ease;
+
+}
+
+
+.chat-option:hover{
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#fff;
+
+}
+
+
+.chat-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:
+        0 20px 20px;
+
+    min-height:48px;
+
+    border-radius:
+        999px;
+
+    background:
+        #25D366;
+
+    color:#000;
+
+    font-weight:800;
+
+}
+
+
+.chat-button:hover{
+
+    background:
+        #52e07d;
+
+    color:#000;
+
+}
+
+
+.whatsapp-toggle{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:9989;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-height:50px;
+
+    padding:
+        0 20px;
+
+    border:0;
+
+    border-radius:
+        999px;
+
+    background:
+        #25D366;
+
+    color:#000;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(37,211,102,.25);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.whatsapp-toggle:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   COOKIE BAR
+========================================================= */
+
+.cookie-bar{
+
+    position:fixed;
+
+    left:20px;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:9970;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:
+        16px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(15,15,15,.96);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.45);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.cookie-bar.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.cookie-info{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+
+.cookie-icon{
+
+    font-size:
+        1.5rem;
+
+}
+
+
+.cookie-text h4{
+
+    margin:
+        0 0 5px;
+
+    font-size:
+        .9rem;
+
+}
+
+
+.cookie-text p{
+
+    margin:0;
+
+    color:#999;
+
+    font-size:.75rem;
+
+    line-height:1.5;
+
+}
+
+
+.cookie-text a{
+
+    color:#fff;
+
+    text-decoration:underline;
+
+}
+
+
+.cookie-accept{
+
+    flex:none;
+
+    border:0;
+
+    padding:
+        10px 20px;
+
+    border-radius:
+        999px;
+
+    background:#fff;
+
+    color:#000;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+    .value-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .season-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .process-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .merch-hero{
+
+        min-height:
+            650px;
+
+    }
+
+
+    .hero-content{
+
+        padding:
+            110px 15px 70px;
+
+    }
+
+
+    .merch-hero h1{
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .hero-description{
+
+        font-size:
+            1rem;
+
+    }
+
+
+    .hero-trust{
+
+        flex-direction:
+            column;
+
+        gap:8px;
+
+    }
+
+
+    .value-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .product-card,
+    .product-card.reverse{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .product-card.reverse
+    .product-image,
+    .product-card.reverse
+    .product-content{
+
+        order:initial;
+
+    }
+
+
+    .product-image{
+
+        min-height:
+            360px;
+
+    }
+
+
+    .product-content{
+
+        padding:
+            35px 25px;
+
+    }
+
+
+    .season-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .process-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .collab-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .whatsapp-chatbot{
+
+        right:15px;
+
+        bottom:80px;
+
+    }
+
+
+    .whatsapp-toggle{
+
+        right:15px;
+
+        bottom:15px;
+
+    }
+
+
+    .cookie-bar{
+
+        left:10px;
+
+        right:10px;
+
+        bottom:10px;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .cookie-accept{
+
+        width:100%;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .merch-hero h1{
+
+        font-size:
+            2.8rem;
+
+    }
+
+
+    .hero-buttons{
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .btn-primary-merch,
+    .btn-secondary-merch{
+
+        width:100%;
+
+    }
+
+
+    .product-prices > div{
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .popup-box{
+
+        padding:
+            40px 22px 25px;
+
+    }
+
+
+    .whatsapp-toggle{
+
+        width:
+            calc(100% - 30px);
+
+        justify-content:center;
+
+    }
+
 }
