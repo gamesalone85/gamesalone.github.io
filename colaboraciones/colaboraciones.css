@@ -1,1933 +1,1668 @@
 /* =========================================================
-   GAMESALONE18 UNIVERSE
-   COLABORACIONES
-   CSS COMPLETAMENTE INDEPENDIENTE
+GAMESALONE18 UNIVERSE
+COLABORACIONES
+CSS COMPLETAMENTE INDEPENDIENTE
 ========================================================= */
 
-
 /* =========================================================
-   VARIABLES
+VARIABLES
 ========================================================= */
 
 :root {
 
-    --collab-bg: #050505;
-    --collab-bg-2: #080808;
-    --collab-panel: #0c0c0c;
-    --collab-panel-2: #101010;
+```
+--collab-bg: #050505;
+--collab-bg-soft: #090909;
+--collab-card: #0b0b0b;
 
-    --collab-white: #f5f5f5;
-    --collab-text: #c8c8c8;
-    --collab-muted: #858585;
-    --collab-dark: #555555;
+--collab-white: #f5f5f5;
+--collab-text: #d2d2d2;
+--collab-muted: #888;
+--collab-dark: #555;
 
-    --collab-green: #00e894;
-    --collab-green-dark: #00b976;
+--collab-green: #00ff9c;
 
-    --collab-border: rgba(255,255,255,.08);
-    --collab-border-hover: rgba(0,232,148,.25);
+--collab-border: rgba(255,255,255,.09);
+--collab-border-hover: rgba(0,255,156,.30);
 
-    --collab-container: 1180px;
+--collab-container: 1180px;
+```
 
 }
 
-
 /* =========================================================
-   RESET EXCLUSIVO
+RESET EXCLUSIVO
 ========================================================= */
 
-.collab-page,
-.collab-page *,
-.collab-page *::before,
-.collab-page *::after {
+.collab-body {
 
-    box-sizing: border-box;
+```
+margin: 0;
+
+padding: 0;
+
+background: var(--collab-bg);
+
+color: var(--collab-white);
+
+overflow-x: hidden;
+```
 
 }
 
-
 /* =========================================================
-   PAGE
+IMPORTANTE:
+NO MODIFICAR EL HEADER
 ========================================================= */
 
-.collab-page {
+#header {
 
-    position: relative;
+```
+position: relative;
 
-    width: 100%;
-
-    min-height: 100vh;
-
-    background:
-        linear-gradient(
-            180deg,
-            #050505 0%,
-            #060606 35%,
-            #080808 100%
-        );
-
-    color: var(--collab-white);
-
-    overflow: hidden;
+z-index: 1000;
+```
 
 }
 
-
 /* =========================================================
-   BACKGROUND
+FONDO
 ========================================================= */
 
 .collab-background {
 
-    position: fixed;
+```
+position: fixed;
 
-    inset: 0;
+inset: 0;
 
-    width: 100%;
-    height: 100%;
+z-index: -3;
 
-    background-image:
-        url("/home/img/bg-masthead.jpg");
+background-image:
+    url("/home/img/bg-masthead.jpg");
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+background-size: cover;
 
-    opacity: .10;
+background-position: center;
 
-    filter: blur(8px);
+background-repeat: no-repeat;
 
-    transform: scale(1.04);
+opacity: .12;
 
-    pointer-events: none;
+filter: blur(2px);
 
-    z-index: 0;
+transform: scale(1.03);
 
-}
-
-
-.collab-background-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.92) 0%,
-            rgba(0,0,0,.97) 45%,
-            rgba(0,0,0,1) 100%
-        );
-
-    pointer-events: none;
-
-    z-index: 1;
+pointer-events: none;
+```
 
 }
 
+.collab-overlay {
+
+```
+position: fixed;
+
+inset: 0;
+
+z-index: -2;
+
+pointer-events: none;
+
+background:
+
+    linear-gradient(
+        180deg,
+        rgba(0,0,0,.88) 0%,
+        rgba(0,0,0,.94) 45%,
+        rgba(0,0,0,.98) 100%
+    );
+```
+
+}
 
 /* =========================================================
-   CONTENIDO
-========================================================= */
-
-.collab-page > *:not(.collab-background):not(.collab-background-overlay) {
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-
-/* =========================================================
-   CONTAINER
+CONTENEDOR
 ========================================================= */
 
 .collab-container {
 
-    width: min(
-        calc(100% - 40px),
-        var(--collab-container)
-    );
+```
+width: min(
+    calc(100% - 40px),
+    var(--collab-container)
+);
 
-    margin-left: auto;
-    margin-right: auto;
+margin: 0 auto;
+```
 
 }
 
-
 /* =========================================================
-   HERO
+HERO
 ========================================================= */
 
 .collab-hero {
 
-    min-height: 610px;
+```
+min-height: 560px;
 
-    display: flex;
+display: flex;
 
-    align-items: center;
+align-items: center;
 
-    justify-content: center;
+justify-content: center;
 
-    padding:
-        90px
-        20px
-        70px;
+text-align: center;
 
-    text-align: center;
+padding: 70px 20px 80px;
 
-    border-bottom:
-        1px solid
-        var(--collab-border);
-
-}
-
-
-.collab-hero-content {
-
-    width: 100%;
-
-    max-width: 850px;
-
-    margin: 0 auto;
+border-bottom:
+    1px solid
+    rgba(255,255,255,.06);
+```
 
 }
 
+.collab-hero-inner {
 
-/* =========================================================
-   EYEBROW
-========================================================= */
+```
+width: 100%;
+
+max-width: 850px;
+
+margin: 0 auto;
+```
+
+}
 
 .collab-eyebrow {
 
-    display: inline-flex;
+```
+display: inline-flex;
 
-    align-items: center;
+align-items: center;
 
-    gap: 9px;
+gap: 9px;
 
-    padding:
-        8px 15px;
+padding: 8px 15px;
 
-    border:
-        1px solid
-        rgba(0,232,148,.18);
+border:
+    1px solid
+    rgba(0,255,156,.20);
 
-    border-radius: 50px;
+border-radius: 50px;
 
-    background:
-        rgba(0,232,148,.035);
+background:
+    rgba(0,255,156,.045);
 
-    color:
-        var(--collab-green);
+color:
+    var(--collab-green);
 
-    font-size: .68rem;
+font-size: .68rem;
 
-    font-weight: 800;
+font-weight: 800;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
+```
 
 }
-
 
 .collab-eyebrow i {
 
-    font-size: .72rem;
+```
+font-size: .75rem;
+```
 
 }
-
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
 
 .collab-hero h1 {
 
-    margin:
-        28px 0 24px;
+```
+margin: 28px 0 22px;
 
-    color:
-        var(--collab-white);
+font-size:
+    clamp(
+        3rem,
+        7vw,
+        6rem
+    );
 
-    font-size:
-        clamp(
-            3.2rem,
-            8vw,
-            6.4rem
-        );
+line-height: .95;
 
-    line-height: .92;
+letter-spacing: -4px;
 
-    letter-spacing: -4px;
+font-weight: 900;
 
-    font-weight: 900;
-
-}
-
-
-.collab-hero h1 strong {
-
-    display: block;
-
-    color:
-        var(--collab-green);
-
-    font-weight: 900;
+color: #fff;
+```
 
 }
 
+.collab-hero h1 span {
+
+```
+display: block;
+
+color: var(--collab-green);
+```
+
+}
+
+.collab-hero p {
+
+```
+max-width: 680px;
+
+margin: 0 auto;
+
+color: #bdbdbd;
+
+font-size: 1.08rem;
+
+line-height: 1.8;
+```
+
+}
+
+.collab-divider {
+
+```
+width: 65px;
+
+height: 2px;
+
+margin: 30px auto 18px;
+
+background: var(--collab-green);
+```
+
+}
+
+.collab-hero small {
+
+```
+color: #666;
+
+font-size: .78rem;
+
+letter-spacing: 1px;
+```
+
+}
 
 /* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
-.collab-hero-content > p {
-
-    max-width: 650px;
-
-    margin:
-        0 auto;
-
-    color:
-        var(--collab-text);
-
-    font-size:
-        clamp(
-            .95rem,
-            2vw,
-            1.15rem
-        );
-
-    line-height: 1.8;
-
-}
-
-
-.collab-hero-line {
-
-    width: 55px;
-
-    height: 2px;
-
-    margin:
-        30px auto 18px;
-
-    background:
-        var(--collab-green);
-
-}
-
-
-.collab-hero-note {
-
-    color:
-        var(--collab-muted);
-
-    font-size: .78rem;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* =========================================================
-   INTRO
+INTRO
 ========================================================= */
 
 .collab-intro {
 
-    padding:
-        105px 0;
+```
+padding: 100px 0;
 
-    border-bottom:
-        1px solid
-        var(--collab-border);
+background:
+    rgba(0,0,0,.25);
+
+border-bottom:
+    1px solid
+    rgba(255,255,255,.06);
+```
+
+}
+
+.collab-intro-grid {
+
+```
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+gap: 90px;
+
+align-items: center;
+```
+
+}
+
+.collab-label {
+
+```
+display: inline-block;
+
+margin-bottom: 17px;
+
+color: var(--collab-green);
+
+font-size: .67rem;
+
+font-weight: 900;
+
+letter-spacing: 2px;
+```
+
+}
+
+.collab-intro-title h2 {
+
+```
+margin: 0;
+
+max-width: 560px;
+
+font-size:
+    clamp(
+        2.4rem,
+        5vw,
+        4rem
+    );
+
+line-height: 1.05;
+
+letter-spacing: -2px;
+```
+
+}
+
+.collab-intro-title h2 span {
+
+```
+display: block;
+
+color: #555;
+```
+
+}
+
+.collab-intro-text {
+
+```
+border-left:
+    1px solid
+    rgba(0,255,156,.25);
+
+padding-left: 30px;
+```
+
+}
+
+.collab-intro-text p {
+
+```
+margin: 0 0 20px;
+
+color: #999;
+
+font-size: .98rem;
+
+line-height: 1.85;
+```
+
+}
+
+.collab-intro-text p:last-child {
+
+```
+margin-bottom: 0;
+```
+
+}
+
+/* =========================================================
+WORK
+========================================================= */
+
+.collab-work {
+
+```
+padding: 100px 0 0;
+```
+
+}
+
+/* =========================================================
+MAIN CARD
+========================================================= */
+
+.collab-main-card {
+
+```
+display: grid;
+
+grid-template-columns:
+    1.05fr .95fr;
+
+min-height: 590px;
+
+overflow: hidden;
+
+background: #090909;
+
+border:
+    1px solid
+    var(--collab-border);
+
+border-radius: 18px;
+```
+
+}
+
+.collab-main-image {
+
+```
+position: relative;
+
+min-height: 590px;
+
+overflow: hidden;
+```
+
+}
+
+.collab-main-image img {
+
+```
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+display: block;
+
+transition:
+    transform .7s ease;
+```
+
+}
+
+.collab-main-card:hover
+.collab-main-image img {
+
+```
+transform: scale(1.035);
+```
+
+}
+
+.collab-image-dark {
+
+```
+position: absolute;
+
+inset: 0;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.65)
+    );
+```
+
+}
+
+.collab-number {
+
+```
+position: absolute;
+
+top: 22px;
+
+left: 22px;
+
+width: 46px;
+
+height: 46px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border:
+    1px solid
+    rgba(255,255,255,.18);
+
+border-radius: 50%;
+
+background:
+    rgba(0,0,0,.65);
+
+color: #fff;
+
+font-size: .75rem;
+
+font-weight: 800;
+```
+
+}
+
+.collab-official {
+
+```
+position: absolute;
+
+left: 22px;
+
+bottom: 22px;
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 8px;
+
+padding: 8px 12px;
+
+border:
+    1px solid
+    rgba(0,255,156,.22);
+
+border-radius: 50px;
+
+background:
+    rgba(0,0,0,.75);
+
+color: #ddd;
+
+font-size: .6rem;
+
+font-weight: 800;
+
+letter-spacing: 1px;
+```
+
+}
+
+.collab-official i {
+
+```
+color: var(--collab-green);
+
+font-size: .4rem;
+```
+
+}
+
+/* =========================================================
+MAIN CONTENT
+========================================================= */
+
+.collab-main-content {
+
+```
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+padding: 55px;
+```
+
+}
+
+.collab-main-content h2 {
+
+```
+margin: 0 0 22px;
+
+font-size:
+    clamp(
+        2.5rem,
+        5vw,
+        4.2rem
+    );
+
+line-height: 1;
+
+letter-spacing: -2px;
+```
+
+}
+
+.collab-main-content p {
+
+```
+margin: 0 0 18px;
+
+color: #888;
+
+line-height: 1.8;
+
+font-size: .95rem;
+```
+
+}
+
+.collab-main-content .collab-lead {
+
+```
+color: #d0d0d0;
+
+font-size: 1.03rem;
+```
+
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.collab-buttons {
+
+```
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 10px;
+
+margin-top: 15px;
+```
+
+}
+
+.collab-btn {
+
+```
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 8px;
+
+min-height: 44px;
+
+padding: 0 18px;
+
+border-radius: 50px;
+
+font-size: .78rem;
+
+font-weight: 800;
+
+text-decoration: none;
+
+transition:
+    .25s ease;
+```
+
+}
+
+.collab-btn:hover {
+
+```
+transform: translateY(-2px);
+```
+
+}
+
+.collab-btn-primary {
+
+```
+background:
+    var(--collab-green);
+
+color: #000;
+```
+
+}
+
+.collab-btn-primary:hover {
+
+```
+background: #fff;
+
+color: #000;
+```
+
+}
+
+.collab-btn-secondary {
+
+```
+border:
+    1px solid
+    rgba(255,255,255,.15);
+
+background:
+    rgba(255,255,255,.03);
+
+color: #fff;
+```
+
+}
+
+.collab-btn-secondary:hover {
+
+```
+border-color:
+    rgba(255,255,255,.35);
+```
+
+}
+
+/* =========================================================
+FEATURE RUTA 3
+========================================================= */
+
+.collab-feature {
+
+```
+display: grid;
+
+grid-template-columns:
+    1.65fr .8fr;
+
+min-height: 340px;
+
+margin: 25px 0 70px;
+
+overflow: hidden;
+
+background: #090909;
+
+border:
+    1px solid
+    var(--collab-border);
+
+border-radius: 18px;
+```
+
+}
+
+.collab-feature-image {
+
+```
+min-height: 340px;
+
+overflow: hidden;
+```
+
+}
+
+.collab-feature-image img {
+
+```
+width: 100%;
+
+height: 100%;
+
+display: block;
+
+object-fit: cover;
+
+transition:
+    transform .7s ease;
+```
+
+}
+
+.collab-feature:hover
+.collab-feature-image img {
+
+```
+transform: scale(1.035);
+```
+
+}
+
+.collab-feature-content {
+
+```
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+padding: 45px;
+```
+
+}
+
+.collab-feature-content h3 {
+
+```
+margin: 8px 0 15px;
+
+font-size: 2.7rem;
+
+line-height: 1;
+```
+
+}
+
+.collab-feature-content p {
+
+```
+margin: 0;
+
+color: #888;
+
+line-height: 1.8;
+```
+
+}
+
+/* =========================================================
+SMALL GRID
+========================================================= */
+
+.collab-grid {
+
+```
+display: grid;
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 24px;
+```
+
+}
+
+/* =========================================================
+SMALL CARDS
+========================================================= */
+
+.collab-card {
+
+```
+overflow: hidden;
+
+background: #090909;
+
+border:
+    1px solid
+    var(--collab-border);
+
+border-radius: 18px;
+
+transition:
+    border-color .3s ease,
+    transform .3s ease;
+```
+
+}
+
+.collab-card:hover {
+
+```
+border-color:
+    rgba(0,255,156,.22);
+
+transform:
+    translateY(-4px);
+```
+
+}
+
+.collab-card-image {
+
+```
+position: relative;
+
+height: 300px;
+
+overflow: hidden;
+```
+
+}
+
+.collab-card-image img {
+
+```
+width: 100%;
+
+height: 100%;
+
+display: block;
+
+object-fit: cover;
+
+transition:
+    transform .7s ease;
+```
+
+}
+
+.collab-card:hover
+.collab-card-image img {
+
+```
+transform: scale(1.04);
+```
+
+}
+
+.collab-card-image > span {
+
+```
+position: absolute;
+
+top: 18px;
+
+left: 18px;
+
+width: 44px;
+
+height: 44px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border:
+    1px solid
+    rgba(255,255,255,.18);
+
+border-radius: 50%;
+
+background:
+    rgba(0,0,0,.7);
+
+color: #fff;
+
+font-size: .72rem;
+
+font-weight: 800;
+```
+
+}
+
+.collab-card-content {
+
+```
+padding: 34px;
+```
+
+}
+
+.collab-card-content h2 {
+
+```
+margin: 0 0 18px;
+
+font-size: 2rem;
+
+line-height: 1.05;
+```
+
+}
+
+.collab-card-content h2 span {
+
+```
+display: block;
+
+color: #666;
+```
+
+}
+
+.collab-card-content p {
+
+```
+margin: 0 0 16px;
+
+color: #888;
+
+line-height: 1.8;
+
+font-size: .92rem;
+```
+
+}
+
+.collab-link {
+
+```
+display: inline-flex;
+
+align-items: center;
+
+gap: 8px;
+
+margin-top: 5px;
+
+color: #fff;
+
+font-size: .8rem;
+
+font-weight: 800;
+
+text-decoration: none;
+
+transition:
+    .25s ease;
+```
+
+}
+
+.collab-link:hover {
+
+```
+color: var(--collab-green);
+
+gap: 12px;
+```
+
+}
+
+/* =========================================================
+VALUE
+========================================================= */
+
+.collab-value {
+
+```
+margin-top: 110px;
+
+padding: 100px 0;
+
+border-top:
+    1px solid
+    rgba(255,255,255,.06);
+
+border-bottom:
+    1px solid
+    rgba(255,255,255,.06);
+```
+
+}
+
+.collab-value-header {
+
+```
+max-width: 760px;
+
+margin: 0 auto 55px;
+
+text-align: center;
+```
+
+}
+
+.collab-value-header h2 {
+
+```
+margin: 0 0 20px;
+
+font-size:
+    clamp(
+        2.4rem,
+        5vw,
+        4rem
+    );
+
+line-height: 1;
+
+letter-spacing: -2px;
+```
+
+}
+
+.collab-value-header h2 span {
+
+```
+display: block;
+
+color: #555;
+```
+
+}
+
+.collab-value-header p {
+
+```
+max-width: 620px;
+
+margin: 0 auto;
+
+color: #888;
+
+line-height: 1.8;
+```
+
+}
+
+.collab-value-grid {
+
+```
+display: grid;
+
+grid-template-columns:
+    repeat(4, 1fr);
+
+gap: 16px;
+```
+
+}
+
+.collab-value-card {
+
+```
+min-height: 250px;
+
+padding: 28px;
+
+background: #090909;
+
+border:
+    1px solid
+    var(--collab-border);
+
+border-radius: 15px;
+
+transition:
+    .3s ease;
+```
+
+}
+
+.collab-value-card:hover {
+
+```
+border-color:
+    rgba(0,255,156,.25);
+
+transform:
+    translateY(-4px);
+```
+
+}
+
+.collab-value-icon {
+
+```
+width: 48px;
+
+height: 48px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+margin-bottom: 25px;
+
+border:
+    1px solid
+    rgba(0,255,156,.20);
+
+border-radius: 12px;
+
+background:
+    rgba(0,255,156,.05);
+
+color:
+    var(--collab-green);
+```
+
+}
+
+.collab-value-card small {
+
+```
+color: #444;
+
+font-size: .65rem;
+
+font-weight: 900;
+```
+
+}
+
+.collab-value-card h3 {
+
+```
+margin: 9px 0 12px;
+
+font-size: 1.1rem;
+```
+
+}
+
+.collab-value-card p {
+
+```
+margin: 0;
+
+color: #777;
+
+font-size: .87rem;
+
+line-height: 1.7;
+```
+
+}
+
+/* =========================================================
+CTA
+========================================================= */
+
+.collab-cta {
+
+```
+max-width: 850px;
+
+margin: 0 auto;
+
+padding: 120px 20px;
+
+text-align: center;
+```
+
+}
+
+.collab-cta h2 {
+
+```
+margin: 10px 0 22px;
+
+font-size:
+    clamp(
+        3rem,
+        7vw,
+        5.5rem
+    );
+
+line-height: .95;
+
+letter-spacing: -3px;
+```
+
+}
+
+.collab-cta h2 span {
+
+```
+display: block;
+
+color: var(--collab-green);
+```
+
+}
+
+.collab-cta p {
+
+```
+max-width: 620px;
+
+margin: 0 auto 30px;
+
+color: #888;
+
+line-height: 1.8;
+```
+
+}
+
+.collab-cta-btn {
+
+```
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 10px;
+
+min-height: 50px;
+
+padding: 0 25px;
+
+border-radius: 50px;
+
+background:
+    var(--collab-green);
+
+color: #000;
+
+font-size: .82rem;
+
+font-weight: 900;
+
+text-decoration: none;
+
+transition:
+    .25s ease;
+```
+
+}
+
+.collab-cta-btn:hover {
+
+```
+background: #fff;
+
+color: #000;
+
+transform: translateY(-3px);
+```
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+```
+.collab-value-grid {
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+}
+```
+
+}
+
+@media (max-width: 850px) {
+
+```
+.collab-hero {
+
+    min-height: 500px;
 
 }
 
 
 .collab-intro-grid {
 
-    display: grid;
+    grid-template-columns: 1fr;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    gap: 90px;
-
-    align-items: center;
+    gap: 45px;
 
 }
 
 
-.collab-section-label {
+.collab-main-card {
 
-    display: inline-block;
-
-    margin-bottom: 18px;
-
-    color:
-        var(--collab-green);
-
-    font-size: .65rem;
-
-    font-weight: 900;
-
-    letter-spacing: 2.5px;
+    grid-template-columns: 1fr;
 
 }
 
 
-.collab-intro h2 {
+.collab-main-image {
 
-    max-width: 580px;
-
-    margin: 0;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            2.3rem,
-            5vw,
-            4rem
-        );
-
-    line-height: 1.02;
-
-    letter-spacing: -2px;
+    min-height: 430px;
 
 }
 
-
-.collab-intro h2 span {
-
-    display: block;
-
-    color:
-        var(--collab-dark);
-
-}
-
-
-.collab-intro-copy {
-
-    padding-left: 30px;
-
-    border-left:
-        2px solid
-        rgba(0,232,148,.25);
-
-}
-
-
-.collab-intro-copy p {
-
-    margin:
-        0 0 20px;
-
-    color:
-        var(--collab-text);
-
-    font-size: .98rem;
-
-    line-height: 1.85;
-
-}
-
-
-.collab-intro-copy p:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.collab-main {
-
-    padding:
-        90px 0 0;
-
-}
-
-
-/* =========================================================
-   LARGE CARD
-========================================================= */
-
-.collab-card-large {
-
-    display: grid;
-
-    grid-template-columns:
-        1.05fr
-        .95fr;
-
-    min-height: 610px;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        var(--collab-border);
-
-    border-radius: 18px;
-
-    background:
-        rgba(10,10,10,.96);
-
-    transition:
-        border-color .3s ease,
-        transform .3s ease;
-
-}
-
-
-.collab-card-large:hover {
-
-    border-color:
-        var(--collab-border-hover);
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-/* =========================================================
-   LARGE IMAGE
-========================================================= */
-
-.collab-card-image {
-
-    position: relative;
-
-    min-height: 610px;
-
-    overflow: hidden;
-
-    background:
-        #050505;
-
-}
-
-
-.collab-card-image img {
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform .6s ease;
-
-}
-
-
-.collab-card-large:hover
-.collab-card-image img {
-
-    transform:
-        scale(1.035);
-
-}
-
-
-.collab-image-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0) 40%,
-            rgba(0,0,0,.72) 100%
-        );
-
-}
-
-
-.collab-number {
-
-    position: absolute;
-
-    top: 22px;
-    left: 22px;
-
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    border-radius: 50%;
-
-    background:
-        rgba(0,0,0,.65);
-
-    color:
-        #fff;
-
-    font-size: .75rem;
-
-    font-weight: 800;
-
-}
-
-
-.collab-status {
-
-    position: absolute;
-
-    left: 22px;
-    bottom: 22px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding:
-        8px 12px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    border-radius: 50px;
-
-    background:
-        rgba(0,0,0,.72);
-
-    color:
-        #ddd;
-
-    font-size: .58rem;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-}
-
-
-.collab-status i {
-
-    color:
-        var(--collab-green);
-
-    font-size: .4rem;
-
-}
-
-
-/* =========================================================
-   LARGE CONTENT
-========================================================= */
-
-.collab-card-content {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding:
-        60px;
-
-}
-
-
-.collab-card-label {
-
-    display: block;
-
-    margin-bottom: 16px;
-
-    color:
-        var(--collab-green);
-
-    font-size: .62rem;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-}
-
-
-.collab-card-content h2 {
-
-    margin:
-        0 0 22px;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            2.5rem,
-            5vw,
-            4.3rem
-        );
-
-    line-height: .95;
-
-    letter-spacing: -2px;
-
-}
-
-
-.collab-card-content p {
-
-    margin:
-        0 0 17px;
-
-    color:
-        var(--collab-muted);
-
-    line-height: 1.8;
-
-}
-
-
-.collab-card-content .collab-lead {
-
-    color:
-        #d6d6d6;
-
-    font-size:
-        1.03rem;
-
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.collab-actions {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 18px;
-
-}
-
-
-.collab-button {
-
-    min-height: 46px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    padding:
-        0 18px;
-
-    border-radius: 50px;
-
-    font-size: .76rem;
-
-    font-weight: 800;
-
-    text-decoration: none;
-
-    transition:
-        .25s ease;
-
-}
-
-
-.collab-button:hover {
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.collab-button-primary {
-
-    background:
-        var(--collab-green);
-
-    color:
-        #000;
-
-}
-
-
-.collab-button-primary:hover {
-
-    background:
-        #fff;
-
-    color:
-        #000;
-
-}
-
-
-.collab-button-secondary {
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    background:
-        rgba(255,255,255,.035);
-
-    color:
-        #fff;
-
-}
-
-
-.collab-button-secondary:hover {
-
-    border-color:
-        rgba(255,255,255,.35);
-
-}
-
-
-/* =========================================================
-   FEATURE
-========================================================= */
 
 .collab-feature {
 
-    display: grid;
-
-    grid-template-columns:
-        1.6fr
-        .8fr;
-
-    min-height: 340px;
-
-    margin:
-        24px 0 70px;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        var(--collab-border);
-
-    border-radius: 18px;
-
-    background:
-        #0a0a0a;
-
-    transition:
-        border-color .3s ease;
-
-}
-
-
-.collab-feature:hover {
-
-    border-color:
-        var(--collab-border-hover);
+    grid-template-columns: 1fr;
 
 }
 
 
 .collab-feature-image {
 
-    min-height: 340px;
+    min-height: 300px;
 
-    overflow: hidden;
+}
+```
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+```
+.collab-container {
+
+    width:
+        calc(100% - 28px);
 
 }
 
 
-.collab-feature-image img {
+.collab-hero {
 
-    width: 100%;
-    height: 100%;
+    min-height: 470px;
 
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform .6s ease;
+    padding:
+        55px 15px 60px;
 
 }
 
 
-.collab-feature:hover
-.collab-feature-image img {
+.collab-hero h1 {
 
-    transform:
-        scale(1.035);
+    font-size: 3rem;
+
+    letter-spacing: -2px;
 
 }
 
 
-.collab-feature-info {
+.collab-hero p {
 
-    display: flex;
+    font-size: .92rem;
+
+}
+
+
+.collab-intro {
+
+    padding: 70px 0;
+
+}
+
+
+.collab-intro-title h2 {
+
+    font-size: 2.5rem;
+
+}
+
+
+.collab-intro-text {
+
+    padding-left: 20px;
+
+}
+
+
+.collab-work {
+
+    padding-top: 70px;
+
+}
+
+
+.collab-main-image {
+
+    min-height: 300px;
+
+}
+
+
+.collab-main-content {
+
+    padding: 32px 25px;
+
+}
+
+
+.collab-main-content h2 {
+
+    font-size: 2.6rem;
+
+}
+
+
+.collab-buttons {
 
     flex-direction: column;
 
-    justify-content: center;
+}
 
-    padding:
-        45px;
+
+.collab-btn {
+
+    width: 100%;
 
 }
 
 
-.collab-feature-info > span {
+.collab-feature-image {
 
-    color:
-        var(--collab-green);
-
-    font-size: .62rem;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
+    min-height: 230px;
 
 }
 
 
-.collab-feature-info h3 {
+.collab-feature-content {
 
-    margin:
-        14px 0;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            2rem,
-            4vw,
-            3.1rem
-        );
+    padding: 30px 25px;
 
 }
 
 
-.collab-feature-info p {
+.collab-feature-content h3 {
 
-    margin: 0;
-
-    color:
-        var(--collab-muted);
-
-    line-height: 1.8;
+    font-size: 2.2rem;
 
 }
 
-
-/* =========================================================
-   SMALL GRID
-========================================================= */
 
 .collab-grid {
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap: 24px;
+    grid-template-columns: 1fr;
 
 }
 
 
-/* =========================================================
-   SMALL CARD
-========================================================= */
+.collab-card-image {
 
-.collab-small-card {
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        var(--collab-border);
-
-    border-radius: 18px;
-
-    background:
-        #0a0a0a;
-
-    transition:
-        border-color .3s ease,
-        transform .3s ease;
+    height: 240px;
 
 }
 
 
-.collab-small-card:hover {
+.collab-card-content {
 
-    border-color:
-        var(--collab-border-hover);
-
-    transform:
-        translateY(-3px);
+    padding: 28px 23px;
 
 }
 
 
-.collab-small-image {
+.collab-card-content h2 {
 
-    position: relative;
-
-    height: 310px;
-
-    overflow: hidden;
+    font-size: 1.9rem;
 
 }
 
-
-.collab-small-image img {
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform .6s ease;
-
-}
-
-
-.collab-small-card:hover
-.collab-small-image img {
-
-    transform:
-        scale(1.04);
-
-}
-
-
-.collab-small-image span {
-
-    position: absolute;
-
-    top: 18px;
-    left: 18px;
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    border-radius: 50%;
-
-    background:
-        rgba(0,0,0,.70);
-
-    color:
-        #fff;
-
-    font-size: .7rem;
-
-    font-weight: 800;
-
-}
-
-
-.collab-small-content {
-
-    padding:
-        34px;
-
-}
-
-
-.collab-small-content h2 {
-
-    margin:
-        0 0 18px;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            1.8rem,
-            3vw,
-            2.6rem
-        );
-
-    line-height: 1.04;
-
-}
-
-
-.collab-small-content h2 span {
-
-    display: block;
-
-    color:
-        var(--collab-dark);
-
-}
-
-
-.collab-small-content p {
-
-    margin:
-        0 0 16px;
-
-    color:
-        var(--collab-muted);
-
-    line-height: 1.8;
-
-}
-
-
-.collab-text-link {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 6px;
-
-    color:
-        #fff;
-
-    font-size: .76rem;
-
-    font-weight: 800;
-
-    text-decoration: none;
-
-    transition:
-        .25s ease;
-
-}
-
-
-.collab-text-link:hover {
-
-    color:
-        var(--collab-green);
-
-    gap: 12px;
-
-}
-
-
-/* =========================================================
-   VALUE
-========================================================= */
 
 .collab-value {
 
-    margin-top:
-        110px;
+    margin-top: 75px;
 
-    padding:
-        100px 0;
-
-    border-top:
-        1px solid
-        var(--collab-border);
-
-    border-bottom:
-        1px solid
-        var(--collab-border);
-
-}
-
-
-.collab-value-header {
-
-    max-width: 750px;
-
-    margin:
-        0 auto 55px;
-
-    text-align: center;
-
-}
-
-
-.collab-value-header h2 {
-
-    margin:
-        0 0 18px;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            2.3rem,
-            5vw,
-            3.8rem
-        );
-
-    line-height: 1;
-
-}
-
-
-.collab-value-header h2 span {
-
-    display: block;
-
-    color:
-        var(--collab-dark);
-
-}
-
-
-.collab-value-header p {
-
-    max-width: 620px;
-
-    margin:
-        0 auto;
-
-    color:
-        var(--collab-muted);
-
-    line-height: 1.8;
+    padding: 75px 0;
 
 }
 
 
 .collab-value-grid {
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-    gap: 16px;
+    grid-template-columns: 1fr;
 
 }
 
-
-.collab-value-card {
-
-    min-height: 260px;
-
-    padding:
-        30px 25px;
-
-    border:
-        1px solid
-        var(--collab-border);
-
-    border-radius: 16px;
-
-    background:
-        #0a0a0a;
-
-    transition:
-        .3s ease;
-
-}
-
-
-.collab-value-card:hover {
-
-    border-color:
-        var(--collab-border-hover);
-
-    transform:
-        translateY(-4px);
-
-}
-
-
-.collab-value-icon {
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 24px;
-
-    border:
-        1px solid
-        rgba(0,232,148,.18);
-
-    border-radius: 12px;
-
-    background:
-        rgba(0,232,148,.05);
-
-    color:
-        var(--collab-green);
-
-}
-
-
-.collab-value-card > span {
-
-    color:
-        #454545;
-
-    font-size: .65rem;
-
-    font-weight: 900;
-
-}
-
-
-.collab-value-card h3 {
-
-    margin:
-        9px 0 12px;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        1.1rem;
-
-}
-
-
-.collab-value-card p {
-
-    margin: 0;
-
-    color:
-        var(--collab-muted);
-
-    font-size: .87rem;
-
-    line-height: 1.7;
-
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
 
 .collab-cta {
 
-    min-height: 480px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     padding:
-        100px 20px;
-
-    text-align: center;
+        90px 15px;
 
 }
 
 
-.collab-cta-content {
+.collab-cta h2 {
 
-    max-width: 760px;
-
-}
-
-
-.collab-cta-content > span {
-
-    color:
-        var(--collab-green);
-
-    font-size: .65rem;
-
-    font-weight: 900;
-
-    letter-spacing: 2.5px;
+    font-size: 3.2rem;
 
 }
 
 
-.collab-cta-content h2 {
+.collab-cta-btn {
 
-    margin:
-        20px 0;
-
-    color:
-        var(--collab-white);
-
-    font-size:
-        clamp(
-            3rem,
-            7vw,
-            5.7rem
-        );
-
-    line-height: .95;
-
-    letter-spacing: -3px;
+    width: 100%;
 
 }
-
-
-.collab-cta-content h2 strong {
-
-    display: block;
-
-    color:
-        var(--collab-green);
+```
 
 }
-
-
-.collab-cta-content p {
-
-    max-width: 620px;
-
-    margin:
-        0 auto 28px;
-
-    color:
-        var(--collab-muted);
-
-    line-height: 1.8;
-
-}
-
-
-.collab-cta-button {
-
-    min-height: 52px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    padding:
-        0 25px;
-
-    border-radius: 50px;
-
-    background:
-        var(--collab-green);
-
-    color:
-        #000;
-
-    font-size: .78rem;
-
-    font-weight: 900;
-
-    text-decoration: none;
-
-    transition:
-        .25s ease;
-
-}
-
-
-.collab-cta-button:hover {
-
-    background:
-        #fff;
-
-    color:
-        #000;
-
-    transform:
-        translateY(-3px);
-
-}
-
 
 /* =========================================================
-   ANIMACIONES
+VERY SMALL DEVICES
 ========================================================= */
 
-.collab-card-large,
-.collab-feature,
-.collab-small-card,
-.collab-value-card {
+@media (max-width: 400px) {
 
-    opacity: 0;
+```
+.collab-hero h1 {
 
-    transform:
-        translateY(25px);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease,
-        border-color .3s ease;
+    font-size: 2.6rem;
 
 }
 
 
-.collab-card-large.visible,
-.collab-feature.visible,
-.collab-small-card.visible,
-.collab-value-card.visible {
+.collab-intro-title h2 {
 
-    opacity: 1;
-
-    transform:
-        translateY(0);
+    font-size: 2.2rem;
 
 }
 
+
+.collab-main-content h2 {
+
+    font-size: 2.3rem;
+
+}
+
+
+.collab-cta h2 {
+
+    font-size: 2.8rem;
+
+}
+```
+
+}
 
 /* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1050px) {
-
-    .collab-value-grid {
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-    }
-
-}
-
-
-/* =========================================================
-   TABLET / MOBILE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .collab-intro-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-    }
-
-
-    .collab-card-large {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .collab-card-image {
-
-        min-height: 440px;
-
-    }
-
-
-    .collab-feature {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .collab-feature-image {
-
-        min-height: 320px;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .collab-container {
-
-        width:
-            calc(100% - 30px);
-
-    }
-
-
-    .collab-hero {
-
-        min-height: 560px;
-
-        padding:
-            70px 15px 60px;
-
-    }
-
-
-    .collab-hero h1 {
-
-        font-size:
-            clamp(
-                3rem,
-                15vw,
-                4.5rem
-            );
-
-        letter-spacing:
-            -2.5px;
-
-    }
-
-
-    .collab-intro {
-
-        padding:
-            75px 0;
-
-    }
-
-
-    .collab-intro h2 {
-
-        font-size:
-            2.65rem;
-
-    }
-
-
-    .collab-intro-copy {
-
-        padding-left:
-            20px;
-
-    }
-
-
-    .collab-main {
-
-        padding-top:
-            70px;
-
-    }
-
-
-    .collab-card-content {
-
-        padding:
-            38px 25px;
-
-    }
-
-
-    .collab-card-content h2 {
-
-        font-size:
-            2.8rem;
-
-    }
-
-
-    .collab-actions {
-
-        flex-direction:
-            column;
-
-    }
-
-
-    .collab-button {
-
-        width:
-            100%;
-
-    }
-
-
-    .collab-feature {
-
-        margin-bottom:
-            55px;
-
-    }
-
-
-    .collab-feature-info {
-
-        padding:
-            35px 25px;
-
-    }
-
-
-    .collab-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .collab-small-image {
-
-        height:
-            270px;
-
-    }
-
-
-    .collab-small-content {
-
-        padding:
-            30px 25px;
-
-    }
-
-
-    .collab-value {
-
-        margin-top:
-            80px;
-
-        padding:
-            75px 0;
-
-    }
-
-
-    .collab-value-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .collab-value-card {
-
-        min-height:
-            auto;
-
-    }
-
-
-    .collab-cta {
-
-        min-height:
-            430px;
-
-        padding:
-            80px 15px;
-
-    }
-
-
-    .collab-cta-content h2 {
-
-        font-size:
-            3.5rem;
-
-        letter-spacing:
-            -2px;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE SMALL
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .collab-container {
-
-        width:
-            calc(100% - 24px);
-
-    }
-
-
-    .collab-hero {
-
-        min-height:
-            520px;
-
-    }
-
-
-    .collab-eyebrow {
-
-        font-size:
-            .58rem;
-
-        letter-spacing:
-            1.2px;
-
-        padding:
-            7px 11px;
-
-    }
-
-
-    .collab-hero h1 {
-
-        font-size:
-            3rem;
-
-    }
-
-
-    .collab-hero-content > p {
-
-        font-size:
-            .9rem;
-
-    }
-
-
-    .collab-hero-note {
-
-        font-size:
-            .68rem;
-
-    }
-
-
-    .collab-intro {
-
-        padding:
-            60px 0;
-
-    }
-
-
-    .collab-intro h2 {
-
-        font-size:
-            2.3rem;
-
-    }
-
-
-    .collab-card-image {
-
-        min-height:
-            280px;
-
-    }
-
-
-    .collab-card-content h2 {
-
-        font-size:
-            2.35rem;
-
-    }
-
-
-    .collab-small-image {
-
-        height:
-            225px;
-
-    }
-
-
-    .collab-small-content h2 {
-
-        font-size:
-            1.95rem;
-
-    }
-
-
-    .collab-value-header h2 {
-
-        font-size:
-            2.4rem;
-
-    }
-
-
-    .collab-cta-content h2 {
-
-        font-size:
-            3rem;
-
-    }
-
-
-    .collab-cta-button {
-
-        width:
-            100%;
-
-    }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
+ACCESSIBILITY
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .collab-page *,
-    .collab-page *::before,
-    .collab-page *::after {
+```
+.collab-body * {
 
-        animation: none !important;
+    scroll-behavior: auto !important;
 
-        transition: none !important;
+    transition: none !important;
 
-    }
+}
+```
 
 }
