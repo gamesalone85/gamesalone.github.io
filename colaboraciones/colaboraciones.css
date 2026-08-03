@@ -1,47 +1,39 @@
 /* =========================================================
-GAMESALONE18 UNIVERSE
-COLABORACIONES — EXCLUSIVE CSS
-NO DEPENDS ON home/css/styles.css
+   GAMESALONE18 UNIVERSE
+   COLABORACIONES
+   CSS COMPLETAMENTE INDEPENDIENTE
 ========================================================= */
 
+
 /* =========================================================
-VARIABLES
+   VARIABLES
 ========================================================= */
 
 :root {
 
-```
---collab-black: #030303;
+    --collab-bg: #050505;
+    --collab-bg-2: #080808;
+    --collab-panel: #0c0c0c;
+    --collab-panel-2: #101010;
 
---collab-black-2: #070707;
+    --collab-white: #f5f5f5;
+    --collab-text: #c8c8c8;
+    --collab-muted: #858585;
+    --collab-dark: #555555;
 
---collab-black-3: #0c0c0c;
+    --collab-green: #00e894;
+    --collab-green-dark: #00b976;
 
---collab-white: #ffffff;
+    --collab-border: rgba(255,255,255,.08);
+    --collab-border-hover: rgba(0,232,148,.25);
 
---collab-gray: #a7a7a7;
-
---collab-gray-light: #d0d0d0;
-
---collab-gray-dark: #686868;
-
---collab-green: #00ff9c;
-
---collab-green-soft: rgba(0,255,156,.12);
-
---collab-border: rgba(255,255,255,.10);
-
---collab-border-hover: rgba(255,255,255,.24);
-
---collab-radius: 22px;
-
---collab-container: 1180px;
-```
+    --collab-container: 1180px;
 
 }
 
+
 /* =========================================================
-PAGE RESET
+   RESET EXCLUSIVO
 ========================================================= */
 
 .collab-page,
@@ -49,1964 +41,1035 @@ PAGE RESET
 .collab-page *::before,
 .collab-page *::after {
 
-```
-box-sizing: border-box;
-```
+    box-sizing: border-box;
 
 }
 
+
 /* =========================================================
-BODY
-ÚNICAMENTE REGLAS GENERALES NO CONFLICTIVAS
+   PAGE
 ========================================================= */
 
-body {
+.collab-page {
 
-```
-margin: 0;
+    position: relative;
 
-padding: 0;
+    width: 100%;
 
-background: var(--collab-black);
+    min-height: 100vh;
 
-color: var(--collab-white);
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #060606 35%,
+            #080808 100%
+        );
 
-overflow-x: hidden;
-```
+    color: var(--collab-white);
+
+    overflow: hidden;
 
 }
 
+
 /* =========================================================
-BACKGROUND
+   BACKGROUND
 ========================================================= */
 
 .collab-background {
 
-```
-position: fixed;
+    position: fixed;
 
-inset: 0;
+    inset: 0;
 
-z-index: -3;
+    width: 100%;
+    height: 100%;
 
-background-image:
-    url("/home/img/bg-masthead.jpg");
+    background-image:
+        url("/home/img/bg-masthead.jpg");
 
-background-position: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-background-size: cover;
+    opacity: .10;
 
-background-repeat: no-repeat;
+    filter: blur(8px);
 
-filter: blur(18px);
+    transform: scale(1.04);
 
-transform: scale(1.08);
+    pointer-events: none;
 
-opacity: .20;
-
-pointer-events: none;
-```
+    z-index: 0;
 
 }
+
 
 .collab-background-overlay {
 
-```
-position: fixed;
+    position: fixed;
 
-inset: 0;
+    inset: 0;
 
-z-index: -2;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.97) 45%,
+            rgba(0,0,0,1) 100%
+        );
 
-background:
+    pointer-events: none;
 
-    radial-gradient(
-        circle at 50% 20%,
-        rgba(0,255,156,.045),
-        transparent 35%
-    ),
-
-    linear-gradient(
-        180deg,
-        rgba(0,0,0,.90) 0%,
-        rgba(0,0,0,.96) 50%,
-        rgba(0,0,0,.985) 100%
-    );
-
-pointer-events: none;
-```
+    z-index: 1;
 
 }
 
+
 /* =========================================================
-PAGE
+   CONTENIDO
 ========================================================= */
 
-.collab-page {
+.collab-page > *:not(.collab-background):not(.collab-background-overlay) {
 
-```
-position: relative;
+    position: relative;
 
-z-index: 1;
-
-width: 100%;
-
-min-height: 100vh;
-
-padding-top: 90px;
-```
+    z-index: 2;
 
 }
 
+
 /* =========================================================
-CONTAINER
+   CONTAINER
 ========================================================= */
 
 .collab-container {
 
-```
-width: min(
-    calc(100% - 40px),
-    var(--collab-container)
-);
+    width: min(
+        calc(100% - 40px),
+        var(--collab-container)
+    );
 
-margin-left: auto;
-
-margin-right: auto;
-```
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
+
 /* =========================================================
-HERO
+   HERO
 ========================================================= */
 
 .collab-hero {
 
-```
-position: relative;
+    min-height: 610px;
 
-min-height: 680px;
+    display: flex;
 
-display: flex;
+    align-items: center;
 
-align-items: center;
+    justify-content: center;
 
-justify-content: center;
+    padding:
+        90px
+        20px
+        70px;
 
-overflow: hidden;
+    text-align: center;
 
-text-align: center;
-
-border-bottom:
-    1px solid
-    rgba(255,255,255,.07);
-```
-
-}
-
-.collab-hero::before {
-
-```
-content: "";
-
-position: absolute;
-
-inset: 0;
-
-background:
-
-    radial-gradient(
-        circle at 50% 40%,
-        rgba(0,255,156,.10),
-        transparent 32%
-    ),
-
-    linear-gradient(
-        180deg,
-        transparent,
-        rgba(0,0,0,.40)
-    );
-
-pointer-events: none;
-```
+    border-bottom:
+        1px solid
+        var(--collab-border);
 
 }
 
-.collab-hero-glow {
-
-```
-position: absolute;
-
-width: 600px;
-
-height: 600px;
-
-top: 50%;
-
-left: 50%;
-
-transform:
-    translate(-50%,-50%);
-
-border-radius: 50%;
-
-background:
-    rgba(0,255,156,.045);
-
-filter: blur(100px);
-
-pointer-events: none;
-```
-
-}
 
 .collab-hero-content {
 
-```
-position: relative;
+    width: 100%;
 
-z-index: 2;
+    max-width: 850px;
 
-width: 100%;
-
-max-width: 900px;
-
-margin: auto;
-
-padding:
-    100px 0 80px;
-```
+    margin: 0 auto;
 
 }
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .collab-eyebrow {
 
-```
-display: inline-flex;
+    display: inline-flex;
 
-align-items: center;
+    align-items: center;
 
-justify-content: center;
+    gap: 9px;
 
-gap: 9px;
+    padding:
+        8px 15px;
 
-padding:
-    9px 17px;
+    border:
+        1px solid
+        rgba(0,232,148,.18);
 
-border:
-    1px solid
-    rgba(0,255,156,.18);
+    border-radius: 50px;
 
-border-radius: 999px;
+    background:
+        rgba(0,232,148,.035);
 
-background:
-    rgba(0,255,156,.055);
+    color:
+        var(--collab-green);
 
-color:
-    var(--collab-green);
+    font-size: .68rem;
 
-font-size: .72rem;
+    font-weight: 800;
 
-font-weight: 800;
-
-letter-spacing: 2px;
-```
+    letter-spacing: 2px;
 
 }
+
 
 .collab-eyebrow i {
 
-```
-font-size: .8rem;
-```
+    font-size: .72rem;
 
 }
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .collab-hero h1 {
 
-```
-margin:
-    28px 0 24px;
+    margin:
+        28px 0 24px;
 
-font-size:
-    clamp(
-        3.2rem,
-        8vw,
-        6.8rem
-    );
+    color:
+        var(--collab-white);
 
-line-height: .95;
+    font-size:
+        clamp(
+            3.2rem,
+            8vw,
+            6.4rem
+        );
 
-letter-spacing: -4px;
+    line-height: .92;
 
-font-weight: 900;
-```
+    letter-spacing: -4px;
+
+    font-weight: 900;
 
 }
+
 
 .collab-hero h1 strong {
 
-```
-display: block;
+    display: block;
 
-color: transparent;
+    color:
+        var(--collab-green);
 
-background:
-
-    linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #00ff9c 100%
-    );
-
--webkit-background-clip: text;
-
-background-clip: text;
-```
+    font-weight: 900;
 
 }
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
 
 .collab-hero-content > p {
 
-```
-max-width: 720px;
+    max-width: 650px;
 
-margin:
-    0 auto;
+    margin:
+        0 auto;
 
-color:
-    var(--collab-gray-light);
+    color:
+        var(--collab-text);
 
-font-size:
-    clamp(
-        1rem,
-        2vw,
-        1.2rem
-    );
+    font-size:
+        clamp(
+            .95rem,
+            2vw,
+            1.15rem
+        );
 
-line-height: 1.8;
-```
+    line-height: 1.8;
 
 }
+
 
 .collab-hero-line {
 
-```
-width: 80px;
+    width: 55px;
 
-height: 2px;
+    height: 2px;
 
-margin:
-    32px auto 20px;
+    margin:
+        30px auto 18px;
 
-background:
-    var(--collab-green);
-
-box-shadow:
-    0 0 20px
-    rgba(0,255,156,.5);
-```
+    background:
+        var(--collab-green);
 
 }
+
 
 .collab-hero-note {
 
-```
-color:
-    var(--collab-gray-dark);
+    color:
+        var(--collab-muted);
 
-font-size: .82rem;
+    font-size: .78rem;
 
-letter-spacing: 1px;
-```
+    letter-spacing: 1px;
 
 }
 
+
 /* =========================================================
-INTRO
+   INTRO
 ========================================================= */
 
 .collab-intro {
 
-```
-padding:
-    120px 0;
+    padding:
+        105px 0;
 
-border-bottom:
-    1px solid
-    rgba(255,255,255,.07);
-```
+    border-bottom:
+        1px solid
+        var(--collab-border);
 
 }
+
 
 .collab-intro-grid {
 
-```
-display: grid;
+    display: grid;
 
-grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-gap: 100px;
+    gap: 90px;
 
-align-items: center;
-```
+    align-items: center;
 
 }
+
 
 .collab-section-label {
 
-```
-display: inline-block;
+    display: inline-block;
 
-margin-bottom: 18px;
+    margin-bottom: 18px;
 
-color:
-    var(--collab-green);
+    color:
+        var(--collab-green);
 
-font-size: .70rem;
+    font-size: .65rem;
 
-font-weight: 900;
+    font-weight: 900;
 
-letter-spacing: 2.5px;
-```
+    letter-spacing: 2.5px;
 
 }
+
 
 .collab-intro h2 {
 
-```
-max-width: 580px;
+    max-width: 580px;
 
-margin: 0;
+    margin: 0;
 
-font-size:
-    clamp(
-        2.4rem,
-        5vw,
-        4.3rem
-    );
+    color:
+        var(--collab-white);
 
-line-height: 1.03;
+    font-size:
+        clamp(
+            2.3rem,
+            5vw,
+            4rem
+        );
 
-letter-spacing: -2px;
-```
+    line-height: 1.02;
+
+    letter-spacing: -2px;
 
 }
+
 
 .collab-intro h2 span {
 
-```
-display: block;
+    display: block;
 
-color:
-    var(--collab-gray-dark);
-```
+    color:
+        var(--collab-dark);
 
 }
+
 
 .collab-intro-copy {
 
-```
-border-left:
-    1px solid
-    rgba(0,255,156,.25);
+    padding-left: 30px;
 
-padding-left: 35px;
-```
+    border-left:
+        2px solid
+        rgba(0,232,148,.25);
 
 }
+
 
 .collab-intro-copy p {
 
-```
-margin:
-    0 0 22px;
+    margin:
+        0 0 20px;
 
-color:
-    var(--collab-gray);
+    color:
+        var(--collab-text);
 
-font-size: 1rem;
+    font-size: .98rem;
 
-line-height: 1.9;
-```
+    line-height: 1.85;
 
 }
+
 
 .collab-intro-copy p:last-child {
 
-```
-margin-bottom: 0;
-```
+    margin-bottom: 0;
 
 }
 
+
 /* =========================================================
-MAIN
+   MAIN
 ========================================================= */
 
 .collab-main {
 
-```
-padding:
-    100px 0 0;
-```
+    padding:
+        90px 0 0;
 
 }
 
+
 /* =========================================================
-LARGE CARD
+   LARGE CARD
 ========================================================= */
 
 .collab-card-large {
 
-```
-display: grid;
+    display: grid;
 
-grid-template-columns:
-    1.05fr
-    .95fr;
+    grid-template-columns:
+        1.05fr
+        .95fr;
 
-min-height: 620px;
+    min-height: 610px;
 
-overflow: hidden;
+    overflow: hidden;
 
-border:
-    1px solid
-    var(--collab-border);
+    border:
+        1px solid
+        var(--collab-border);
 
-border-radius:
-    var(--collab-radius);
+    border-radius: 18px;
 
-background:
-    rgba(8,8,8,.78);
+    background:
+        rgba(10,10,10,.96);
 
-box-shadow:
-    0 30px 100px
-    rgba(0,0,0,.45);
-
-opacity: 0;
-
-transform:
-    translateY(35px);
-
-transition:
-    opacity .8s ease,
-    transform .8s ease,
-    border-color .3s ease;
-```
+    transition:
+        border-color .3s ease,
+        transform .3s ease;
 
 }
 
-.collab-card-large.visible {
-
-```
-opacity: 1;
-
-transform:
-    translateY(0);
-```
-
-}
 
 .collab-card-large:hover {
 
-```
-border-color:
-    var(--collab-border-hover);
-```
+    border-color:
+        var(--collab-border-hover);
+
+    transform:
+        translateY(-3px);
 
 }
 
+
 /* =========================================================
-LARGE IMAGE
+   LARGE IMAGE
 ========================================================= */
 
 .collab-card-image {
 
-```
-position: relative;
+    position: relative;
 
-min-height: 620px;
+    min-height: 610px;
 
-overflow: hidden;
-```
+    overflow: hidden;
+
+    background:
+        #050505;
 
 }
+
 
 .collab-card-image img {
 
-```
-width: 100%;
+    width: 100%;
+    height: 100%;
 
-height: 100%;
+    display: block;
 
-object-fit: cover;
+    object-fit: cover;
 
-transition:
-    transform .8s ease;
-```
+    transition:
+        transform .6s ease;
 
 }
+
 
 .collab-card-large:hover
 .collab-card-image img {
 
-```
-transform:
-    scale(1.045);
-```
+    transform:
+        scale(1.035);
 
 }
+
 
 .collab-image-overlay {
 
-```
-position: absolute;
+    position: absolute;
 
-inset: 0;
+    inset: 0;
 
-background:
-
-    linear-gradient(
-        90deg,
-        transparent 45%,
-        rgba(0,0,0,.78)
-    ),
-
-    linear-gradient(
-        0deg,
-        rgba(0,0,0,.60),
-        transparent 40%
-    );
-```
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0) 40%,
+            rgba(0,0,0,.72) 100%
+        );
 
 }
+
 
 .collab-number {
 
-```
-position: absolute;
+    position: absolute;
 
-top: 25px;
+    top: 22px;
+    left: 22px;
 
-left: 25px;
+    width: 46px;
+    height: 46px;
 
-display: flex;
+    display: flex;
 
-align-items: center;
+    align-items: center;
+    justify-content: center;
 
-justify-content: center;
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
-width: 52px;
+    border-radius: 50%;
 
-height: 52px;
+    background:
+        rgba(0,0,0,.65);
 
-border:
-    1px solid
-    rgba(255,255,255,.18);
+    color:
+        #fff;
 
-border-radius: 50%;
+    font-size: .75rem;
 
-background:
-    rgba(0,0,0,.55);
-
-backdrop-filter:
-    blur(12px);
-
-color:
-    #fff;
-
-font-size: .85rem;
-
-font-weight: 800;
-```
+    font-weight: 800;
 
 }
+
 
 .collab-status {
 
-```
-position: absolute;
+    position: absolute;
 
-left: 25px;
+    left: 22px;
+    bottom: 22px;
 
-bottom: 25px;
+    display: inline-flex;
 
-display: inline-flex;
+    align-items: center;
 
-align-items: center;
+    gap: 8px;
 
-gap: 8px;
+    padding:
+        8px 12px;
 
-padding:
-    9px 14px;
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
-border:
-    1px solid
-    rgba(0,255,156,.22);
+    border-radius: 50px;
 
-border-radius: 999px;
+    background:
+        rgba(0,0,0,.72);
 
-background:
-    rgba(0,0,0,.65);
+    color:
+        #ddd;
 
-backdrop-filter:
-    blur(10px);
+    font-size: .58rem;
 
-color:
-    #fff;
+    font-weight: 800;
 
-font-size: .65rem;
-
-font-weight: 800;
-
-letter-spacing: 1.2px;
-```
+    letter-spacing: 1px;
 
 }
+
 
 .collab-status i {
 
-```
-color:
-    var(--collab-green);
+    color:
+        var(--collab-green);
 
-font-size: .45rem;
-```
+    font-size: .4rem;
 
 }
 
+
 /* =========================================================
-LARGE CONTENT
+   LARGE CONTENT
 ========================================================= */
 
 .collab-card-content {
 
-```
-display: flex;
+    display: flex;
 
-flex-direction: column;
+    flex-direction: column;
 
-justify-content: center;
-
-padding:
-    65px;
-```
-
-}
-
-.collab-card-label {
-
-```
-display: block;
-
-margin-bottom: 18px;
-
-color:
-    var(--collab-green);
-
-font-size: .68rem;
-
-font-weight: 900;
-
-letter-spacing: 2px;
-```
-
-}
-
-.collab-card-content h2 {
-
-```
-margin:
-    0 0 25px;
-
-font-size:
-    clamp(
-        2.5rem,
-        5vw,
-        4.5rem
-    );
-
-line-height: .98;
-
-letter-spacing: -2px;
-```
-
-}
-
-.collab-card-content p {
-
-```
-margin:
-    0 0 18px;
-
-color:
-    var(--collab-gray);
-
-line-height: 1.8;
-```
-
-}
-
-.collab-card-content .collab-lead {
-
-```
-color:
-    #e5e5e5;
-
-font-size: 1.08rem;
-```
-
-}
-
-.collab-actions {
-
-```
-display: flex;
-
-flex-wrap: wrap;
-
-gap: 12px;
-
-margin-top: 22px;
-```
-
-}
-
-.collab-button {
-
-```
-display: inline-flex;
-
-align-items: center;
-
-justify-content: center;
-
-gap: 9px;
-
-min-height: 48px;
-
-padding:
-    0 20px;
-
-border-radius: 999px;
-
-font-size: .82rem;
-
-font-weight: 800;
-
-transition:
-    transform .25s ease,
-    background .25s ease,
-    border-color .25s ease;
-```
-
-}
-
-.collab-button:hover {
-
-```
-transform:
-    translateY(-3px);
-```
-
-}
-
-.collab-button-primary {
-
-```
-background:
-    var(--collab-green);
-
-color:
-    #000;
-```
-
-}
-
-.collab-button-primary:hover {
-
-```
-background:
-    #ffffff;
-
-color:
-    #000;
-```
-
-}
-
-.collab-button-secondary {
-
-```
-border:
-    1px solid
-    rgba(255,255,255,.16);
-
-background:
-    rgba(255,255,255,.04);
-
-color:
-    #fff;
-```
-
-}
-
-.collab-button-secondary:hover {
-
-```
-border-color:
-    rgba(255,255,255,.4);
-
-color:
-    #fff;
-```
-
-}
-
-/* =========================================================
-FEATURE
-========================================================= */
-
-.collab-feature {
-
-```
-display: grid;
-
-grid-template-columns:
-    1.6fr
-    .8fr;
-
-margin:
-    28px 0 80px;
-
-min-height: 360px;
-
-overflow: hidden;
-
-border:
-    1px solid
-    var(--collab-border);
-
-border-radius:
-    var(--collab-radius);
-
-background:
-    rgba(255,255,255,.025);
-
-opacity: 0;
-
-transform:
-    translateY(35px);
-
-transition:
-    opacity .8s ease,
-    transform .8s ease,
-    border-color .3s ease;
-```
-
-}
-
-.collab-feature.visible {
-
-```
-opacity: 1;
-
-transform:
-    translateY(0);
-```
-
-}
-
-.collab-feature:hover {
-
-```
-border-color:
-    var(--collab-border-hover);
-```
-
-}
-
-.collab-feature-image {
-
-```
-min-height: 360px;
-
-overflow: hidden;
-```
-
-}
-
-.collab-feature-image img {
-
-```
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-transition:
-    transform .7s ease;
-```
-
-}
-
-.collab-feature:hover
-.collab-feature-image img {
-
-```
-transform:
-    scale(1.04);
-```
-
-}
-
-.collab-feature-info {
-
-```
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-padding:
-    50px;
-```
-
-}
-
-.collab-feature-info > span {
-
-```
-color:
-    var(--collab-green);
-
-font-size: .68rem;
-
-font-weight: 900;
-
-letter-spacing: 2px;
-```
-
-}
-
-.collab-feature-info h3 {
-
-```
-margin:
-    15px 0;
-
-font-size:
-    clamp(
-        2rem,
-        4vw,
-        3.2rem
-    );
-```
-
-}
-
-.collab-feature-info p {
-
-```
-margin: 0;
-
-color:
-    var(--collab-gray);
-
-line-height: 1.8;
-```
-
-}
-
-/* =========================================================
-SMALL GRID
-========================================================= */
-
-.collab-grid {
-
-```
-display: grid;
-
-grid-template-columns:
-    repeat(2, minmax(0,1fr));
-
-gap: 25px;
-```
-
-}
-
-/* =========================================================
-SMALL CARDS
-========================================================= */
-
-.collab-small-card {
-
-```
-overflow: hidden;
-
-border:
-    1px solid
-    var(--collab-border);
-
-border-radius:
-    var(--collab-radius);
-
-background:
-    rgba(8,8,8,.75);
-
-opacity: 0;
-
-transform:
-    translateY(35px);
-
-transition:
-    opacity .8s ease,
-    transform .8s ease,
-    border-color .3s ease;
-```
-
-}
-
-.collab-small-card.visible {
-
-```
-opacity: 1;
-
-transform:
-    translateY(0);
-```
-
-}
-
-.collab-small-card:hover {
-
-```
-border-color:
-    var(--collab-border-hover);
-```
-
-}
-
-.collab-small-image {
-
-```
-position: relative;
-
-height: 330px;
-
-overflow: hidden;
-```
-
-}
-
-.collab-small-image img {
-
-```
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-transition:
-    transform .7s ease;
-```
-
-}
-
-.collab-small-card:hover
-.collab-small-image img {
-
-```
-transform:
-    scale(1.05);
-```
-
-}
-
-.collab-small-image span {
-
-```
-position: absolute;
-
-top: 20px;
-
-left: 20px;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-width: 48px;
-
-height: 48px;
-
-border:
-    1px solid
-    rgba(255,255,255,.2);
-
-border-radius: 50%;
-
-background:
-    rgba(0,0,0,.60);
-
-backdrop-filter:
-    blur(10px);
-
-font-size: .8rem;
-
-font-weight: 800;
-```
-
-}
-
-.collab-small-content {
-
-```
-padding:
-    38px;
-```
-
-}
-
-.collab-small-content h2 {
-
-```
-margin:
-    0 0 18px;
-
-font-size:
-    clamp(
-        1.8rem,
-        3vw,
-        2.7rem
-    );
-
-line-height: 1.05;
-
-letter-spacing: -1px;
-```
-
-}
-
-.collab-small-content h2 span {
-
-```
-display: block;
-
-color:
-    var(--collab-gray-dark);
-```
-
-}
-
-.collab-small-content p {
-
-```
-margin:
-    0 0 17px;
-
-color:
-    var(--collab-gray);
-
-line-height: 1.8;
-```
-
-}
-
-.collab-text-link {
-
-```
-display: inline-flex;
-
-align-items: center;
-
-gap: 9px;
-
-margin-top: 8px;
-
-color:
-    #fff;
-
-font-size: .82rem;
-
-font-weight: 800;
-
-transition:
-    color .25s ease,
-    gap .25s ease;
-```
-
-}
-
-.collab-text-link:hover {
-
-```
-color:
-    var(--collab-green);
-
-gap: 14px;
-```
-
-}
-
-/* =========================================================
-VALUE
-========================================================= */
-
-.collab-value {
-
-```
-margin-top:
-    120px;
-
-padding:
-    110px 0;
-
-border-top:
-    1px solid
-    rgba(255,255,255,.07);
-
-border-bottom:
-    1px solid
-    rgba(255,255,255,.07);
-```
-
-}
-
-.collab-value-header {
-
-```
-max-width: 780px;
-
-margin:
-    0 auto 60px;
-
-text-align: center;
-```
-
-}
-
-.collab-value-header h2 {
-
-```
-margin:
-    0 0 20px;
-
-font-size:
-    clamp(
-        2.3rem,
-        5vw,
-        4rem
-    );
-
-line-height: 1;
-
-letter-spacing: -2px;
-```
-
-}
-
-.collab-value-header h2 span {
-
-```
-display: block;
-
-color:
-    var(--collab-gray-dark);
-```
-
-}
-
-.collab-value-header p {
-
-```
-max-width: 650px;
-
-margin:
-    0 auto;
-
-color:
-    var(--collab-gray);
-
-line-height: 1.8;
-```
-
-}
-
-.collab-value-grid {
-
-```
-display: grid;
-
-grid-template-columns:
-    repeat(4,minmax(0,1fr));
-
-gap: 18px;
-```
-
-}
-
-.collab-value-card {
-
-```
-position: relative;
-
-padding:
-    35px 28px;
-
-min-height: 280px;
-
-border:
-    1px solid
-    var(--collab-border);
-
-border-radius:
-    18px;
-
-background:
-    rgba(255,255,255,.025);
-
-opacity: 0;
-
-transform:
-    translateY(30px);
-
-transition:
-    opacity .7s ease,
-    transform .7s ease,
-    border-color .3s ease,
-    background .3s ease;
-```
-
-}
-
-.collab-value-card.visible {
-
-```
-opacity: 1;
-
-transform:
-    translateY(0);
-```
-
-}
-
-.collab-value-card:hover {
-
-```
-border-color:
-    rgba(0,255,156,.28);
-
-background:
-    rgba(0,255,156,.035);
-
-transform:
-    translateY(-6px);
-```
-
-}
-
-.collab-value-icon {
-
-```
-width: 52px;
-
-height: 52px;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-margin-bottom: 28px;
-
-border:
-    1px solid
-    rgba(0,255,156,.20);
-
-border-radius: 14px;
-
-background:
-    rgba(0,255,156,.07);
-
-color:
-    var(--collab-green);
-
-font-size: 1.15rem;
-```
-
-}
-
-.collab-value-card > span {
-
-```
-color:
-    #444;
-
-font-size: .7rem;
-
-font-weight: 900;
-
-letter-spacing: 1px;
-```
-
-}
-
-.collab-value-card h3 {
-
-```
-margin:
-    10px 0 12px;
-
-font-size: 1.2rem;
-```
-
-}
-
-.collab-value-card p {
-
-```
-margin: 0;
-
-color:
-    var(--collab-gray-dark);
-
-font-size: .9rem;
-
-line-height: 1.7;
-```
-
-}
-
-/* =========================================================
-CTA
-========================================================= */
-
-.collab-cta {
-
-```
-position: relative;
-
-min-height: 520px;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-padding:
-    100px 20px;
-
-text-align: center;
-
-overflow: hidden;
-```
-
-}
-
-.collab-cta::before {
-
-```
-content: "";
-
-position: absolute;
-
-inset: 0;
-
-background:
-
-    radial-gradient(
-        circle at center,
-        rgba(0,255,156,.09),
-        transparent 40%
-    );
-```
-
-}
-
-.collab-cta-glow {
-
-```
-position: absolute;
-
-width: 500px;
-
-height: 500px;
-
-border-radius: 50%;
-
-background:
-    rgba(0,255,156,.045);
-
-filter:
-    blur(100px);
-```
-
-}
-
-.collab-cta-content {
-
-```
-position: relative;
-
-z-index: 2;
-
-max-width: 800px;
-```
-
-}
-
-.collab-cta-content > span {
-
-```
-color:
-    var(--collab-green);
-
-font-size: .7rem;
-
-font-weight: 900;
-
-letter-spacing: 2.5px;
-```
-
-}
-
-.collab-cta-content h2 {
-
-```
-margin:
-    20px 0;
-
-font-size:
-    clamp(
-        3rem,
-        7vw,
-        6rem
-    );
-
-line-height: .95;
-
-letter-spacing: -3px;
-```
-
-}
-
-.collab-cta-content h2 strong {
-
-```
-display: block;
-
-color: transparent;
-
-background:
-    linear-gradient(
-        90deg,
-        #fff,
-        var(--collab-green)
-    );
-
--webkit-background-clip: text;
-
-background-clip: text;
-```
-
-}
-
-.collab-cta-content p {
-
-```
-max-width: 650px;
-
-margin:
-    0 auto 30px;
-
-color:
-    var(--collab-gray);
-
-line-height: 1.8;
-```
-
-}
-
-.collab-cta-button {
-
-```
-display: inline-flex;
-
-align-items: center;
-
-justify-content: center;
-
-gap: 10px;
-
-min-height: 54px;
-
-padding:
-    0 28px;
-
-border-radius: 999px;
-
-background:
-    var(--collab-green);
-
-color:
-    #000;
-
-font-size: .85rem;
-
-font-weight: 900;
-
-transition:
-    transform .25s ease,
-    background .25s ease,
-    box-shadow .25s ease;
-```
-
-}
-
-.collab-cta-button:hover {
-
-```
-transform:
-    translateY(-4px);
-
-background:
-    #fff;
-
-color:
-    #000;
-
-box-shadow:
-    0 15px 40px
-    rgba(0,255,156,.18);
-```
-
-}
-
-/* =========================================================
-MOBILE / TABLET
-========================================================= */
-
-@media (max-width: 1050px) {
-
-```
-.collab-value-grid {
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-}
-```
-
-}
-
-@media (max-width: 900px) {
-
-```
-.collab-page {
-
-    padding-top: 75px;
-
-}
-
-
-.collab-intro-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-}
-
-
-.collab-card-large {
-
-    grid-template-columns: 1fr;
-
-}
-
-
-.collab-card-image {
-
-    min-height: 450px;
-
-}
-
-
-.collab-card-content {
-
-    padding: 45px;
-
-}
-
-
-.collab-feature {
-
-    grid-template-columns: 1fr;
-
-}
-
-
-.collab-feature-image {
-
-    min-height: 350px;
-
-}
-
-
-.collab-feature-info {
-
-    padding: 40px;
-
-}
-```
-
-}
-
-@media (max-width: 700px) {
-
-```
-.collab-container {
-
-    width:
-        calc(100% - 30px);
-
-}
-
-
-.collab-hero {
-
-    min-height: 590px;
-
-}
-
-
-.collab-hero-content {
+    justify-content: center;
 
     padding:
-        80px 0 60px;
-
-}
-
-
-.collab-hero h1 {
-
-    font-size:
-        clamp(
-            3rem,
-            15vw,
-            4.8rem
-        );
-
-    letter-spacing:
-        -2.5px;
-
-}
-
-
-.collab-intro {
-
-    padding:
-        80px 0;
-
-}
-
-
-.collab-intro h2 {
-
-    font-size:
-        2.7rem;
-
-}
-
-
-.collab-intro-copy {
-
-    padding-left:
-        22px;
-
-}
-
-
-.collab-main {
-
-    padding-top:
-        70px;
-
-}
-
-
-.collab-card-image {
-
-    min-height:
-        350px;
-
-}
-
-
-.collab-card-content {
-
-    padding:
-        35px 25px;
-
-}
-
-
-.collab-card-content h2 {
-
-    font-size:
-        2.8rem;
-
-}
-
-
-.collab-feature {
-
-    margin-bottom:
         60px;
 
 }
 
 
+.collab-card-label {
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    color:
+        var(--collab-green);
+
+    font-size: .62rem;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.collab-card-content h2 {
+
+    margin:
+        0 0 22px;
+
+    color:
+        var(--collab-white);
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4.3rem
+        );
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+
+}
+
+
+.collab-card-content p {
+
+    margin:
+        0 0 17px;
+
+    color:
+        var(--collab-muted);
+
+    line-height: 1.8;
+
+}
+
+
+.collab-card-content .collab-lead {
+
+    color:
+        #d6d6d6;
+
+    font-size:
+        1.03rem;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.collab-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+
+.collab-button {
+
+    min-height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        0 18px;
+
+    border-radius: 50px;
+
+    font-size: .76rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.collab-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.collab-button-primary {
+
+    background:
+        var(--collab-green);
+
+    color:
+        #000;
+
+}
+
+
+.collab-button-primary:hover {
+
+    background:
+        #fff;
+
+    color:
+        #000;
+
+}
+
+
+.collab-button-secondary {
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #fff;
+
+}
+
+
+.collab-button-secondary:hover {
+
+    border-color:
+        rgba(255,255,255,.35);
+
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.collab-feature {
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        .8fr;
+
+    min-height: 340px;
+
+    margin:
+        24px 0 70px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--collab-border);
+
+    border-radius: 18px;
+
+    background:
+        #0a0a0a;
+
+    transition:
+        border-color .3s ease;
+
+}
+
+
+.collab-feature:hover {
+
+    border-color:
+        var(--collab-border-hover);
+
+}
+
+
 .collab-feature-image {
 
-    min-height:
-        260px;
+    min-height: 340px;
+
+    overflow: hidden;
+
+}
+
+
+.collab-feature-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.collab-feature:hover
+.collab-feature-image img {
+
+    transform:
+        scale(1.035);
 
 }
 
 
 .collab-feature-info {
 
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
     padding:
-        32px 25px;
+        45px;
 
 }
 
 
+.collab-feature-info > span {
+
+    color:
+        var(--collab-green);
+
+    font-size: .62rem;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.collab-feature-info h3 {
+
+    margin:
+        14px 0;
+
+    color:
+        var(--collab-white);
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.1rem
+        );
+
+}
+
+
+.collab-feature-info p {
+
+    margin: 0;
+
+    color:
+        var(--collab-muted);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   SMALL GRID
+========================================================= */
+
 .collab-grid {
 
+    display: grid;
+
     grid-template-columns:
-        1fr;
+        repeat(2,minmax(0,1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =========================================================
+   SMALL CARD
+========================================================= */
+
+.collab-small-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--collab-border);
+
+    border-radius: 18px;
+
+    background:
+        #0a0a0a;
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease;
+
+}
+
+
+.collab-small-card:hover {
+
+    border-color:
+        var(--collab-border-hover);
+
+    transform:
+        translateY(-3px);
 
 }
 
 
 .collab-small-image {
 
-    height:
-        280px;
+    position: relative;
+
+    height: 310px;
+
+    overflow: hidden;
+
+}
+
+
+.collab-small-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.collab-small-card:hover
+.collab-small-image img {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+.collab-small-image span {
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.70);
+
+    color:
+        #fff;
+
+    font-size: .7rem;
+
+    font-weight: 800;
 
 }
 
@@ -2014,301 +1077,857 @@ MOBILE / TABLET
 .collab-small-content {
 
     padding:
-        30px 25px;
-
-}
-
-
-.collab-value {
-
-    margin-top:
-        80px;
-
-    padding:
-        80px 0;
-
-}
-
-
-.collab-value-grid {
-
-    grid-template-columns:
-        1fr;
-
-}
-
-
-.collab-value-card {
-
-    min-height:
-        auto;
-
-}
-
-
-.collab-cta {
-
-    min-height:
-        450px;
-
-    padding:
-        80px 15px;
-
-}
-
-
-.collab-cta-content h2 {
-
-    font-size:
-        3.6rem;
-
-    letter-spacing:
-        -2px;
-
-}
-```
-
-}
-
-@media (max-width: 480px) {
-
-```
-.collab-container {
-
-    width:
-        calc(100% - 24px);
-
-}
-
-
-.collab-page {
-
-    padding-top:
-        70px;
-
-}
-
-
-.collab-eyebrow {
-
-    font-size:
-        .62rem;
-
-    letter-spacing:
-        1.4px;
-
-    padding:
-        8px 12px;
-
-}
-
-
-.collab-hero {
-
-    min-height:
-        550px;
-
-}
-
-
-.collab-hero h1 {
-
-    margin-top:
-        22px;
-
-    font-size:
-        3rem;
-
-    letter-spacing:
-        -2px;
-
-}
-
-
-.collab-hero-content > p {
-
-    font-size:
-        .95rem;
-
-}
-
-
-.collab-hero-note {
-
-    font-size:
-        .72rem;
-
-}
-
-
-.collab-intro {
-
-    padding:
-        65px 0;
-
-}
-
-
-.collab-intro h2 {
-
-    font-size:
-        2.35rem;
-
-}
-
-
-.collab-intro-copy p {
-
-    font-size:
-        .92rem;
-
-}
-
-
-.collab-card-image {
-
-    min-height:
-        280px;
-
-}
-
-
-.collab-number {
-
-    top:
-        15px;
-
-    left:
-        15px;
-
-    width:
-        44px;
-
-    height:
-        44px;
-
-}
-
-
-.collab-status {
-
-    left:
-        15px;
-
-    bottom:
-        15px;
-
-    font-size:
-        .55rem;
-
-}
-
-
-.collab-card-content h2 {
-
-    font-size:
-        2.35rem;
-
-}
-
-
-.collab-card-content p {
-
-    font-size:
-        .9rem;
-
-}
-
-
-.collab-actions {
-
-    flex-direction:
-        column;
-
-}
-
-
-.collab-button {
-
-    width:
-        100%;
-
-}
-
-
-.collab-small-image {
-
-    height:
-        230px;
+        34px;
 
 }
 
 
 .collab-small-content h2 {
 
+    margin:
+        0 0 18px;
+
+    color:
+        var(--collab-white);
+
     font-size:
-        2rem;
+        clamp(
+            1.8rem,
+            3vw,
+            2.6rem
+        );
+
+    line-height: 1.04;
+
+}
+
+
+.collab-small-content h2 span {
+
+    display: block;
+
+    color:
+        var(--collab-dark);
+
+}
+
+
+.collab-small-content p {
+
+    margin:
+        0 0 16px;
+
+    color:
+        var(--collab-muted);
+
+    line-height: 1.8;
+
+}
+
+
+.collab-text-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 6px;
+
+    color:
+        #fff;
+
+    font-size: .76rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.collab-text-link:hover {
+
+    color:
+        var(--collab-green);
+
+    gap: 12px;
+
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.collab-value {
+
+    margin-top:
+        110px;
+
+    padding:
+        100px 0;
+
+    border-top:
+        1px solid
+        var(--collab-border);
+
+    border-bottom:
+        1px solid
+        var(--collab-border);
+
+}
+
+
+.collab-value-header {
+
+    max-width: 750px;
+
+    margin:
+        0 auto 55px;
+
+    text-align: center;
 
 }
 
 
 .collab-value-header h2 {
 
+    margin:
+        0 0 18px;
+
+    color:
+        var(--collab-white);
+
     font-size:
-        2.5rem;
+        clamp(
+            2.3rem,
+            5vw,
+            3.8rem
+        );
+
+    line-height: 1;
+
+}
+
+
+.collab-value-header h2 span {
+
+    display: block;
+
+    color:
+        var(--collab-dark);
+
+}
+
+
+.collab-value-header p {
+
+    max-width: 620px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--collab-muted);
+
+    line-height: 1.8;
+
+}
+
+
+.collab-value-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap: 16px;
+
+}
+
+
+.collab-value-card {
+
+    min-height: 260px;
+
+    padding:
+        30px 25px;
+
+    border:
+        1px solid
+        var(--collab-border);
+
+    border-radius: 16px;
+
+    background:
+        #0a0a0a;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.collab-value-card:hover {
+
+    border-color:
+        var(--collab-border-hover);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.collab-value-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border:
+        1px solid
+        rgba(0,232,148,.18);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0,232,148,.05);
+
+    color:
+        var(--collab-green);
+
+}
+
+
+.collab-value-card > span {
+
+    color:
+        #454545;
+
+    font-size: .65rem;
+
+    font-weight: 900;
+
+}
+
+
+.collab-value-card h3 {
+
+    margin:
+        9px 0 12px;
+
+    color:
+        var(--collab-white);
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.collab-value-card p {
+
+    margin: 0;
+
+    color:
+        var(--collab-muted);
+
+    font-size: .87rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.collab-cta {
+
+    min-height: 480px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 20px;
+
+    text-align: center;
+
+}
+
+
+.collab-cta-content {
+
+    max-width: 760px;
+
+}
+
+
+.collab-cta-content > span {
+
+    color:
+        var(--collab-green);
+
+    font-size: .65rem;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
 
 }
 
 
 .collab-cta-content h2 {
 
+    margin:
+        20px 0;
+
+    color:
+        var(--collab-white);
+
     font-size:
-        3rem;
+        clamp(
+            3rem,
+            7vw,
+            5.7rem
+        );
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+}
+
+
+.collab-cta-content h2 strong {
+
+    display: block;
+
+    color:
+        var(--collab-green);
 
 }
 
 
 .collab-cta-content p {
 
-    font-size:
-        .9rem;
+    max-width: 620px;
+
+    margin:
+        0 auto 28px;
+
+    color:
+        var(--collab-muted);
+
+    line-height: 1.8;
 
 }
 
 
 .collab-cta-button {
 
-    width:
-        100%;
+    min-height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        0 25px;
+
+    border-radius: 50px;
+
+    background:
+        var(--collab-green);
+
+    color:
+        #000;
+
+    font-size: .78rem;
+
+    font-weight: 900;
+
+    text-decoration: none;
+
+    transition:
+        .25s ease;
 
 }
-```
+
+
+.collab-cta-button:hover {
+
+    background:
+        #fff;
+
+    color:
+        #000;
+
+    transform:
+        translateY(-3px);
 
 }
+
 
 /* =========================================================
-REDUCED MOTION
+   ANIMACIONES
+========================================================= */
+
+.collab-card-large,
+.collab-feature,
+.collab-small-card,
+.collab-value-card {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease,
+        border-color .3s ease;
+
+}
+
+
+.collab-card-large.visible,
+.collab-feature.visible,
+.collab-small-card.visible,
+.collab-value-card.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .collab-value-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .collab-intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .collab-card-large {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .collab-card-image {
+
+        min-height: 440px;
+
+    }
+
+
+    .collab-feature {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .collab-feature-image {
+
+        min-height: 320px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .collab-container {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .collab-hero {
+
+        min-height: 560px;
+
+        padding:
+            70px 15px 60px;
+
+    }
+
+
+    .collab-hero h1 {
+
+        font-size:
+            clamp(
+                3rem,
+                15vw,
+                4.5rem
+            );
+
+        letter-spacing:
+            -2.5px;
+
+    }
+
+
+    .collab-intro {
+
+        padding:
+            75px 0;
+
+    }
+
+
+    .collab-intro h2 {
+
+        font-size:
+            2.65rem;
+
+    }
+
+
+    .collab-intro-copy {
+
+        padding-left:
+            20px;
+
+    }
+
+
+    .collab-main {
+
+        padding-top:
+            70px;
+
+    }
+
+
+    .collab-card-content {
+
+        padding:
+            38px 25px;
+
+    }
+
+
+    .collab-card-content h2 {
+
+        font-size:
+            2.8rem;
+
+    }
+
+
+    .collab-actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .collab-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .collab-feature {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .collab-feature-info {
+
+        padding:
+            35px 25px;
+
+    }
+
+
+    .collab-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .collab-small-image {
+
+        height:
+            270px;
+
+    }
+
+
+    .collab-small-content {
+
+        padding:
+            30px 25px;
+
+    }
+
+
+    .collab-value {
+
+        margin-top:
+            80px;
+
+        padding:
+            75px 0;
+
+    }
+
+
+    .collab-value-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .collab-value-card {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .collab-cta {
+
+        min-height:
+            430px;
+
+        padding:
+            80px 15px;
+
+    }
+
+
+    .collab-cta-content h2 {
+
+        font-size:
+            3.5rem;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE SMALL
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .collab-container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .collab-hero {
+
+        min-height:
+            520px;
+
+    }
+
+
+    .collab-eyebrow {
+
+        font-size:
+            .58rem;
+
+        letter-spacing:
+            1.2px;
+
+        padding:
+            7px 11px;
+
+    }
+
+
+    .collab-hero h1 {
+
+        font-size:
+            3rem;
+
+    }
+
+
+    .collab-hero-content > p {
+
+        font-size:
+            .9rem;
+
+    }
+
+
+    .collab-hero-note {
+
+        font-size:
+            .68rem;
+
+    }
+
+
+    .collab-intro {
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .collab-intro h2 {
+
+        font-size:
+            2.3rem;
+
+    }
+
+
+    .collab-card-image {
+
+        min-height:
+            280px;
+
+    }
+
+
+    .collab-card-content h2 {
+
+        font-size:
+            2.35rem;
+
+    }
+
+
+    .collab-small-image {
+
+        height:
+            225px;
+
+    }
+
+
+    .collab-small-content h2 {
+
+        font-size:
+            1.95rem;
+
+    }
+
+
+    .collab-value-header h2 {
+
+        font-size:
+            2.4rem;
+
+    }
+
+
+    .collab-cta-content h2 {
+
+        font-size:
+            3rem;
+
+    }
+
+
+    .collab-cta-button {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-```
-.collab-page *,
-.collab-page *::before,
-.collab-page *::after {
+    .collab-page *,
+    .collab-page *::before,
+    .collab-page *::after {
 
-    scroll-behavior: auto !important;
+        animation: none !important;
 
-    transition-duration:
-        .01ms !important;
+        transition: none !important;
 
-    animation-duration:
-        .01ms !important;
-
-    animation-iteration-count:
-        1 !important;
-
-}
-```
+    }
 
 }
