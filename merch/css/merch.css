@@ -116,7 +116,7 @@ button{
     z-index:-3;
 
     background-image:
-        url("../merchimg/flyer.jpg");
+        url("/home/img/bg-masthead.jpg");
 
     background-size:cover;
 
