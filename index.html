@@ -4,6 +4,7 @@
 
 <head>
 
+```
 <!-- =====================================================
      CONFIGURACIÓN BÁSICA
 ====================================================== -->
@@ -32,7 +33,7 @@
 
 <meta
     name="theme-color"
-    content="#050505">
+    content="#000000">
 
 <meta
     name="color-scheme"
@@ -41,6 +42,10 @@
 <meta
     name="referrer"
     content="strict-origin-when-cross-origin">
+
+<meta
+    name="application-name"
+    content="GamesAlone18 Universe">
 
 
 <!-- =====================================================
@@ -105,6 +110,10 @@
     property="og:image:alt"
     content="GamesAlone18 Universe">
 
+<meta
+    property="og:image:type"
+    content="image/jpeg">
+
 
 <!-- =====================================================
      TWITTER / X
@@ -126,6 +135,10 @@
     name="twitter:image"
     content="https://www.gamesalone.com/home/img/Banner.jpg">
 
+<meta
+    name="twitter:image:alt"
+    content="GamesAlone18 Universe">
+
 
 <!-- =====================================================
      FAVICON
@@ -144,6 +157,10 @@
 <link
     rel="preconnect"
     href="https://cdn.jsdelivr.net">
+
+<link
+    rel="preconnect"
+    href="https://cdnjs.cloudflare.com">
 
 
 <!-- =====================================================
@@ -239,15 +256,22 @@
     "alternateName": "GamesAlone18",
     "url": "https://www.gamesalone.com/",
     "description": "Gaming, terror, cultura geek, podcast, eventos y experiencias reales.",
-    "inLanguage": "es-MX"
+    "inLanguage": "es-MX",
+    "publisher": {
+        "@type": "Organization",
+        "name": "GamesAlone18 Universe",
+        "url": "https://www.gamesalone.com/"
+    }
 }
 
 </script>
+```
 
 </head>
 
 <body>
 
+```
 <!-- =====================================================
      FONDO
 ====================================================== -->
@@ -293,7 +317,6 @@
                     GAMESALONE18 UNIVERSE
                 </span>
 
-
                 <h1 id="main-title">
 
                     Gaming, terror y cultura geek
@@ -304,14 +327,12 @@
 
                 </h1>
 
-
                 <p class="highlight">
 
                     +3,500 miembros ya forman parte
                     de nuestra comunidad.
 
                 </p>
-
 
                 <p class="description">
 
@@ -339,9 +360,6 @@
         <div class="container-fluid">
 
             <div class="swiper mySwiper">
-
-
-                <!-- SLIDES -->
 
                 <div class="swiper-wrapper">
 
@@ -535,16 +553,13 @@
                 </div>
 
 
-                <!-- BOTÓN ANTERIOR -->
+                <!-- NAVEGACIÓN -->
 
                 <button
                     class="swiper-button-prev"
                     type="button"
                     aria-label="Contenido anterior">
                 </button>
-
-
-                <!-- BOTÓN SIGUIENTE -->
 
                 <button
                     class="swiper-button-next"
@@ -577,53 +592,36 @@
 
         <div class="container">
 
-
             <div class="about-content">
 
-
                 <span class="section-eyebrow">
-
                     NUESTRO UNIVERSO
-
                 </span>
 
-
                 <h2 id="about-title">
-
                     ¿Qué es GamesAlone18 Universe?
-
                 </h2>
 
-
                 <p>
-
                     GamesAlone18 Universe es un ecosistema
                     digital donde el <strong>gaming</strong>,
                     el <strong>terror</strong> y la
                     <strong>cultura geek</strong> se convierten
                     en experiencias reales.
-
                 </p>
 
-
                 <p>
-
                     Creamos contenido con identidad,
                     narrativa y visión, conectando
                     entretenimiento digital con
                     experiencias que suceden fuera
                     de la pantalla.
-
                 </p>
-
 
                 <p>
-
                     Más de <strong>3,500 miembros</strong>
                     forman parte de esta comunidad.
-
                 </p>
-
 
                 <div class="about-action">
 
@@ -642,8 +640,6 @@
             </div>
 
 
-            <!-- BANNER -->
-
             <div class="about-banner">
 
                 <a
@@ -659,7 +655,6 @@
 
             </div>
 
-
         </div>
 
     </section>
@@ -670,7 +665,6 @@
     ================================================== -->
 
     <div id="footer"></div>
-
 
 </main>
 
@@ -688,7 +682,6 @@
 
     <div class="cookie-content">
 
-
         <div class="cookie-text">
 
             <p>
@@ -698,9 +691,7 @@
                 y mejorar tu experiencia.
 
                 <a href="/avisodeprivacidad/">
-
                     Política de Privacidad
-
                 </a>
 
             </p>
@@ -718,7 +709,6 @@
 
             </button>
 
-
             <button
                 id="accept-cookies"
                 type="button">
@@ -728,7 +718,6 @@
             </button>
 
         </div>
-
 
     </div>
 
@@ -754,350 +743,15 @@
 
 
 <!-- =====================================================
-     JAVASCRIPT PROPIO
+     JAVASCRIPT PRINCIPAL
+     INCLUYE SWIPER + HEADER + CHATBOT + TRACKING
 ====================================================== -->
 
 <script
-    src="/js/scripts.js">
-</script>
-
-
-<!-- =====================================================
-     CARGAR HEADER
-====================================================== -->
-
-<script>
-
-    fetch("/header.html")
-
-        .then(function (response) {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "No se pudo cargar header.html"
-                );
-
-            }
-
-            return response.text();
-
-        })
-
-        .then(function (data) {
-
-            const header =
-                document.getElementById("header");
-
-            if (header) {
-
-                header.innerHTML = data;
-
-            }
-
-        })
-
-        .catch(function (error) {
-
-            console.error(
-                "GamesAlone18: error cargando header:",
-                error
-            );
-
-        });
-
-</script>
-
-
-<!-- =====================================================
-     CARGAR FOOTER
-====================================================== -->
-
-<script>
-
-    fetch("/footer.html")
-
-        .then(function (response) {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "No se pudo cargar footer.html"
-                );
-
-            }
-
-            return response.text();
-
-        })
-
-        .then(function (data) {
-
-            const footer =
-                document.getElementById("footer");
-
-            if (footer) {
-
-                footer.innerHTML = data;
-
-            }
-
-        })
-
-        .catch(function (error) {
-
-            console.error(
-                "GamesAlone18: error cargando footer:",
-                error
-            );
-
-        });
-
-</script>
-
-
-<!-- =====================================================
-     HEADER SCROLL
-====================================================== -->
-
-<script>
-
-    window.addEventListener(
-        "scroll",
-        function () {
-
-            const nav =
-                document.querySelector(
-                    ".custom-navbar"
-                );
-
-            if (!nav) {
-                return;
-            }
-
-            nav.classList.toggle(
-                "scrolled",
-                window.scrollY > 50
-            );
-
-        },
-        {
-            passive: true
-        }
-    );
-
-</script>
-
-
-<!-- =====================================================
-     COOKIE SYSTEM
-====================================================== -->
-
-<script>
-
-    const COOKIE_KEY =
-        "gamesalone18_cookie_consent";
-
-
-    function loadAnalytics() {
-
-        if (
-            document.getElementById(
-                "gamesalone18-analytics"
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        const script =
-            document.createElement("script");
-
-
-        script.id =
-            "gamesalone18-analytics";
-
-
-        script.async = true;
-
-
-        script.src =
-            "https://www.googletagmanager.com/gtag/js?id=G-EGZ2977YBH";
-
-
-        document.head.appendChild(script);
-
-
-        gtag(
-            "js",
-            new Date()
-        );
-
-
-        gtag(
-            "config",
-            "G-EGZ2977YBH",
-            {
-                anonymize_ip: true
-            }
-        );
-
-
-        gtag(
-            "consent",
-            "update",
-            {
-                analytics_storage:
-                    "granted"
-            }
-        );
-
-    }
-
-
-    function closeCookieBanner() {
-
-        const banner =
-            document.getElementById(
-                "cookie-consent"
-            );
-
-
-        if (!banner) {
-            return;
-        }
-
-
-        banner.classList.add(
-            "cookie-hidden"
-        );
-
-    }
-
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-
-
-            const banner =
-                document.getElementById(
-                    "cookie-consent"
-                );
-
-
-            const accept =
-                document.getElementById(
-                    "accept-cookies"
-                );
-
-
-            const reject =
-                document.getElementById(
-                    "reject-cookies"
-                );
-
-
-            if (
-                !banner ||
-                !accept ||
-                !reject
-            ) {
-
-                return;
-
-            }
-
-
-            const consent =
-                localStorage.getItem(
-                    COOKIE_KEY
-                );
-
-
-            if (
-                consent === "accepted"
-            ) {
-
-                loadAnalytics();
-
-                closeCookieBanner();
-
-            }
-
-
-            if (
-                consent === "rejected"
-            ) {
-
-                closeCookieBanner();
-
-            }
-
-
-            accept.addEventListener(
-                "click",
-                function () {
-
-
-                    localStorage.setItem(
-                        COOKIE_KEY,
-                        "accepted"
-                    );
-
-
-                    loadAnalytics();
-
-
-                    closeCookieBanner();
-
-                }
-            );
-
-
-            reject.addEventListener(
-                "click",
-                function () {
-
-
-                    localStorage.setItem(
-                        COOKIE_KEY,
-                        "rejected"
-                    );
-
-
-                    gtag(
-                        "consent",
-                        "update",
-                        {
-                            analytics_storage:
-                                "denied"
-                        }
-                    );
-
-
-                    closeCookieBanner();
-
-                }
-            );
-
-
-        }
-    );
-
-</script>
-
-
-<!-- =====================================================
-     CHATBOT
-====================================================== -->
-
-<script
-    src="js/chatbot.js"
+    src="/js/scripts.js"
     defer>
 </script>
+```
 
 </body>
 
