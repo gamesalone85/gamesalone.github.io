@@ -1,6 +1,8 @@
 /* =========================================================
 GAMESALONE18 UNIVERSE
-GLOBAL HEADER
+GLOBAL HEADER/* =========================================================
+GAMESALONE18 UNIVERSE
+HEADER GLOBAL
 ========================================================= */
 
 /* =========================================================
@@ -11,97 +13,87 @@ VARIABLES
 
 ```
 --ga-green:
-    #00ffae;
+    #00ff9c;
 
---ga-green-strong:
+--ga-green-dark:
     #00e676;
+
+--ga-green-hover:
+    #00ffae;
 
 --ga-black:
     #050505;
 
---ga-panel:
-    rgba(5, 5, 5, .96);
+--ga-navbar-green:
+    #228b22;
 ```
 
 }
 
 /* =========================================================
 NAVBAR BASE
+TRANSPARENTE AL ENTRAR
 ========================================================= */
 
 .navbar.custom-navbar {
 
 ```
-position:
-    fixed;
+position: fixed;
 
-top:
-    0;
+top: 0;
+left: 0;
+right: 0;
 
-left:
-    0;
+width: 100%;
 
-width:
-    100%;
-
-z-index:
-    10000;
-
-padding:
-    16px 0;
+z-index: 10000;
 
 background:
-    linear-gradient(
-        180deg,
-        rgba(0, 0, 0, .78),
-        rgba(0, 0, 0, .25)
-    ) !important;
+    transparent !important;
 
-border-bottom:
-    1px solid
-    rgba(255, 255, 255, .04);
+border: none;
+
+padding:
+    18px 0;
 
 transition:
-    background .3s ease,
-    padding .3s ease,
-    box-shadow .3s ease;
+    background-color .35s ease,
+    box-shadow .35s ease,
+    padding .35s ease,
+    transform .35s ease;
 ```
 
 }
 
 /* =========================================================
-NAVBAR SCROLLED
+HEADER AL HACER SCROLL
 ========================================================= */
 
 .navbar.custom-navbar.scrolled {
 
 ```
+background:
+    var(--ga-navbar-green) !important;
+
 padding:
     9px 0;
 
-background:
-    rgba(5, 5, 5, .97) !important;
-
 box-shadow:
-    0 8px 30px
+    0 4px 20px
     rgba(0, 0, 0, .35);
-
-border-bottom:
-    1px solid
-    rgba(0, 255, 174, .08);
 ```
 
 }
 
 /* =========================================================
-CONTAINER
+CONTENEDOR
 ========================================================= */
 
-.custom-navbar .container {
+.navbar.custom-navbar
+.container {
 
 ```
-min-height:
-    48px;
+position: relative;
 ```
 
 }
@@ -110,59 +102,86 @@ min-height:
 LOGO
 ========================================================= */
 
-.custom-navbar .navbar-brand {
+.navbar.custom-navbar
+.navbar-brand {
 
 ```
 color:
     var(--ga-green) !important;
 
 font-size:
-    1.15rem;
+    1.25rem;
 
 font-weight:
     800;
 
 letter-spacing:
-    -.02em;
+    .3px;
 
 transition:
-    color .25s ease,
-    text-shadow .25s ease;
+    color .3s ease,
+    transform .3s ease;
 ```
 
 }
 
-.custom-navbar .navbar-brand:hover {
+/* LOGO HOVER */
+
+.navbar.custom-navbar
+.navbar-brand:hover {
 
 ```
 color:
     #ffffff !important;
 
-text-shadow:
-    0 0 12px
-    rgba(0, 255, 174, .5);
+transform:
+    translateY(-1px);
+```
+
+}
+
+/* LOGO AL HACER SCROLL */
+
+.navbar.custom-navbar.scrolled
+.navbar-brand {
+
+```
+color:
+    #ffffff !important;
 ```
 
 }
 
 /* =========================================================
-NAV LINKS
+MENÚ
 ========================================================= */
 
-.custom-navbar .navbar-nav {
+.navbar.custom-navbar
+.navbar-nav {
 
 ```
 gap:
-    4px;
+    5px;
 ```
 
 }
 
-.custom-navbar .nav-link {
+/* =========================================================
+LINKS
+========================================================= */
+
+.navbar.custom-navbar
+.nav-link {
 
 ```
-position:
-    relative;
+color:
+    var(--ga-green) !important;
+
+font-size:
+    .95rem;
+
+font-weight:
+    600;
 
 padding:
     8px 12px !important;
@@ -170,86 +189,70 @@ padding:
 margin:
     0 !important;
 
-color:
-    #ffffff !important;
-
-font-size:
-    .92rem;
-
-font-weight:
-    600;
-
-transition:
-    color .25s ease;
-```
-
-}
-
-/* =========================================================
-LINK UNDERLINE
-========================================================= */
-
-.custom-navbar .nav-link::after {
-
-```
-content:
-    "";
-
-position:
-    absolute;
-
-left:
-    12px;
-
-right:
-    12px;
-
-bottom:
-    2px;
-
-height:
-    2px;
-
 border-radius:
-    10px;
-
-background:
-    var(--ga-green);
-
-transform:
-    scaleX(0);
-
-transform-origin:
-    center;
+    8px;
 
 transition:
+    color .25s ease,
+    background-color .25s ease,
     transform .25s ease;
 ```
 
 }
 
-.custom-navbar .nav-link:hover {
+/* =========================================================
+LINK HOVER
+========================================================= */
+
+.navbar.custom-navbar
+.nav-link:hover {
 
 ```
 color:
-    var(--ga-green) !important;
-```
+    #ffffff !important;
 
-}
-
-.custom-navbar .nav-link:hover::after {
-
-```
-transform:
-    scaleX(1);
+background:
+    rgba(0, 255, 156, .08);
 ```
 
 }
 
 /* =========================================================
-ZONA BUTTON
+LINKS EN SCROLL
 ========================================================= */
 
+.navbar.custom-navbar.scrolled
+.nav-link {
+
+```
+color:
+    #ffffff !important;
+```
+
+}
+
+/* =========================================================
+LINKS EN SCROLL - HOVER
+========================================================= */
+
+.navbar.custom-navbar.scrolled
+.nav-link:hover {
+
+```
+color:
+    #000000 !important;
+
+background:
+    rgba(255, 255, 255, .75);
+```
+
+}
+
+/* =========================================================
+BOTÓN ZONA EXCLUSIVA
+========================================================= */
+
+.navbar.custom-navbar
 .btn-exclusive {
 
 ```
@@ -262,27 +265,24 @@ align-items:
 justify-content:
     center;
 
-gap:
-    7px;
-
-padding:
-    9px 17px !important;
-
-border:
-    none !important;
-
-border-radius:
-    999px;
-
 background:
     linear-gradient(
         135deg,
         var(--ga-green),
-        var(--ga-green-strong)
+        var(--ga-green-dark)
     );
 
 color:
     #000 !important;
+
+padding:
+    9px 20px;
+
+border:
+    none;
+
+border-radius:
+    50px;
 
 font-size:
     .85rem;
@@ -290,84 +290,134 @@ font-size:
 font-weight:
     800;
 
+line-height:
+    1;
+
 white-space:
     nowrap;
 
 box-shadow:
-    0 5px 20px
-    rgba(0, 255, 174, .12);
+    0 5px 18px
+    rgba(0, 255, 156, .18);
 
 transition:
     transform .25s ease,
     box-shadow .25s ease,
-    filter .25s ease;
+    background .25s ease;
 ```
 
 }
 
+/* HOVER */
+
+.navbar.custom-navbar
 .btn-exclusive:hover {
 
 ```
 color:
     #000 !important;
 
+background:
+    linear-gradient(
+        135deg,
+        var(--ga-green-dark),
+        var(--ga-green)
+    );
+
 transform:
     translateY(-2px);
 
-filter:
-    brightness(1.08);
-
 box-shadow:
-    0 8px 28px
-    rgba(0, 255, 174, .25);
+    0 8px 25px
+    rgba(0, 255, 156, .35);
 ```
 
 }
 
 /* =========================================================
-TOGGLER
+BOTÓN EN SCROLL
 ========================================================= */
 
-.custom-navbar .navbar-toggler {
+.navbar.custom-navbar.scrolled
+.btn-exclusive {
 
 ```
-padding:
-    7px 9px;
+background:
+    #000;
 
+color:
+    var(--ga-green) !important;
+
+box-shadow:
+    none;
+```
+
+}
+
+.navbar.custom-navbar.scrolled
+.btn-exclusive:hover {
+
+```
+background:
+    #111;
+
+color:
+    #ffffff !important;
+```
+
+}
+
+/* =========================================================
+BOTÓN HAMBURGUESA
+========================================================= */
+
+.navbar.custom-navbar
+.navbar-toggler {
+
+```
 border:
     1px solid
-    rgba(0, 255, 174, .35);
+    rgba(0, 255, 156, .45);
 
 border-radius:
     10px;
 
-background:
-    rgba(0, 0, 0, .35);
+padding:
+    7px 10px;
 
 box-shadow:
     none !important;
+
+transition:
+    border-color .25s ease,
+    background-color .25s ease;
 ```
 
 }
 
-.custom-navbar .navbar-toggler:focus {
+.navbar.custom-navbar
+.navbar-toggler:hover {
 
 ```
-box-shadow:
-    0 0 0 3px
-    rgba(0, 255, 174, .12) !important;
+background:
+    rgba(0, 255, 156, .08);
+
+border-color:
+    var(--ga-green);
 ```
 
 }
 
-.custom-navbar .navbar-toggler-icon {
+/* =========================================================
+ICONO HAMBURGUESA
+========================================================= */
+
+.navbar.custom-navbar
+.navbar-toggler-icon {
 
 ```
-width:
-    1.3em;
-
-height:
-    1.3em;
+filter:
+    invert(1);
 ```
 
 }
@@ -379,57 +429,90 @@ MOBILE
 @media (max-width: 991.98px) {
 
 ```
+/* -----------------------------------------------
+   NAVBAR MOBILE
+------------------------------------------------ */
+
 .navbar.custom-navbar {
 
     padding:
-        12px 0;
+        14px 0;
 
     background:
-        rgba(5, 5, 5, .96) !important;
+        rgba(0, 0, 0, .82) !important;
 
     backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
         blur(12px);
 
 }
 
 
+/* -----------------------------------------------
+   MOBILE SCROLL
+------------------------------------------------ */
+
 .navbar.custom-navbar.scrolled {
 
+    background:
+        var(--ga-navbar-green) !important;
+
     padding:
-        10px 0;
+        8px 0;
+
+    backdrop-filter:
+        none;
+
+    -webkit-backdrop-filter:
+        none;
 
 }
 
 
-.custom-navbar .navbar-collapse {
+/* -----------------------------------------------
+   MENÚ DESPLEGADO
+------------------------------------------------ */
+
+.navbar.custom-navbar
+.navbar-collapse {
 
     margin-top:
         12px;
 
     padding:
-        10px 5px 15px;
+        15px;
 
     background:
-        rgba(5, 5, 5, .98);
+        rgba(0, 0, 0, .97);
 
-    border-top:
+    border:
         1px solid
-        rgba(255, 255, 255, .06);
+        rgba(0, 255, 156, .12);
 
     border-radius:
-        0 0 14px 14px;
+        0 0 16px 16px;
 
     box-shadow:
         0 15px 35px
-        rgba(0, 0, 0, .4);
+        rgba(0, 0, 0, .45);
 
 }
 
 
-.custom-navbar .navbar-nav {
+/* -----------------------------------------------
+   LINKS MOBILE
+------------------------------------------------ */
+
+.navbar.custom-navbar
+.navbar-nav {
+
+    width:
+        100%;
 
     gap:
-        0;
+        3px;
 
     align-items:
         stretch !important;
@@ -437,7 +520,8 @@ MOBILE
 }
 
 
-.custom-navbar .nav-item {
+.navbar.custom-navbar
+.nav-item {
 
     width:
         100%;
@@ -445,7 +529,8 @@ MOBILE
 }
 
 
-.custom-navbar .nav-link {
+.navbar.custom-navbar
+.nav-link {
 
     display:
         block;
@@ -456,32 +541,33 @@ MOBILE
     padding:
         12px 10px !important;
 
-}
+    margin:
+        0 !important;
 
-
-.custom-navbar .nav-link::after {
-
-    left:
-        10px;
-
-    right:
-        auto;
-
-    width:
-        30px;
+    color:
+        var(--ga-green) !important;
 
 }
 
 
-.custom-navbar .nav-link:hover::after {
+.navbar.custom-navbar
+.nav-link:hover {
 
-    transform:
-        scaleX(1);
+    background:
+        rgba(0, 255, 156, .08);
+
+    color:
+        #ffffff !important;
 
 }
 
 
-.custom-navbar .btn-exclusive {
+/* -----------------------------------------------
+   BOTÓN ZONA MOBILE
+------------------------------------------------ */
+
+.navbar.custom-navbar
+.btn-exclusive {
 
     width:
         100%;
@@ -490,7 +576,23 @@ MOBILE
         10px;
 
     padding:
-        11px 15px !important;
+        12px 18px;
+
+}
+
+
+/* -----------------------------------------------
+   BOTÓN ZONA CUANDO HEADER ESTÁ EN SCROLL
+------------------------------------------------ */
+
+.navbar.custom-navbar.scrolled
+.btn-exclusive {
+
+    background:
+        #000;
+
+    color:
+        var(--ga-green) !important;
 
 }
 ```
@@ -498,29 +600,90 @@ MOBILE
 }
 
 /* =========================================================
-SMALL MOBILE
+MOBILE PEQUEÑO
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 575.98px) {
 
-
-.custom-navbar .container {
+```
+.navbar.custom-navbar
+.container {
 
     padding-left:
-        15px;
+        16px;
 
     padding-right:
-        15px;
+        16px;
 
 }
 
 
-.custom-navbar .navbar-brand {
+.navbar.custom-navbar
+.navbar-brand {
 
     font-size:
-        1rem;
+        1.1rem;
 
 }
 
+
+.navbar.custom-navbar
+.navbar-toggler {
+
+    padding:
+        6px 9px;
+
+}
+```
+
+}
+
+/* =========================================================
+ACCESIBILIDAD
+========================================================= */
+
+.navbar.custom-navbar
+.nav-link:focus-visible,
+
+.navbar.custom-navbar
+.navbar-brand:focus-visible,
+
+.navbar.custom-navbar
+.btn-exclusive:focus-visible,
+
+.navbar.custom-navbar
+.navbar-toggler:focus-visible {
+
+```
+outline:
+    2px solid
+    var(--ga-green);
+
+outline-offset:
+    3px;
+```
+
+}
+
+/* =========================================================
+REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+```
+.navbar.custom-navbar,
+.navbar.custom-navbar
+.navbar-brand,
+.navbar.custom-navbar
+.nav-link,
+.navbar.custom-navbar
+.btn-exclusive {
+
+    transition:
+        none !important;
+
+}
+```
 
 }
