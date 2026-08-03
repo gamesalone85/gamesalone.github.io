@@ -1,118 +1,526 @@
-/* ===== VARIABLES ===== */
+/* =========================================================
+GAMESALONE18 UNIVERSE
+GLOBAL HEADER
+========================================================= */
+
+/* =========================================================
+VARIABLES
+========================================================= */
+
 :root {
-  --green-neon: #00ff9c;
-  --green-strong: #00e676;
+
+```
+--ga-green:
+    #00ffae;
+
+--ga-green-strong:
+    #00e676;
+
+--ga-black:
+    #050505;
+
+--ga-panel:
+    rgba(5, 5, 5, .96);
+```
+
 }
 
-/* ===== NAVBAR BASE ===== */
+/* =========================================================
+NAVBAR BASE
+========================================================= */
+
 .navbar.custom-navbar {
-  background: transparent !important;
-  transition: all 0.3s ease;
-  padding: 15px 0;
+
+```
+position:
+    fixed;
+
+top:
+    0;
+
+left:
+    0;
+
+width:
+    100%;
+
+z-index:
+    10000;
+
+padding:
+    16px 0;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(0, 0, 0, .78),
+        rgba(0, 0, 0, .25)
+    ) !important;
+
+border-bottom:
+    1px solid
+    rgba(255, 255, 255, .04);
+
+transition:
+    background .3s ease,
+    padding .3s ease,
+    box-shadow .3s ease;
+```
+
 }
 
-/* ===== SCROLL (AQUÍ ESTÁ LA MAGIA) ===== */
+/* =========================================================
+NAVBAR SCROLLED
+========================================================= */
+
 .navbar.custom-navbar.scrolled {
-  background: #228B22 !important; /* barra blanca como antes */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 8px 0;
+
+```
+padding:
+    9px 0;
+
+background:
+    rgba(5, 5, 5, .97) !important;
+
+box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, .35);
+
+border-bottom:
+    1px solid
+    rgba(0, 255, 174, .08);
+```
+
 }
 
-/* ===== LOGO ===== */
-.navbar-brand {
-  color: var(--green-neon) !important;
-  font-weight: bold;
+/* =========================================================
+CONTAINER
+========================================================= */
+
+.custom-navbar .container {
+
+```
+min-height:
+    48px;
+```
+
 }
 
-/* ===== LINKS BASE (FUERZA EL VERDE) ===== */
-.navbar.custom-navbar .nav-link {
-  color: var(--green-neon) !important;
-  margin-left: 15px;
-  transition: all 0.3s ease;
+/* =========================================================
+LOGO
+========================================================= */
+
+.custom-navbar .navbar-brand {
+
+```
+color:
+    var(--ga-green) !important;
+
+font-size:
+    1.15rem;
+
+font-weight:
+    800;
+
+letter-spacing:
+    -.02em;
+
+transition:
+    color .25s ease,
+    text-shadow .25s ease;
+```
+
 }
 
-/* ===== HOVER ===== */
-.navbar.custom-navbar .nav-link:hover {
-  color: var(--green-strong) !important;
-  text-shadow: 0 0 6px var(--green-neon);
+.custom-navbar .navbar-brand:hover {
+
+```
+color:
+    #ffffff !important;
+
+text-shadow:
+    0 0 12px
+    rgba(0, 255, 174, .5);
+```
+
 }
 
-/* ===== CUANDO HACES SCROLL (CON FONDO BLANCO) ===== */
-.navbar.custom-navbar.scrolled .nav-link {
-  color: #000 !important;
+/* =========================================================
+NAV LINKS
+========================================================= */
+
+.custom-navbar .navbar-nav {
+
+```
+gap:
+    4px;
+```
+
 }
 
-.navbar.custom-navbar.scrolled .nav-link:hover {
-  color: var(--green-strong) !important;
+.custom-navbar .nav-link {
+
+```
+position:
+    relative;
+
+padding:
+    8px 12px !important;
+
+margin:
+    0 !important;
+
+color:
+    #ffffff !important;
+
+font-size:
+    .92rem;
+
+font-weight:
+    600;
+
+transition:
+    color .25s ease;
+```
+
 }
 
-/* ===== BOTÓN PRINCIPAL (ZONA) ===== */
+/* =========================================================
+LINK UNDERLINE
+========================================================= */
+
+.custom-navbar .nav-link::after {
+
+```
+content:
+    "";
+
+position:
+    absolute;
+
+left:
+    12px;
+
+right:
+    12px;
+
+bottom:
+    2px;
+
+height:
+    2px;
+
+border-radius:
+    10px;
+
+background:
+    var(--ga-green);
+
+transform:
+    scaleX(0);
+
+transform-origin:
+    center;
+
+transition:
+    transform .25s ease;
+```
+
+}
+
+.custom-navbar .nav-link:hover {
+
+```
+color:
+    var(--ga-green) !important;
+```
+
+}
+
+.custom-navbar .nav-link:hover::after {
+
+```
+transform:
+    scaleX(1);
+```
+
+}
+
+/* =========================================================
+ZONA BUTTON
+========================================================= */
+
 .btn-exclusive {
-  background: linear-gradient(45deg, #00ff9c, #00e676);
-  color: #000;
-  padding: 8px 18px;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  border: none;
-  transition: all 0.3s ease;
+
+```
+display:
+    inline-flex;
+
+align-items:
+    center;
+
+justify-content:
+    center;
+
+gap:
+    7px;
+
+padding:
+    9px 17px !important;
+
+border:
+    none !important;
+
+border-radius:
+    999px;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--ga-green),
+        var(--ga-green-strong)
+    );
+
+color:
+    #000 !important;
+
+font-size:
+    .85rem;
+
+font-weight:
+    800;
+
+white-space:
+    nowrap;
+
+box-shadow:
+    0 5px 20px
+    rgba(0, 255, 174, .12);
+
+transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+```
+
 }
 
-/* HOVER */
 .btn-exclusive:hover {
-  background: linear-gradient(45deg, #00e676, #00ff9c);
-  color: #000;
-  box-shadow: 0 0 12px #00ff9c;
-  transform: translateY(-2px);
+
+```
+color:
+    #000 !important;
+
+transform:
+    translateY(-2px);
+
+filter:
+    brightness(1.08);
+
+box-shadow:
+    0 8px 28px
+    rgba(0, 255, 174, .25);
+```
+
 }
 
-/* ===== BOTÓN EN SCROLL ===== */
-.navbar.custom-navbar.scrolled .btn-exclusive {
-  background: #000;
-  color: #00ff9c;
+/* =========================================================
+TOGGLER
+========================================================= */
+
+.custom-navbar .navbar-toggler {
+
+```
+padding:
+    7px 9px;
+
+border:
+    1px solid
+    rgba(0, 255, 174, .35);
+
+border-radius:
+    10px;
+
+background:
+    rgba(0, 0, 0, .35);
+
+box-shadow:
+    none !important;
+```
+
 }
 
-.navbar.custom-navbar.scrolled .btn-exclusive:hover {
-  background: #111;
-  color: #00ff9c;
+.custom-navbar .navbar-toggler:focus {
+
+```
+box-shadow:
+    0 0 0 3px
+    rgba(0, 255, 174, .12) !important;
+```
+
 }
 
-/* ===== TOGGLER ===== */
-.navbar-toggler {
-  border-color: rgba(0,255,150,0.5);
+.custom-navbar .navbar-toggler-icon {
+
+```
+width:
+    1.3em;
+
+height:
+    1.3em;
+```
+
 }
 
-.navbar-toggler-icon {
-  filter: invert(1);
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+```
+.navbar.custom-navbar {
+
+    padding:
+        12px 0;
+
+    background:
+        rgba(5, 5, 5, .96) !important;
+
+    backdrop-filter:
+        blur(12px);
+
 }
 
-/* ===== FIX IMPORTANTE ===== */
-.navbar.custom-navbar .navbar-nav .nav-link {
-  color: var(--green-neon) !important;
+
+.navbar.custom-navbar.scrolled {
+
+    padding:
+        10px 0;
+
 }
-/* ===== FIX MOBILE NAVBAR (CLAVE) ===== */
-@media (max-width: 991px) {
 
-  /* Navbar sólida en mobile */
-  .navbar.custom-navbar {
-    background: #000 !important;
-  }
 
-  /* Contenedor del menú desplegado */
-  .navbar-collapse {
-    background: #000;
-    padding: 15px 20px;
-    border-radius: 0 0 12px 12px;
-  }
+.custom-navbar .navbar-collapse {
 
-  /* Espaciado entre items */
-  .navbar-nav .nav-link {
-    margin-left: 0;
-    padding: 10px 0;
-  }
+    margin-top:
+        12px;
 
-  /* Botón separado */
-  .btn-exclusive {
-    margin-top: 10px;
-  }
+    padding:
+        10px 5px 15px;
+
+    background:
+        rgba(5, 5, 5, .98);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    border-radius:
+        0 0 14px 14px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, .4);
+
+}
+
+
+.custom-navbar .navbar-nav {
+
+    gap:
+        0;
+
+    align-items:
+        stretch !important;
+
+}
+
+
+.custom-navbar .nav-item {
+
+    width:
+        100%;
+
+}
+
+
+.custom-navbar .nav-link {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    padding:
+        12px 10px !important;
+
+}
+
+
+.custom-navbar .nav-link::after {
+
+    left:
+        10px;
+
+    right:
+        auto;
+
+    width:
+        30px;
+
+}
+
+
+.custom-navbar .nav-link:hover::after {
+
+    transform:
+        scaleX(1);
+
+}
+
+
+.custom-navbar .btn-exclusive {
+
+    width:
+        100%;
+
+    margin-top:
+        10px;
+
+    padding:
+        11px 15px !important;
+
+}
+```
+
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+```
+.custom-navbar .container {
+
+    padding-left:
+        15px;
+
+    padding-right:
+        15px;
+
+}
+
+
+.custom-navbar .navbar-brand {
+
+    font-size:
+        1rem;
+
+}
+```
+
 }
