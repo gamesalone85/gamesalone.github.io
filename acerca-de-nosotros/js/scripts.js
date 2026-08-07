@@ -1,39 +1,68 @@
-// =========================
-// SWIPER CONFIG
-// =========================
-const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
+/* =========================================================
+GAMESALONE18 UNIVERSE
+ACERCA DE NOSOTROS
+========================================================= */
 
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
+/* HEADER */
 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+fetch("/header.html")
+.then(res => res.text())
+.then(data => {
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    document.getElementById("header").innerHTML = data;
+
+})
+.catch(error => {
+
+    console.error(
+        "Error cargando header:",
+        error
+    );
+
 });
 
-// =========================
-// NAVEGACIÓN
-// =========================
-function go(link) {
-    if (link !== "#") {
-        window.location.href = link;
-    }
-}
 
-// =========================
-// DEBUG
-// =========================
-console.log("Home cargado correctamente");
+/* FOOTER */
+
+fetch("/footer.html")
+.then(res => res.text())
+.then(data => {
+
+    document.getElementById("footer").innerHTML = data;
+
+})
+.catch(error => {
+
+    console.error(
+        "Error cargando footer:",
+        error
+    );
+
+});
+
+/* =========================================================
+NAVBAR SCROLL
+========================================================= */
+
+window.addEventListener("scroll", function() {
+
+const nav =
+    document.querySelector(".custom-navbar");
+
+if (!nav) return;
+
+nav.classList.toggle(
+    "scrolled",
+    window.scrollY > 50
+);
+
+
+});
+
+/* =========================================================
+DEBUG
+========================================================= */
+
+console.log(
+"GamesAlone18 Universe - Acerca de Nosotros cargado correctamente."
+);
