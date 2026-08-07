@@ -6,35 +6,32 @@
 
 
 /* =========================================================
-   RESET
+   BASE DE LA PÁGINA
    ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.prensa-page {
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
     background: #000;
+
     color: #fff;
+
     overflow-x: hidden;
+
     line-height: 1.6;
+
 }
 
 
 /* =========================================================
-   FONDO GLOBAL
+   FONDO
    ========================================================= */
 
-.bg-image {
+.prensa-page .prensa-bg-image {
+
     position: fixed;
+
     inset: 0;
+
     width: 100%;
     height: 100%;
 
@@ -42,19 +39,26 @@ body {
         url("/home/img/bg-masthead.jpg")
         center center / cover no-repeat;
 
+    transform: scale(1.04);
+
     z-index: -3;
 
-    transform: scale(1.04);
+    pointer-events: none;
+
 }
 
-.bg-overlay {
+
+.prensa-page .prensa-bg-overlay {
+
     position: fixed;
+
     inset: 0;
 
     width: 100%;
     height: 100%;
 
     background:
+
         linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.72) 0%,
@@ -65,6 +69,9 @@ body {
     backdrop-filter: blur(3px);
 
     z-index: -2;
+
+    pointer-events: none;
+
 }
 
 
@@ -72,12 +79,14 @@ body {
    CONTENIDO PRINCIPAL
    ========================================================= */
 
-.main-content {
+.prensa-page .prensa-main-content {
+
     position: relative;
+
     z-index: 1;
 
-    padding-top: 90px;
     min-height: 100vh;
+
 }
 
 
@@ -85,21 +94,86 @@ body {
    HERO
    ========================================================= */
 
-.hero {
-    padding: 90px 20px 70px;
+.prensa-page .prensa-hero {
+
+    padding:
+
+        105px
+        20px
+        75px;
+
     text-align: center;
+
 }
 
-.hero h1 {
-    margin-bottom: 18px;
 
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
+/* =========================================================
+   ETIQUETA HERO
+   ========================================================= */
+
+.prensa-page .prensa-hero-tag {
+
+    display: inline-block;
+
+    padding:
+
+        9px
+        18px;
+
+    margin-bottom: 25px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 50px;
+
+    background:
+
+        rgba(255, 255, 255, 0.04);
+
+    color: #00ff88;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+/* =========================================================
+   TITULO HERO
+   ========================================================= */
+
+.prensa-page .prensa-hero h1 {
+
+    margin:
+
+        0
+        0
+        20px;
+
+    font-size:
+
+        clamp(
+            2.5rem,
+            6vw,
+            4.5rem
+        );
+
     font-weight: 800;
+
     line-height: 1.1;
 
     letter-spacing: -1px;
 
     background:
+
         linear-gradient(
             90deg,
             #ffffff,
@@ -107,120 +181,165 @@ body {
         );
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
+
     background-clip: text;
+
 }
 
-.hero .description {
-    max-width: 760px;
 
-    margin: 0 auto;
+/* =========================================================
+   DESCRIPCIÓN HERO
+   ========================================================= */
+
+.prensa-page .prensa-description {
+
+    max-width: 780px;
+
+    margin:
+
+        0
+        auto;
 
     color: #cfcfcf;
 
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+
     line-height: 1.8;
+
 }
 
 
 /* =========================================================
-   CONTENEDOR
+   CONTENEDOR DE PRENSA
    ========================================================= */
 
-.container {
-    width: 100%;
+.prensa-page .prensa-container {
 
-    max-width: 1180px;
+    padding-bottom: 30px;
 
-    margin-left: auto;
-    margin-right: auto;
-
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 
 /* =========================================================
-   SISTEMA DE FILAS
-   Reemplaza la estructura básica de Bootstrap
+   ARTÍCULOS
    ========================================================= */
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-
-    width: 100%;
-}
-
-.gx-0 {
-    --gap-x: 0;
-}
-
-.g-0 {
-    gap: 0;
-}
-
-.mb-5 {
-    margin-bottom: 70px;
-}
-
-.mt-5 {
-    margin-top: 70px;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-
-/* =========================================================
-   COLUMNAS
-   ========================================================= */
-
-.col-12 {
-    width: 100%;
-}
-
-.col-lg-6 {
-    width: 50%;
-}
-
-
-/* =========================================================
-   BLOQUES DE PRENSA
-   ========================================================= */
-
-.project {
-    width: 100%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 15, 15, 0.96),
-            rgba(3, 3, 3, 0.98)
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.prensa-page .press-item {
 
     position: relative;
 
-    overflow: hidden;
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
 }
 
 
-/* Línea verde decorativa */
+/* =========================================================
+   IMAGEN
+   ========================================================= */
 
-.project::before {
+.prensa-page .press-image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 390px;
+
+    overflow: hidden;
+
+    background: #050505;
+
+}
+
+
+/* =========================================================
+   IMAGEN DE PRENSA
+   ========================================================= */
+
+.prensa-page .press-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 390px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+
+        transform 0.6s ease,
+
+        filter 0.4s ease;
+
+}
+
+
+/* =========================================================
+   EFECTO IMAGEN
+   ========================================================= */
+
+.prensa-page .press-item:hover .press-image {
+
+    transform: scale(1.035);
+
+    filter: brightness(1.08);
+
+}
+
+
+/* =========================================================
+   PANEL DE TEXTO
+   ========================================================= */
+
+.prensa-page .press-project {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 390px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 18, 0.97),
+            rgba(3, 3, 3, 0.99)
+        );
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transition:
+
+        transform 0.35s ease,
+
+        border-color 0.35s ease,
+
+        box-shadow 0.35s ease;
+
+}
+
+
+/* =========================================================
+   BARRA VERDE
+   ========================================================= */
+
+.prensa-page .press-project::before {
+
     content: "";
 
     position: absolute;
@@ -233,114 +352,62 @@ body {
 
     background: #00ff88;
 
-    opacity: 0.75;
-
-    transition: width 0.35s ease;
-}
-
-.project:hover {
-    border-color: rgba(0, 255, 136, 0.35);
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.55),
-        0 0 30px rgba(0, 255, 136, 0.06);
-
-    transform: translateY(-4px);
-}
-
-.project:hover::before {
-    width: 7px;
-}
-
-
-/* =========================================================
-   IMÁGENES DE PRENSA
-   ========================================================= */
-
-.project img,
-.row > .col-lg-6 > img {
-    width: 100%;
-    height: 100%;
-
-    min-height: 360px;
-
-    object-fit: cover;
-
-    display: block;
+    opacity: 0.8;
 
     transition:
-        transform 0.6s ease,
-        filter 0.4s ease;
-}
 
-.row:hover > .col-lg-6 > img {
-    filter: brightness(1.08);
-}
+        width 0.35s ease;
 
-.row:hover > .col-lg-6 > img {
-    transform: scale(1.025);
 }
 
 
 /* =========================================================
-   ESTRUCTURA INTERNA
+   HOVER PANEL
    ========================================================= */
 
-.d-flex {
+.prensa-page .press-item:hover .press-project {
+
+    border-color:
+
+        rgba(
+            0,
+            255,
+            136,
+            0.35
+        );
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 30px
+        rgba(0, 255, 136, 0.06);
+
+}
+
+
+.prensa-page .press-item:hover .press-project::before {
+
+    width: 7px;
+
+}
+
+
+/* =========================================================
+   CONTENIDO INTERNO
+   ========================================================= */
+
+.prensa-page .press-project-inner {
+
     display: flex;
-}
 
-.h-100 {
-    height: 100%;
-}
+    align-items: center;
 
-.project-text {
     width: 100%;
 
-    display: flex;
+    min-height: 390px;
 
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding: 55px;
-}
-
-
-/* =========================================================
-   TITULOS DE NOTICIAS
-   ========================================================= */
-
-.project-text h4 {
-    position: relative;
-
-    margin-bottom: 22px;
-
-    color: #fff;
-
-    font-size: 1.65rem;
-
-    line-height: 1.3;
-
-    font-weight: 700;
-}
-
-
-/* pequeño indicador */
-
-.project-text h4::after {
-    content: "";
-
-    display: block;
-
-    width: 45px;
-    height: 3px;
-
-    margin-top: 14px;
-
-    background: #00ff88;
-
-    border-radius: 10px;
 }
 
 
@@ -348,19 +415,127 @@ body {
    TEXTO
    ========================================================= */
 
-.project-text p {
+.prensa-page .press-text {
+
+    width: 100%;
+
+    padding:
+
+        50px
+        55px;
+
+}
+
+
+/* =========================================================
+   CATEGORÍA
+   ========================================================= */
+
+.prensa-page .press-category {
+
+    display: inline-block;
+
     margin-bottom: 18px;
 
-    color: rgba(255, 255, 255, 0.65);
+    color: #00ff88;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TITULO
+   ========================================================= */
+
+.prensa-page .press-text h2 {
+
+    position: relative;
+
+    margin:
+
+        0
+        0
+        23px;
+
+    color: #fff;
+
+    font-size: 1.65rem;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+}
+
+
+/* =========================================================
+   LINEA DEL TITULO
+   ========================================================= */
+
+.prensa-page .press-text h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    margin-top: 14px;
+
+    border-radius: 10px;
+
+    background: #00ff88;
+
+}
+
+
+/* =========================================================
+   PÁRRAFOS
+   ========================================================= */
+
+.prensa-page .press-text p {
+
+    margin:
+
+        0
+        0
+        18px;
+
+    color:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.66
+        );
 
     font-size: 1rem;
 
     line-height: 1.8;
+
 }
 
-.project-text strong {
+
+/* =========================================================
+   STRONG
+   ========================================================= */
+
+.prensa-page .press-text strong {
+
     color: #fff;
+
     font-weight: 700;
+
 }
 
 
@@ -368,84 +543,174 @@ body {
    ENLACES
    ========================================================= */
 
-.project-text a {
+.prensa-page .press-text a {
+
     display: inline-flex;
 
     align-items: center;
 
     width: fit-content;
 
-    margin-top: 8px;
+    margin-top: 7px;
+
+    color: #00ff88;
+
+    font-size: 0.98rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition:
+
+        color 0.25s ease,
+
+        transform 0.25s ease;
+
+}
+
+
+/* =========================================================
+   FLECHA
+   ========================================================= */
+
+.prensa-page .press-text a span {
+
+    display: inline-block;
+
+    margin-left: 7px;
+
+    transition:
+
+        transform 0.25s ease;
+
+}
+
+
+/* =========================================================
+   HOVER LINK
+   ========================================================= */
+
+.prensa-page .press-text a:hover {
+
+    color: #62ffb3;
+
+    transform: translateX(3px);
+
+}
+
+
+.prensa-page .press-text a:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   LINKS DENTRO DE PÁRRAFOS
+   ========================================================= */
+
+.prensa-page .press-text .inline-link {
+
+    display: inline;
+
+    margin: 0;
 
     color: #00ff88;
 
     font-weight: 700;
 
-    text-decoration: none;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
 }
 
-.project-text a::after {
-    content: " →";
 
-    margin-left: 5px;
+/* =========================================================
+   HOVER LINK INTERNO
+   ========================================================= */
 
-    transition: transform 0.25s ease;
-}
+.prensa-page .press-text .inline-link:hover {
 
-.project-text a:hover {
+    transform: none;
+
     color: #62ffb3;
 
-    transform: translateX(3px);
-}
-
-.project-text a:hover::after {
-    transform: translateX(4px);
 }
 
 
 /* =========================================================
-   CLASES DE TEXTO UTILIZADAS POR EL HTML
+   ÚLTIMO ARTÍCULO
    ========================================================= */
 
-.text-white {
-    color: #fff;
-}
+.prensa-page .press-item:last-child {
 
-.text-white-50 {
-    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 80px !important;
+
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET / LAPTOP
    ========================================================= */
 
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
 
-    .main-content {
-        padding-top: 80px;
+    .prensa-page .prensa-hero {
+
+        padding:
+
+            90px
+            20px
+            60px;
+
     }
 
-    .hero {
-        padding: 75px 20px 55px;
+
+    .prensa-page .press-image-wrapper {
+
+        min-height: 330px;
+
     }
 
-    .col-lg-6 {
-        width: 100%;
+
+    .prensa-page .press-image {
+
+        min-height: 330px;
+
+        max-height: 460px;
+
     }
 
-    .project-text {
-        padding: 40px 30px;
+
+    .prensa-page .press-project {
+
+        min-height: auto;
+
     }
 
-    .project img,
-    .row > .col-lg-6 > img {
-        min-height: 320px;
-        max-height: 450px;
+
+    .prensa-page .press-project-inner {
+
+        min-height: auto;
+
+    }
+
+
+    .prensa-page .press-text {
+
+        padding:
+
+            42px
+            35px;
+
+    }
+
+
+    .prensa-page .press-text h2 {
+
+        font-size: 1.5rem;
+
     }
 
 }
@@ -455,100 +720,204 @@ body {
    TABLET
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
 
-    .hero h1 {
-        font-size: 2.8rem;
+    .prensa-page .prensa-hero {
+
+        padding:
+
+            75px
+            18px
+            50px;
+
     }
 
-    .hero .description {
+
+    .prensa-page .prensa-hero h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+
+    .prensa-page .prensa-description {
+
         font-size: 1rem;
+
     }
 
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
+
+    .prensa-page .press-item {
+
+        margin-bottom: 45px !important;
+
     }
 
-    .mb-5 {
-        margin-bottom: 45px;
+
+    .prensa-page .press-image-wrapper {
+
+        min-height: 270px;
+
     }
 
-    .project-text {
-        padding: 35px 25px;
-    }
 
-    .project-text h4 {
-        font-size: 1.4rem;
-    }
+    .prensa-page .press-image {
 
-    .project-text p {
-        font-size: 0.95rem;
-    }
+        min-height: 270px;
 
-    .project img,
-    .row > .col-lg-6 > img {
-        min-height: 260px;
         max-height: 380px;
+
+    }
+
+
+    .prensa-page .press-text {
+
+        padding:
+
+            35px
+            28px;
+
+    }
+
+
+    .prensa-page .press-text h2 {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .prensa-page .press-text p {
+
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+
     }
 
 }
 
 
 /* =========================================================
-   CELULARES
+   CELULAR
    ========================================================= */
 
 @media (max-width: 480px) {
 
-    .main-content {
-        padding-top: 70px;
+    .prensa-page .prensa-hero {
+
+        padding:
+
+            65px
+            15px
+            45px;
+
     }
 
-    .hero {
-        padding: 60px 15px 45px;
+
+    .prensa-page .prensa-hero-tag {
+
+        padding:
+
+            8px
+            14px;
+
+        font-size: 0.65rem;
+
+        letter-spacing: 1.5px;
+
     }
 
-    .hero h1 {
+
+    .prensa-page .prensa-hero h1 {
+
         font-size: 2.2rem;
+
     }
 
-    .hero .description {
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
 
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+    .prensa-page .prensa-description {
 
-    .mb-5 {
-        margin-bottom: 35px;
-    }
-
-    .project-text {
-        padding: 30px 22px;
-        text-align: left;
-    }
-
-    .project-text h4 {
-        font-size: 1.25rem;
-    }
-
-    .project-text p {
         font-size: 0.92rem;
+
         line-height: 1.7;
+
     }
 
-    .project-text a {
-        font-size: 0.9rem;
-    }
 
-    .project img,
-    .row > .col-lg-6 > img {
+    .prensa-page .press-image-wrapper {
+
         min-height: 220px;
+
+    }
+
+
+    .prensa-page .press-image {
+
+        min-height: 220px;
+
         max-height: 300px;
+
+    }
+
+
+    .prensa-page .press-text {
+
+        padding:
+
+            30px
+            22px;
+
+    }
+
+
+    .prensa-page .press-category {
+
+        font-size: 0.65rem;
+
+    }
+
+
+    .prensa-page .press-text h2 {
+
+        font-size: 1.25rem;
+
+        line-height: 1.35;
+
+    }
+
+
+    .prensa-page .press-text p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .prensa-page .press-text a {
+
+        font-size: 0.88rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE ANIMACIONES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .prensa-page .press-image,
+    .prensa-page .press-project,
+    .prensa-page .press-text a,
+    .prensa-page .press-text a span {
+
+        transition: none;
+
     }
 
 }
